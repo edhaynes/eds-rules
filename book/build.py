@@ -45,6 +45,12 @@ MMDC_ARGS = ["-t", "neutral", "-b", "white", "-s", "2"]
 # generated source by build_pdf).
 TRIM_WIDTH, TRIM_HEIGHT = "7in", "10in"
 PAGE_PATCH_POINT = "    paper: paper,"
+# Book layout: chapters (level-1 headings) start on a fresh page; weak
+# pagebreak collapses when the heading already sits at a page top.
+SHOW_PATCH_POINT = "#show: doc => conf("
+CHAPTER_BREAK_RULE = (
+    "#show heading.where(level: 1): it => pagebreak(weak: true) + it\n"
+)
 
 MERMAID_BLOCK = re.compile(r"^```mermaid\n(.*?)^```\n", re.M | re.S)
 
@@ -134,6 +140,10 @@ def build_pdf(processed: list[Path]) -> None:
     text = text.replace(
         PAGE_PATCH_POINT,
         f"    width: {TRIM_WIDTH},\n    height: {TRIM_HEIGHT},", 1)
+    if SHOW_PATCH_POINT not in text:
+        sys.exit("error: pandoc typst template changed; show patch point not found")
+    text = text.replace(SHOW_PATCH_POINT,
+                        CHAPTER_BREAK_RULE + SHOW_PATCH_POINT, 1)
     typ.write_text(text)
     pdf = DIST_DIR / "eds-rules-book-print.pdf"
     subprocess.run(["typst", "compile", str(typ), str(pdf)], check=True)
