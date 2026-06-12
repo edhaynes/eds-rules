@@ -1,0 +1,28 @@
+# Features
+
+Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software: The Red Hat Way*).
+
+## F1 — EPUB + print PDF build pipeline
+- **Status:** Open
+- **Added:** 2026-06-12
+- Build the manuscript (`book/00-front-matter.md`, `ch01–ch05`, `99-back-matter.md`) to EPUB (Kindle) and print-ready PDF (KDP, 6"×9") with pandoc; render the 30 Mermaid diagrams to grayscale SVG/PNG via mermaid-cli.
+- Static B&W audit passed 2026-06-12 (zero color styling in any diagram); actual render check pending tooling.
+- **Blocked on:** `pandoc` and `@mermaid-js/mermaid-cli` not installed (Eddie to approve/run install).
+
+## F2 — Ansible coverage in the book
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Add Ansible to the book. Natural home: Ch. 3 *Build* (deployment) alongside Podman/UBI/OpenShift — the Red Hat automation leg of the stack.
+- **Clarify:** mention/section within existing rules, or a rule of its own? The count is fixed at 100 (v1.1.2 policy) — a new rule requires consolidating or deprecating an existing one, never growing the list.
+
+## F3 — Zero-trust infrastructure in the book
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Add Eddie's zero-trust infrastructure to the book. Natural home: Ch. 4 *Protect and Prove* (trust boundaries, secret hygiene) or Ch. 3 deployment.
+- **Clarify:** scope of "my zero trust infrastructure" — the book is public and commercial, so actual private details (tailnet names, hostnames, network topology) must be generalized into principles/patterns, not published as-is. Same fixed-at-100 constraint as F2 if it becomes a rule.
+
+## F4 — Squawk Box as a worked example of a well-designed app
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Use Squawk Box as the book's running example of a well-designed app (possibly illustrating the zero-trust/F3 material).
+- **Clarify:** which repo is Squawk Box and which aspects to showcase (architecture? config layer? deploy pipeline?); where in the book it lands (one chapter's worked example vs. a thread through several).
