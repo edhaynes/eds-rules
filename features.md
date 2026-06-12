@@ -51,6 +51,12 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   **Not a commercial project** — the chapter presents it as a personal
   reference architecture with an explicit YMMV disclaimer (same posture as
   the book's Red Hat disclaimer: provided as is, do your own research).
+- **Squawk Box is a Bard Pro plugin** (Eddie, 2026-06-12 — "apologies to Dan
+  Walsh"): it becomes the chapter's worked example of the plugin seam,
+  folding that half of F4 into this capstone.
+- Plugin roadmap to present in the chapter (Eddie, 2026-06-12): Squawk Box,
+  plus plugins for **SSH**, **remote desktop**, etc. — the walkthrough shows
+  the plugin contract once and the catalog demonstrates the seam holds.
 - **Clarify:** where does Bard Pro live (not found on this machine — only
   `bard-technical-solutions`, the company site)? Which artifacts can I read
   (repo, ADRs, rubric scores)? Public-book caution: real endpoints,
@@ -78,8 +84,9 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie; cdn-sim added same day)
 - Use Squawk Box and cdn-sim as the book's worked examples of well-designed
-  apps (Squawk Box possibly illustrating the zero-trust/F3 material).
-- **Clarify:** which repo is Squawk Box; which aspects of each to showcase
-  (architecture? config layer? deploy pipeline?); where each lands (one
-  chapter's worked example vs. a thread through several). Public-book
-  caution applies: generalize, don't expose private endpoints/infra.
+  apps. **Update 2026-06-12:** Squawk Box is a Bard Pro *plugin* — its
+  walkthrough moves into the F7 capstone chapter; cdn-sim remains the
+  standalone worked example for the rule chapters.
+- **Clarify:** which aspects of cdn-sim to showcase (architecture? config
+  layer? deploy pipeline?) and where it lands. Public-book caution applies:
+  generalize, don't expose private endpoints/infra.
