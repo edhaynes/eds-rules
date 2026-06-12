@@ -118,7 +118,9 @@ Your starting point matters too. A few less famous model families are trained
 on curated, governed corpora rather than the raw scrape — IBM's Granite Code
 models are the notable example: Apache-2.0 licensed, trained on
 license-filtered data with documented provenance, in over a hundred
-programming languages. And InstructLab, the open-source Red Hat/IBM
+programming languages — a pipeline that deduplicates aggressively, scans for
+malware, and even redacts keys and passwords from the training data itself.
+Secret hygiene all the way down. And InstructLab, the open-source Red Hat/IBM
 fine-tuning project, is exactly this appendix's second path packaged for
 people who are not researchers: it turns "tune open weights" into a
 command-line workflow fed by your own curated examples. A model that begins
