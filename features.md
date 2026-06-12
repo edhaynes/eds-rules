@@ -224,3 +224,27 @@ Linda's recommendation (2026-06-12): keep 100 as the authority moat (the
 Twelve-Factor-vs-Phoenix-Project contrast), but add a free "10 essential
 rules" on-ramp page for newcomers — repo page + book teaser. Candidate ten
 to be drawn from the F12 measured ranking once it exists.
+
+## F14 — Proposed rule: "ship means ship — carry the instruction through the push" (2026-06-12, Open)
+
+Eddie's observation (2026-06-12): "I tell an LLM to ship something and they do
+everything except the push and stop. That's not shipping." The failure mode is
+completion-stopping-short — the agent treats the last, outward step (push,
+deploy, publish, send) as optional and halts at "ready to ship" instead of
+shipped. Candidate rule text: *When instructed to ship/deploy/publish/send,
+carry the instruction all the way to its outward completion. "Done except the
+push" is not done. Stop short only for a genuine gate (failing test, secret
+finding, destructive-action confirmation) — never out of caution about the
+final step itself.*
+
+- **Count is capped at 100 — consolidation target required.** Best fit: fold
+  into **rule 5** (push early and always) as a second clause about completion,
+  OR sharpen **rule 6** (green before commit, healthy before handover) which
+  already defines "done" — extend "healthy before handover" with "and the
+  outward step is taken, not left pending." Recommendation: extend rule 5,
+  since it already owns the push; rule 6 owns verification.
+- **Tension to resolve when picked up:** this rule must NOT override rule 3
+  (never destructive without confirmation) or the Powell rule (<90% → ask).
+  "Ship means ship" governs clear-path completion, not skipping real gates.
+- **Clarify:** is this a standalone 101st candidate (forcing a retirement),
+  or a clause merged into rule 5/6 (preferred — keeps 100)?
