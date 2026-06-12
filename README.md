@@ -55,6 +55,12 @@ there — never guess ahead, and never stall gathering past 90%.
 it), every persona rebinds to its local backend. Bindings live in config — never
 hardcoded. Same roles, same rules, different engine.
 
+## The quality bar
+
+Every project keeps a **rubric** — a concrete way to grade how good the software
+is. The goal is **solid A− software: 90%** on the rubric. Sprints are sized so the
+AI hits that 90% first go; polish takes it to 95%; **nothing publishes below 95%**.
+
 ## Adopting these rules
 
 1. Copy (or submodule) `RULES.md` into your repo.

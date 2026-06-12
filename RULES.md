@@ -111,7 +111,7 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 73. Correctness over speed: the delay to reach full coverage and verified behavior is acceptable and expected.
 74. No network calls in unit tests — fakes, mocks, and fixtures.
 75. Run the full regression suite after every feature; report the test count and any failures.
-76. You get what you inspect: test-driven, not test-after.
+76. You get what you inspect: test-driven, not test-after — and graded. Every project keeps a rubric that scores how good the software actually is. The goal is solid A− software: 90% on the rubric is the working bar, polish takes it to 95%, and nothing publishes below 95%.
 
 ## Errors and observability
 

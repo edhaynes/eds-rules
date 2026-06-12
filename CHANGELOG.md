@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.0.3] - 2026-06-11
+
+### Added
+
+- The quality bar: every project keeps a rubric grading the software; 90% =
+  solid A− is the working bar, polish to 95%, publish only at 95%+ (rule 76,
+  README "The quality bar").
+
 ## [1.0.2] - 2026-06-11
 
 ### Changed
