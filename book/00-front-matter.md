@@ -83,6 +83,39 @@ taping to a monitor. Every rule gets a statement, the why (usually a scar), and
 a diagram where one earns its place. All diagrams are designed for black and
 white.
 
+## Start with these ten
+
+One hundred rules is a reference, not a starting line. If you adopt nothing
+else this week, adopt these — they prevent the unrecoverable and build the
+habits the other ninety stand on:
+
+1. **Rule 1 — scan before every boundary.** A secret scan before every
+   commit, push, and deploy. No scan, no ship.
+2. **Rule 2 — never hardcode secrets.** Found one → stop and flag it; never
+   propagate it, even temporarily.
+3. **Rule 3 — never destroy without confirmation.** No deletes, drops,
+   force-pushes, or history rewrites on an agent's own judgment.
+4. **Rule 5 — push early and always.** Unpushed work is a liability; the
+   remote is the backup, and AI killed the merge-pain excuse.
+5. **Rule 6 — green before commit, healthy before handover.** Never commit
+   on red; never present a service as done without watching it answer.
+6. **Rule 7 — one purpose per commit.** No "while I'm in there" fixes.
+7. **Rule 8 — fail fast.** Crash loudly at startup with a clear message;
+   never limp along degraded.
+8. **Rule 11 — the Powell rule.** Get 90% of the information, then decide;
+   below 90% certain, ask — never guess ahead, never stall past 90%.
+9. **Rule 21 — if it can change, it's config.** Zero hardcoded hosts, ports,
+   models, paths, or timeouts.
+10. **Rule 61 — hooks before the first commit.** Pre-commit secret scanning
+    goes in before any code does; gates beat memory.
+
+This ten is the author's judgment, weighted toward irreversible damage. It
+has a successor: audit enough real sessions against the rules (the tooling
+ships with the companion repo) and the violation histogram produces a
+*measured* ranking. When the data disagrees with this list, the data wins.
+(The companion repo's `RULES.md` orders the same hundred by topic; Appendix D
+maps the numbering.)
+
 ## Meet the crew
 
 The rules assume a team of five AI personas plus one human. The roles are

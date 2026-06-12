@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.1] - 2026-06-12
+
+### Added
+
+- "Start with these ten" on-ramp in the book front matter (F13, book half):
+  the ten judgment-ranked rules weighted toward irreversible damage, with the
+  explicit promise that the measured ranking from session audits supersedes
+  it when the data disagrees.
+
 ## [1.4.0] - 2026-06-12
 
 ### Added

@@ -205,7 +205,7 @@ and the knee of the curve. Until then any ranking is judgment, not data.
 - **Clarify:** sessions from which projects count — all repos, or
   code-heavy repos only?
 
-## F13 — "Start with these 10" on-ramp page (2026-06-12, Open)
+## F13 — "Start with these 10" on-ramp page (2026-06-12, In Progress — book front matter shipped v1.4.1; repo README page still open)
 
 Linda's recommendation (2026-06-12): keep 100 as the authority moat (the
 Twelve-Factor-vs-Phoenix-Project contrast), but add a free "10 essential
