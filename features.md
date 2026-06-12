@@ -63,10 +63,17 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   chapter draws: with the rules in place, the machine nails what's
   specified; the residual failure mode is the human's spec, which is
   exactly what the Powell rule and sprint-sizing discipline exist to catch.
-- **Clarify:** where does Bard Pro live (not found on this machine — only
-  `bard-technical-solutions`, the company site)? Which artifacts can I read
-  (repo, ADRs, rubric scores)? Public-book caution: real endpoints,
-  tailnet names, and topology get generalized.
+- **Located (2026-06-12):** `~/projects/VibeLLamaPhonograph/bardLLMPro/` —
+  v1.5.2; MVP shipped (TLS Router/Registry/UBI-9 Podman agents, llama.cpp,
+  per-hop JWT, zero network-location trust), 160 tests / 100% coverage,
+  15 ADRs; `TRUST_MODEL.md` v3 carries the zero-trust-of-the-overlay design
+  (per-entity hardware keys, MLS workgroups, hybrid PQ, E2EE past relays);
+  plugin SDK is the v2 platform (catalog incl. SSH/SCP #68). Chapter draws
+  from DESIGN.md / TRUST_MODEL.md / ADRs.
+- **Clarify:** "Squawk Box" not found in the repo — closest match is the
+  iOS walkie-talkie client (claudeTalk/Maude). Confirm with Eddie which
+  artifact carries the name. Public-book caution: real endpoints and
+  topology get generalized.
 
 ## F6 — End-of-chapter axiom blocks ("axioms, not theorems")
 - **Status:** Open
