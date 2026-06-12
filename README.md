@@ -11,6 +11,12 @@ make people hoard local state, like merges, are exactly what AI does extremely w
 now, so the old reasons to delay pushing are gone. Take what works, fork what
 doesn't. That's why the license is CC-BY-4.0.
 
+## Introducing Jason
+
+Jason was the lead architect for an extremely well designed product - Internet Top Secret rated encryption device.   I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago.
+
+For performance it was written in C, but Jason had object oriented design mandated by strong architectural rules.  Every directory had on .h file, every function had a scope that was obvious by the naming scheme.  Any state change to the device went through range checking and locks.  I would say at least 25 of my "rules" are really Jason's.
+
 ## Who is this for?
 
 Anyone who pairs with an AI coding agent — Claude Code, OpenCode, Cursor, Copilot,
