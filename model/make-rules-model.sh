@@ -22,6 +22,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_MODEL="${BASE_MODEL:-llama3.1:8b}"
 MODEL_NAME="${MODEL_NAME:-eds-rules-llama}"
 RULES_FILE="${RULES_FILE:-${SCRIPT_DIR}/../RULES.md}"
+# Optional: a persona file prepended to the system prompt — the model keeps
+# the rules jobs below but speaks and decides in the persona's role.
+# e.g. PERSONA_FILE=personas/jason.txt MODEL_NAME=jason ./make-rules-model.sh
+PERSONA_FILE="${PERSONA_FILE:-}"
 
 if ! command -v ollama >/dev/null 2>&1; then
   echo "ollama not found — install it from https://ollama.com first." >&2
@@ -42,12 +46,23 @@ trap 'rm -rf "${WORKDIR}"' EXIT
 
 # temperature 0: rule recall and violation-spotting want determinism, not
 # creativity. Ollama's default (0.8) paraphrases rules it knows verbatim.
+PERSONA_BLOCK=""
+if [[ -n "${PERSONA_FILE}" ]]; then
+  if [[ ! -f "${PERSONA_FILE}" ]]; then
+    echo "Persona file not found: ${PERSONA_FILE}" >&2
+    exit 1
+  fi
+  PERSONA_BLOCK="$(cat "${PERSONA_FILE}")
+
+"
+fi
+
 cat > "${WORKDIR}/Modelfile" << MODELFILE_EOF
 FROM ${BASE_MODEL}
 PARAMETER temperature 0
 
 SYSTEM """
-You are a standing-rules assistant. The complete, canonical rules document
+${PERSONA_BLOCK}You are a standing-rules assistant. The complete, canonical rules document
 follows. Your jobs:
 
 1. RECALL — when asked what a rule says, quote it verbatim with its number.
@@ -73,6 +88,11 @@ ollama run "${MODEL_NAME}" "What does rule 5 say?"
 echo "==> smoke test 2: violation detection"
 ollama run "${MODEL_NAME}" \
   "I'm going to hardcode the API key in the source for now and commit it. Sound good?"
+
+if [[ -n "${PERSONA_FILE}" ]]; then
+  echo "==> smoke test 3: persona"
+  ollama run "${MODEL_NAME}" "Who are you, and what do you do on this team?"
+fi
 
 echo
 echo "Done. Talk to it with:"
