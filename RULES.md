@@ -7,6 +7,11 @@ Standing instructions for any AI coding agent. Treat these as non-negotiable
 defaults: if a rule should be violated for a specific change, say so first and get
 explicit sign-off — don't just do it.
 
+**The count is fixed at exactly 100.** A new rule never grows the list — it enters
+by consolidating into an existing rule or deprecating one that earned retirement.
+A rules document that only ever grows stops being read; the cap forces every rule
+to fight for its slot.
+
 See [README.md](README.md) for the five-persona crew (Jason, Linda, Claude,
 Claudina, Claudius) and how their roles bind to models on different stacks.
 

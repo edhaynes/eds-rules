@@ -72,6 +72,10 @@ AI hits that 90% first go; polish takes it to 95%; **nothing publishes below 95%
 3. Edit the rules you disagree with. They're numbered so you can cite them in
    review comments ("violates #56").
 
+**Maintenance policy:** the count is fixed at exactly 100. New rules enter by
+consolidation or by deprecating a rule that earned retirement — the list never
+grows. A rules document that only ever grows stops being read.
+
 ## Disclaimer
 
 These rules are called **"the Red Hat way"** but are **not sanctioned or verified

@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.1.2] - 2026-06-11
+
+### Added
+
+- Maintenance policy: the count is fixed at exactly 100 — new rules enter by
+  consolidating into an existing rule or deprecating one, never by growing
+  the list.
+
 ## [1.1.1] - 2026-06-11
 
 ### Changed
