@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.2] - 2026-06-12
+
+### Changed
+
+- Rule 10 consolidates two new doctrines (count stays at 100): **assume
+  everything is headless** (no display, nobody at a prompt — agents, CI,
+  containers, and 3 a.m. reboots all demand a non-interactive path) and
+  **script everything** (manual procedures die with the next reimage; a
+  script is a `git clone` away — the frogstation lesson). Book Rule 10 +
+  chapter card + RULES.md updated together.
+
+### Added
+
+- `model/` persona support: `PERSONA_FILE` hook in make-rules-model.sh,
+  `personas/jason.txt` (public-safe Jason role contract), and
+  `bootstrap-node.sh` — fresh box to running rules+persona model in one
+  command. Verified end-to-end locally (llama3.1:8b: ~90 tok/s generation,
+  3.6k-token system prompt).
+
 ## [1.4.1] - 2026-06-12
 
 ### Added

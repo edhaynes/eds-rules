@@ -26,7 +26,7 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 7. One purpose per commit, one purpose per deploy. No "while I'm in there" fixes.
 8. Fail fast: invalid config, missing dependencies, or unreachable backends crash loudly at startup with a clear message — never limp along degraded.
 9. Never add a dependency without stating its name, purpose, license, and platform support.
-10. Never assume a path, OS, or shell — use cross-platform primitives.
+10. Never assume a path, OS, or shell — use cross-platform primitives. Assume everything is headless: every tool runs with no display and nobody at a prompt. Script everything — a manual procedure dies with the next reimage; a script is a `git clone` away.
 
 ## The crew
 
