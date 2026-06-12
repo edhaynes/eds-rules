@@ -33,6 +33,29 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Plan:** ordering proposal doc for Eddie's sign-off first, then one
   mechanical renumber commit with a cross-reference sweep.
 
+## F7 — Capstone chapter: "Pulling It Together" — the Bard Pro zero-trust architecture
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- New chapter at the END of the book (after the five rule chapters, before
+  back matter): a detailed walkthrough of the Bard Pro zero-trust
+  architecture — the first project where the rules delivered **90% rubric
+  quality out of the box**. The book's proof-of-claim: the five chapters
+  build the discipline, the capstone shows it shipping.
+- Structural impact: OUTLINE.md product/structure rows, front matter "How to
+  read this book," build.py SOURCES list (new ch06 file), EPUB/PDF rebuild.
+- Likely absorbs F3 (zero-trust) and part of F4 (worked examples).
+- Positioning notes (Eddie, 2026-06-12): it's *like Tailscale* but with
+  **zero trust of the overlay itself** — even Tailscale isn't inside the
+  trust boundary; and it's **designed for plugins** to the architecture
+  (extension points are first-class, per the swappable-interface rules).
+  **Not a commercial project** — the chapter presents it as a personal
+  reference architecture with an explicit YMMV disclaimer (same posture as
+  the book's Red Hat disclaimer: provided as is, do your own research).
+- **Clarify:** where does Bard Pro live (not found on this machine — only
+  `bard-technical-solutions`, the company site)? Which artifacts can I read
+  (repo, ADRs, rubric scores)? Public-book caution: real endpoints,
+  tailnet names, and topology get generalized.
+
 ## F6 — End-of-chapter axiom blocks ("axioms, not theorems")
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie)
