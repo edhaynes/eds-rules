@@ -90,7 +90,7 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 
 51. Pre-commit hooks with secret scanning (gitleaks + detect-secrets) are mandatory in every repo — installed before the first commit, not after.
 52. A secret that ever touched a commit is burned. Rotate first, clean history second — pushed objects outlive deletion.
-53. Never copy a discovered secret anywhere — not into chat, not a scratch file, not "temporarily."
+53. Never copy a discovered secret anywhere — not into chat, not a scratch file, not "temporarily." One exception: during leak response, surface it verbatim — SHA, file, exact string — to its owner, who must identify which credential to kill.
 54. Before deploying, scan the full artifact: image build context, manifests, env bindings, the lot — not just the files changed since last deploy.
 55. Before pushing, scan the entire push range, not just the tip — an intermediate commit can carry the leak.
 56. Before committing, inspect the staged diff of every config-shaped file (yaml, json, toml, env, anything under infra/deploy dirs) — leaks hide best in "harmless" config.

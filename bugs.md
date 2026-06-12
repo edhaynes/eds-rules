@@ -3,7 +3,7 @@
 Known bugs for the eds-rules repo and the book manuscript.
 
 ## B1 — Post-F5 narrative seams (body sentences strained by the reorder)
-- **Status:** Open
+- **Status:** Completed, 2026-06-12 (pending commit) — all three seams rephrased: Ch2 R30 tail now "configuration thread," Ch2 R31 opener now invokes "the configuration rules" by theme, Ch1 transition leads with the decision doctrine.
 - **Observed:** 2026-06-12, during the F5 importance reorder (body text was
   frozen by instruction; these sentences now read against the new order)
 - Ch. 2, new Rule 30 tail: "That's the configuration half of this chapter in
@@ -18,35 +18,36 @@ Known bugs for the eds-rules repo and the book manuscript.
   judgment — body text, not mechanical).
 
 ## B2 — Powell rule misdefined in Ch3 + Ch5 synopses (Edith, cold grade 2026-06-12)
-- **Status:** In Progress (floor-fix sprint, 2026-06-12)
+- **Status:** Completed, 2026-06-12 (pending commit) — both synopses now state the real rule: get/gather 90% of the information, then decide; below 90%, ask the human.
 - Ch3 synopsis: "the Powell rule: you break it, you own it"; Ch5 synopsis:
   "the Powell rule holds: you touched it, you own it." That is the Pottery
   Barn rule — a different Powell doctrine. The flagship rule is *get 90% of
   the information, then decide*. Worst defect in the book; both openers.
 
 ## B3 — Rule 46 ignores rootless Docker (Reddit-test exposure)
-- **Status:** In Progress (floor-fix sprint, 2026-06-12)
+- **Status:** Completed, 2026-06-12 (pending commit) — Rule 46 body now acknowledges rootless Docker (20.10, 2020) and holds the line: opt-in retrofit vs. rootless/daemonless by construction; secure path must be the default path.
 - "Docker's insecure daemon" argues against Docker's classic architecture as
   if it were the only one; rootless mode has shipped since 20.10 (2020).
   Fix: acknowledge it and state why Podman still wins (rootless by
   construction vs. opt-in).
 
 ## B4 — RULES.md drift: repo rule 53 vs book Rules 62–63
-- **Status:** In Progress (floor-fix sprint, 2026-06-12)
+- **Status:** Completed, 2026-06-12 (pending commit) — rule 53 now carries the verbatim-disclosure-to-owner exception (SHA, file, exact string, leak response only); repo and book describe the same rule.
 - Repo says "never copy a secret anywhere," full stop; the book correctly
   carves the verbatim-disclosure-to-owner exception. Repo short form is
   incomplete — drift is a bug.
 
 ## B5 — Appendix E overclaims the open-weights tune
-- **Status:** In Progress (floor-fix sprint, 2026-06-12)
+- **Status:** Completed, 2026-06-12 (pending commit) — table row honest (days to weeks / Medium-high, gates still carry process discipline); body paragraph caveats that tuning shapes style and defaults, not procedural discipline.
 - "A weekend and a good dataset" / robustness "High" overstates what LoRA
   can instill (agentic process discipline is not a weekend). Soften to honest
   ranges; the Reddit test applies.
 
 ## B6 — Minor grade findings (one pass, low severity)
-- **Status:** Open
-- Ch3 synopsis claims function-size limits already established (they are
-  Ch4, Rule 79). Rule 64 gauge + Rule 69 funnel diagrams are decoration —
+- **Status:** Open — synopsis sub-item Completed, 2026-06-12 (pending commit), in the floor-fix sprint; remaining items below still open.
+- ~~Ch3 synopsis claims function-size limits already established (they are
+  Ch4, Rule 79).~~ Done 2026-06-12: synopsis now claims only Ch2's file
+  ceilings (500/800/1000). Rule 64 gauge + Rule 69 funnel diagrams are decoration —
   cut or earn. Rule 13 sprint-lanes diagram may be cramped at trim — check
   in printed proof. Frustration #1 (hallucinated *library* APIs, not just
   tools) never named where the arriving reader looks — add the named

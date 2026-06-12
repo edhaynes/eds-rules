@@ -129,13 +129,16 @@ order of cost:
 | Path | Cost | Robustness | Who it's for |
 |---|---|---|---|
 | Train from scratch | Millions | Highest | Labs, not you |
-| Tune open weights | A weekend and a good dataset | High — survives long sessions | Anyone with a capable machine |
+| Tune open weights | Days to weeks — the dataset is the work | Medium-high — shapes style and defaults; process discipline still needs gates | Anyone with a capable machine |
 | Standing rules in the prompt | Free, immediate | Lowest — instructions dilute | Everyone; start here |
 
 **Training from scratch** is listed for completeness. If you have to ask what
 it costs, it is the wrong path.
 
-**Tuning open weights** is easier than its reputation. Take a strong
+**Tuning open weights** is more approachable than its reputation, with one
+honest caveat up front: tuning shapes the model's defaults and style; it does
+not install procedural discipline. A tuned model writes in your idiom — it
+still won't refuse to commit on a red suite unless a gate stops it. Take a strong
 open-weight coding model and fine-tune it with LoRA or QLoRA — techniques
 that adjust a small fraction of the model's weights, so the hardware stays
 reasonable: a single consumer GPU handles the small-and-mid sizes, and one
