@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.0.2] - 2026-06-11
+
+### Changed
+
+- Powell rule restated both ways: get 90% of the information you need, then
+  decide; below 90%, ask Eddie more questions — never guess ahead, never
+  stall gathering past 90% (rule 17).
+
 ## [1.0.1] - 2026-06-11
 
 ### Changed

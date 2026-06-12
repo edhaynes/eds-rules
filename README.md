@@ -47,8 +47,9 @@ new ruling contradicts the canon, surfacing the inconsistency before acting on i
 frontend to Claudina, design questions to Claudius. Quick factual or yes/no calls go
 to a fast persona only when ≥90% confident it will get them right; 50–90% goes to a
 heavyweight; below that, or anything high-stakes, goes to the human. And crew-wide,
-**the Powell rule**: any persona that is not 90% certain of what to do stops and
-asks — never guesses ahead.
+**the Powell rule**: get 90% of the information you need to make a decision, then
+make the decision. Below 90% certain? Ask Eddie more questions until you get
+there — never guess ahead, and never stall gathering past 90%.
 
 **Local-models rule:** when the human says "go local" (or the environment requires
 it), every persona rebinds to its local backend. Bindings live in config — never
