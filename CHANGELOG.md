@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.3.3] - 2026-06-12
+
+### Added
+
+- Foreword: the lopsided-intelligence argument — models are trained on
+  quantity not quality (C-grade defaults) yet are fantastic at review,
+  reorganization, secret scanning, and merges; the three ways to bend a
+  model toward quality (train from scratch / tune open weights / standing
+  rules in the prompt — this book is the third).
+- Appendix E — "Bending the model": LoRA/QLoRA open-weights tuning, dataset
+  curation over volume, IBM Granite Code (license-filtered, provenance-
+  tracked training data) and InstructLab as the packaged tune-path.
+- Title page: display typography + original B&W crew illustration
+  (`book/art/the-team.svg`, placeholder line art); disclaimer moved to its
+  own page; chapters start on fresh pages.
+
 ## [1.3.2] - 2026-06-12
 
 ### Changed

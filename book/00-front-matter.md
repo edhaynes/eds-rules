@@ -28,6 +28,26 @@ excuse. Demand 100% branch coverage, because the patience to reach it is no
 longer human patience. Tailor sprints so the AI nails them first go nine times
 out of ten, and let it run those sprints in parallel.
 
+Be clear about what that machine intelligence is, though, because it is
+lopsided. Out of the box, a coding model has been trained on most of the code
+ever published — and most of the code ever published is bad. Quantity, not
+quality: the average tutorial, the average abandoned repo, the average pull
+request that barely got reviewed. Left on its defaults, an AI assistant
+reproduces exactly that — functional, unremarkable, C-grade. Yet the same
+model is fantastic at reviewing code for issues, reorganizing code that
+already works, scanning for secrets, and untangling git merges. Mediocre
+author, excellent editor. The system in this book is built on that asymmetry:
+let the machine run the gates, the reviews, the scans, and the merges, and
+put rules around the part where it merely averages the internet.
+
+You bend a model toward quality in one of three ways. Train one from scratch
+on code you trust — millions of dollars, nobody's first move. Tune open
+weights toward your standards — easier and cheaper than you think; Appendix E
+sketches the path. Or put standing rules in front of the model on every
+request — simple, immediate, and not foolproof, which is why so many of these
+hundred rules are gates and hooks that hold even when the prompt doesn't.
+This book is the third way, with the second as your upgrade path.
+
 The rules are opinionated. Many people will disagree with some of them — that
 is what the license is for. Take what works, fork what doesn't.
 

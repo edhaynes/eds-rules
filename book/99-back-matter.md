@@ -87,6 +87,53 @@ Same one hundred rules, two orderings.
 | 99 | 97 | Decisions persisted same-commit |
 | 100 | 99 | Verbatim errors, diffs not prose |
 
+## Appendix E — Bending the model: the three ways to retrain
+
+The foreword names three ways to move a model off its C-grade defaults. In
+order of cost:
+
+| Path | Cost | Robustness | Who it's for |
+|---|---|---|---|
+| Train from scratch | Millions | Highest | Labs, not you |
+| Tune open weights | A weekend and a good dataset | High — survives long sessions | Anyone with a capable machine |
+| Standing rules in the prompt | Free, immediate | Lowest — instructions dilute | Everyone; start here |
+
+**Training from scratch** is listed for completeness. If you have to ask what
+it costs, it is the wrong path.
+
+**Tuning open weights** is easier than its reputation. Take a strong
+open-weight coding model and fine-tune it with LoRA or QLoRA — techniques
+that adjust a small fraction of the model's weights, so the hardware stays
+reasonable: a single consumer GPU handles the small-and-mid sizes, and one
+large unified-memory machine handles the 70-billion-parameter class. The
+established open-source tooling (Hugging Face PEFT, Axolotl, Unsloth) makes
+the mechanics a configuration file, not a research project. The hard part —
+and the entire point — is the dataset: a few thousand *curated* examples of
+your standard (diffs that passed your review, before-and-after refactors,
+rules-compliant modules) beat millions of scraped files. Quantity got the
+model into this condition; only quality gets it out. Grade the tuned model
+against your rubric, not against public benchmarks.
+
+Your starting point matters too. A few less famous model families are trained
+on curated, governed corpora rather than the raw scrape — IBM's Granite Code
+models are the notable example: Apache-2.0 licensed, trained on
+license-filtered data with documented provenance, in over a hundred
+programming languages. And InstructLab, the open-source Red Hat/IBM
+fine-tuning project, is exactly this appendix's second path packaged for
+people who are not researchers: it turns "tune open weights" into a
+command-line workflow fed by your own curated examples. A model that begins
+license-clean and provenance-tracked has less of the internet's average to
+unlearn.
+
+**Standing rules in the prompt** is this book: the hundred rules, dropped
+into the file your harness reads on every request (Appendix C shows how, per
+harness). It costs nothing and works today, on any model, including the
+closed ones you cannot tune. Its weakness is honesty itself: long sessions
+dilute instructions, and a model can drift from a rule it read an hour ago.
+That is why the rules lean so hard on gates that do not depend on the model's
+memory — pre-commit hooks (Appendix A), scans, and tests run whether or not
+anyone remembered the rule. Not foolproof is acceptable when the hooks are.
+
 ## Glossary
 
 - **The crew** — five fixed AI roles (Jason, Linda, Claude, Claudina,
