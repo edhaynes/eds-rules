@@ -39,9 +39,12 @@ METADATA = {
 }
 
 # B&W print constraint: neutral theme renders in grayscale; scale 2 keeps
-# diagrams crisp at 6"x9" trim.
+# diagrams crisp at print trim.
 MMDC_ARGS = ["-t", "neutral", "-b", "white", "-s", "2"]
-PAPERSIZE = "us-trade"  # typst built-in 6"x9"
+# KDP 7"x10" technical trim (not a named typst paper; patched into the
+# generated source by build_pdf).
+TRIM_WIDTH, TRIM_HEIGHT = "7in", "10in"
+PAGE_PATCH_POINT = "    paper: paper,"
 
 MERMAID_BLOCK = re.compile(r"^```mermaid\n(.*?)^```\n", re.M | re.S)
 
@@ -118,8 +121,23 @@ def main() -> None:
         pandoc(processed, DIST_DIR / "eds-rules-book.epub",
                ["--split-level=1"])
     if target in ("pdf", "all"):
-        pandoc(processed, DIST_DIR / "eds-rules-book-print.pdf",
-               ["--pdf-engine=typst", f"--variable=papersize:{PAPERSIZE}"])
+        build_pdf(processed)
+
+
+def build_pdf(processed: list[Path]) -> None:
+    """Custom trim: pandoc -> standalone typst, patch page size, compile."""
+    typ = BUILD_DIR / "book.typ"
+    pandoc(processed, typ, ["--standalone"])
+    text = typ.read_text()
+    if PAGE_PATCH_POINT not in text:
+        sys.exit("error: pandoc typst template changed; page patch point not found")
+    text = text.replace(
+        PAGE_PATCH_POINT,
+        f"    width: {TRIM_WIDTH},\n    height: {TRIM_HEIGHT},", 1)
+    typ.write_text(text)
+    pdf = DIST_DIR / "eds-rules-book-print.pdf"
+    subprocess.run(["typst", "compile", str(typ), str(pdf)], check=True)
+    print(f"built {pdf.relative_to(REPO_ROOT)} ({pdf.stat().st_size // 1024} KB)")
 
 
 if __name__ == "__main__":

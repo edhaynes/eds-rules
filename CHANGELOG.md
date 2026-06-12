@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.3.2] - 2026-06-12
+
+### Changed
+
+- Trim raised to 7"×10" (technical-book comp set; ~125 pages, prints cheaper
+  than 6"×9"/166 since KDP charges per page). Build now emits standalone
+  Typst and patches the page size — typst has no named 7×10 paper.
+- Prices: softcover $19.99 (was $9.99), Kindle $9.99 (was $4.99).
+
 ## [1.3.1] - 2026-06-12
 
 ### Added

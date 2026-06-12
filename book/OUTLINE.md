@@ -24,10 +24,10 @@ Status: In Progress — first draft complete (5 chapters + front/back matter, ~3
 |---|---|
 | Title | **100 Rules for Writing My Software** |
 | Subtitle | **The Red Hat Way** |
-| Kindle price | **$4.99** |
-| Softcover price | **$9.99** |
+| Kindle price | **$9.99** (raised from $4.99, 2026-06-12) |
+| Softcover price | **$19.99** (raised from $9.99, 2026-06-12 — priced against the technical-nonfiction comp set) |
 | Interior | **Black and white** (KDP standard B&W, cream or white paper) |
-| Trim | 6" × 9" (KDP default for nonfiction) |
+| Trim | **7" × 10"** (raised from 6"×9", 2026-06-12 — technical-book comp set; KDP B&W print cost is per page, so the bigger trim prints *cheaper*: ~125 pp vs 166) |
 | Structure | **5 chapters × 20 rules = 100 rules** (restructured from 10×10) |
 | Art | Lots of diagrams — 2–4 per chapter, all designed for B&W |
 | License note | Book text © author; the underlying rules repo stays CC-BY-4.0 |
