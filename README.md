@@ -13,7 +13,7 @@ doesn't. That's why the license is CC-BY-4.0.
 
 ## Introducing Jason
 
-Jason was the lead architect for an extremely well designed product - Internet Top Secret rated encryption device.   I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago.
+Jason was the lead architect for an extremely well designed product - the General Dynamics TACLANE Top Secret encryption device.  I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago.
 
 For performance it was written in C, but Jason had object oriented design mandated by strong architectural rules.  Every directory had on .h file, every function had a scope that was obvious by the naming scheme.  Any state change to the device went through range checking and locks.  I would say at least 25 of my "rules" are really Jason's.
 
@@ -91,8 +91,8 @@ affiliated with Red Hat. Everything is provided **"as is"**, with no warranties 
 promises of any kind (see [LICENSE](LICENSE)). Your mileage may vary — do your
 own research.
 
-That said, the rules do say **Podman, RHEL UBI, and OpenShift**. Tough luck — if
-you like Ubuntu, Arch Linux, and Docker's insecure daemon, write your own rules.
+That said, the rules do say **Podman, RHEL UBI, Ansible, and OpenShift**. Tough luck — if
+you like Ubuntu, Arch Linux, Puppet, and Docker's insecure daemon, write your own rules.
 The license lets you.
 
 
