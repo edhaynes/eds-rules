@@ -1,6 +1,6 @@
 Status: Not Implemented
 
-# PLAN — Capstone chapter: "Pulling It Together" (F7, Bard Pro zero-trust architecture)
+# PLAN — Capstone chapter: "Pulling It Together" (F7, Bard zero-trust architecture)
 
 Author-date: 2026-06-12. Scopes features.md F7 (absorbs F3 zero-trust; absorbs the
 Squawk Box half of F4). Source repo inspected read-only at
@@ -42,7 +42,7 @@ convention verbatim.
 | TRUST_MODEL.md v3 (per-entity hybrid-PQ hardware keys, MLS workgroups with per-epoch re-key, HPKE envelopes, encryption-at-rest, bridging) | First line of the file: *"Status: Not Implemented — deferred to v3 (Run); direction only, not an MVP commitment."* `trust/` contains **stubs** coded to `contracts/trust.schema.yaml`, not wired into the data path. The PQ verifier does not exist — only the `TokenVerifier` seam does. |
 | "Zero trust of the overlay itself" (Eddie's *like Tailscale, but Tailscale isn't inside the boundary* positioning) | **Partially true today, fully true only in v3.** Shipped: per-hop authentication means a Tailscale/LAN packet earns nothing — that is real and demonstrable. Not shipped: E2EE past relays, per-entity identity, workgroup authorization. The honest sentence is "the overlay is treated as untrusted transport *for authentication* today; the full least-disclosure model is the v3 design." |
 | Plugin SDK / plugin platform | v2 direction (root features #66 Hub plugin platform, #68 plugin catalog incl. SSH/SCP). **No SDK code exists, no seam in the codebase is named "plugin."** What exists is the de-facto plugin contract: frozen wire contracts + JWT + the swappable `TokenVerifier`/`InferenceEngine` seams. |
-| Squawk Box as a Bard Pro plugin | The app exists and ships (claudeTalk repo; product name **"Squahk"**, v0.6.x on TestFlight; E2EE rooms are called "Squahk Boxes"). It already speaks JWT + `POST /v1/message` against the live contract as the **v1 example client** (ADR-0011). It is integrated as a *client*, not via a plugin SDK — because the SDK doesn't exist. |
+| Squawk Box as a Bard plugin | The app exists and ships (claudeTalk repo; product name **"Squahk"**, v0.6.x on TestFlight; E2EE rooms are called "Squahk Boxes"). It already speaks JWT + `POST /v1/message` against the live contract as the **v1 example client** (ADR-0011). It is integrated as a *client*, not via a plugin SDK — because the SDK doesn't exist. |
 | Profile B (enterprise console, strict onboarding), ssh CLI tab, remote spawn, Valkey control plane, mesh | All v2 per ROADMAP.md; some have ADRs (0004, 0007, 0008, 0010), none have product code beyond the parked Flutter/console scaffolds. |
 
 ### One naming discrepancy to surface now

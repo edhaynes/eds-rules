@@ -130,7 +130,7 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   **Not a commercial project** — the chapter presents it as a personal
   reference architecture with an explicit YMMV disclaimer (same posture as
   the book's Red Hat disclaimer: provided as is, do your own research).
-- **Squawk Box is a Bard Pro plugin** (Eddie, 2026-06-12): it becomes the
+- **Squawk Box is a Bard plugin** (Eddie, 2026-06-12): it becomes the
   chapter's worked example of the plugin seam, folding that half of F4 into
   this capstone.
 - Plugin roadmap to present in the chapter (Eddie, 2026-06-12): Squawk Box,
@@ -151,7 +151,7 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   from DESIGN.md / TRUST_MODEL.md / ADRs.
 - **Resolved (Eddie, 2026-06-12): Squawk Box IS the walkie-talkie app**
   (the claudeTalk/Maude iOS client) — presented in the chapter as the first
-  Bard Pro plugin. Public-book caution: real endpoints and topology get
+  Bard plugin. Public-book caution: real endpoints and topology get
   generalized.
 
 ## F8 — Crew-installation appendix ("install Jason")
@@ -197,7 +197,7 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie; cdn-sim added same day)
 - Use Squawk Box and cdn-sim as the book's worked examples of well-designed
-  apps. **Update 2026-06-12:** Squawk Box is a Bard Pro *plugin* — its
+  apps. **Update 2026-06-12:** Squawk Box is a Bard *plugin* — its
   walkthrough moves into the F7 capstone chapter; cdn-sim remains the
   standalone worked example for the rule chapters.
 - **Clarify:** which aspects of cdn-sim to showcase (architecture? config
