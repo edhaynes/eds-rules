@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.0.1] - 2026-06-11
+
+### Changed
+
+- Documented the rationale for push-early-and-always: AI handles messy merges
+  extremely well, removing the old reason to hoard local state.
+- Jason now chunks work into independent, clearly defined sprints sized for a
+  90% first-try success rate, run in parallel across personas (rules 12, 98).
+- Added the Powell rule: any persona that is not 90% certain of what to do
+  stops and asks (rule 17).
+
 ## [1.0.0] - 2026-06-11
 
 ### Added
