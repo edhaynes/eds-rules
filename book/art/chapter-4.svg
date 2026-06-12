@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ch4 "Protect and Prove" — the shield and the proof. Original B&W line art. -->
+  <!-- shield -->
+  <path d="M360 70 C420 110 480 124 530 128 C530 300 480 420 360 490 C240 420 190 300 190 128 C240 124 300 110 360 70 Z" fill="#fff"/>
+  <!-- checkmark inside -->
+  <path d="M280 280 L340 350 L450 200" stroke-width="6"/>
+  <!-- padlock, lower left -->
+  <rect x="80" y="430" width="84" height="64" rx="10" fill="#fff"/>
+  <path d="M96 430 v-24 q0 -26 26 -26 q26 0 26 26 v24"/>
+  <circle cx="122" cy="458" r="8" fill="#fff"/>
+  <line x1="122" y1="466" x2="122" y2="478"/>
+  <!-- magnifier, lower right -->
+  <circle cx="586" cy="436" r="40" fill="#fff"/>
+  <line x1="614" y1="464" x2="654" y2="504" stroke-width="7"/>
+</svg>

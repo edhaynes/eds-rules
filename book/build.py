@@ -97,10 +97,26 @@ def render_diagram(source: str, name: str) -> Path:
     return png
 
 
+# Chapter divider page (print only): title at top, plate filling the lower
+# two-thirds, body starts on the next page. Raw typst is dropped by the
+# EPUB writer.
+CHAPTER_PLATE = (
+    "\n\n```{{=typst}}\n#v(1fr)\n"
+    '#align(center, image("art/chapter-{n}.svg", width: 100%, height: 62%, fit: "contain"))\n'
+    "#pagebreak()\n```\n"
+)
+
+
 def preprocess(src: Path) -> Path:
     """Replace mermaid blocks with rendered-image references."""
     text = src.read_text()
     stem = src.stem
+    if stem.startswith("ch") and stem[2:].isdigit():
+        n = int(stem[2:])
+        plate = BOOK_DIR / "art" / f"chapter-{n}.svg"
+        if plate.exists():
+            heading, rest = text.split("\n", 1)
+            text = heading + CHAPTER_PLATE.format(n=n) + rest
     count = 0
 
     def replace(match: re.Match) -> str:

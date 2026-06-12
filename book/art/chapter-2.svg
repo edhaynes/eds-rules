@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ch2 "Design" — the edifice: architecture before language. Original B&W line art. -->
+  <!-- steps -->
+  <line x1="80" y1="500" x2="640" y2="500"/>
+  <line x1="110" y1="468" x2="610" y2="468"/>
+  <line x1="140" y1="436" x2="580" y2="436"/>
+  <!-- columns (4) -->
+  <g>
+    <line x1="190" y1="436" x2="190" y2="220"/>
+    <line x1="214" y1="436" x2="214" y2="220"/>
+    <rect x="180" y="204" width="44" height="16" fill="#fff"/>
+    <rect x="184" y="420" width="36" height="16" fill="#fff"/>
+  </g>
+  <g>
+    <line x1="300" y1="436" x2="300" y2="220"/>
+    <line x1="324" y1="436" x2="324" y2="220"/>
+    <rect x="290" y="204" width="44" height="16" fill="#fff"/>
+    <rect x="294" y="420" width="36" height="16" fill="#fff"/>
+  </g>
+  <g>
+    <line x1="410" y1="436" x2="410" y2="220"/>
+    <line x1="434" y1="436" x2="434" y2="220"/>
+    <rect x="400" y="204" width="44" height="16" fill="#fff"/>
+    <rect x="404" y="420" width="36" height="16" fill="#fff"/>
+  </g>
+  <g>
+    <line x1="520" y1="436" x2="520" y2="220"/>
+    <line x1="544" y1="436" x2="544" y2="220"/>
+    <rect x="510" y="204" width="44" height="16" fill="#fff"/>
+    <rect x="514" y="420" width="36" height="16" fill="#fff"/>
+  </g>
+  <!-- entablature + pediment -->
+  <rect x="150" y="176" width="430" height="28" fill="#fff"/>
+  <path d="M130 176 L365 60 L600 176 Z" fill="#fff"/>
+  <!-- blueprint scroll leaning on the steps -->
+  <rect x="86" y="380" width="26" height="110" rx="13" fill="#fff" transform="rotate(-18 99 435)"/>
+  <ellipse cx="91" cy="389" rx="13" ry="9" fill="#fff" transform="rotate(-18 99 435)"/>
+</svg>

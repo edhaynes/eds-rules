@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Ch1 "First Principles" — the line, and the gate through it. Original B&W line art. -->
+  <!-- ground -->
+  <line x1="30" y1="470" x2="690" y2="470"/>
+  <!-- fence left -->
+  <line x1="60" y1="470" x2="60" y2="360"/>
+  <line x1="120" y1="470" x2="120" y2="360"/>
+  <line x1="180" y1="470" x2="180" y2="360"/>
+  <line x1="40" y1="385" x2="200" y2="385"/>
+  <line x1="40" y1="430" x2="200" y2="430"/>
+  <!-- fence right -->
+  <line x1="540" y1="470" x2="540" y2="360"/>
+  <line x1="600" y1="470" x2="600" y2="360"/>
+  <line x1="660" y1="470" x2="660" y2="360"/>
+  <line x1="520" y1="385" x2="680" y2="385"/>
+  <line x1="520" y1="430" x2="680" y2="430"/>
+  <!-- gate posts -->
+  <line x1="260" y1="470" x2="260" y2="330"/>
+  <line x1="460" y1="470" x2="460" y2="330"/>
+  <circle cx="260" cy="322" r="8" fill="#fff"/>
+  <circle cx="460" cy="322" r="8" fill="#fff"/>
+  <!-- gate, swung open (perspective) -->
+  <path d="M460 345 L560 300 M460 455 L560 480 M560 300 L560 480"/>
+  <line x1="475" y1="338" x2="475" y2="458"/>
+  <line x1="505" y1="324" x2="505" y2="466"/>
+  <line x1="535" y1="311" x2="535" y2="474"/>
+  <!-- path through the gate -->
+  <path d="M300 470 Q340 380 352 290" stroke-dasharray="2 14"/>
+  <path d="M420 470 Q390 380 380 290" stroke-dasharray="2 14"/>
+  <!-- figure approaching the gate -->
+  <circle cx="200" cy="500" r="0" />
+  <circle cx="170" cy="498" r="0" />
+  <circle cx="305" cy="510" r="16" fill="#fff"/>
+  <line x1="305" y1="526" x2="305" y2="552"/>
+  <line x1="305" y1="534" x2="288" y2="548"/>
+  <line x1="305" y1="534" x2="322" y2="548"/>
+  <!-- sun, low and plain -->
+  <circle cx="640" cy="120" r="36"/>
+  <line x1="640" y1="60" x2="640" y2="44"/>
+  <line x1="640" y1="196" x2="640" y2="180"/>
+  <line x1="580" y1="120" x2="564" y2="120"/>
+  <line x1="716" y1="120" x2="700" y2="120"/>
+</svg>
