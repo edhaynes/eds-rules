@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+id_rsa*
+credentials.json
+service-account*.json
+.aws/
+.azure/
+.gcp/
+*.sqlite
+*.db
+.DS_Store
