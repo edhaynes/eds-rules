@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.3.0] - 2026-06-11
+
+### Changed
+
+- Manuscript restructured 10×10 → **5 chapters × 20 rules**, most fundamental
+  first, each chapter building on the last and opening with a synopsis of the
+  fundamentals it stands on: First Principles → Design → Build → Protect and
+  Prove → Ship and Remember.
+
+### Added
+
+- Front matter (title/disclaimer, foreword, how to read, meet the crew) and
+  back matter (appendices A–D incl. book↔RULES.md mapping, glossary).
+
+## [1.2.0] - 2026-06-11
+
+### Added
+
+- First draft manuscript: 10 chapters, ~34k words, Mermaid diagrams
+  throughout. (Changelog entry added retroactively in v1.3.0 — the draft
+  commit omitted it, a process slip worth recording.)
+
 ## [1.1.2] - 2026-06-11
 
 ### Added

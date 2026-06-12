@@ -1,6 +1,22 @@
 # Book Outline — *100 Rules for Writing My Software: The Red Hat Way*
 
-Status: Not Implemented (outline approved structure; manuscript not started)
+Status: In Progress — first draft complete (5 chapters + front/back matter, ~38k words); remaining: author read-through, B&W diagram render check, EPUB/print build
+
+> **Restructured 2026-06-11 (Eddie):** 5 chapters × 20 rules (was 10 × 10).
+> Chapters build on one another, most fundamental first; each opens with a
+> synopsis of the fundamentals it stands on. The chapter specs below the
+> Product table describe the original 10-chapter cut and are retained for the
+> rule-grouping rationale; the live structure is the 5-chapter arc:
+>
+> 1. **First Principles** (book rules 1–20) — hard rules + the crew → `ch01.md`
+> 2. **Design** (21–40) — configuration + architecture → `ch02.md`
+> 3. **Build** (41–60) — cross-platform & deployment + errors/observability/dependencies → `ch03.md`
+> 4. **Protect and Prove** (61–80) — secret hygiene + testing & the quality bar → `ch04.md`
+> 5. **Ship and Remember** (81–100) — versioning & release + hygiene/memory/process → `ch05.md`
+>
+> Front matter: `00-front-matter.md` (title/disclaimer, foreword, how to read,
+> meet the crew). Back matter: `99-back-matter.md` (appendices A–D incl. the
+> book↔RULES.md mapping, glossary).
 
 ## Product
 
@@ -12,7 +28,7 @@ Status: Not Implemented (outline approved structure; manuscript not started)
 | Softcover price | **$9.99** |
 | Interior | **Black and white** (KDP standard B&W, cream or white paper) |
 | Trim | 6" × 9" (KDP default for nonfiction) |
-| Structure | **10 chapters × 10 rules = 100 rules** |
+| Structure | **5 chapters × 20 rules = 100 rules** (restructured from 10×10) |
 | Art | Lots of diagrams — 2–4 per chapter, all designed for B&W |
 | License note | Book text © author; the underlying rules repo stays CC-BY-4.0 |
 
