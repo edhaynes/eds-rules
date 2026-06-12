@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.3.1] - 2026-06-12
+
+### Added
+
+- Book build pipeline (`book/build.py`): renders the 30 Mermaid diagrams to
+  grayscale PNG (mermaid-cli, neutral theme) and builds EPUB + 6"×9" print
+  PDF via pandoc/typst. First draft artifacts verified: 166-page PDF at
+  exact US-trade trim, all diagrams legible in B&W.
+- `RUBRIC.md`: audience profile (newbie AI coders), top-ten frustration map
+  with chapter cross-references, weighted grading rubric (90 working bar /
+  95 publish).
+- `bugs.md` / `features.md` trackers; backlog filed for Ansible coverage,
+  zero-trust infrastructure, and the Squawk Box worked example.
+
 ## [1.3.0] - 2026-06-11
 
 ### Changed

@@ -1,6 +1,6 @@
 # Book Outline — *100 Rules for Writing My Software: The Red Hat Way*
 
-Status: In Progress — first draft complete (5 chapters + front/back matter, ~38k words); remaining: author read-through, B&W diagram render check, EPUB/print build
+Status: In Progress — first draft complete (5 chapters + front/back matter, ~38k words); build pipeline live (`book/build.py` → EPUB + 6"×9" PDF, 30 B&W diagrams render-checked 2026-06-12); remaining: author read-through, rubric cold grade (RUBRIC.md), trademark answer before cover is final
 
 > **Restructured 2026-06-11 (Eddie):** 5 chapters × 20 rules (was 10 × 10).
 > Chapters build on one another, most fundamental first; each opens with a

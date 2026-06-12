@@ -15,3 +15,7 @@ service-account*.json
 *.sqlite
 *.db
 .DS_Store
+
+# book build artifacts
+book/_build/
+dist/
