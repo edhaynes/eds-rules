@@ -38,7 +38,7 @@ Known bugs for the eds-rules repo and the book manuscript.
   incomplete — drift is a bug.
 
 ## B5 — Appendix E overclaims the open-weights tune
-- **Status:** Completed, 2026-06-12 (pending commit) — table row honest (days to weeks / Medium-high, gates still carry process discipline); body paragraph caveats that tuning shapes style and defaults, not procedural discipline.
+- **Status:** Completed, 2026-06-12 (pending commit) — table row honest (days to weeks / Medium-high, gates still carry process discipline), body paragraph caveats that tuning shapes style and defaults, not procedural discipline.
 - "A weekend and a good dataset" / robustness "High" overstates what LoRA
   can instill (agentic process discipline is not a weekend). Soften to honest
   ranges; the Reddit test applies.
@@ -52,3 +52,8 @@ Known bugs for the eds-rules repo and the book manuscript.
   in printed proof. Frustration #1 (hallucinated *library* APIs, not just
   tools) never named where the arriving reader looks — add the named
   incident to Rule 50's body or Ch2 search-first.
+
+## B7 — Invalid Jason Llama8B model name in opencode config
+- **Status:** Open — Opencode validation reports `ollama/jason-llama8b` as an invalid model.
+- **Observed:** When running Opencode with `opencode.json` (or `project_manager/opencode.json`), the system fails to start due to the unrecognized model name.
+- **Fix:** Install the correct model (e.g., `ollama pull jason-llama8b`) or update the config to a valid model name.
