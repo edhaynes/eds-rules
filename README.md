@@ -67,6 +67,14 @@ Every project keeps a **rubric** — a concrete way to grade how good the softwa
 is. The goal is **solid A− software: 90%** on the rubric. Sprints are sized so the
 AI hits that 90% first go; polish takes it to 95%; **nothing publishes below 95%**.
 
+## Run the rules as a model
+
+`model/make-rules-model.sh` builds a rules-aware Llama 8B from stock Ollama
+in about two minutes — it recites rules, attributes situations to rule
+numbers, and calls out violations unprompted. `model/audit-session.py` scans
+your AI-session transcripts for rule violations and rule gaps. The full
+fine-tune recipe (and when to bother) is in [model/README.md](model/README.md).
+
 ## Adopting these rules
 
 1. Copy (or submodule) `RULES.md` into your repo.

@@ -190,3 +190,24 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Clarify:** which aspects of cdn-sim to showcase (architecture? config
   layer? deploy pipeline?) and where it lands. Public-book caution applies:
   generalize, don't expose private endpoints/infra.
+
+## F12 — Rule-effectiveness study: rank the 100, find the sweet spot (2026-06-12, Open)
+
+Eddie's questions (2026-06-12): could 50 rules catch what 100 do? 33? What's
+the sweet spot for reaching 90%-quality code quickest? And: rank the rules by
+effectiveness. The instrument now exists: `model/audit-session.py` emits a
+per-rule violation histogram per session. Plan: batch-audit the full local
+session-transcript corpus (judge: gpt-oss:120b on the GPU box), aggregate
+histograms, plot the cumulative-coverage curve, publish the measured ranking
+and the knee of the curve. Until then any ranking is judgment, not data.
+- **Clarify:** does "effectiveness" weight violation *frequency* only, or
+  frequency × severity (a once-a-year secret leak outweighs daily lint nits)?
+- **Clarify:** sessions from which projects count — all repos, or
+  code-heavy repos only?
+
+## F13 — "Start with these 10" on-ramp page (2026-06-12, Open)
+
+Linda's recommendation (2026-06-12): keep 100 as the authority moat (the
+Twelve-Factor-vs-Phoenix-Project contrast), but add a free "10 essential
+rules" on-ramp page for newcomers — repo page + book teaser. Candidate ten
+to be drawn from the F12 measured ranking once it exists.

@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.0] - 2026-06-12
+
+### Added
+
+- `model/` — run the rules as a model: `make-rules-model.sh` builds a custom
+  rules-aware Llama 8B from stock Ollama in ~2 minutes (rules baked into the
+  system prompt, temperature 0, recall/attribution/violation-detection job
+  description). Smoke-tested: violation detection works; number attribution
+  is honest-documented as weak vs. the fine-tune.
+- `model/README.md` — the measured QLoRA fine-tune recipe (per-rule chunks,
+  number drills, open-ended recall gate: forward 10/10, reverse 6/10) and
+  the prompt-vs-fine-tune decision table.
+- `model/audit-session.py` — stdlib-only session auditor: scans Claude Code
+  transcripts (or any log) against the rules via a local Ollama judge; emits
+  ledger-ready violations, capped-count rule proposals, and the per-rule
+  violation histogram that will answer "how many rules do you actually
+  need?" (F12).
+- The miss loop documented: missed violations → ledger → training pairs →
+  permanent regression gate.
+
 ## [1.3.4] - 2026-06-12
 
 ### Changed
