@@ -41,9 +41,12 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   chapter's critical-tier rules — the axiomatic *style* as honest rhetoric,
   never claimed as mathematical proof. Tells a dissenting reader exactly
   which premise they're rejecting (ties into the fork-what-doesn't-work
-  license invitation). Short axiom list in prose beside the chart; one
-  disclaimer sentence in "How to read this book." Renders via the existing
-  Mermaid→grayscale pipeline.
+  license invitation). Short axiom list in prose beside the chart. Renders
+  via the existing Mermaid→grayscale pipeline.
+- **Framing ruling (Eddie, 2026-06-12):** call them **pseudo-proofs**
+  explicitly — structured arguments from stated premises, *not* proven;
+  genuinely proving any one rule would be doctorate-dissertation-level work.
+  The "How to read this book" section gets a sentence saying exactly that.
 - Constraints: zero formal notation (newbie audience-fit is the heaviest
   rubric weight); sequence AFTER F5 — axiom blocks cite rule numbers the
   reorder changes.
