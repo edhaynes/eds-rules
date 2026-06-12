@@ -248,3 +248,47 @@ final step itself.*
   "Ship means ship" governs clear-path completion, not skipping real gates.
 - **Clarify:** is this a standalone 101st candidate (forcing a retirement),
   or a clause merged into rule 5/6 (preferred — keeps 100)?
+
+## F15 — Make the Powell rule rule 1 + add its origin story (2026-06-12, Open — specced, ready)
+
+Eddie 2026-06-12: "He's the author of the 90% rule, and I would like it to be
+first." Plus the origin anecdote (below). Captured here verbatim-ready because
+Eddie redirected to Bard before execution — this is a clean, specced edit.
+
+**Renumber spec (keeps 100; only rules 1–18 change, 19–100 untouched):**
+- NEW rule 1 = the Powell rule, pulled out as a standalone universal rule under
+  a new `## The decision rule` heading: *"The Powell rule. Get 90% of the
+  information you need to make a decision, then make the decision. Below 90%
+  certain of what to do? Ask more questions until you get there — never guess
+  ahead, never stall gathering past 90%."*
+- Old rules 1–10 (hard rules) shift to **2–11**.
+- Old rule 11's routing matrix (≥90%→fast persona / 50–90%→heavyweight /
+  <50% or high-stakes→human) merges into the crew governance rule (old 12,
+  new 12) as "the Powell rule applied to who acts." This frees the slot.
+- Old 12–18 (crew) → new 12–18 (crew/Eddie+routing, Claudius, Jason, Claude,
+  Claudina, Linda, go-local). Rules 19–100 unchanged.
+- **Coordinated files (per §18.5, do in ONE pass, tree clean, no concurrent
+  book edit):** `RULES.md`, `book/ch01.md` (rule headings 1–18 + chapter
+  card), `book/00-front-matter.md` ("Start with these ten" rule numbers:
+  secret-scan is now 2, Powell now 1, hooks-first now 62…), `book/99-back-
+  matter.md` Appendix D mapping.
+- **Model impact:** invalidates the tuned model's number map for rules 1–18.
+  HOLD the v5 retrain until Eddie confirms numbering is stable (it has moved
+  three times today) — then one pipeline run folds it in.
+
+**Origin story (draft for the book intro — Eddie to confirm names/venue):**
+> I was in the parade the day the rule's author took over. Class of 1990, a
+> first-class midshipman, standing at attention in the heat while the Chairman
+> of the Joint Chiefs changed hands — the outgoing chairman (Admiral Crowe, if
+> memory serves) passing it to Colin Powell. The President spoke; George Bush,
+> Secret Service thick on every roofline. I remember the heat more than the
+> words. Powell's rule outlasted the speeches: get to about 70–90 percent of
+> what you'd want to know, then act — wait for 100 and you've waited too long.
+> It became the decision backbone of everything in this book.
+
+- **Clarify for Eddie:** outgoing chairman was **Admiral William J. Crowe Jr.**
+  (Powell became CJCS 1 Oct 1989) — confirm "Troust" = Crowe before print. The
+  ceremony was at Fort Myer, VA; were USNA mids bussed in, or is this a
+  different parade you're recalling? Powell's published phrasing is the
+  "P=40-to-70" information rule — keep your "90%" framing (it's the canon
+  number) but we can footnote his original 40–70 if you want fidelity.
