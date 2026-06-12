@@ -1,8 +1,7 @@
 # Ed's Rules — 100 Rules for Writing My Software: The Red Hat Way
 
 **100 opinionated, general-purpose rules for AI pair programming** — distilled from
-years of working with coding agents, written to be dropped into any project and any
-harness.
+years of coding.  I was on the team that designed the first Top Secret rated internet device (Taclane, General Dynamics) - and my "Jason" persona in the rules is based on the architect of that projects, which has sold billions and still in production 30 years later.
 
 These are *my* defaults, earned from years of actual development experience. Plenty
 of people will disagree with some of them — many have different opinions about git
