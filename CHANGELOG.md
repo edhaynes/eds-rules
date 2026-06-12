@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.1.0] - 2026-06-11
+
+### Added
+
+- Book outline (`book/OUTLINE.md`): *100 Rules for Writing My Software: The
+  Red Hat Way* — 10 chapters × 10 rules, diagram-heavy, black-and-white
+  interior, $4.99 Kindle / $9.99 softcover.
+- "The Red Hat Way" subtitle and expanded disclaimer (not sanctioned or
+  verified by Red Hat; your mileage may vary — do your own research).
+
 ## [1.0.5] - 2026-06-11
 
 ### Changed

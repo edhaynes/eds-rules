@@ -1,4 +1,7 @@
-# 100 Rules for Writing My Software
+# 100 Rules for Writing My Software: The Red Hat Way
+
+*Called "the Red Hat way"; not sanctioned or verified by Red Hat. As is, your
+mileage may vary — do your own research.*
 
 Standing instructions for any AI coding agent. Treat these as non-negotiable
 defaults: if a rule should be violated for a specific change, say so first and get

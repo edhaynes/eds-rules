@@ -1,4 +1,4 @@
-# Ed's Rules — 100 Rules for Writing My Software
+# Ed's Rules — 100 Rules for Writing My Software: The Red Hat Way
 
 **100 opinionated, general-purpose rules for AI pair programming** — distilled from
 years of working with coding agents, written to be dropped into any project and any
@@ -74,10 +74,12 @@ AI hits that 90% first go; polish takes it to 95%; **nothing publishes below 95%
 
 ## Disclaimer
 
-I'm a Red Hat architect by day. **This repo is personal** — I don't represent
-Red Hat here, and nothing in it is endorsed by, reviewed by, or affiliated with
-Red Hat. Everything is provided **"as is"**, with no warranties or promises of any
-kind (see [LICENSE](LICENSE)).
+These rules are called **"the Red Hat way"** but are **not sanctioned or verified
+by Red Hat**. I'm a Red Hat architect by day; **this repo is personal** — I don't
+represent Red Hat here, and nothing in it is endorsed by, reviewed by, or
+affiliated with Red Hat. Everything is provided **"as is"**, with no warranties or
+promises of any kind (see [LICENSE](LICENSE)). Your mileage may vary — do your
+own research.
 
 That said, the rules do say **Podman, RHEL UBI, and OpenShift**. Tough luck — if
 you like Ubuntu, Arch Linux, and Docker's insecure daemon, write your own rules.
