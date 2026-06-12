@@ -44,13 +44,29 @@ MMDC_ARGS = ["-t", "neutral", "-b", "white", "-s", "2"]
 # KDP 7"x10" technical trim (not a named typst paper; patched into the
 # generated source by build_pdf).
 TRIM_WIDTH, TRIM_HEIGHT = "7in", "10in"
-PAGE_PATCH_POINT = "    paper: paper,"
-# Book layout: chapters (level-1 headings) start on a fresh page; weak
-# pagebreak collapses when the heading already sits at a page top.
-SHOW_PATCH_POINT = "#show: doc => conf("
-CHAPTER_BREAK_RULE = (
-    "#show heading.where(level: 1): it => pagebreak(weak: true) + it\n"
+AUTHORS_ANCHOR = "#if authors != none and authors != [] {"
+TITLE_ART = (
+    "#v(2.5em)\n"
+    '      #align(center, image("art/the-team.svg", width: 72%))\n'
+    "      #v(1.5em)\n      "
 )
+# Patches applied to the pandoc-generated typst source, in order. Each LHS
+# must appear in the source — the build fails loudly if pandoc's template
+# changes underneath us. Covers: custom 7x10 trim (no named typst paper),
+# chapters starting on a fresh page (weak break collapses at page tops),
+# title-page typography, and the crew illustration on the title page.
+PDF_PATCHES = [
+    ("    paper: paper,",
+     f"    width: {TRIM_WIDTH},\n    height: {TRIM_HEIGHT},"),
+    ("#show: doc => conf(",
+     "#show heading.where(level: 1): it => pagebreak(weak: true) + it\n"
+     "#show: doc => conf("),
+    ("size: 1.5em, hyphenate: false)[#title",
+     "size: 2.7em, hyphenate: false)[#title"),
+    ("size: 1.25em, hyphenate: false)[#subtitle",
+     "size: 1.7em, hyphenate: false)[#subtitle"),
+    (AUTHORS_ANCHOR, TITLE_ART + AUTHORS_ANCHOR),
+]
 
 MERMAID_BLOCK = re.compile(r"^```mermaid\n(.*?)^```\n", re.M | re.S)
 
@@ -119,6 +135,9 @@ def main() -> None:
         require(tool)
     DIAGRAM_DIR.mkdir(parents=True, exist_ok=True)
     DIST_DIR.mkdir(exist_ok=True)
+    art = BOOK_DIR / "art"
+    if art.exists():
+        shutil.copytree(art, BUILD_DIR / "art", dirs_exist_ok=True)
 
     print("rendering diagrams + preprocessing:")
     processed = [preprocess(BOOK_DIR / name) for name in SOURCES]
@@ -135,15 +154,10 @@ def build_pdf(processed: list[Path]) -> None:
     typ = BUILD_DIR / "book.typ"
     pandoc(processed, typ, ["--standalone"])
     text = typ.read_text()
-    if PAGE_PATCH_POINT not in text:
-        sys.exit("error: pandoc typst template changed; page patch point not found")
-    text = text.replace(
-        PAGE_PATCH_POINT,
-        f"    width: {TRIM_WIDTH},\n    height: {TRIM_HEIGHT},", 1)
-    if SHOW_PATCH_POINT not in text:
-        sys.exit("error: pandoc typst template changed; show patch point not found")
-    text = text.replace(SHOW_PATCH_POINT,
-                        CHAPTER_BREAK_RULE + SHOW_PATCH_POINT, 1)
+    for old, new in PDF_PATCHES:
+        if old not in text:
+            sys.exit(f"error: pandoc typst template changed; patch point not found: {old!r}")
+        text = text.replace(old, new, 1)
     typ.write_text(text)
     pdf = DIST_DIR / "eds-rules-book-print.pdf"
     subprocess.run(["typst", "compile", str(typ), str(pdf)], check=True)

@@ -1,6 +1,6 @@
-# 100 Rules for Writing My Software
-
-## The Red Hat Way
+```{=typst}
+#pagebreak()
+```
 
 ---
 
@@ -58,6 +58,8 @@ white.
 The rules assume a team of five AI personas plus one human. The roles are
 fixed; the model behind each is configuration, never hardcoded — the same crew
 works on a Claude stack, an open-model stack, or fully local machines.
+
+![The crew. Five fixed roles, one human whose rulings are final.](art/the-team.svg)
 
 - **Jason** — project manager. Fast and decisive; chunks work into independent
   sprints sized for 90% first-try success, runs the heavyweights in parallel,

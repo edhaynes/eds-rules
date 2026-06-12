@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 310" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- The crew: Jason, Claudius, Eddie, Claude, Claudina, Linda.
+       Original B&W line art; print-safe, no color. -->
+
+  <!-- counter line the crew stands behind -->
+  <line x1="20" y1="242" x2="860" y2="242"/>
+
+  <!-- ============ Jason (cx=90): PM, clipboard, flat cap hair ============ -->
+  <circle cx="90" cy="104" r="24" fill="#fff"/>
+  <path d="M66 98 q24 -14 48 0" fill="#fff"/>
+  <rect x="54" y="136" width="72" height="106" rx="24" fill="#fff"/>
+  <rect x="74" y="168" width="32" height="44" rx="3" fill="#fff"/>
+  <rect x="83" y="162" width="14" height="9" rx="3" fill="#fff"/>
+  <line x1="80" y1="182" x2="100" y2="182"/>
+  <line x1="80" y1="192" x2="100" y2="192"/>
+  <line x1="80" y1="202" x2="94" y2="202"/>
+  <text x="90" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">JASON</text>
+
+  <!-- ========= Claudius (cx=230): architect, beard, scroll ========= -->
+  <circle cx="230" cy="104" r="24" fill="#fff"/>
+  <path d="M214 118 q16 14 32 0" />
+  <rect x="194" y="136" width="72" height="106" rx="24" fill="#fff"/>
+  <path d="M206 142 q24 16 48 0" />
+  <rect x="212" y="176" width="36" height="22" rx="4" fill="#fff"/>
+  <circle cx="212" cy="187" r="6" fill="#fff"/>
+  <circle cx="248" cy="187" r="6" fill="#fff"/>
+  <text x="230" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">CLAUDIUS</text>
+
+  <!-- ============ Eddie (cx=370): the human, taller, glasses, mug ============ -->
+  <circle cx="370" cy="92" r="27" fill="#fff"/>
+  <circle cx="360" cy="90" r="7" fill="#fff"/>
+  <circle cx="380" cy="90" r="7" fill="#fff"/>
+  <line x1="367" y1="90" x2="373" y2="90"/>
+  <path d="M356 108 q14 10 28 0"/>
+  <rect x="330" y="126" width="80" height="116" rx="26" fill="#fff"/>
+  <rect x="352" y="180" width="26" height="30" rx="4" fill="#fff"/>
+  <path d="M378 186 q12 0 12 9 q0 9 -12 9" fill="#fff"/>
+  <text x="370" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">EDDIE</text>
+
+  <!-- ============ Claude (cx=510): backend, messy hair, laptop, floral shirt ============ -->
+  <circle cx="510" cy="104" r="24" fill="#fff"/>
+  <path d="M488 96 l8 -8 l6 6 l7 -8 l7 8 l6 -6 l8 8" fill="#fff"/>
+  <rect x="474" y="136" width="72" height="106" rx="24" fill="#fff"/>
+  <circle cx="490" cy="160" r="3.5"/>
+  <circle cx="530" cy="166" r="3.5"/>
+  <circle cx="500" cy="222" r="3.5"/>
+  <path d="M484 206 l12 -22 h40 l-12 22 z" fill="#fff"/>
+  <line x1="480" y1="206" x2="540" y2="206"/>
+  <text x="510" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">CLAUDE</text>
+
+  <!-- ============ Claudina (cx=650): frontend, long hair, tablet ============ -->
+  <circle cx="650" cy="104" r="24" fill="#fff"/>
+  <path d="M626 100 q-6 38 6 52" />
+  <path d="M674 100 q6 38 -6 52" />
+  <path d="M626 96 q24 -16 48 0" fill="#fff"/>
+  <rect x="614" y="136" width="72" height="106" rx="24" fill="#fff"/>
+  <rect x="634" y="170" width="30" height="42" rx="4" fill="#fff"/>
+  <circle cx="649" cy="204" r="2.5"/>
+  <text x="650" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">CLAUDINA</text>
+
+  <!-- ============ Linda (cx=790): research, bob hair, bar chart ============ -->
+  <circle cx="790" cy="104" r="24" fill="#fff"/>
+  <path d="M766 102 q-3 22 8 30" />
+  <path d="M814 102 q3 22 -8 30" />
+  <path d="M766 98 q24 -16 48 0" fill="#fff"/>
+  <rect x="754" y="136" width="72" height="106" rx="24" fill="#fff"/>
+  <rect x="768" y="168" width="44" height="44" rx="4" fill="#fff"/>
+  <line x1="776" y1="204" x2="776" y2="194"/>
+  <line x1="786" y1="204" x2="786" y2="186"/>
+  <line x1="796" y1="204" x2="796" y2="190"/>
+  <line x1="806" y1="204" x2="806" y2="178"/>
+  <text x="790" y="278" font-family="Menlo, Consolas, monospace" font-size="15" fill="#000" stroke="none" text-anchor="middle">LINDA</text>
+</svg>
