@@ -1,4 +1,4 @@
-# Ed's Rules — Top 100 Rules for Coding My Software
+# Ed's Rules — 100 Rules for Writing My Software
 
 **100 opinionated, general-purpose rules for AI pair programming** — distilled from
 years of working with coding agents, written to be dropped into any project and any

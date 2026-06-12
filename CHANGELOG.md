@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.0.5] - 2026-06-11
+
+### Changed
+
+- Title is now "100 Rules for Writing My Software".
+
 ## [1.0.4] - 2026-06-11
 
 ### Added

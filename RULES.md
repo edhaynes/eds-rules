@@ -1,4 +1,4 @@
-# Top 100 Rules for Coding My Software
+# 100 Rules for Writing My Software
 
 Standing instructions for any AI coding agent. Treat these as non-negotiable
 defaults: if a rule should be violated for a specific change, say so first and get
