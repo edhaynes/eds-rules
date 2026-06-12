@@ -33,14 +33,29 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Plan:** ordering proposal doc for Eddie's sign-off first, then one
   mechanical renumber commit with a cross-reference sweep.
 
-## F7 — Capstone chapter: "Pulling It Together" — the Bard Pro zero-trust architecture
+## F10 — Security chapter (philosophy: rootless, SELinux, least privilege)
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie)
-- New chapter at the END of the book (after the five rule chapters, before
-  back matter): a detailed walkthrough of the Bard Pro zero-trust
-  architecture — the first project where the rules delivered **90% rubric
-  quality out of the box**. The book's proof-of-claim: the five chapters
-  build the discipline, the capstone shows it shipping.
+- A dedicated **Security** chapter between the five rule chapters and the
+  Bard capstone: the philosophy of rootless containers, SELinux, and least
+  privilege — the secure path as the default path — closing with the
+  explicit promise the capstone keeps: "you'll see all of this in action in
+  the Bard architecture."
+- Structural impact: build.py SOURCES, OUTLINE.md, "How to read this book";
+  Claudius outlines (HANDOFF_Claudius), Eddie signs the outline before
+  drafting. Not part of the 100-rule numbering (like the capstone).
+
+## F7 — Capstone chapter: "Pulling It Together" — the Bard zero-trust architecture
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- **Naming ruling (Eddie, 2026-06-12): "Bard" — the "Pro" moniker is
+  dropped** in the book and all planning docs.
+- New chapter at the END of the book (after the five rule chapters and the
+  F10 Security chapter, before back matter): a detailed walkthrough of the
+  Bard zero-trust architecture — the first project where the rules delivered
+  **90% rubric quality out of the box**. The book's proof-of-claim: the five
+  chapters build the discipline, the Security chapter states the philosophy,
+  the capstone shows both shipping.
 - Structural impact: OUTLINE.md product/structure rows, front matter "How to
   read this book," build.py SOURCES list (new ch06 file), EPUB/PDF rebuild.
 - Likely absorbs F3 (zero-trust) and part of F4 (worked examples).
