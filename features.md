@@ -117,9 +117,9 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   **Not a commercial project** — the chapter presents it as a personal
   reference architecture with an explicit YMMV disclaimer (same posture as
   the book's Red Hat disclaimer: provided as is, do your own research).
-- **Squawk Box is a Bard Pro plugin** (Eddie, 2026-06-12 — "apologies to Dan
-  Walsh"): it becomes the chapter's worked example of the plugin seam,
-  folding that half of F4 into this capstone.
+- **Squawk Box is a Bard Pro plugin** (Eddie, 2026-06-12): it becomes the
+  chapter's worked example of the plugin seam, folding that half of F4 into
+  this capstone.
 - Plugin roadmap to present in the chapter (Eddie, 2026-06-12): Squawk Box,
   plus plugins for **SSH**, **remote desktop**, etc. — the walkthrough shows
   the plugin contract once and the catalog demonstrates the seam holds.
