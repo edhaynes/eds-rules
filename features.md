@@ -70,10 +70,31 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   (per-entity hardware keys, MLS workgroups, hybrid PQ, E2EE past relays);
   plugin SDK is the v2 platform (catalog incl. SSH/SCP #68). Chapter draws
   from DESIGN.md / TRUST_MODEL.md / ADRs.
-- **Clarify:** "Squawk Box" not found in the repo — closest match is the
-  iOS walkie-talkie client (claudeTalk/Maude). Confirm with Eddie which
-  artifact carries the name. Public-book caution: real endpoints and
-  topology get generalized.
+- **Resolved (Eddie, 2026-06-12): Squawk Box IS the walkie-talkie app**
+  (the claudeTalk/Maude iOS client) — presented in the chapter as the first
+  Bard Pro plugin. Public-book caution: real endpoints and topology get
+  generalized.
+
+## F8 — Crew-installation appendix ("install Jason")
+- **Status:** Open
+- **Added:** 2026-06-12 (from Edith's cold grade — "the change that gets you
+  from 90 toward 95")
+- The crew is the book's differentiator and nothing in the book installs it:
+  Rules 12–20 describe the five-persona system; Appendix C installs only
+  RULES.md. Add an appendix with copy-pasteable harness setup: persona
+  definitions for CLAUDE.md/AGENTS.md, subagent bindings per stack (Claude
+  Code / OpenCode / local), and the minimal "Jason coordinates, heavyweights
+  as subagents" wiring.
+
+## F9 — Audience on-ramp for the newbie reader
+- **Status:** Open
+- **Added:** 2026-06-12 (from Edith's cold grade — audience-fit is the
+  heaviest rubric weight and the weakest dimension)
+- Rule 1 hands the newbie "pre-commit hook," "push range," and "deploy
+  artifact" unexplained on the first page. Options for Eddie: a short
+  Chapter 0 primer (the ten terms the book leans on), margin definitions on
+  first use, or expanded glossary with first-use pointers. Ch3's container
+  vocabulary (PID 1, tmpfs, manifests) same treatment.
 
 ## F6 — End-of-chapter axiom blocks ("axioms, not theorems")
 - **Status:** Open
