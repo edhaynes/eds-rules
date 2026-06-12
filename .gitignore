@@ -19,3 +19,6 @@ service-account*.json
 # book build artifacts
 book/_build/
 dist/
+__pycache__/
+*.py[cod]
+findings.yaml
