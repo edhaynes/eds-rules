@@ -40,8 +40,8 @@ author, excellent editor. The system in this book is built on that asymmetry:
 let the machine run the gates, the reviews, the scans, and the merges, and
 put rules around the part where it merely averages the internet.
 
-Call it the three Cs. Algorithms was about the only subject I ever got a C
-in. The most successful system I ever helped build — defense networking
+Call it the three Cs. Algorithms was the only computer-science subject I
+ever got a C in. The most successful system I ever helped build — defense networking
 gear, certified to carry top-secret traffic, still in production thirty
 years later — was written in C, with an object-oriented architecture. And a
 coding model, out of the box, writes C-grade code. All three are connected:

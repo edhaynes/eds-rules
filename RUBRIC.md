@@ -60,7 +60,7 @@ Score each 0–100, weight, sum. Letter anchors: 95+ A (publish), 90–94 A−
 | **Frustration coverage** | 15% | All ten frustrations in §2 are answered, findable from the table of contents, and the answer would actually have prevented the complained-about incident. |
 | **Structural integrity** | 10% | The five chapters build in order; each opener's synopsis genuinely summarizes what the chapter stands on; book text never contradicts `RULES.md` (drift is a bug, filed on sight). |
 | **Diagrams** | 10% | Every diagram earns its place, reads correctly printed B&W at 6"×9", and is understood faster than the paragraph it replaces. No color dependence, no decoration. |
-| **Voice & honesty** | 10% | Direct, no flattery, no hedging. Scars are real and specific. The Red Hat disclaimer is unambiguous. Claims about what the rules prevent are ones the rules actually deliver. |
+| **Voice & honesty** | 10% | Direct, no flattery, no hedging. Scars are real and specific. The Red Hat disclaimer is unambiguous. Claims about what the rules prevent are ones the rules actually deliver. **The Reddit test (Eddie, 2026-06-12): a technical crowd sniffs out a fraud in two seconds — no overclaimed rigor ("proofs" stay pseudo-proofs), no borrowed authority, no credential inflation.** |
 | **Production quality** | 10% | EPUB and print PDF build clean; front/back matter complete; Appendix D mapping table exact; no typos a paying reader would catch. |
 | **Differentiation** | 5% | Says things the generic "prompt engineering tips" content does not — the personas, the Powell rule, the quality bar, the trust-boundary discipline are presented as the system they are. |
 

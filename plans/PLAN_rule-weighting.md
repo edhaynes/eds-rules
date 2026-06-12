@@ -1,4 +1,12 @@
-Status: Not Implemented
+Status: In Progress
+
+> **Amendment (2026-06-12, Eddie's sign-off via Jason):** Chapter 1 takes the
+> middle path on the contested top slot — "No scan, no ship" keeps position 1
+> (the opener's irreversibility argument stands), and the Powell rule leads
+> the who-decides half at position 11. Hard lines fill 1–10 and crew rules
+> 12–20 in the proposed relative order. The frozen mapping incorporating this
+> is `plans/F5-mapping.md` (bijection verified). All other chapters execute
+> as tabled below.
 
 # PLAN — Rule weighting: order each chapter by importance
 
