@@ -10,10 +10,12 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Blocked on:** `pandoc` and `@mermaid-js/mermaid-cli` not installed (Eddie to approve/run install).
 
 ## F2 — Ansible coverage in the book
-- **Status:** Open
+- **Status:** In Progress — resolved into F12 (2026-06-12): Ansible enters as
+  the automation engine of the Lifecycle/Day-2 chapter, not as a new rule.
+  Closes when F12 ships.
 - **Added:** 2026-06-12 (Eddie)
 - Add Ansible to the book. Natural home: Ch. 3 *Build* (deployment) alongside Podman/UBI/OpenShift — the Red Hat automation leg of the stack.
-- **Clarify:** mention/section within existing rules, or a rule of its own? The count is fixed at 100 (v1.1.2 policy) — a new rule requires consolidating or deprecating an existing one, never growing the list.
+- ~~**Clarify:** mention/section within existing rules, or a rule of its own?~~ Answered: chapter content in F12; the 100 stays fixed.
 
 ## F3 — Zero-trust infrastructure in the book
 - **Status:** Open
@@ -44,6 +46,29 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - Structural impact: build.py SOURCES, OUTLINE.md, "How to read this book";
   Claudius outlines (HANDOFF_Claudius), Eddie signs the outline before
   drafting. Not part of the 100-rule numbering (like the capstone).
+
+## F11 — High Availability chapter
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Dedicated HA chapter: mean time to failure, MTTR, the five-nines ladder
+  and what each nine costs, redundancy/failover patterns, graceful
+  degradation vs. fail-fast (and why both are true at different layers).
+  Eddie's carrier-grade/defense background (TACLANE, Nortel) is the scar
+  vault here. Sits in the practice half with Security (F10) before the Bard
+  capstone.
+
+## F12 — "Lifecycle / Day 2" chapter (candidate — Eddie said "possibility")
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Day-2 operations: training and handoff to ops, handling routine vs. urgent
+  updates, debugging in the field. Natural companion to F11.
+- **Ansible is the automation engine of this chapter** (Eddie, 2026-06-12):
+  lifecycle automation — playbooks for routine updates, urgent patches,
+  drift-free repeatable ops. This absorbs F2's open question: Ansible enters
+  the book here (and completes the Red Hat stack: Podman/UBI/OpenShift/
+  Ansible), not as a new rule.
+- **Clarify:** confirmed chapter or candidate? Decide when Claudius proposes
+  the practice-half arc.
 
 ## F7 — Capstone chapter: "Pulling It Together" — the Bard zero-trust architecture
 - **Status:** Open
