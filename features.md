@@ -21,6 +21,18 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - Add Eddie's zero-trust infrastructure to the book. Natural home: Ch. 4 *Protect and Prove* (trust boundaries, secret hygiene) or Ch. 3 deployment.
 - **Clarify:** scope of "my zero trust infrastructure" — the book is public and commercial, so actual private details (tailnet names, hostnames, network topology) must be generalized into principles/patterns, not published as-is. Same fixed-at-100 constraint as F2 if it becomes a rule.
 
+## F5 — Order rules within each chapter by importance
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie)
+- Within each of the five chapters, reorder the twenty rules most-important-first.
+  Named anchors from Eddie: the Powell rule leads its chapter; the quality
+  rubric ranks high in its chapter.
+- Scope note: reordering renumbers all 100 rules — every "Rule N"
+  cross-reference in prose and diagrams, the chapter cards, the Appendix D
+  mapping, and `RULES.md` (book↔repo drift is a bug, so both move together).
+- **Plan:** ordering proposal doc for Eddie's sign-off first, then one
+  mechanical renumber commit with a cross-reference sweep.
+
 ## F4 — Squawk Box as a worked example of a well-designed app
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie)
