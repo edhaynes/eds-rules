@@ -72,6 +72,17 @@ AI hits that 90% first go; polish takes it to 95%; **nothing publishes below 95%
 3. Edit the rules you disagree with. They're numbered so you can cite them in
    review comments ("violates #56").
 
+## Disclaimer
+
+I'm a Red Hat architect by day. **This repo is personal** — I don't represent
+Red Hat here, and nothing in it is endorsed by, reviewed by, or affiliated with
+Red Hat. Everything is provided **"as is"**, with no warranties or promises of any
+kind (see [LICENSE](LICENSE)).
+
+That said, the rules do say **Podman, RHEL UBI, and OpenShift**. Tough luck — if
+you like Ubuntu, Arch Linux, and Docker's insecure daemon, write your own rules.
+The license lets you.
+
 ## License
 
 [CC-BY-4.0](LICENSE) — use, adapt, and redistribute with attribution.

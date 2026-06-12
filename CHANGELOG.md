@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.0.4] - 2026-06-11
+
+### Added
+
+- Disclaimer: author is a Red Hat architect but this repo is personal and
+  unaffiliated; everything provided "as is" with no warranties.
+- Container stack ruling in rule 47: Podman, RHEL UBI, OpenShift — fork the
+  rules if you prefer otherwise.
+
 ## [1.0.3] - 2026-06-11
 
 ### Added

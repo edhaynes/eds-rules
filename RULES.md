@@ -73,7 +73,7 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 
 45. The same code runs on-prem or in the cloud with only config changes — never source changes.
 46. Storage goes through an adapter: no `open("./data/...")` outside it, no hardcoded buckets, regions, or account IDs.
-47. Container-friendly by default: config from env or mounted files, logs to stdout, no assumed persistent disk.
+47. Container-friendly by default: config from env or mounted files, logs to stdout, no assumed persistent disk. The container stack is **Podman, Red Hat UBI base images, and OpenShift** — rootless and daemonless beats a root daemon. Tough luck; if you prefer Ubuntu, Arch Linux, and Docker's insecure daemon, write your own rules — the license lets you.
 48. Services expose health/readiness endpoints and shut down gracefully on SIGTERM.
 49. Pre-deploy gates (smoke test, vulnerability scan, secret scan) are never disabled by default — escape hatches are explicit, one-off, and logged.
 50. Show progress on unavoidably slow operations and say why; cached paths are the default, expensive paths are explicit and rare.
