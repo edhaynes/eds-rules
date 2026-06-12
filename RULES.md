@@ -123,7 +123,7 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 79. Structured logging (JSON) once the project is more than a script.
 80. Fail loudly in dev, gracefully in prod, diagnosably always.
 81. Resource cleanup uses context managers / `defer` / `using` — no close-and-hope.
-82. AI/LLM errors surface to the user as friendly messages — never a silent failure, never a raw stack trace.
+82. AI/LLM errors surface to the user as friendly messages — never a silent failure, never a raw stack trace. And agents only call tools that actually exist in their tool list: a hallucinated tool name wastes tokens and stalls the session — fall back to shell or file primitives, or ask for the tool to be wired in, never fabricate one.
 
 ## Dependencies
 

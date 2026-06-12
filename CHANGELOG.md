@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.1.1] - 2026-06-11
+
+### Changed
+
+- Rule 82 now includes tool-call discipline: agents only call tools that
+  exist in their tool list; hallucinated tool names waste tokens and stall
+  sessions (mirrors private canon §0.17).
+
 ## [1.1.0] - 2026-06-11
 
 ### Added
