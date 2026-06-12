@@ -56,6 +56,21 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   Eddie's carrier-grade/defense background (TACLANE, Nortel) is the scar
   vault here. Sits in the practice half with Security (F10) before the Bard
   capstone.
+- **Chapter thesis (Eddie, 2026-06-12): assume you ship 95% code — failures
+  WILL happen.** Chasing the last nines of MTTF is asymptotic and
+  unaffordable; engineer **MTTR** instead: automation (detection, restart,
+  rollback — Ansible ties in from F12), redundancy, and warm/hot failover.
+  Ties the loop closed with the quality bar: the rubric gets you to 95;
+  recovery engineering covers the 5 you shipped anyway — and the failures
+  come from what you didn't spec (the Bard lesson), from hardware, networks,
+  and operators, which no coverage number prevents.
+- **The limit argument (Eddie, 2026-06-12)** — and the chapter's one
+  genuinely rigorous proof, not pseudo: availability = MTTF / (MTTF + MTTR).
+  **If MTTR is 0 you can handle any failure** — the formula gives 100%
+  regardless of MTTF. MTTR is never 0; **measure how close you are** and
+  spend engineering on closing that gap, not on chasing the asymptote of
+  never failing. Warm/hot failover IS the measurement made architecture:
+  failover time is your MTTR floor.
 
 ## F12 — "Lifecycle / Day 2" chapter (candidate — Eddie said "possibility")
 - **Status:** Open
