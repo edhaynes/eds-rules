@@ -57,6 +57,12 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - Plugin roadmap to present in the chapter (Eddie, 2026-06-12): Squawk Box,
   plus plugins for **SSH**, **remote desktop**, etc. — the walkthrough shows
   the plugin contract once and the catalog demonstrates the seam holds.
+- Quality detail for the chapter (Eddie, 2026-06-12): not only 90+% on the
+  rubric — **everything delivered was functionally correct**; the only gaps
+  were mandatory MVP features Eddie had forgotten to spec. The lesson the
+  chapter draws: with the rules in place, the machine nails what's
+  specified; the residual failure mode is the human's spec, which is
+  exactly what the Powell rule and sprint-sizing discipline exist to catch.
 - **Clarify:** where does Bard Pro live (not found on this machine — only
   `bard-technical-solutions`, the company site)? Which artifacts can I read
   (repo, ADRs, rubric scores)? Public-book caution: real endpoints,
