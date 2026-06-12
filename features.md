@@ -33,8 +33,27 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
 - **Plan:** ordering proposal doc for Eddie's sign-off first, then one
   mechanical renumber commit with a cross-reference sweep.
 
-## F4 — Squawk Box as a worked example of a well-designed app
+## F6 — End-of-chapter axiom blocks ("axioms, not theorems")
 - **Status:** Open
 - **Added:** 2026-06-12 (Eddie)
-- Use Squawk Box as the book's running example of a well-designed app (possibly illustrating the zero-trust/F3 material).
-- **Clarify:** which repo is Squawk Box and which aspects to showcase (architecture? config layer? deploy pipeline?); where in the book it lands (one chapter's worked example vs. a thread through several).
+- Each chapter closes with a **simple B&W flowchart showing the "proof"**
+  (Eddie, 2026-06-12): 3–5 plain-English axiom nodes flowing into the
+  chapter's critical-tier rules — the axiomatic *style* as honest rhetoric,
+  never claimed as mathematical proof. Tells a dissenting reader exactly
+  which premise they're rejecting (ties into the fork-what-doesn't-work
+  license invitation). Short axiom list in prose beside the chart; one
+  disclaimer sentence in "How to read this book." Renders via the existing
+  Mermaid→grayscale pipeline.
+- Constraints: zero formal notation (newbie audience-fit is the heaviest
+  rubric weight); sequence AFTER F5 — axiom blocks cite rule numbers the
+  reorder changes.
+
+## F4 — Worked examples of well-designed apps: Squawk Box, cdn-sim
+- **Status:** Open
+- **Added:** 2026-06-12 (Eddie; cdn-sim added same day)
+- Use Squawk Box and cdn-sim as the book's worked examples of well-designed
+  apps (Squawk Box possibly illustrating the zero-trust/F3 material).
+- **Clarify:** which repo is Squawk Box; which aspects of each to showcase
+  (architecture? config layer? deploy pipeline?); where each lands (one
+  chapter's worked example vs. a thread through several). Public-book
+  caution applies: generalize, don't expose private endpoints/infra.
