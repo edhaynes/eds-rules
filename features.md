@@ -71,6 +71,17 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   spend engineering on closing that gap, not on chasing the asymptote of
   never failing. Warm/hot failover IS the measurement made architecture:
   failover time is your MTTR floor.
+- **Worked example: cdn-sim** (Eddie, 2026-06-12) — the chapter's example
+  architecture: AI-driven fault detection takes MTTR from hours to
+  **minutes** (detection is usually the dominant term in MTTR; the machine
+  watches always, escalates instantly). This sharpens F4: cdn-sim is the HA
+  chapter's worked example specifically.
+- **Required exhibit: the before/after nines** (Eddie, 2026-06-12) — same
+  MTTF, only MTTR changes; show the availability ladder move. Illustrative
+  shape (recompute with cdn-sim's real numbers at draft time): MTTF 30 days
+  with MTTR 4 h → 99.45% (two nines); MTTR 5 min → 99.988% (three nines,
+  knocking on four). One small B&W table or gauge: "you didn't fail less —
+  you recovered faster, and bought a nine."
 
 ## F12 — "Lifecycle / Day 2" chapter (candidate — Eddie said "possibility")
 - **Status:** Open
