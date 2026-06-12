@@ -82,6 +82,19 @@ Backlog for the eds-rules repo and the book (*100 Rules for Writing My Software:
   with MTTR 4 h → 99.45% (two nines); MTTR 5 min → 99.988% (three nines,
   knocking on four). One small B&W table or gauge: "you didn't fail less —
   you recovered faster, and bought a nine."
+- **The five-nines section (Eddie Q&A, 2026-06-12: "would auto-accepting the
+  AI suggestion get there?"):** five nines = 26 s downtime/month, so a human
+  in the recovery path is disqualifying — closed loop is *necessary*. But
+  generative remediate-in-~60s only buys the fourth nine (99.998% at monthly
+  failures). The fifth nine is **hot failover**: ~5 s health-check-driven
+  switch → 99.9998%, holds even at weekly failures; the AI then repairs the
+  failed replica offline with no clock running. Design: AI in the detection
+  and playbook-selection seat, redundancy in the recovery seat.
+- **Sidebar — bounded autonomy vs. Rule 3:** auto-execution collides with
+  "destruction requires a human." Resolution in print: the AI auto-executes
+  only pre-approved, pre-tested, reversible playbooks (failover, restart,
+  drain, rollback); it chooses which, never invents; novel/destructive
+  escalates. The Powell rule in an ops uniform.
 
 ## F12 — "Lifecycle / Day 2" chapter (candidate — Eddie said "possibility")
 - **Status:** Open
