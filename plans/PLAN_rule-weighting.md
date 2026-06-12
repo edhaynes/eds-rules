@@ -1,4 +1,4 @@
-Status: In Progress
+Status: Implemented, 2026-06-12
 
 > **Amendment (2026-06-12, Eddie's sign-off via Jason):** Chapter 1 takes the
 > middle path on the contested top slot — "No scan, no ship" keeps position 1

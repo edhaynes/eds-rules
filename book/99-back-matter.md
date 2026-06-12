@@ -56,7 +56,7 @@ repository (`RULES.md` at github.com/edhaynes/eds-rules, CC-BY-4.0).
      keeps them from drifting.
 3. Project-specific files may tighten the rules; they must never loosen them.
 4. Edit what you disagree with — the rules are numbered so reviews can cite
-   them ("violates rule 56").
+   them ("violates rule 55").
 
 ## Appendix D — Book number ↔ repository `RULES.md` mapping
 
@@ -66,26 +66,60 @@ Same one hundred rules, two orderings.
 | Book rules | RULES.md rules | Topic |
 |---|---|---|
 | 1–10 | 1–10 | Hard rules |
-| 11–18 | 11–18 | The crew |
-| 19 | 98 | Plan first, sprint sizing |
-| 20 | 100 | No flattery |
-| 21–28 | 19–26 | Configuration |
-| 29–30 | 45–46 | Config-driven deployment, storage adapter |
-| 31–38 | 27–34 | Architecture, file size |
-| 39–40 | 37–38 | God classes, mechanical refactors |
-| 41–46 | 39–44 | Cross-platform |
-| 47–50 | 47–50 | Containers, health, deploy gates |
-| 51–60 | 77–86 | Errors, observability, dependencies |
-| 61–70 | 51–60 | Secret hygiene |
-| 71–78 | 69–76 | Testing, quality bar |
-| 79–80 | 35–36 | Function size, nesting (complexity budget) |
-| 81–88 | 61–68 | Versioning, tags, build numbers |
-| 89 | 92 | Post-release cleanup |
-| 90 | 96 | Plan status tracking |
-| 91–95 | 87–91 | Dependency disclosure, dead code, lint |
-| 96–98 | 93–95 | README, ADRs, bug/feature ledgers |
-| 99 | 97 | Decisions persisted same-commit |
-| 100 | 99 | Verbatim errors, diffs not prose |
+| 11–12 | 11–12 | The Powell rule, the crew and its governance |
+| 13 | 98 | Plan first, sprint sizing |
+| 14–18 | 13–17 | The crew (Claudius, Jason, Claude, Claudina, Linda) |
+| 19 | 99 | No flattery |
+| 20 | 18 | Go local |
+| 21 | 19 | If it can change, it's config |
+| 22–25 | 27–30 | Architecture thesis, vendor interfaces, search-first, DI |
+| 26–28 | 20–22 | No silent fallbacks, startup validation, one config layer |
+| 29 | 31 | Objects with one job |
+| 30–31 | 45–46 | Storage adapter, on-prem/cloud as config |
+| 32–35 | 23–26 | "Use X locally", zero-setup defaults, magic numbers, `.env.example` |
+| 36–37 | 34–35 | File-size gauge, god classes |
+| 38–39 | 32–33 | SOLID, one class per file |
+| 40 | 36 | Mechanical refactor commits |
+| 41 | 47 | Deploy gates never disabled |
+| 42 | 77 | Catch specific, never swallow |
+| 43–44 | 83–84 | Pinned dependencies, vulnerability audits |
+| 45–46 | 48–49 | Health endpoints, container-friendly |
+| 47 | 78 | Loud in dev, graceful in prod |
+| 48 | 39 | Three platforms, two in CI |
+| 49–50 | 79–80 | Logger not print, AI errors surface |
+| 51 | 40 | Path libraries |
+| 52 | 85 | Stdlib plus one dependency |
+| 53 | 41 | No hardcoded temp, home, or drive letters |
+| 54–55 | 42–43 | Both architectures, no shell-isms |
+| 56 | 81 | Structural cleanup (context managers) |
+| 57 | 86 | Project-local virtualenvs |
+| 58 | 50 | Progress on slow paths |
+| 59 | 82 | Structured logs |
+| 60 | 44 | Line endings |
+| 61–63 | 51–53 | Hooks first, rotate first, never copy a secret |
+| 64 | 69 | The quality rubric (you get what you inspect) |
+| 65–66 | 54–55 | Scan the artifact, scan the range |
+| 67–69 | 70–72 | Tests ship with logic, contract first, 100% coverage |
+| 70–72 | 56–58 | "Harmless" config, unauthored files, pre-push rescan |
+| 73–74 | 73–74 | Correctness over speed, coverage ratchet |
+| 75–76 | 59–60 | `.gitignore` day one, fix the hook |
+| 77–78 | 75–76 | Full regression, no network in unit tests |
+| 79–80 | 37–38 | Function size, nesting (complexity budget) |
+| 81–82 | 61–62 | Immutable tags, versions only forward |
+| 83 | 93 | Decisions persisted same-commit |
+| 84 | 63 | One canonical version home |
+| 85 | 94 | Bug/feature ledgers |
+| 86–87 | 64–65 | Fetch before tagging, build numbers |
+| 88 | 100 | Verbatim errors, diffs not prose |
+| 89 | 66 | Changelog in the bump commit |
+| 90 | 95 | Plan status tracking |
+| 91 | 96 | Immutable ADRs |
+| 92–93 | 67–68 | Version display, push tags by name |
+| 94–95 | 88–89 | Lint every commit, dead-code sweeps |
+| 96 | 90 | Post-release cleanup |
+| 97 | 97 | README regeneration |
+| 98–99 | 91–92 | No commented-out code, no orphan TODOs |
+| 100 | 87 | Dependency disclosure |
 
 ## Appendix E — Bending the model: the three ways to retrain
 

@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.3.4] - 2026-06-12
+
+### Changed
+
+- **All 100 rules reordered by importance within their chapters** (F5,
+  per plans/PLAN_rule-weighting.md): irreversibility first, then fire rate,
+  then load-bearing weight. Ch1 takes the middle path — "No scan, no ship"
+  keeps #1, the Powell rule leads the who-decides half at Rule 11.
+  `RULES.md` renumbered to match; Appendix D regenerated (bijection
+  verified); every cross-reference and diagram label remapped; chapter
+  openers rewritten where importance-ordering broke topical runs. Regression:
+  headings exactly 1–100, zero dangling references, EPUB + PDF build green.
+
 ## [1.3.3] - 2026-06-12
 
 ### Added
