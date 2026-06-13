@@ -6,5 +6,6 @@
 | [PLAN_agent-assignments.md](plans/PLAN_agent-assignments.md) — crew handoffs, 87 → 95 publish bar | In Progress — wave 1 briefs issued (HANDOFF_Claudius/Claude/Claudina/Linda/Iris) |
 | [PLAN_capstone-bardpro.md](plans/PLAN_capstone-bardpro.md) — Bard capstone chapter scoping (F7; "Pro" dropped per Eddie) | Not Implemented — awaiting Eddie sign-off; 3 gaps flagged (rubric grade, plugin seam naming, draft-day verification) |
 | [demo/PLAN.md](demo/PLAN.md) — narrated demo video "Seeing is believing" (F16) | In Progress — pipeline scripts + runsheet + cost/power done; awaiting Eddie's recording; axis B blocked on valid ANTHROPIC_API_KEY; training deep-dive shelved (Gladius unreachable) |
+| [PLAN_persona-models.md](plans/PLAN_persona-models.md) — base model + training approach per persona | Not Implemented — design draft; awaiting Eddie sign-off + hardware (Gladius?) / local-vs-cloud answers |
 
 TODO: Eddie rulings — capstone claims path (grade Bard vs. reword), Squahk/Squawk Box naming; then wave 1 execution.
