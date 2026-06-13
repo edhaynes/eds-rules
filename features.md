@@ -318,3 +318,10 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
 - **Status:** In Progress
 - **Added:** 2026-06-13 (Eddie)
 - Grade all 100 rules on a multi-dimension quality rubric — pertinence (P(Claude violates unprompted) × cost), security, cost-effectiveness, architectural simplicity, enforceability, generality — composited to a 0–100 quality score per rule, with a graph of the distribution. Artifacts: `quality/RUBRIC.md`, `quality/grade_rules.py`, `quality/rule-quality.svg`, `quality/grades.csv`.
+
+## F19 — Rule consolidation: punchier, more concise, fewer
+- **Status:** Open — 2026-06-13
+- Make each rule punchier and more concise; consolidate/merge where rules overlap. Goal: fewer total rules + tighter wording.
+- **Now evidence-backed** (experiments/rule-scaling): rule *count* is the binding constraint for small models — capping at ~16 roughly doubles a 2B/4B/8B's adherence (~40→~80), and their clean budget is really ≤8. Fewer, sharper rules = more of the model's budget for the actual task + small models that clear the 90% bar.
+- Eddie has done **one** consolidation pass; estimates **2 more passes** will yield meaningful merges ("meat"). Ties to the 100-cap (§0.9) and PLAN_persona-models (smaller set → small models viable for more roles).
+- Approach: per-pass, find overlapping/redundant rules, merge into one sharper rule; tighten verbose rules to one crisp sentence; re-rank by importance; keep the cap. Surface proposed merges for Eddie's sign-off (don't silently cut).
