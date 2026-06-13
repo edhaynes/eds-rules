@@ -23,7 +23,9 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ELEVENLABS_API_KEY="${ELEVENLABS_API_KEY:?ELEVENLABS_API_KEY is not set — export it (read from env, never hardcoded).}"
+# Key var name varies; accept the common spellings (Eddie's is ELEVEN_API_KEY).
+ELEVENLABS_API_KEY="${ELEVENLABS_API_KEY:-${ELEVEN_API_KEY:-${XI_API_KEY:-}}}"
+: "${ELEVENLABS_API_KEY:?No ElevenLabs key — export ELEVEN_API_KEY (or ELEVENLABS_API_KEY/XI_API_KEY). Read from env, never hardcoded.}"
 VOICE_ID="${VOICE_ID:-pNInz6obpgDQGcFmaJgB}"   # stock "Adam" — override to taste
 TTS_MODEL="${TTS_MODEL:-eleven_multilingual_v2}"
 NARRATION_FILE="${NARRATION_FILE:-${SCRIPT_DIR}/narration.txt}"

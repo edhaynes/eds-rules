@@ -22,3 +22,9 @@ dist/
 __pycache__/
 *.py[cod]
 findings.yaml
+
+# demo media artifacts (generated; not source)
+demo/*.mp3
+demo/*.mov
+demo/*.mp4
+demo/*.wav
