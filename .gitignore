@@ -35,3 +35,4 @@ demo/style-sample.png
 demo/assets/
 demo/frames-ep90/
 demo/.ep90-timeline.txt
+experiments/rule-scaling/results.jsonl
