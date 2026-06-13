@@ -11,6 +11,21 @@ make people hoard local state, like merges, are exactly what AI does extremely w
 now, so the old reasons to delay pushing are gone. Take what works, fork what
 doesn't. That's why the license is CC-BY-4.0.
 
+## ▶ Watch — same 8B model, with the rules vs. without (2 min)
+
+[![Watch: same Llama 3.1 8B, with my rules vs. without](demo/teaser-thumb.png)](https://youtu.be/VIDEO_ID)
+
+One local **Llama 3.1 8B**, the same weights twice. On the left, vanilla — it's
+never heard of "rule 2." On the right, the same model with these 100 rules
+standing in front of it: it quotes the rule cold, catches a hardcoded API key
+and *names the rule it breaks*, and refuses to invent a rule that doesn't exist.
+A small model, properly trained, does this for a few dollars of electricity a
+year — the same work through a frontier API runs into the thousands.
+
+**▶ [Watch the 2-minute demo →](https://youtu.be/VIDEO_ID)**
+
+> Built and run with **[Bard](https://github.com/edhaynes/BardLLM)** — my local-first LLM workbench.
+
 ## Introducing Jason
 
 Jason was the lead architect for an extremely well designed product - the General Dynamics TACLANE Top Secret encryption device.  I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago.
