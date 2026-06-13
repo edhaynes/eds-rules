@@ -41,9 +41,11 @@ are really Jason's). Repo: github.com/edhaynes/eds-rules.
   refinement loop.
 
 ## Open threads / unfinished
-- **B12 (top): sync the book to the 3-swap** — `book/ch0*.md` prose + cards,
-  Appendix D mapping, ~239 cross-refs, Mermaid labels. Decided: **flex chapters to
-  19–21** (drop rigid 20). Until done, RULES.md↔book drift is a known bug.
+- **B12 (top, in progress): sync the book** to both RULES.md changesets. Plan:
+  `plans/PLAN_book-sync.md` (flex chapters to 19–21; 4 essays in, 4 retired). Step
+  1 done — 4 new rule essays drafted in `plans/book-sync-drafts.md`, **awaiting
+  Eddie's voice review + `[ANECDOTE]` fills** before integration (renumber, cards,
+  Appendix D, ~239 cross-refs). Until done, RULES.md↔book drift is a known bug.
 - Eddie's latency/determinism+live-progress rule (grades 52.5, consolidates
   #50+#76) — available as an optional net-neutral swap.
 - **STATE process:** rule #92 added; per-repo `STATE.md` live (1024-word cap,
