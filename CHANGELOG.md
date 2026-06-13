@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.3] - 2026-06-13
+
+Net-neutral rule swap (count stays at exactly 100): three rules added by
+importance, three retired by consolidation. `RULES.md` updated; **the book
+(`book/ch0*.md`, chapter cards, Appendix D mapping, ~239 cross-references) is
+not yet synced — tracked as a follow-on sweep** (book↔repo drift is a known,
+in-progress bug until then).
+
+### Added
+
+- **Rule 3 — Distrust every external input.** Validate/constrain at the
+  boundary; parameterize queries and commands, confine paths, never interpolate
+  untrusted data into SQL, a shell, HTML, or a deserializer. Closes the doc's
+  biggest security gap: ten rules on secret *leakage*, none on malicious *input*.
+- **Rule 47 — Make every operation idempotent and safe to re-run.** Deploys,
+  migrations, setup scripts converge to the same state on re-run and resume
+  cleanly after interruption; gate on real end-state, not a partial artifact.
+  The agent-era failure mode (and the exact bug hit in voicelab setup the same day).
+- **Rule 76 — Declare a latency/throughput budget and gate regressions like
+  coverage.** Determinism and latency as first-class, CI-gated features.
+
+### Removed (consolidated)
+
+- LF-line-endings rule → folded into the path-library rule (40).
+- Standalone SOLID rule → folded into the OO-design rule (32).
+- Dependency-disclosure restatement (the "see rule 9" duplicate) → folded into
+  the hard dependency rule (10), which now also names *maintenance status*.
+
 ## [1.4.2] - 2026-06-12
 
 ### Changed

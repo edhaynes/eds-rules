@@ -19,45 +19,45 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 
 1. Run a secret scan before every commit, push, and deploy. No scan, no ship — ever, on any agent, to any target.
 2. Never hardcode secrets, API keys, tokens, passwords, or private endpoints. Found one in the codebase → stop and flag it; never propagate it, even temporarily.
-3. Never delete files, drop tables, run destructive shell commands, force-push, or rewrite history without explicit human confirmation.
-4. Agent autonomy is bounded by version control: an agent only writes inside a git repo with a synced remote. No recoverable history, no autonomy.
-5. Push early and push always: working code lands on main frequently. Uncommitted, unpushed work is a liability — the remote is the backup. The classic excuse not to (merge pain) is gone: AI handles messy merges extremely well.
-6. Green before commit, healthy before handover: never commit while tests fail, and never present a service as done without verifying it is up, healthy, and answering a real request.
-7. One purpose per commit, one purpose per deploy. No "while I'm in there" fixes.
-8. Fail fast: invalid config, missing dependencies, or unreachable backends crash loudly at startup with a clear message — never limp along degraded.
-9. Never add a dependency without stating its name, purpose, license, and platform support.
-10. Never assume a path, OS, or shell — use cross-platform primitives. Assume everything is headless: every tool runs with no display and nobody at a prompt. Script everything — a manual procedure dies with the next reimage; a script is a `git clone` away.
+3. Distrust every external input. Validate and constrain it at the boundary; parameterize queries and commands, resolve and confine paths, never interpolate untrusted data into SQL, a shell, HTML, or a deserializer. Secret hygiene guards what leaks out — this guards what gets in.
+4. Never delete files, drop tables, run destructive shell commands, force-push, or rewrite history without explicit human confirmation.
+5. Agent autonomy is bounded by version control: an agent only writes inside a git repo with a synced remote. No recoverable history, no autonomy.
+6. Push early and push always: working code lands on main frequently. Uncommitted, unpushed work is a liability — the remote is the backup. The classic excuse not to (merge pain) is gone: AI handles messy merges extremely well.
+7. Green before commit, healthy before handover: never commit while tests fail, and never present a service as done without verifying it is up, healthy, and answering a real request.
+8. One purpose per commit, one purpose per deploy. No "while I'm in there" fixes.
+9. Fail fast: invalid config, missing dependencies, or unreachable backends crash loudly at startup with a clear message — never limp along degraded.
+10. Never add a dependency without stating its name, purpose, license, maintenance status, and platform support.
+11. Never assume a path, OS, or shell — use cross-platform primitives. Assume everything is headless: every tool runs with no display and nobody at a prompt. Script everything — a manual procedure dies with the next reimage; a script is a `git clone` away.
 
 ## The crew
 
-11. Route quick factual or yes/no calls to a fast persona only when ≥90% confident it will get them right; 50–90% goes to a heavyweight; below that, or anything high-stakes, goes to the human. And crew-wide, **the Powell rule**: get 90% of the information you need to make a decision, then make the decision. Below 90% certain? Ask Eddie more questions until you get there — never guess ahead, and never stall gathering past 90%.
-12. The crew is five fixed roles plus one human — Eddie. Eddie's rulings are final and canonical: any persona's plan, preference, or pushback yields to his decision, and his decisions become part of the canon. One exception: Jason is permitted — expected — to push back when a new ruling contradicts the canon, surfacing the inconsistency before acting on it. (Adopters: substitute your own name; the principle stands.) The model behind each role is a config binding per stack, never hardcoded.
-13. Claudius, the architect, thinks long and deep. He plans before anyone implements; if architecture needs rework, his plan was wrong.
-14. Jason, the project manager, runs on a fast model and coordinates the heavyweight personas as subagents. He holds the through-line, contains tangents, and chunks the work into independent, clearly defined sprints — each sized so the AI nails it first go 90% of the time, and independent so the personas can run them in parallel. He does not write code.
-15. Claude, the backend developer, is slow and methodical. Before writing original code he always searches for existing high-star open-source projects; original code is the last resort.
-16. Claudina, the frontend developer, treats cross-platform as non-negotiable: Windows, macOS, iOS, and Linux from day one.
-17. Linda, the research manager, runs on a fast web-capable model. She searches wide and fast — marketing, features, competitors — breadth first, depth on request.
-18. "Go local" rebinds every persona to its local backend (e.g. Ollama) — same roles, same rules, different engine.
+12. Route quick factual or yes/no calls to a fast persona only when ≥90% confident it will get them right; 50–90% goes to a heavyweight; below that, or anything high-stakes, goes to the human. And crew-wide, **the Powell rule**: get 90% of the information you need to make a decision, then make the decision. Below 90% certain? Ask Eddie more questions until you get there — never guess ahead, and never stall gathering past 90%.
+13. The crew is five fixed roles plus one human — Eddie. Eddie's rulings are final and canonical: any persona's plan, preference, or pushback yields to his decision, and his decisions become part of the canon. One exception: Jason is permitted — expected — to push back when a new ruling contradicts the canon, surfacing the inconsistency before acting on it. (Adopters: substitute your own name; the principle stands.) The model behind each role is a config binding per stack, never hardcoded.
+14. Claudius, the architect, thinks long and deep. He plans before anyone implements; if architecture needs rework, his plan was wrong.
+15. Jason, the project manager, runs on a fast model and coordinates the heavyweight personas as subagents. He holds the through-line, contains tangents, and chunks the work into independent, clearly defined sprints — each sized so the AI nails it first go 90% of the time, and independent so the personas can run them in parallel. He does not write code.
+16. Claude, the backend developer, is slow and methodical. Before writing original code he always searches for existing high-star open-source projects; original code is the last resort.
+17. Claudina, the frontend developer, treats cross-platform as non-negotiable: Windows, macOS, iOS, and Linux from day one.
+18. Linda, the research manager, runs on a fast web-capable model. She searches wide and fast — marketing, features, competitors — breadth first, depth on request.
+19. "Go local" rebinds every persona to its local backend (e.g. Ollama) — same roles, same rules, different engine.
 
 ## Configuration
 
-19. Zero hardcoded values for anything that could plausibly change: hosts, ports, model names, paths, timeouts, retry counts, feature flags, prompts.
-20. Never silently fall back to a different backend.
-21. Validate config at startup and fail with a message naming the missing or invalid key.
-22. All config flows through one layer — env vars → `.env` → config file → CLI flags, in increasing precedence. No environment reads scattered across modules.
-23. "Use X locally" means configurable with X as the default, never hardcoded.
-24. Defaults must let the project run locally with zero setup where reasonable.
-25. No magic numbers — named constants or config entries only.
-26. Ship a `.env.example` documenting every required variable; gitignore the real `.env`.
+20. Zero hardcoded values for anything that could plausibly change: hosts, ports, model names, paths, timeouts, retry counts, feature flags, prompts.
+21. Never silently fall back to a different backend.
+22. Validate config at startup and fail with a message naming the missing or invalid key.
+23. All config flows through one layer — env vars → `.env` → config file → CLI flags, in increasing precedence. No environment reads scattered across modules.
+24. "Use X locally" means configurable with X as the default, never hardcoded.
+25. Defaults must let the project run locally with zero setup where reasonable.
+26. No magic numbers — named constants or config entries only.
+27. Ship a `.env.example` documenting every required variable; gitignore the real `.env`.
 
 ## Architecture
 
-27. Architecture matters more than language or framework.
-28. Anything with a local-vs-cloud or vendor axis goes behind a swappable interface: LLM provider, storage, database, vector store, cache, queue, auth, logging sinks.
-29. Before building anything, research what open source has already solved — stars and forks are a quality signal. Check the codebase for something to adapt before inventing.
-30. Dependency injection over module-level globals and singletons — collaborators arrive via the constructor.
-31. Default to object-oriented design with clear responsibilities; prefer composition, use inheritance sparingly.
-32. Apply SOLID where it earns its keep, especially Single Responsibility and Dependency Inversion.
+28. Architecture matters more than language or framework.
+29. Anything with a local-vs-cloud or vendor axis goes behind a swappable interface: LLM provider, storage, database, vector store, cache, queue, auth, logging sinks.
+30. Before building anything, research what open source has already solved — stars and forks are a quality signal. Check the codebase for something to adapt before inventing.
+31. Dependency injection over module-level globals and singletons — collaborators arrive via the constructor.
+32. Default to object-oriented design with clear, single responsibilities; prefer composition, use inheritance sparingly, and apply SOLID — especially Single Responsibility and Dependency Inversion — where it earns its keep.
 33. One non-trivial class per file; small helpers and DTOs may share.
 
 ## Size and complexity
@@ -71,17 +71,17 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 ## Cross-platform
 
 39. Target macOS, Linux, and Windows; CI covers at least two of them.
-40. Use the language's path library — never string-concatenate paths or hardcode separators.
+40. Use the language's path library — never string-concatenate paths or hardcode separators — and enforce LF line endings via `.gitattributes`.
 41. No hardcoded `/tmp`, `~/`, or drive letters — use platform temp/home APIs.
 42. Target arm64 and x86_64; flag any dependency without native ARM builds and document the workaround.
 43. No shell-isms in cross-platform scripts; orchestrate in Python or Node, not bash.
-44. Enforce LF line endings via `.gitattributes`.
 
 ## Deployment
 
-45. Storage goes through an adapter: no `open("./data/...")` outside it, no hardcoded buckets, regions, or account IDs.
-46. The same code runs on-prem or in the cloud with only config changes — never source changes.
-47. Pre-deploy gates (smoke test, vulnerability scan, secret scan) are never disabled by default — escape hatches are explicit, one-off, and logged.
+44. Storage goes through an adapter: no `open("./data/...")` outside it, no hardcoded buckets, regions, or account IDs.
+45. The same code runs on-prem or in the cloud with only config changes — never source changes.
+46. Pre-deploy gates (smoke test, vulnerability scan, secret scan) are never disabled by default — escape hatches are explicit, one-off, and logged.
+47. Make every operation idempotent and safe to re-run. Deploys, migrations, and setup scripts must converge to the same state run once or five times, and resume cleanly after an interruption — a half-finished run is the normal case, not the exception. Gate on the real end-state, never on a partial artifact that merely looks "done."
 48. Services expose health/readiness endpoints and shut down gracefully on SIGTERM.
 49. Container-friendly by default: config from env or mounted files, logs to stdout, no assumed persistent disk. The container stack is **Podman, Red Hat UBI base images, and OpenShift** — rootless and daemonless beats a root daemon. Tough luck; if you prefer Ubuntu, Arch Linux, and Docker's insecure daemon, write your own rules — the license lets you.
 50. Show progress on unavoidably slow operations and say why; cached paths are the default, expensive paths are explicit and rare.
@@ -119,24 +119,24 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 73. Correctness over speed: the delay to reach full coverage and verified behavior is acceptable and expected.
 74. Coverage going down is a stop-and-fix, not a "justify it."
 75. Run the full regression suite after every feature; report the test count and any failures.
-76. No network calls in unit tests — fakes, mocks, and fixtures.
+76. Declare a latency and throughput budget, then gate regressions against it the way you gate coverage. Determinism and latency are features: measure them, set the ceiling explicitly, and fail the build when a change blows past it — a silent slowdown is a defect that ships.
+77. No network calls in unit tests — fakes, mocks, and fixtures.
 
 ## Errors and observability
 
-77. No bare `except:`/`catch (e)` swallows — catch specific exceptions, rethrow or log with context.
-78. Fail loudly in dev, gracefully in prod, diagnosably always.
-79. Use a logger, never `print`, in shipped code; log level configurable.
-80. AI/LLM errors surface to the user as friendly messages — never a silent failure, never a raw stack trace. And agents only call tools that actually exist in their tool list: a hallucinated tool name wastes tokens and stalls the session — fall back to shell or file primitives, or ask for the tool to be wired in, never fabricate one.
-81. Resource cleanup uses context managers / `defer` / `using` — no close-and-hope.
-82. Structured logging (JSON) once the project is more than a script.
+78. No bare `except:`/`catch (e)` swallows — catch specific exceptions, rethrow or log with context.
+79. Fail loudly in dev, gracefully in prod, diagnosably always.
+80. Use a logger, never `print`, in shipped code; log level configurable.
+81. AI/LLM errors surface to the user as friendly messages — never a silent failure, never a raw stack trace. And agents only call tools that actually exist in their tool list: a hallucinated tool name wastes tokens and stalls the session — fall back to shell or file primitives, or ask for the tool to be wired in, never fabricate one.
+82. Resource cleanup uses context managers / `defer` / `using` — no close-and-hope.
+83. Structured logging (JSON) once the project is more than a script.
 
 ## Dependencies
 
-83. Pin versions and commit the lockfile.
-84. Run a vulnerability audit periodically and on every new dependency.
-85. Prefer stdlib plus one well-maintained dependency over five small ones.
-86. Python work always uses a project-local virtualenv — never install into the system Python.
-87. State name, purpose, license, and maintenance status before adding any dependency (see rule 9).
+84. Pin versions and commit the lockfile.
+85. Run a vulnerability audit periodically and on every new dependency.
+86. Prefer stdlib plus one well-maintained dependency over five small ones.
+87. Python work always uses a project-local virtualenv — never install into the system Python.
 
 ## Hygiene
 
