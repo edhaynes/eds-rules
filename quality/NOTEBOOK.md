@@ -129,6 +129,30 @@ candidates landed in rounds 1–3** (58, 56, 55.5, 52.5, 51.5); round 4 first be
 the bar. Meaty-rounds count exact (3); taper completed at round 4, one round
 earlier than predicted. The architect's gut, calibrated.
 
+## Entry 12 — why 3-round epochs (Eddie's practice, mechanism)
+
+Eddie: "I've done more AI polishing than anyone I know, and our 3-round epochs
+are 3 for a reason." The polish experiment is independent evidence — above-bar
+finds exhausted by round 3, with no coordination between his practice and the run.
+
+Mechanism (generalizable beyond this doc):
+1. **Findings come in tiers.** Round 1 = first-order gaps (obvious omissions);
+   fixing them makes second-order gaps visible; round 3 catches the third order.
+   A mature artifact has ~3 orders of genuine structure; past that is the noise
+   floor — preferences, edge cases, rephrasing.
+2. **The generator front-loads.** An LLM reviewing its own work spends its
+   strongest critiques early; by round 4 it reaches, by round 5 it manufactures
+   findings to fill the quota. "3" is part artifact, part model.
+
+Caveat: 3 holds for an *already-decent* artifact (this doc was curated before
+grading). A rough first draft has 5–6 meaty rounds — more low-hanging fruit.
+So "3-round epoch" = "3 rounds to exhaust a good draft." Starting from junk
+yields more rounds; not starting from junk is the tell of an expert.
+
+Side note: the cap mechanism works even on the boss's pet rule — "use vim, not
+emacs" grades 14.0 (below the go-local floor of 25.5), so it earns no slot. The
+fixed-100 cap rejects it; the system functions as designed.
+
 ## Open threads
 
 - Cut depth: which of the 33 sub-bar rules go (Eddie: keep Podman/UBI by
