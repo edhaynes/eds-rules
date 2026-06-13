@@ -300,3 +300,9 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
 - **Cost/power punchline:** at 2,000 calls/day, local 8B (~$30/yr electricity) vs frontier API (~$5K Haiku / $15K Sonnet / $25K Opus per dev-year) — ~160–800× cheaper; assumptions documented.
 - **Blocked (axis B):** "small-trained-beats-big-Claude" + the Claude half of the comparison need a valid `ANTHROPIC_API_KEY` (env key len 46 fails Anthropic auth). `ask-vanilla.sh BACKEND=claude` is wired and ready.
 - **Shelved:** training deep-dive (epoch training + reverse-rule-lookup) — source artifacts on Gladius, currently unreachable (Eddie). Won't fabricate training output.
+
+## F17 — YouTube series: one rule per video ("100 Rules" daily shorts)
+- **Status:** Open — 2026-06-13 (Eddie idea, parked)
+- Concept: a short (~2 min) video per day, each covering one rule (maybe 2–3 rules/video) — turn the 100 rules into a daily YouTube series. Natural fit with F16's demo-video pipeline (Eddie's voice + terminal/slides + `demo/make-demo-video.sh`).
+- **Open questions (Linda):** optimal length & one-vs-multi-rule format for retention/algorithm; Shorts vs long-form; cadence sustainability; does the rules-model demo anchor episode 1?
+- **Depends on:** F16 pipeline (reuse VO + mux flow per episode). 100 rules ≈ 100 episodes ≈ a ~3-month daily run.
