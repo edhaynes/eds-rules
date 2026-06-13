@@ -12,310 +12,308 @@
 <text x="755.0" y="84" font-size="10" fill="#999" text-anchor="middle">75</text>
 <line x1="910.0" y1="90" x2="910.0" y2="1800" stroke="#e8e8e8"/>
 <text x="910.0" y="84" font-size="10" fill="#999" text-anchor="middle">100</text>
-<line x1="848.0" y1="90" x2="848.0" y2="1800" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="3,3"/>
-<text x="848.0" y="1814" font-size="9" fill="#27ae60" text-anchor="middle">90</text>
-<line x1="879.0" y1="90" x2="879.0" y2="1800" stroke="#16a085" stroke-width="1.2" stroke-dasharray="3,3"/>
-<text x="879.0" y="1814" font-size="9" fill="#16a085" text-anchor="middle">95</text>
+<line x1="600.0" y1="90" x2="600.0" y2="1800" stroke="#c0392b" stroke-width="1.6" stroke-dasharray="5,3"/>
+<text x="600.0" y="1814" font-size="10" fill="#c0392b" text-anchor="middle" font-weight="bold">50 — keep/cut bar</text>
 <text x="282" y="107" text-anchor="end" fill="#333">  1. Secret scan before ship</text>
-<rect x="290" y="96" width="561.1" height="13" fill="#c0392b" rx="1.5"/>
-<text x="857.1" y="107" fill="#333" font-size="10">90</text>
+<rect x="290" y="96" width="558.0" height="13" fill="#c0392b" rx="1.5"/>
+<text x="854.0" y="107" fill="#333" font-size="10">90</text>
 <text x="282" y="124" text-anchor="end" fill="#333">  2. Never hardcode a secret</text>
-<rect x="290" y="113" width="533.2" height="13" fill="#c0392b" rx="1.5"/>
-<text x="829.2" y="124" fill="#333" font-size="10">86</text>
-<text x="282" y="141" text-anchor="end" fill="#333">  3. Distrust every external input</text>
-<rect x="290" y="130" width="489.8" height="13" fill="#c0392b" rx="1.5"/>
-<text x="785.8" y="141" fill="#333" font-size="10">79</text>
-<text x="282" y="158" text-anchor="end" fill="#333">  4. Destruction needs a human</text>
-<rect x="290" y="147" width="489.8" height="13" fill="#c0392b" rx="1.5"/>
-<text x="785.8" y="158" fill="#333" font-size="10">79</text>
-<text x="282" y="175" text-anchor="end" fill="#333"> 51. Hooks before first commit</text>
-<rect x="290" y="164" width="483.6" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="779.6" y="175" fill="#333" font-size="10">78</text>
-<text x="282" y="192" text-anchor="end" fill="#333">  9. Fail fast</text>
-<rect x="290" y="181" width="477.4" height="13" fill="#c0392b" rx="1.5"/>
-<text x="773.4" y="192" fill="#333" font-size="10">77</text>
-<text x="282" y="209" text-anchor="end" fill="#333"> 20. Zero hardcoded values</text>
-<rect x="290" y="198" width="468.1" height="13" fill="#2980b9" rx="1.5"/>
-<text x="764.1" y="209" fill="#333" font-size="10">76</text>
+<rect x="290" y="113" width="508.4" height="13" fill="#c0392b" rx="1.5"/>
+<text x="804.4" y="124" fill="#333" font-size="10">82</text>
+<text x="282" y="141" text-anchor="end" fill="#333"> 20. Zero hardcoded values</text>
+<rect x="290" y="130" width="458.8" height="13" fill="#2980b9" rx="1.5"/>
+<text x="754.8" y="141" fill="#333" font-size="10">74</text>
+<text x="282" y="158" text-anchor="end" fill="#333"> 51. Hooks before first commit</text>
+<rect x="290" y="147" width="455.7" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="751.7" y="158" fill="#333" font-size="10">74</text>
+<text x="282" y="175" text-anchor="end" fill="#333">  9. Fail fast</text>
+<rect x="290" y="164" width="449.5" height="13" fill="#c0392b" rx="1.5"/>
+<text x="745.5" y="175" fill="#333" font-size="10">72</text>
+<text x="282" y="192" text-anchor="end" fill="#333">  3. Distrust every external input</text>
+<rect x="290" y="181" width="446.4" height="13" fill="#c0392b" rx="1.5"/>
+<text x="742.4" y="192" fill="#333" font-size="10">72</text>
+<text x="282" y="209" text-anchor="end" fill="#333">  4. Destruction needs a human</text>
+<rect x="290" y="198" width="443.3" height="13" fill="#c0392b" rx="1.5"/>
+<text x="739.3" y="209" fill="#333" font-size="10">72</text>
 <text x="282" y="226" text-anchor="end" fill="#333"> 59. Gitignore keys from day one</text>
-<rect x="290" y="215" width="468.1" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="764.1" y="226" fill="#333" font-size="10">76</text>
-<text x="282" y="243" text-anchor="end" fill="#333">  6. Push early, push always</text>
-<rect x="290" y="232" width="446.4" height="13" fill="#c0392b" rx="1.5"/>
-<text x="742.4" y="243" fill="#333" font-size="10">72</text>
-<text x="282" y="260" text-anchor="end" fill="#333"> 84. Pin it and lock it</text>
-<rect x="290" y="249" width="446.4" height="13" fill="#9b59b6" rx="1.5"/>
-<text x="742.4" y="260" fill="#333" font-size="10">72</text>
-<text x="282" y="277" text-anchor="end" fill="#333"> 22. Validate config at startup</text>
-<rect x="290" y="266" width="440.2" height="13" fill="#2980b9" rx="1.5"/>
-<text x="736.2" y="277" fill="#333" font-size="10">71</text>
-<text x="282" y="294" text-anchor="end" fill="#333"> 46. Pre-deploy gates never off</text>
-<rect x="290" y="283" width="440.2" height="13" fill="#d35400" rx="1.5"/>
-<text x="736.2" y="294" fill="#333" font-size="10">71</text>
-<text x="282" y="311" text-anchor="end" fill="#333">  5. Autonomy bounded by VC</text>
-<rect x="290" y="300" width="434.0" height="13" fill="#c0392b" rx="1.5"/>
-<text x="730.0" y="311" fill="#333" font-size="10">70</text>
-<text x="282" y="328" text-anchor="end" fill="#333">  7. Green commit, healthy handover</text>
-<rect x="290" y="317" width="434.0" height="13" fill="#c0392b" rx="1.5"/>
-<text x="730.0" y="328" fill="#333" font-size="10">70</text>
-<text x="282" y="345" text-anchor="end" fill="#333"> 56. Inspect config-file diffs</text>
-<rect x="290" y="334" width="434.0" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="730.0" y="345" fill="#333" font-size="10">70</text>
-<text x="282" y="362" text-anchor="end" fill="#333"> 70. Tests with logic, regress first</text>
-<rect x="290" y="351" width="430.9" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="726.9" y="362" fill="#333" font-size="10">70</text>
-<text x="282" y="379" text-anchor="end" fill="#333"> 78. No swallowed exceptions</text>
-<rect x="290" y="368" width="427.8" height="13" fill="#34495e" rx="1.5"/>
-<text x="723.8" y="379" fill="#333" font-size="10">69</text>
-<text x="282" y="396" text-anchor="end" fill="#333"> 88. Lint + format every commit</text>
-<rect x="290" y="385" width="424.7" height="13" fill="#1abc9c" rx="1.5"/>
-<text x="720.7" y="396" fill="#333" font-size="10">68</text>
-<text x="282" y="413" text-anchor="end" fill="#333"> 54. Scan the whole artifact</text>
-<rect x="290" y="402" width="421.6" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="717.6" y="413" fill="#333" font-size="10">68</text>
-<text x="282" y="430" text-anchor="end" fill="#333"> 55. Scan the range, not the tip</text>
-<rect x="290" y="419" width="421.6" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="717.6" y="430" fill="#333" font-size="10">68</text>
-<text x="282" y="447" text-anchor="end" fill="#333"> 12. Powell rule: 90% then decide</text>
-<rect x="290" y="436" width="418.5" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="714.5" y="447" fill="#333" font-size="10">68</text>
-<text x="282" y="464" text-anchor="end" fill="#333"> 58. Pre-push rescan + tests</text>
-<rect x="290" y="453" width="418.5" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="714.5" y="464" fill="#333" font-size="10">68</text>
-<text x="282" y="481" text-anchor="end" fill="#333">  8. One purpose per commit</text>
-<rect x="290" y="470" width="415.4" height="13" fill="#c0392b" rx="1.5"/>
-<text x="711.4" y="481" fill="#333" font-size="10">67</text>
-<text x="282" y="498" text-anchor="end" fill="#333"> 23. One config layer, one order</text>
-<rect x="290" y="487" width="415.4" height="13" fill="#2980b9" rx="1.5"/>
-<text x="711.4" y="498" fill="#333" font-size="10">67</text>
-<text x="282" y="515" text-anchor="end" fill="#333"> 26. No magic numbers</text>
-<rect x="290" y="504" width="409.2" height="13" fill="#2980b9" rx="1.5"/>
-<text x="705.2" y="515" fill="#333" font-size="10">66</text>
+<rect x="290" y="215" width="440.2" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="736.2" y="226" fill="#333" font-size="10">71</text>
+<text x="282" y="243" text-anchor="end" fill="#333"> 84. Pin it and lock it</text>
+<rect x="290" y="232" width="418.5" height="13" fill="#9b59b6" rx="1.5"/>
+<text x="714.5" y="243" fill="#333" font-size="10">68</text>
+<text x="282" y="260" text-anchor="end" fill="#333"> 22. Validate config at startup</text>
+<rect x="290" y="249" width="412.3" height="13" fill="#2980b9" rx="1.5"/>
+<text x="708.3" y="260" fill="#333" font-size="10">66</text>
+<text x="282" y="277" text-anchor="end" fill="#333"> 46. Pre-deploy gates never off</text>
+<rect x="290" y="266" width="412.3" height="13" fill="#d35400" rx="1.5"/>
+<text x="708.3" y="277" fill="#333" font-size="10">66</text>
+<text x="282" y="294" text-anchor="end" fill="#333"> 56. Inspect config-file diffs</text>
+<rect x="290" y="283" width="406.1" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="702.1" y="294" fill="#333" font-size="10">66</text>
+<text x="282" y="311" text-anchor="end" fill="#333"> 70. Tests with logic, regress first</text>
+<rect x="290" y="300" width="403.0" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="699.0" y="311" fill="#333" font-size="10">65</text>
+<text x="282" y="328" text-anchor="end" fill="#333"> 78. No swallowed exceptions</text>
+<rect x="290" y="317" width="399.9" height="13" fill="#34495e" rx="1.5"/>
+<text x="695.9" y="328" fill="#333" font-size="10">64</text>
+<text x="282" y="345" text-anchor="end" fill="#333">  7. Green commit, healthy handover</text>
+<rect x="290" y="334" width="396.8" height="13" fill="#c0392b" rx="1.5"/>
+<text x="692.8" y="345" fill="#333" font-size="10">64</text>
+<text x="282" y="362" text-anchor="end" fill="#333">  6. Push early, push always</text>
+<rect x="290" y="351" width="393.7" height="13" fill="#c0392b" rx="1.5"/>
+<text x="689.7" y="362" fill="#333" font-size="10">64</text>
+<text x="282" y="379" text-anchor="end" fill="#333"> 54. Scan the whole artifact</text>
+<rect x="290" y="368" width="393.7" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="689.7" y="379" fill="#333" font-size="10">64</text>
+<text x="282" y="396" text-anchor="end" fill="#333"> 55. Scan the range, not the tip</text>
+<rect x="290" y="385" width="393.7" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="689.7" y="396" fill="#333" font-size="10">64</text>
+<text x="282" y="413" text-anchor="end" fill="#333">  5. Autonomy bounded by VC</text>
+<rect x="290" y="402" width="390.6" height="13" fill="#c0392b" rx="1.5"/>
+<text x="686.6" y="413" fill="#333" font-size="10">63</text>
+<text x="282" y="430" text-anchor="end" fill="#333"> 58. Pre-push rescan + tests</text>
+<rect x="290" y="419" width="390.6" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="686.6" y="430" fill="#333" font-size="10">63</text>
+<text x="282" y="447" text-anchor="end" fill="#333"> 77. No network in unit tests</text>
+<rect x="290" y="436" width="390.6" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="686.6" y="447" fill="#333" font-size="10">63</text>
+<text x="282" y="464" text-anchor="end" fill="#333"> 88. Lint + format every commit</text>
+<rect x="290" y="453" width="387.5" height="13" fill="#1abc9c" rx="1.5"/>
+<text x="683.5" y="464" fill="#333" font-size="10">62</text>
+<text x="282" y="481" text-anchor="end" fill="#333"> 23. One config layer, one order</text>
+<rect x="290" y="470" width="381.3" height="13" fill="#2980b9" rx="1.5"/>
+<text x="677.3" y="481" fill="#333" font-size="10">62</text>
+<text x="282" y="498" text-anchor="end" fill="#333"> 26. No magic numbers</text>
+<rect x="290" y="487" width="381.3" height="13" fill="#2980b9" rx="1.5"/>
+<text x="677.3" y="498" fill="#333" font-size="10">62</text>
+<text x="282" y="515" text-anchor="end" fill="#333"> 47. Idempotent, safe to re-run</text>
+<rect x="290" y="504" width="381.3" height="13" fill="#d35400" rx="1.5"/>
+<text x="677.3" y="515" fill="#333" font-size="10">62</text>
 <text x="282" y="532" text-anchor="end" fill="#333"> 75. Full regression, with numbers</text>
-<rect x="290" y="521" width="409.2" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="705.2" y="532" fill="#333" font-size="10">66</text>
-<text x="282" y="549" text-anchor="end" fill="#333"> 21. Never silently fall back</text>
-<rect x="290" y="538" width="406.1" height="13" fill="#2980b9" rx="1.5"/>
-<text x="702.1" y="549" fill="#333" font-size="10">66</text>
-<text x="282" y="566" text-anchor="end" fill="#333"> 80. A logger, never print</text>
-<rect x="290" y="555" width="406.1" height="13" fill="#34495e" rx="1.5"/>
-<text x="702.1" y="566" fill="#333" font-size="10">66</text>
-<text x="282" y="583" text-anchor="end" fill="#333"> 11. No path/OS assumptions; script</text>
-<rect x="290" y="572" width="403.0" height="13" fill="#c0392b" rx="1.5"/>
-<text x="699.0" y="583" fill="#333" font-size="10">65</text>
-<text x="282" y="600" text-anchor="end" fill="#333"> 27. Ship the .env.example</text>
-<rect x="290" y="589" width="403.0" height="13" fill="#2980b9" rx="1.5"/>
-<text x="699.0" y="600" fill="#333" font-size="10">65</text>
-<text x="282" y="617" text-anchor="end" fill="#333"> 53. Never copy a secret anywhere</text>
-<rect x="290" y="606" width="403.0" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="699.0" y="617" fill="#333" font-size="10">65</text>
-<text x="282" y="634" text-anchor="end" fill="#333"> 85. Audit for vulnerabilities</text>
-<rect x="290" y="623" width="403.0" height="13" fill="#9b59b6" rx="1.5"/>
-<text x="699.0" y="634" fill="#333" font-size="10">65</text>
-<text x="282" y="651" text-anchor="end" fill="#333"> 98. Plan first, size for 90%</text>
-<rect x="290" y="640" width="403.0" height="13" fill="#e67e22" rx="1.5"/>
-<text x="699.0" y="651" fill="#333" font-size="10">65</text>
-<text x="282" y="668" text-anchor="end" fill="#333"> 47. Idempotent, safe to re-run</text>
-<rect x="290" y="657" width="399.9" height="13" fill="#d35400" rx="1.5"/>
-<text x="695.9" y="668" fill="#333" font-size="10">64</text>
-<text x="282" y="685" text-anchor="end" fill="#333"> 10. Disclose every dependency</text>
-<rect x="290" y="674" width="396.8" height="13" fill="#c0392b" rx="1.5"/>
-<text x="692.8" y="685" fill="#333" font-size="10">64</text>
-<text x="282" y="702" text-anchor="end" fill="#333"> 30. Search open source first</text>
-<rect x="290" y="691" width="390.6" height="13" fill="#16a085" rx="1.5"/>
-<text x="686.6" y="702" fill="#333" font-size="10">63</text>
-<text x="282" y="719" text-anchor="end" fill="#333"> 31. DI over globals</text>
-<rect x="290" y="708" width="390.6" height="13" fill="#16a085" rx="1.5"/>
-<text x="686.6" y="719" fill="#333" font-size="10">63</text>
-<text x="282" y="736" text-anchor="end" fill="#333"> 77. No network in unit tests</text>
-<rect x="290" y="725" width="390.6" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="686.6" y="736" fill="#333" font-size="10">63</text>
+<rect x="290" y="521" width="381.3" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="677.3" y="532" fill="#333" font-size="10">62</text>
+<text x="282" y="549" text-anchor="end" fill="#333"> 11. No path/OS assumptions; script</text>
+<rect x="290" y="538" width="378.2" height="13" fill="#c0392b" rx="1.5"/>
+<text x="674.2" y="549" fill="#333" font-size="10">61</text>
+<text x="282" y="566" text-anchor="end" fill="#333"> 12. Powell rule: 90% then decide</text>
+<rect x="290" y="555" width="375.1" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="671.1" y="566" fill="#333" font-size="10">60</text>
+<text x="282" y="583" text-anchor="end" fill="#333"> 85. Audit for vulnerabilities</text>
+<rect x="290" y="572" width="375.1" height="13" fill="#9b59b6" rx="1.5"/>
+<text x="671.1" y="583" fill="#333" font-size="10">60</text>
+<text x="282" y="600" text-anchor="end" fill="#333">  8. One purpose per commit</text>
+<rect x="290" y="589" width="372.0" height="13" fill="#c0392b" rx="1.5"/>
+<text x="668.0" y="600" fill="#333" font-size="10">60</text>
+<text x="282" y="617" text-anchor="end" fill="#333"> 21. Never silently fall back</text>
+<rect x="290" y="606" width="372.0" height="13" fill="#2980b9" rx="1.5"/>
+<text x="668.0" y="617" fill="#333" font-size="10">60</text>
+<text x="282" y="634" text-anchor="end" fill="#333"> 31. DI over globals</text>
+<rect x="290" y="623" width="372.0" height="13" fill="#16a085" rx="1.5"/>
+<text x="668.0" y="634" fill="#333" font-size="10">60</text>
+<text x="282" y="651" text-anchor="end" fill="#333"> 40. Path library + LF endings</text>
+<rect x="290" y="640" width="372.0" height="13" fill="#f39c12" rx="1.5"/>
+<text x="668.0" y="651" fill="#333" font-size="10">60</text>
+<text x="282" y="668" text-anchor="end" fill="#333"> 53. Never copy a secret anywhere</text>
+<rect x="290" y="657" width="368.9" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="664.9" y="668" fill="#333" font-size="10">60</text>
+<text x="282" y="685" text-anchor="end" fill="#333"> 80. A logger, never print</text>
+<rect x="290" y="674" width="368.9" height="13" fill="#34495e" rx="1.5"/>
+<text x="664.9" y="685" fill="#333" font-size="10">60</text>
+<text x="282" y="702" text-anchor="end" fill="#333"> 82. Cleanup is structural</text>
+<rect x="290" y="691" width="365.8" height="13" fill="#34495e" rx="1.5"/>
+<text x="661.8" y="702" fill="#333" font-size="10">59</text>
+<text x="282" y="719" text-anchor="end" fill="#333"> 98. Plan first, size for 90%</text>
+<rect x="290" y="708" width="365.8" height="13" fill="#e67e22" rx="1.5"/>
+<text x="661.8" y="719" fill="#333" font-size="10">59</text>
+<text x="282" y="736" text-anchor="end" fill="#333"> 27. Ship the .env.example</text>
+<rect x="290" y="725" width="359.6" height="13" fill="#2980b9" rx="1.5"/>
+<text x="655.6" y="736" fill="#333" font-size="10">58</text>
 <text x="282" y="753" text-anchor="end" fill="#333"> 57. Scan files you didn't write</text>
-<rect x="290" y="742" width="387.5" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="683.5" y="753" fill="#333" font-size="10">62</text>
-<text x="282" y="770" text-anchor="end" fill="#333"> 16. Claude searches before building</text>
-<rect x="290" y="759" width="384.4" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="680.4" y="770" fill="#333" font-size="10">62</text>
-<text x="282" y="787" text-anchor="end" fill="#333"> 69. Inspect, grade to a rubric</text>
-<rect x="290" y="776" width="384.4" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="680.4" y="787" fill="#333" font-size="10">62</text>
-<text x="282" y="804" text-anchor="end" fill="#333"> 81. AI errors surface; no fake tool</text>
-<rect x="290" y="793" width="384.4" height="13" fill="#34495e" rx="1.5"/>
-<text x="680.4" y="804" fill="#333" font-size="10">62</text>
-<text x="282" y="821" text-anchor="end" fill="#333"> 82. Cleanup is structural</text>
-<rect x="290" y="810" width="384.4" height="13" fill="#34495e" rx="1.5"/>
-<text x="680.4" y="821" fill="#333" font-size="10">62</text>
-<text x="282" y="838" text-anchor="end" fill="#333"> 86. Stdlib plus one, not five</text>
-<rect x="290" y="827" width="384.4" height="13" fill="#9b59b6" rx="1.5"/>
-<text x="680.4" y="838" fill="#333" font-size="10">62</text>
-<text x="282" y="855" text-anchor="end" fill="#333"> 29. Swappable interface per axis</text>
-<rect x="290" y="844" width="381.3" height="13" fill="#16a085" rx="1.5"/>
-<text x="677.3" y="855" fill="#333" font-size="10">62</text>
-<text x="282" y="872" text-anchor="end" fill="#333"> 79. Loud dev, graceful prod</text>
-<rect x="290" y="861" width="381.3" height="13" fill="#34495e" rx="1.5"/>
-<text x="677.3" y="872" fill="#333" font-size="10">62</text>
-<text x="282" y="889" text-anchor="end" fill="#333"> 41. No hardcoded temp/home/drive</text>
-<rect x="290" y="878" width="375.1" height="13" fill="#f39c12" rx="1.5"/>
-<text x="671.1" y="889" fill="#333" font-size="10">60</text>
-<text x="282" y="906" text-anchor="end" fill="#333"> 89. Dead-code pass after features</text>
-<rect x="290" y="895" width="375.1" height="13" fill="#1abc9c" rx="1.5"/>
-<text x="671.1" y="906" fill="#333" font-size="10">60</text>
-<text x="282" y="923" text-anchor="end" fill="#333"> 93. Persist decisions same commit</text>
-<rect x="290" y="912" width="375.1" height="13" fill="#3498db" rx="1.5"/>
-<text x="671.1" y="923" fill="#333" font-size="10">60</text>
-<text x="282" y="940" text-anchor="end" fill="#333"> 40. Path library + LF endings</text>
-<rect x="290" y="929" width="372.0" height="13" fill="#f39c12" rx="1.5"/>
-<text x="668.0" y="940" fill="#333" font-size="10">60</text>
-<text x="282" y="957" text-anchor="end" fill="#333"> 87. Project-local virtualenv</text>
-<rect x="290" y="946" width="372.0" height="13" fill="#9b59b6" rx="1.5"/>
-<text x="668.0" y="957" fill="#333" font-size="10">60</text>
-<text x="282" y="974" text-anchor="end" fill="#333"> 91. No commented-out code</text>
-<rect x="290" y="963" width="372.0" height="13" fill="#1abc9c" rx="1.5"/>
-<text x="668.0" y="974" fill="#333" font-size="10">60</text>
-<text x="282" y="991" text-anchor="end" fill="#333">100. Verbatim errors, diffs, asks</text>
-<rect x="290" y="980" width="372.0" height="13" fill="#e67e22" rx="1.5"/>
-<text x="668.0" y="991" fill="#333" font-size="10">60</text>
-<text x="282" y="1008" text-anchor="end" fill="#333"> 63. SemVer, one canonical home</text>
-<rect x="290" y="997" width="368.9" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="664.9" y="1008" fill="#333" font-size="10">60</text>
-<text x="282" y="1025" text-anchor="end" fill="#333"> 24. Local default, not hardcoded</text>
-<rect x="290" y="1014" width="365.8" height="13" fill="#2980b9" rx="1.5"/>
-<text x="661.8" y="1025" fill="#333" font-size="10">59</text>
-<text x="282" y="1042" text-anchor="end" fill="#333"> 72. 100% line + branch coverage</text>
-<rect x="290" y="1031" width="365.8" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="661.8" y="1042" fill="#333" font-size="10">59</text>
-<text x="282" y="1059" text-anchor="end" fill="#333"> 34. Files small, never &gt;1000 lines</text>
-<rect x="290" y="1048" width="359.6" height="13" fill="#27ae60" rx="1.5"/>
-<text x="655.6" y="1059" fill="#333" font-size="10">58</text>
-<text x="282" y="1076" text-anchor="end" fill="#333"> 37. Small functions, few params</text>
-<rect x="290" y="1065" width="359.6" height="13" fill="#27ae60" rx="1.5"/>
-<text x="655.6" y="1076" fill="#333" font-size="10">58</text>
+<rect x="290" y="742" width="359.6" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="655.6" y="753" fill="#333" font-size="10">58</text>
+<text x="282" y="770" text-anchor="end" fill="#333"> 86. Stdlib plus one, not five</text>
+<rect x="290" y="759" width="359.6" height="13" fill="#9b59b6" rx="1.5"/>
+<text x="655.6" y="770" fill="#333" font-size="10">58</text>
+<text x="282" y="787" text-anchor="end" fill="#333"> 30. Search open source first</text>
+<rect x="290" y="776" width="356.5" height="13" fill="#16a085" rx="1.5"/>
+<text x="652.5" y="787" fill="#333" font-size="10">58</text>
+<text x="282" y="804" text-anchor="end" fill="#333"> 37. Small functions, few params</text>
+<rect x="290" y="793" width="356.5" height="13" fill="#27ae60" rx="1.5"/>
+<text x="652.5" y="804" fill="#333" font-size="10">58</text>
+<text x="282" y="821" text-anchor="end" fill="#333"> 41. No hardcoded temp/home/drive</text>
+<rect x="290" y="810" width="356.5" height="13" fill="#f39c12" rx="1.5"/>
+<text x="652.5" y="821" fill="#333" font-size="10">58</text>
+<text x="282" y="838" text-anchor="end" fill="#333"> 79. Loud dev, graceful prod</text>
+<rect x="290" y="827" width="356.5" height="13" fill="#34495e" rx="1.5"/>
+<text x="652.5" y="838" fill="#333" font-size="10">58</text>
+<text x="282" y="855" text-anchor="end" fill="#333"> 89. Dead-code pass after features</text>
+<rect x="290" y="844" width="356.5" height="13" fill="#1abc9c" rx="1.5"/>
+<text x="652.5" y="855" fill="#333" font-size="10">58</text>
+<text x="282" y="872" text-anchor="end" fill="#333"> 10. Disclose every dependency</text>
+<rect x="290" y="861" width="350.3" height="13" fill="#c0392b" rx="1.5"/>
+<text x="646.3" y="872" fill="#333" font-size="10">56</text>
+<text x="282" y="889" text-anchor="end" fill="#333"> 63. SemVer, one canonical home</text>
+<rect x="290" y="878" width="350.3" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="646.3" y="889" fill="#333" font-size="10">56</text>
+<text x="282" y="906" text-anchor="end" fill="#333"> 34. Files small, never &gt;1000 lines</text>
+<rect x="290" y="895" width="347.2" height="13" fill="#27ae60" rx="1.5"/>
+<text x="643.2" y="906" fill="#333" font-size="10">56</text>
+<text x="282" y="923" text-anchor="end" fill="#333"> 69. Inspect, grade to a rubric</text>
+<rect x="290" y="912" width="347.2" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="643.2" y="923" fill="#333" font-size="10">56</text>
+<text x="282" y="940" text-anchor="end" fill="#333"> 81. AI errors surface; no fake tool</text>
+<rect x="290" y="929" width="347.2" height="13" fill="#34495e" rx="1.5"/>
+<text x="643.2" y="940" fill="#333" font-size="10">56</text>
+<text x="282" y="957" text-anchor="end" fill="#333"> 91. No commented-out code</text>
+<rect x="290" y="946" width="344.1" height="13" fill="#1abc9c" rx="1.5"/>
+<text x="640.1" y="957" fill="#333" font-size="10">56</text>
+<text x="282" y="974" text-anchor="end" fill="#333"> 29. Swappable interface per axis</text>
+<rect x="290" y="963" width="341.0" height="13" fill="#16a085" rx="1.5"/>
+<text x="637.0" y="974" fill="#333" font-size="10">55</text>
+<text x="282" y="991" text-anchor="end" fill="#333"> 87. Project-local virtualenv</text>
+<rect x="290" y="980" width="337.9" height="13" fill="#9b59b6" rx="1.5"/>
+<text x="633.9" y="991" fill="#333" font-size="10">54</text>
+<text x="282" y="1008" text-anchor="end" fill="#333">100. Verbatim errors, diffs, asks</text>
+<rect x="290" y="997" width="334.8" height="13" fill="#e67e22" rx="1.5"/>
+<text x="630.8" y="1008" fill="#333" font-size="10">54</text>
+<text x="282" y="1025" text-anchor="end" fill="#333"> 93. Persist decisions same commit</text>
+<rect x="290" y="1014" width="331.7" height="13" fill="#3498db" rx="1.5"/>
+<text x="627.7" y="1025" fill="#333" font-size="10">54</text>
+<text x="282" y="1042" text-anchor="end" fill="#333"> 16. Claude searches before building</text>
+<rect x="290" y="1031" width="328.6" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="624.6" y="1042" fill="#333" font-size="10">53</text>
+<text x="282" y="1059" text-anchor="end" fill="#333"> 61. Tags are immutable</text>
+<rect x="290" y="1048" width="328.6" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="624.6" y="1059" fill="#333" font-size="10">53</text>
+<text x="282" y="1076" text-anchor="end" fill="#333"> 72. 100% line + branch coverage</text>
+<rect x="290" y="1065" width="325.5" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="621.5" y="1076" fill="#333" font-size="10">52</text>
 <text x="282" y="1093" text-anchor="end" fill="#333"> 52. A touched secret is burned</text>
-<rect x="290" y="1082" width="356.5" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="652.5" y="1093" fill="#333" font-size="10">58</text>
-<text x="282" y="1110" text-anchor="end" fill="#333"> 61. Tags are immutable</text>
-<rect x="290" y="1099" width="356.5" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="652.5" y="1110" fill="#333" font-size="10">58</text>
-<text x="282" y="1127" text-anchor="end" fill="#333"> 94. File bugs/features on sight</text>
-<rect x="290" y="1116" width="356.5" height="13" fill="#3498db" rx="1.5"/>
-<text x="652.5" y="1127" fill="#333" font-size="10">58</text>
-<text x="282" y="1144" text-anchor="end" fill="#333"> 74. Coverage never goes down</text>
-<rect x="290" y="1133" width="350.3" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="646.3" y="1144" fill="#333" font-size="10">56</text>
-<text x="282" y="1161" text-anchor="end" fill="#333"> 99. No flattery, no yes-manning</text>
-<rect x="290" y="1150" width="350.3" height="13" fill="#e67e22" rx="1.5"/>
-<text x="646.3" y="1161" fill="#333" font-size="10">56</text>
-<text x="282" y="1178" text-anchor="end" fill="#333"> 17. Claudina: cross-platform day one</text>
-<rect x="290" y="1167" width="347.2" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="643.2" y="1178" fill="#333" font-size="10">56</text>
-<text x="282" y="1195" text-anchor="end" fill="#333"> 25. Zero-setup local defaults</text>
-<rect x="290" y="1184" width="347.2" height="13" fill="#2980b9" rx="1.5"/>
-<text x="643.2" y="1195" fill="#333" font-size="10">56</text>
-<text x="282" y="1212" text-anchor="end" fill="#333"> 38. Shallow nesting</text>
-<rect x="290" y="1201" width="344.1" height="13" fill="#27ae60" rx="1.5"/>
-<text x="640.1" y="1212" fill="#333" font-size="10">56</text>
-<text x="282" y="1229" text-anchor="end" fill="#333"> 44. Storage goes through adapter</text>
-<rect x="290" y="1218" width="344.1" height="13" fill="#d35400" rx="1.5"/>
-<text x="640.1" y="1229" fill="#333" font-size="10">56</text>
-<text x="282" y="1246" text-anchor="end" fill="#333"> 62. Versions only move forward</text>
-<rect x="290" y="1235" width="341.0" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="637.0" y="1246" fill="#333" font-size="10">55</text>
-<text x="282" y="1263" text-anchor="end" fill="#333"> 66. Changelog rides the bump</text>
-<rect x="290" y="1252" width="341.0" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="637.0" y="1263" fill="#333" font-size="10">55</text>
-<text x="282" y="1280" text-anchor="end" fill="#333"> 71. Contract first, code second</text>
-<rect x="290" y="1269" width="341.0" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="637.0" y="1280" fill="#333" font-size="10">55</text>
-<text x="282" y="1297" text-anchor="end" fill="#333"> 48. Health endpoints + SIGTERM</text>
-<rect x="290" y="1286" width="337.9" height="13" fill="#d35400" rx="1.5"/>
-<text x="633.9" y="1297" fill="#333" font-size="10">54</text>
+<rect x="290" y="1082" width="322.4" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="618.4" y="1093" fill="#333" font-size="10">52</text>
+<text x="282" y="1110" text-anchor="end" fill="#333"> 71. Contract first, code second</text>
+<rect x="290" y="1099" width="322.4" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="618.4" y="1110" fill="#333" font-size="10">52</text>
+<text x="282" y="1127" text-anchor="end" fill="#333"> 44. Storage goes through adapter</text>
+<rect x="290" y="1116" width="319.3" height="13" fill="#d35400" rx="1.5"/>
+<text x="615.3" y="1127" fill="#333" font-size="10">52</text>
+<text x="282" y="1144" text-anchor="end" fill="#333"> 48. Health endpoints + SIGTERM</text>
+<rect x="290" y="1133" width="319.3" height="13" fill="#d35400" rx="1.5"/>
+<text x="615.3" y="1144" fill="#333" font-size="10">52</text>
+<text x="282" y="1161" text-anchor="end" fill="#333"> 38. Shallow nesting</text>
+<rect x="290" y="1150" width="316.2" height="13" fill="#27ae60" rx="1.5"/>
+<text x="612.2" y="1161" fill="#333" font-size="10">51</text>
+<text x="282" y="1178" text-anchor="end" fill="#333"> 62. Versions only move forward</text>
+<rect x="290" y="1167" width="313.1" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="609.1" y="1178" fill="#333" font-size="10">50</text>
+<text x="282" y="1195" text-anchor="end" fill="#333"> 66. Changelog rides the bump</text>
+<rect x="290" y="1184" width="313.1" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="609.1" y="1195" fill="#333" font-size="10">50</text>
+<text x="282" y="1212" text-anchor="end" fill="#333"> 74. Coverage never goes down</text>
+<rect x="290" y="1201" width="313.1" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="609.1" y="1212" fill="#333" font-size="10">50</text>
+<text x="282" y="1229" text-anchor="end" fill="#333"> 94. File bugs/features on sight</text>
+<rect x="290" y="1218" width="313.1" height="13" fill="#3498db" rx="1.5"/>
+<text x="609.1" y="1229" fill="#333" font-size="10">50</text>
+<text x="282" y="1246" text-anchor="end" fill="#333"> 35. No god classes</text>
+<rect x="290" y="1235" width="306.9" height="13" fill="#27ae60" rx="1.5"/>
+<text x="602.9" y="1246" fill="#333" font-size="10">50</text>
+<text x="282" y="1263" text-anchor="end" fill="#333"> 99. No flattery, no yes-manning</text>
+<rect x="290" y="1252" width="306.9" height="13" fill="#e67e22" rx="1.5"/>
+<text x="602.9" y="1263" fill="#333" font-size="10">50</text>
+<text x="282" y="1280" text-anchor="end" fill="#333"> 64. Fetch tags before tagging</text>
+<rect x="290" y="1269" width="303.8" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="599.8" y="1280" fill="#333" font-size="10">49</text>
+<text x="282" y="1297" text-anchor="end" fill="#333"> 67. Show the version everywhere</text>
+<rect x="290" y="1286" width="303.8" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="599.8" y="1297" fill="#333" font-size="10">49</text>
 <text x="282" y="1314" text-anchor="end" fill="#333"> 60. After a leak, fix the hook</text>
-<rect x="290" y="1303" width="334.8" height="13" fill="#e74c3c" rx="1.5"/>
-<text x="630.8" y="1314" fill="#333" font-size="10">54</text>
-<text x="282" y="1331" text-anchor="end" fill="#333"> 35. No god classes</text>
-<rect x="290" y="1320" width="331.7" height="13" fill="#27ae60" rx="1.5"/>
-<text x="627.7" y="1331" fill="#333" font-size="10">54</text>
-<text x="282" y="1348" text-anchor="end" fill="#333"> 64. Fetch tags before tagging</text>
-<rect x="290" y="1337" width="331.7" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="627.7" y="1348" fill="#333" font-size="10">54</text>
-<text x="282" y="1365" text-anchor="end" fill="#333"> 67. Show the version everywhere</text>
-<rect x="290" y="1354" width="331.7" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="627.7" y="1365" fill="#333" font-size="10">54</text>
-<text x="282" y="1382" text-anchor="end" fill="#333"> 36. Size refactors are own commits</text>
-<rect x="290" y="1371" width="328.6" height="13" fill="#27ae60" rx="1.5"/>
-<text x="624.6" y="1382" fill="#333" font-size="10">53</text>
-<text x="282" y="1399" text-anchor="end" fill="#333"> 15. Jason sprints sized for 90%</text>
-<rect x="290" y="1388" width="325.5" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="621.5" y="1399" fill="#333" font-size="10">52</text>
-<text x="282" y="1416" text-anchor="end" fill="#333"> 65. Unique build number</text>
-<rect x="290" y="1405" width="325.5" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="621.5" y="1416" fill="#333" font-size="10">52</text>
-<text x="282" y="1433" text-anchor="end" fill="#333"> 92. No orphan TODOs</text>
-<rect x="290" y="1422" width="325.5" height="13" fill="#1abc9c" rx="1.5"/>
-<text x="621.5" y="1433" fill="#333" font-size="10">52</text>
-<text x="282" y="1450" text-anchor="end" fill="#333"> 97. Regenerate the README</text>
-<rect x="290" y="1439" width="325.5" height="13" fill="#3498db" rx="1.5"/>
-<text x="621.5" y="1450" fill="#333" font-size="10">52</text>
-<text x="282" y="1467" text-anchor="end" fill="#333"> 28. Architecture beats language</text>
-<rect x="290" y="1456" width="322.4" height="13" fill="#16a085" rx="1.5"/>
-<text x="618.4" y="1467" fill="#333" font-size="10">52</text>
-<text x="282" y="1484" text-anchor="end" fill="#333"> 45. Same code on-prem or cloud</text>
-<rect x="290" y="1473" width="322.4" height="13" fill="#d35400" rx="1.5"/>
-<text x="618.4" y="1484" fill="#333" font-size="10">52</text>
-<text x="282" y="1501" text-anchor="end" fill="#333"> 76. Latency budget, gated like cov.</text>
-<rect x="290" y="1490" width="319.3" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="615.3" y="1501" fill="#333" font-size="10">52</text>
-<text x="282" y="1518" text-anchor="end" fill="#333"> 50. Show progress; cache default</text>
-<rect x="290" y="1507" width="316.2" height="13" fill="#d35400" rx="1.5"/>
-<text x="612.2" y="1518" fill="#333" font-size="10">51</text>
-<text x="282" y="1535" text-anchor="end" fill="#333"> 32. OO + SOLID where it earns</text>
-<rect x="290" y="1524" width="313.1" height="13" fill="#16a085" rx="1.5"/>
-<text x="609.1" y="1535" fill="#333" font-size="10">50</text>
-<text x="282" y="1552" text-anchor="end" fill="#333"> 39. Three platforms, two in CI</text>
-<rect x="290" y="1541" width="313.1" height="13" fill="#f39c12" rx="1.5"/>
-<text x="609.1" y="1552" fill="#333" font-size="10">50</text>
+<rect x="290" y="1303" width="300.7" height="13" fill="#e74c3c" rx="1.5"/>
+<text x="596.7" y="1314" fill="#333" font-size="10">48</text>
+<text x="282" y="1331" text-anchor="end" fill="#333"> 17. Claudina: cross-platform day one</text>
+<rect x="290" y="1320" width="297.6" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="593.6" y="1331" fill="#333" font-size="10">48</text>
+<text x="282" y="1348" text-anchor="end" fill="#333"> 92. No orphan TODOs</text>
+<rect x="290" y="1337" width="297.6" height="13" fill="#1abc9c" rx="1.5"/>
+<text x="593.6" y="1348" fill="#333" font-size="10">48</text>
+<text x="282" y="1365" text-anchor="end" fill="#333"> 28. Architecture beats language</text>
+<rect x="290" y="1354" width="294.5" height="13" fill="#16a085" rx="1.5"/>
+<text x="590.5" y="1365" fill="#333" font-size="10">48</text>
+<text x="282" y="1382" text-anchor="end" fill="#333"> 45. Same code on-prem or cloud</text>
+<rect x="290" y="1371" width="294.5" height="13" fill="#d35400" rx="1.5"/>
+<text x="590.5" y="1382" fill="#333" font-size="10">48</text>
+<text x="282" y="1399" text-anchor="end" fill="#333"> 24. Local default, not hardcoded</text>
+<rect x="290" y="1388" width="291.4" height="13" fill="#2980b9" rx="1.5"/>
+<text x="587.4" y="1399" fill="#333" font-size="10">47</text>
+<text x="282" y="1416" text-anchor="end" fill="#333"> 43. No shell-isms; orchestrate</text>
+<rect x="290" y="1405" width="291.4" height="13" fill="#f39c12" rx="1.5"/>
+<text x="587.4" y="1416" fill="#333" font-size="10">47</text>
+<text x="282" y="1433" text-anchor="end" fill="#333"> 65. Unique build number</text>
+<rect x="290" y="1422" width="288.3" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="584.3" y="1433" fill="#333" font-size="10">46</text>
+<text x="282" y="1450" text-anchor="end" fill="#333"> 25. Zero-setup local defaults</text>
+<rect x="290" y="1439" width="285.2" height="13" fill="#2980b9" rx="1.5"/>
+<text x="581.2" y="1450" fill="#333" font-size="10">46</text>
+<text x="282" y="1467" text-anchor="end" fill="#333"> 32. OO + SOLID where it earns</text>
+<rect x="290" y="1456" width="285.2" height="13" fill="#16a085" rx="1.5"/>
+<text x="581.2" y="1467" fill="#333" font-size="10">46</text>
+<text x="282" y="1484" text-anchor="end" fill="#333"> 39. Three platforms, two in CI</text>
+<rect x="290" y="1473" width="285.2" height="13" fill="#f39c12" rx="1.5"/>
+<text x="581.2" y="1484" fill="#333" font-size="10">46</text>
+<text x="282" y="1501" text-anchor="end" fill="#333"> 50. Show progress; cache default</text>
+<rect x="290" y="1490" width="282.1" height="13" fill="#d35400" rx="1.5"/>
+<text x="578.1" y="1501" fill="#333" font-size="10">46</text>
+<text x="282" y="1518" text-anchor="end" fill="#333"> 76. Latency budget, gated like cov.</text>
+<rect x="290" y="1507" width="282.1" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="578.1" y="1518" fill="#333" font-size="10">46</text>
+<text x="282" y="1535" text-anchor="end" fill="#333"> 97. Regenerate the README</text>
+<rect x="290" y="1524" width="282.1" height="13" fill="#3498db" rx="1.5"/>
+<text x="578.1" y="1535" fill="#333" font-size="10">46</text>
+<text x="282" y="1552" text-anchor="end" fill="#333"> 49. Podman / UBI / OpenShift</text>
+<rect x="290" y="1541" width="279.0" height="13" fill="#d35400" rx="1.5"/>
+<text x="575.0" y="1552" fill="#333" font-size="10">45</text>
 <text x="282" y="1569" text-anchor="end" fill="#333"> 73. Correctness over speed</text>
-<rect x="290" y="1558" width="313.1" height="13" fill="#2c3e50" rx="1.5"/>
-<text x="609.1" y="1569" fill="#333" font-size="10">50</text>
-<text x="282" y="1586" text-anchor="end" fill="#333"> 43. No shell-isms; orchestrate</text>
-<rect x="290" y="1575" width="310.0" height="13" fill="#f39c12" rx="1.5"/>
-<text x="606.0" y="1586" fill="#333" font-size="10">50</text>
-<text x="282" y="1603" text-anchor="end" fill="#333"> 96. ADRs are immutable</text>
-<rect x="290" y="1592" width="310.0" height="13" fill="#3498db" rx="1.5"/>
-<text x="606.0" y="1603" fill="#333" font-size="10">50</text>
-<text x="282" y="1620" text-anchor="end" fill="#333"> 49. Podman / UBI / OpenShift</text>
-<rect x="290" y="1609" width="303.8" height="13" fill="#d35400" rx="1.5"/>
-<text x="599.8" y="1620" fill="#333" font-size="10">49</text>
-<text x="282" y="1637" text-anchor="end" fill="#333"> 42. Both arches, flag no-ARM</text>
-<rect x="290" y="1626" width="300.7" height="13" fill="#f39c12" rx="1.5"/>
-<text x="596.7" y="1637" fill="#333" font-size="10">48</text>
-<text x="282" y="1654" text-anchor="end" fill="#333"> 68. Push tags by name</text>
-<rect x="290" y="1643" width="300.7" height="13" fill="#7f8c8d" rx="1.5"/>
-<text x="596.7" y="1654" fill="#333" font-size="10">48</text>
+<rect x="290" y="1558" width="275.9" height="13" fill="#2c3e50" rx="1.5"/>
+<text x="571.9" y="1569" fill="#333" font-size="10">44</text>
+<text x="282" y="1586" text-anchor="end" fill="#333"> 36. Size refactors are own commits</text>
+<rect x="290" y="1575" width="272.8" height="13" fill="#27ae60" rx="1.5"/>
+<text x="568.8" y="1586" fill="#333" font-size="10">44</text>
+<text x="282" y="1603" text-anchor="end" fill="#333"> 68. Push tags by name</text>
+<rect x="290" y="1592" width="272.8" height="13" fill="#7f8c8d" rx="1.5"/>
+<text x="568.8" y="1603" fill="#333" font-size="10">44</text>
+<text x="282" y="1620" text-anchor="end" fill="#333"> 96. ADRs are immutable</text>
+<rect x="290" y="1609" width="272.8" height="13" fill="#3498db" rx="1.5"/>
+<text x="568.8" y="1620" fill="#333" font-size="10">44</text>
+<text x="282" y="1637" text-anchor="end" fill="#333"> 15. Jason sprints sized for 90%</text>
+<rect x="290" y="1626" width="269.7" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="565.7" y="1637" fill="#333" font-size="10">44</text>
+<text x="282" y="1654" text-anchor="end" fill="#333"> 33. One non-trivial class per file</text>
+<rect x="290" y="1643" width="263.5" height="13" fill="#16a085" rx="1.5"/>
+<text x="559.5" y="1654" fill="#333" font-size="10">42</text>
 <text x="282" y="1671" text-anchor="end" fill="#333"> 95. Plans carry a live Status</text>
-<rect x="290" y="1660" width="300.7" height="13" fill="#3498db" rx="1.5"/>
-<text x="596.7" y="1671" fill="#333" font-size="10">48</text>
-<text x="282" y="1688" text-anchor="end" fill="#333"> 14. Claudius plans deep</text>
-<rect x="290" y="1677" width="294.5" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="590.5" y="1688" fill="#333" font-size="10">48</text>
-<text x="282" y="1705" text-anchor="end" fill="#333"> 33. One non-trivial class per file</text>
-<rect x="290" y="1694" width="294.5" height="13" fill="#16a085" rx="1.5"/>
-<text x="590.5" y="1705" fill="#333" font-size="10">48</text>
-<text x="282" y="1722" text-anchor="end" fill="#333"> 83. Structured logs past a script</text>
-<rect x="290" y="1711" width="291.4" height="13" fill="#34495e" rx="1.5"/>
-<text x="587.4" y="1722" fill="#333" font-size="10">47</text>
-<text x="282" y="1739" text-anchor="end" fill="#333"> 90. Cleanup sweep after release</text>
-<rect x="290" y="1728" width="291.4" height="13" fill="#1abc9c" rx="1.5"/>
-<text x="587.4" y="1739" fill="#333" font-size="10">47</text>
+<rect x="290" y="1660" width="263.5" height="13" fill="#3498db" rx="1.5"/>
+<text x="559.5" y="1671" fill="#333" font-size="10">42</text>
+<text x="282" y="1688" text-anchor="end" fill="#333"> 90. Cleanup sweep after release</text>
+<rect x="290" y="1677" width="257.3" height="13" fill="#1abc9c" rx="1.5"/>
+<text x="553.3" y="1688" fill="#333" font-size="10">42</text>
+<text x="282" y="1705" text-anchor="end" fill="#333"> 83. Structured logs past a script</text>
+<rect x="290" y="1694" width="248.0" height="13" fill="#34495e" rx="1.5"/>
+<text x="544.0" y="1705" fill="#333" font-size="10">40</text>
+<text x="282" y="1722" text-anchor="end" fill="#333"> 42. Both arches, flag no-ARM</text>
+<rect x="290" y="1711" width="244.9" height="13" fill="#f39c12" rx="1.5"/>
+<text x="540.9" y="1722" fill="#333" font-size="10">40</text>
+<text x="282" y="1739" text-anchor="end" fill="#333"> 14. Claudius plans deep</text>
+<rect x="290" y="1728" width="232.5" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="528.5" y="1739" fill="#333" font-size="10">38</text>
 <text x="282" y="1756" text-anchor="end" fill="#333"> 13. Five roles, human is final</text>
-<rect x="290" y="1745" width="269.7" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="565.7" y="1756" fill="#333" font-size="10">44</text>
+<rect x="290" y="1745" width="207.7" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="503.7" y="1756" fill="#333" font-size="10">34</text>
 <text x="282" y="1773" text-anchor="end" fill="#333"> 18. Linda searches wide</text>
-<rect x="290" y="1762" width="248.0" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="544.0" y="1773" fill="#333" font-size="10">40</text>
+<rect x="290" y="1762" width="186.0" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="482.0" y="1773" fill="#333" font-size="10">30</text>
 <text x="282" y="1790" text-anchor="end" fill="#333"> 19. Go local rebinds the crew</text>
-<rect x="290" y="1779" width="235.6" height="13" fill="#8e44ad" rx="1.5"/>
-<text x="531.6" y="1790" fill="#333" font-size="10">38</text>
+<rect x="290" y="1779" width="158.1" height="13" fill="#8e44ad" rx="1.5"/>
+<text x="454.1" y="1790" fill="#333" font-size="10">26</text>
 <rect x="652.0" y="1539" width="200" height="255" fill="#ffffff" stroke="#ddd" rx="4"/>
 <text x="662.0" y="1555" font-size="11" font-weight="bold" fill="#333">Section</text>
 <rect x="662.0" y="1567" width="11" height="11" fill="#c0392b" rx="1.5"/>

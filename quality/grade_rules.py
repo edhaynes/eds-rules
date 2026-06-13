@@ -34,107 +34,110 @@ SECTIONS = {
 }
 
 # (num, section, short title, pertinence, security, cost_eff, arch, enforce, generality)
+# Recalibrated 2026-06-13 to use the FULL 0-10 range (Eddie: kill the central-
+# tendency bias; a niche/never-violated rule must be free to score 1-2). 50 is
+# the keep/cut bar — below it, a rule earns its slot on conviction, not leverage.
 RULES = [
-    (1,  "hard", "Secret scan before ship",        10, 10, 9, 5, 10, 10),
-    (2,  "hard", "Never hardcode a secret",          9, 10, 9, 6,  7, 10),
-    (3,  "hard", "Distrust every external input",    8, 10, 8, 6,  6,  9),
-    (4,  "hard", "Destruction needs a human",        8,  9, 9, 5,  6, 10),
-    (5,  "hard", "Autonomy bounded by VC",           7,  7, 8, 5,  7,  8),
-    (6,  "hard", "Push early, push always",          8,  5, 8, 5,  8,  9),
-    (7,  "hard", "Green commit, healthy handover",   8,  4, 7, 6,  8,  9),
-    (8,  "hard", "One purpose per commit",           7,  3, 8, 7,  6,  9),
-    (9,  "hard", "Fail fast",                        8,  6, 8, 8,  6, 10),
-    (10, "hard", "Disclose every dependency",        6,  6, 7, 6,  5,  9),
-    (11, "hard", "No path/OS assumptions; script",   7,  4, 7, 6,  6,  9),
-    (12, "crew", "Powell rule: 90% then decide",     9,  3, 8, 6,  3,  8),
-    (13, "crew", "Five roles, human is final",       5,  2, 6, 5,  2,  4),
-    (14, "crew", "Claudius plans deep",              5,  2, 6, 7,  2,  5),
-    (15, "crew", "Jason sprints sized for 90%",      6,  2, 7, 7,  2,  5),
-    (16, "crew", "Claude searches before building",  7,  3, 8, 7,  3,  7),
-    (17, "crew", "Claudina: cross-platform day one", 6,  4, 6, 6,  4,  7),
-    (18, "crew", "Linda searches wide",              4,  2, 6, 4,  2,  5),
-    (19, "crew", "Go local rebinds the crew",        3,  3, 5, 5,  3,  4),
-    (20, "config", "Zero hardcoded values",          8,  5, 8, 8,  6, 10),
-    (21, "config", "Never silently fall back",       6,  6, 7, 7,  5,  9),
-    (22, "config", "Validate config at startup",     7,  5, 8, 7,  7,  9),
-    (23, "config", "One config layer, one order",    7,  4, 7, 8,  5,  9),
-    (24, "config", "Local default, not hardcoded",   6,  3, 7, 7,  4,  8),
-    (25, "config", "Zero-setup local defaults",      6,  2, 7, 6,  4,  8),
-    (26, "config", "No magic numbers",               7,  3, 7, 7,  7,  9),
-    (27, "config", "Ship the .env.example",          6,  4, 8, 6,  7,  9),
-    (28, "arch", "Architecture beats language",      5,  2, 6, 8,  1,  9),
-    (29, "arch", "Swappable interface per axis",     6,  5, 6, 8,  4,  8),
-    (30, "arch", "Search open source first",         7,  3, 8, 7,  3,  8),
-    (31, "arch", "DI over globals",                  6,  4, 7, 8,  5,  8),
-    (32, "arch", "OO + SOLID where it earns",        5,  2, 6, 7,  3,  7),
-    (33, "arch", "One non-trivial class per file",   4,  1, 6, 6,  6,  7),
-    (34, "size", "Files small, never >1000 lines",   6,  1, 6, 7,  8,  8),
-    (35, "size", "No god classes",                   5,  2, 6, 7,  5,  8),
-    (36, "size", "Size refactors are own commits",   5,  2, 7, 6,  4,  8),
-    (37, "size", "Small functions, few params",      6,  1, 6, 7,  8,  8),
-    (38, "size", "Shallow nesting",                  5,  2, 6, 7,  7,  8),
-    (39, "xplat", "Three platforms, two in CI",      5,  2, 6, 5,  6,  7),
-    (40, "xplat", "Path library + LF endings",       6,  2, 7, 6,  8,  8),
-    (41, "xplat", "No hardcoded temp/home/drive",    6,  3, 7, 6,  7,  8),
-    (42, "xplat", "Both arches, flag no-ARM",        5,  2, 6, 5,  5,  6),
-    (43, "xplat", "No shell-isms; orchestrate",      5,  2, 6, 6,  4,  7),
-    (44, "deploy", "Storage goes through adapter",   5,  4, 6, 7,  5,  7),
-    (45, "deploy", "Same code on-prem or cloud",     5,  3, 6, 7,  3,  7),
-    (46, "deploy", "Pre-deploy gates never off",     7,  8, 7, 6,  7,  8),
-    (47, "deploy", "Idempotent, safe to re-run",     7,  4, 7, 7,  5,  8),
-    (48, "deploy", "Health endpoints + SIGTERM",     5,  3, 6, 6,  7,  7),
-    (49, "deploy", "Podman / UBI / OpenShift",       5,  4, 5, 6,  6,  3),
-    (50, "deploy", "Show progress; cache default",   5,  2, 6, 6,  4,  8),
-    (51, "secret", "Hooks before first commit",      8,  9, 8, 5,  8,  9),
-    (52, "secret", "A touched secret is burned",     5,  9, 6, 4,  3,  8),
-    (53, "secret", "Never copy a secret anywhere",   6,  9, 7, 5,  4,  8),
-    (54, "secret", "Scan the whole artifact",        6,  9, 7, 5,  7,  8),
-    (55, "secret", "Scan the range, not the tip",    6,  9, 7, 5,  7,  8),
-    (56, "secret", "Inspect config-file diffs",      7,  9, 7, 5,  6,  8),
-    (57, "secret", "Scan files you didn't write",    6,  8, 6, 5,  5,  8),
-    (58, "secret", "Pre-push rescan + tests",        6,  8, 7, 5,  8,  8),
-    (59, "secret", "Gitignore keys from day one",    7,  8, 9, 5,  8,  9),
-    (60, "secret", "After a leak, fix the hook",     4,  7, 6, 5,  4,  8),
-    (61, "version", "Tags are immutable",            5,  4, 7, 5,  7,  8),
-    (62, "version", "Versions only move forward",    5,  3, 7, 5,  6,  8),
-    (63, "version", "SemVer, one canonical home",    6,  2, 7, 7,  6,  8),
-    (64, "version", "Fetch tags before tagging",     5,  3, 7, 4,  7,  7),
-    (65, "version", "Unique build number",           5,  2, 6, 5,  8,  7),
-    (66, "version", "Changelog rides the bump",      6,  1, 7, 5,  6,  8),
-    (67, "version", "Show the version everywhere",   5,  2, 7, 5,  6,  8),
-    (68, "version", "Push tags by name",             4,  3, 6, 4,  7,  7),
-    (69, "test", "Inspect, grade to a rubric",       7,  3, 7, 7,  4,  8),
-    (70, "test", "Tests with logic, regress first",  8,  4, 7, 7,  6,  9),
-    (71, "test", "Contract first, code second",      6,  3, 5, 7,  4,  8),
-    (72, "test", "100% line + branch coverage",      6,  4, 5, 6,  9,  7),
-    (73, "test", "Correctness over speed",           5,  3, 6, 6,  2,  8),
-    (74, "test", "Coverage never goes down",         5,  3, 6, 6,  8,  8),
-    (75, "test", "Full regression, with numbers",    7,  4, 7, 6,  7,  9),
-    (76, "test", "Latency budget, gated like cov.",  5,  3, 5, 6,  6,  7),
-    (77, "test", "No network in unit tests",         6,  3, 7, 7,  7,  9),
-    (78, "errors", "No swallowed exceptions",        7,  5, 7, 7,  7,  9),
-    (79, "errors", "Loud dev, graceful prod",        6,  4, 7, 7,  4,  9),
-    (80, "errors", "A logger, never print",          7,  3, 7, 6,  8,  9),
-    (81, "errors", "AI errors surface; no fake tool",7,  4, 7, 6,  4,  8),
-    (82, "errors", "Cleanup is structural",          6,  3, 7, 7,  6,  9),
-    (83, "errors", "Structured logs past a script",  4,  2, 6, 6,  4,  7),
-    (84, "deps", "Pin it and lock it",               7,  6, 8, 6,  8,  9),
-    (85, "deps", "Audit for vulnerabilities",        6,  7, 7, 5,  7,  8),
-    (86, "deps", "Stdlib plus one, not five",        6,  4, 7, 8,  4,  8),
-    (87, "deps", "Project-local virtualenv",         6,  4, 7, 6,  7,  6),
-    (88, "hygiene", "Lint + format every commit",    7,  3, 8, 6,  9,  9),
-    (89, "hygiene", "Dead-code pass after features", 6,  2, 7, 7,  7,  8),
-    (90, "hygiene", "Cleanup sweep after release",   4,  2, 6, 6,  4,  7),
-    (91, "hygiene", "No commented-out code",         6,  2, 7, 6,  8,  8),
-    (92, "hygiene", "No orphan TODOs",               5,  2, 6, 5,  7,  8),
-    (93, "docs", "Persist decisions same commit",    7,  3, 7, 6,  4,  8),
-    (94, "docs", "File bugs/features on sight",      7,  2, 7, 5,  4,  8),
-    (95, "docs", "Plans carry a live Status",        5,  2, 6, 5,  5,  6),
-    (96, "docs", "ADRs are immutable",               5,  2, 6, 6,  4,  7),
-    (97, "docs", "Regenerate the README",            6,  2, 6, 5,  4,  8),
-    (98, "working", "Plan first, size for 90%",      8,  3, 7, 7,  3,  9),
-    (99, "working", "No flattery, no yes-manning",   7,  2, 7, 5,  3,  8),
-    (100,"working", "Verbatim errors, diffs, asks",  7,  3, 7, 5,  4,  9),
+    (1,  "hard", "Secret scan before ship",        10, 10, 10, 4, 10,  9),
+    (2,  "hard", "Never hardcode a secret",          9, 10,  9, 4,  6, 10),
+    (3,  "hard", "Distrust every external input",    7,  9,  8, 5,  5,  9),
+    (4,  "hard", "Destruction needs a human",        7,  8,  9, 3,  6, 10),
+    (5,  "hard", "Autonomy bounded by VC",           6,  6,  8, 4,  7,  7),
+    (6,  "hard", "Push early, push always",          7,  4,  8, 3,  8,  8),
+    (7,  "hard", "Green commit, healthy handover",   7,  3,  7, 5,  8,  9),
+    (8,  "hard", "One purpose per commit",           6,  2,  8, 6,  5,  9),
+    (9,  "hard", "Fail fast",                        7,  5,  8, 8,  6, 10),
+    (10, "hard", "Disclose every dependency",        5,  5,  7, 4,  5,  9),
+    (11, "hard", "No path/OS assumptions; script",   7,  3,  7, 5,  6,  8),
+    (12, "crew", "Powell rule: 90% then decide",     8,  2,  8, 5,  2,  8),
+    (13, "crew", "Five roles, human is final",       4,  1,  5, 4,  1,  3),
+    (14, "crew", "Claudius plans deep",              4,  1,  5, 6,  1,  4),
+    (15, "crew", "Jason sprints sized for 90%",      5,  1,  6, 6,  2,  4),
+    (16, "crew", "Claude searches before building",  6,  2,  7, 6,  2,  7),
+    (17, "crew", "Claudina: cross-platform day one", 5,  3,  6, 5,  3,  6),
+    (18, "crew", "Linda searches wide",              3,  1,  5, 3,  1,  4),
+    (19, "crew", "Go local rebinds the crew",        2,  1,  4, 4,  2,  2),
+    (20, "config", "Zero hardcoded values",          8,  4,  8, 8,  6, 10),
+    (21, "config", "Never silently fall back",       5,  5,  7, 7,  5,  8),
+    (22, "config", "Validate config at startup",     6,  4,  8, 7,  7,  9),
+    (23, "config", "One config layer, one order",    6,  3,  7, 8,  5,  8),
+    (24, "config", "Local default, not hardcoded",   4,  2,  6, 6,  4,  7),
+    (25, "config", "Zero-setup local defaults",      4,  1,  7, 5,  4,  7),
+    (26, "config", "No magic numbers",               6,  2,  7, 7,  7,  9),
+    (27, "config", "Ship the .env.example",          5,  3,  8, 5,  7,  8),
+    (28, "arch", "Architecture beats language",      4,  1,  6, 8,  1,  9),
+    (29, "arch", "Swappable interface per axis",     5,  4,  6, 8,  3,  7),
+    (30, "arch", "Search open source first",         6,  2,  8, 7,  2,  8),
+    (31, "arch", "DI over globals",                  5,  3,  7, 9,  5,  8),
+    (32, "arch", "OO + SOLID where it earns",        4,  1,  6, 7,  3,  7),
+    (33, "arch", "One non-trivial class per file",   3,  1,  5, 6,  6,  7),
+    (34, "size", "Files small, never >1000 lines",   5,  1,  6, 7,  9,  8),
+    (35, "size", "No god classes",                   4,  1,  6, 8,  4,  8),
+    (36, "size", "Size refactors are own commits",   4,  1,  6, 5,  3,  8),
+    (37, "size", "Small functions, few params",      5,  1,  6, 8,  9,  8),
+    (38, "size", "Shallow nesting",                  4,  1,  6, 7,  7,  8),
+    (39, "xplat", "Three platforms, two in CI",      4,  2,  6, 4,  6,  7),
+    (40, "xplat", "Path library + LF endings",       6,  2,  7, 6,  8,  8),
+    (41, "xplat", "No hardcoded temp/home/drive",    5,  3,  7, 6,  7,  8),
+    (42, "xplat", "Both arches, flag no-ARM",        4,  1,  5, 4,  4,  6),
+    (43, "xplat", "No shell-isms; orchestrate",      4,  2,  6, 6,  4,  7),
+    (44, "deploy", "Storage goes through adapter",   4,  3,  6, 8,  4,  7),
+    (45, "deploy", "Same code on-prem or cloud",     4,  2,  6, 7,  3,  7),
+    (46, "deploy", "Pre-deploy gates never off",     6,  8,  7, 5,  7,  8),
+    (47, "deploy", "Idempotent, safe to re-run",     6,  4,  7, 7,  5,  8),
+    (48, "deploy", "Health endpoints + SIGTERM",     4,  3,  6, 6,  7,  7),
+    (49, "deploy", "Podman / UBI / OpenShift",       4,  4,  5, 6,  6,  2),
+    (50, "deploy", "Show progress; cache default",   4,  1,  6, 6,  3,  8),
+    (51, "secret", "Hooks before first commit",      7,  9,  8, 4,  8,  9),
+    (52, "secret", "A touched secret is burned",     4,  9,  6, 3,  2,  8),
+    (53, "secret", "Never copy a secret anywhere",   5,  9,  7, 4,  3,  8),
+    (54, "secret", "Scan the whole artifact",        5,  9,  7, 4,  7,  8),
+    (55, "secret", "Scan the range, not the tip",    5,  9,  7, 4,  7,  8),
+    (56, "secret", "Inspect config-file diffs",      6,  9,  7, 4,  6,  8),
+    (57, "secret", "Scan files you didn't write",    5,  8,  6, 4,  5,  8),
+    (58, "secret", "Pre-push rescan + tests",        5,  8,  7, 4,  8,  8),
+    (59, "secret", "Gitignore keys from day one",    6,  8,  9, 4,  8,  9),
+    (60, "secret", "After a leak, fix the hook",     3,  7,  6, 4,  3,  8),
+    (61, "version", "Tags are immutable",            4,  4,  7, 4,  7,  8),
+    (62, "version", "Versions only move forward",    4,  3,  7, 4,  6,  8),
+    (63, "version", "SemVer, one canonical home",    5,  2,  7, 7,  6,  8),
+    (64, "version", "Fetch tags before tagging",     4,  3,  7, 3,  7,  7),
+    (65, "version", "Unique build number",           4,  1,  6, 4,  8,  7),
+    (66, "version", "Changelog rides the bump",      5,  1,  7, 4,  6,  8),
+    (67, "version", "Show the version everywhere",   4,  2,  7, 4,  6,  8),
+    (68, "version", "Push tags by name",             3,  3,  6, 3,  7,  7),
+    (69, "test", "Inspect, grade to a rubric",       6,  2,  7, 6,  4,  8),
+    (70, "test", "Tests with logic, regress first",  7,  4,  7, 6,  6,  9),
+    (71, "test", "Contract first, code second",      5,  3,  5, 7,  4,  8),
+    (72, "test", "100% line + branch coverage",      5,  4,  4, 5,  9,  7),
+    (73, "test", "Correctness over speed",           4,  2,  6, 5,  2,  8),
+    (74, "test", "Coverage never goes down",         4,  2,  6, 5,  8,  8),
+    (75, "test", "Full regression, with numbers",    6,  4,  7, 5,  7,  9),
+    (76, "test", "Latency budget, gated like cov.",  4,  2,  5, 5,  6,  7),
+    (77, "test", "No network in unit tests",         6,  3,  7, 7,  7,  9),
+    (78, "errors", "No swallowed exceptions",        6,  4,  7, 7,  7,  9),
+    (79, "errors", "Loud dev, graceful prod",        5,  4,  7, 7,  3,  9),
+    (80, "errors", "A logger, never print",          6,  2,  7, 5,  8,  9),
+    (81, "errors", "AI errors surface; no fake tool",6,  3,  7, 5,  4,  8),
+    (82, "errors", "Cleanup is structural",          5,  3,  7, 7,  6,  9),
+    (83, "errors", "Structured logs past a script",  3,  1,  6, 5,  3,  7),
+    (84, "deps", "Pin it and lock it",               6,  6,  8, 5,  8,  9),
+    (85, "deps", "Audit for vulnerabilities",        5,  7,  7, 4,  7,  8),
+    (86, "deps", "Stdlib plus one, not five",        5,  4,  7, 8,  3,  8),
+    (87, "deps", "Project-local virtualenv",         5,  4,  7, 5,  7,  5),
+    (88, "hygiene", "Lint + format every commit",    6,  2,  8, 5,  9,  9),
+    (89, "hygiene", "Dead-code pass after features", 5,  2,  7, 7,  7,  8),
+    (90, "hygiene", "Cleanup sweep after release",   3,  1,  6, 6,  3,  7),
+    (91, "hygiene", "No commented-out code",         5,  2,  7, 5,  8,  8),
+    (92, "hygiene", "No orphan TODOs",               4,  2,  6, 4,  7,  8),
+    (93, "docs", "Persist decisions same commit",    6,  2,  7, 5,  3,  8),
+    (94, "docs", "File bugs/features on sight",      6,  1,  7, 4,  3,  8),
+    (95, "docs", "Plans carry a live Status",        4,  1,  6, 4,  5,  6),
+    (96, "docs", "ADRs are immutable",               4,  1,  6, 5,  4,  7),
+    (97, "docs", "Regenerate the README",            5,  1,  6, 4,  3,  8),
+    (98, "working", "Plan first, size for 90%",      7,  2,  7, 6,  3,  9),
+    (99, "working", "No flattery, no yes-manning",   6,  1,  7, 4,  2,  8),
+    (100,"working", "Verbatim errors, diffs, asks",  6,  2,  7, 4,  4,  9),
 ]
 
 
@@ -193,13 +196,12 @@ def render_svg(rows, path):
                  f'stroke="#e8e8e8"/>')
         s.append(f'<text x="{gx:.1f}" y="{top-12}" font-size="10" fill="#999" '
                  f'text-anchor="middle">{g}</text>')
-    # 90 / 95 "solid A-" anchor lines
-    for g, col in ((90, "#27ae60"), (95, "#16a085")):
-        gx = x(g)
-        s.append(f'<line x1="{gx:.1f}" y1="{top-6}" x2="{gx:.1f}" y2="{height-bottom+4}" '
-                 f'stroke="{col}" stroke-width="1.2" stroke-dasharray="3,3"/>')
-        s.append(f'<text x="{gx:.1f}" y="{height-bottom+18}" font-size="9" fill="{col}" '
-                 f'text-anchor="middle">{g}</text>')
+    # 50 = Eddie's keep/cut bar (5/10 = above average). Below it, reconsider the rule.
+    gx = x(50)
+    s.append(f'<line x1="{gx:.1f}" y1="{top-6}" x2="{gx:.1f}" y2="{height-bottom+4}" '
+             f'stroke="#c0392b" stroke-width="1.6" stroke-dasharray="5,3"/>')
+    s.append(f'<text x="{gx:.1f}" y="{height-bottom+18}" font-size="10" fill="#c0392b" '
+             f'text-anchor="middle" font-weight="bold">50 — keep/cut bar</text>')
 
     for i, r in enumerate(rows):
         y = top + i * row_h
@@ -224,7 +226,7 @@ def render_svg(rows, path):
         s.append(f'<text x="{lx+16}" y="{ey+9}" font-size="10" fill="#444">{esc(lab)}</text>')
 
     s.append('</svg>')
-    path.write_text("\n".join(s))
+    path.write_text("\n".join(s) + "\n")
 
 
 def summary(rows):
@@ -243,6 +245,10 @@ def summary(rows):
     for key, (lab, _) in SECTIONS.items():
         vals = [r["composite"] for r in rows if r["section"] == key]
         print(f"  {sum(vals)/len(vals):5.1f}  {lab} ({len(vals)})")
+    below = [r for r in rows_sorted if r["composite"] < 50.0]
+    print(f"\nBELOW THE 50 KEEP/CUT BAR ({len(below)} rules):")
+    for r in below:
+        print(f"  {r['composite']:5.1f}  {r['num']:>3}. {r['short']}")
 
 
 def main():

@@ -1,101 +1,101 @@
 num,section,short_title,pertinence,security,cost_eff,arch_simpl,enforce,generality,composite
-1,hard,Secret scan before ship,10,10,9,5,10,10,90.5
-2,hard,Never hardcode a secret,9,10,9,6,7,10,86.0
-3,hard,Distrust every external input,8,10,8,6,6,9,79.0
-4,hard,Destruction needs a human,8,9,9,5,6,10,79.0
-5,hard,Autonomy bounded by VC,7,7,8,5,7,8,70.0
-6,hard,Push early; push always,8,5,8,5,8,9,72.0
-7,hard,Green commit; healthy handover,8,4,7,6,8,9,70.0
-8,hard,One purpose per commit,7,3,8,7,6,9,67.0
-9,hard,Fail fast,8,6,8,8,6,10,77.0
-10,hard,Disclose every dependency,6,6,7,6,5,9,64.0
-11,hard,No path/OS assumptions; script,7,4,7,6,6,9,65.0
-12,crew,Powell rule: 90% then decide,9,3,8,6,3,8,67.5
-13,crew,Five roles; human is final,5,2,6,5,2,4,43.5
-14,crew,Claudius plans deep,5,2,6,7,2,5,47.5
-15,crew,Jason sprints sized for 90%,6,2,7,7,2,5,52.5
-16,crew,Claude searches before building,7,3,8,7,3,7,62.0
-17,crew,Claudina: cross-platform day one,6,4,6,6,4,7,56.0
-18,crew,Linda searches wide,4,2,6,4,2,5,40.0
-19,crew,Go local rebinds the crew,3,3,5,5,3,4,38.0
-20,config,Zero hardcoded values,8,5,8,8,6,10,75.5
-21,config,Never silently fall back,6,6,7,7,5,9,65.5
-22,config,Validate config at startup,7,5,8,7,7,9,71.0
-23,config,One config layer; one order,7,4,7,8,5,9,67.0
-24,config,Local default; not hardcoded,6,3,7,7,4,8,59.0
-25,config,Zero-setup local defaults,6,2,7,6,4,8,56.0
-26,config,No magic numbers,7,3,7,7,7,9,66.0
-27,config,Ship the .env.example,6,4,8,6,7,9,65.0
-28,arch,Architecture beats language,5,2,6,8,1,9,52.0
-29,arch,Swappable interface per axis,6,5,6,8,4,8,61.5
-30,arch,Search open source first,7,3,8,7,3,8,63.0
-31,arch,DI over globals,6,4,7,8,5,8,63.0
-32,arch,OO + SOLID where it earns,5,2,6,7,3,7,50.5
-33,arch,One non-trivial class per file,4,1,6,6,6,7,47.5
-34,size,Files small; never >1000 lines,6,1,6,7,8,8,58.0
-35,size,No god classes,5,2,6,7,5,8,53.5
-36,size,Size refactors are own commits,5,2,7,6,4,8,53.0
-37,size,Small functions; few params,6,1,6,7,8,8,58.0
-38,size,Shallow nesting,5,2,6,7,7,8,55.5
-39,xplat,Three platforms; two in CI,5,2,6,5,6,7,50.5
+1,hard,Secret scan before ship,10,10,10,4,10,9,90.0
+2,hard,Never hardcode a secret,9,10,9,4,6,10,82.0
+3,hard,Distrust every external input,7,9,8,5,5,9,72.0
+4,hard,Destruction needs a human,7,8,9,3,6,10,71.5
+5,hard,Autonomy bounded by VC,6,6,8,4,7,7,63.0
+6,hard,Push early; push always,7,4,8,3,8,8,63.5
+7,hard,Green commit; healthy handover,7,3,7,5,8,9,64.0
+8,hard,One purpose per commit,6,2,8,6,5,9,60.0
+9,hard,Fail fast,7,5,8,8,6,10,72.5
+10,hard,Disclose every dependency,5,5,7,4,5,9,56.5
+11,hard,No path/OS assumptions; script,7,3,7,5,6,8,61.0
+12,crew,Powell rule: 90% then decide,8,2,8,5,2,8,60.5
+13,crew,Five roles; human is final,4,1,5,4,1,3,33.5
+14,crew,Claudius plans deep,4,1,5,6,1,4,37.5
+15,crew,Jason sprints sized for 90%,5,1,6,6,2,4,43.5
+16,crew,Claude searches before building,6,2,7,6,2,7,53.0
+17,crew,Claudina: cross-platform day one,5,3,6,5,3,6,48.0
+18,crew,Linda searches wide,3,1,5,3,1,4,30.0
+19,crew,Go local rebinds the crew,2,1,4,4,2,2,25.5
+20,config,Zero hardcoded values,8,4,8,8,6,10,74.0
+21,config,Never silently fall back,5,5,7,7,5,8,60.0
+22,config,Validate config at startup,6,4,8,7,7,9,66.5
+23,config,One config layer; one order,6,3,7,8,5,8,61.5
+24,config,Local default; not hardcoded,4,2,6,6,4,7,47.0
+25,config,Zero-setup local defaults,4,1,7,5,4,7,46.0
+26,config,No magic numbers,6,2,7,7,7,9,61.5
+27,config,Ship the .env.example,5,3,8,5,7,8,58.0
+28,arch,Architecture beats language,4,1,6,8,1,9,47.5
+29,arch,Swappable interface per axis,5,4,6,8,3,7,55.0
+30,arch,Search open source first,6,2,8,7,2,8,57.5
+31,arch,DI over globals,5,3,7,9,5,8,60.0
+32,arch,OO + SOLID where it earns,4,1,6,7,3,7,46.0
+33,arch,One non-trivial class per file,3,1,5,6,6,7,42.5
+34,size,Files small; never >1000 lines,5,1,6,7,9,8,56.0
+35,size,No god classes,4,1,6,8,4,8,49.5
+36,size,Size refactors are own commits,4,1,6,5,3,8,44.0
+37,size,Small functions; few params,5,1,6,8,9,8,57.5
+38,size,Shallow nesting,4,1,6,7,7,8,51.0
+39,xplat,Three platforms; two in CI,4,2,6,4,6,7,46.0
 40,xplat,Path library + LF endings,6,2,7,6,8,8,60.0
-41,xplat,No hardcoded temp/home/drive,6,3,7,6,7,8,60.5
-42,xplat,Both arches; flag no-ARM,5,2,6,5,5,6,48.5
-43,xplat,No shell-isms; orchestrate,5,2,6,6,4,7,50.0
-44,deploy,Storage goes through adapter,5,4,6,7,5,7,55.5
-45,deploy,Same code on-prem or cloud,5,3,6,7,3,7,52.0
-46,deploy,Pre-deploy gates never off,7,8,7,6,7,8,71.0
-47,deploy,Idempotent; safe to re-run,7,4,7,7,5,8,64.5
-48,deploy,Health endpoints + SIGTERM,5,3,6,6,7,7,54.5
-49,deploy,Podman / UBI / OpenShift,5,4,5,6,6,3,49.0
-50,deploy,Show progress; cache default,5,2,6,6,4,8,51.0
-51,secret,Hooks before first commit,8,9,8,5,8,9,78.0
-52,secret,A touched secret is burned,5,9,6,4,3,8,57.5
-53,secret,Never copy a secret anywhere,6,9,7,5,4,8,65.0
-54,secret,Scan the whole artifact,6,9,7,5,7,8,68.0
-55,secret,Scan the range; not the tip,6,9,7,5,7,8,68.0
-56,secret,Inspect config-file diffs,7,9,7,5,6,8,70.0
-57,secret,Scan files you didn't write,6,8,6,5,5,8,62.5
-58,secret,Pre-push rescan + tests,6,8,7,5,8,8,67.5
-59,secret,Gitignore keys from day one,7,8,9,5,8,9,75.5
-60,secret,After a leak; fix the hook,4,7,6,5,4,8,54.0
-61,version,Tags are immutable,5,4,7,5,7,8,57.5
-62,version,Versions only move forward,5,3,7,5,6,8,55.0
-63,version,SemVer; one canonical home,6,2,7,7,6,8,59.5
-64,version,Fetch tags before tagging,5,3,7,4,7,7,53.5
-65,version,Unique build number,5,2,6,5,8,7,52.5
-66,version,Changelog rides the bump,6,1,7,5,6,8,55.0
-67,version,Show the version everywhere,5,2,7,5,6,8,53.5
-68,version,Push tags by name,4,3,6,4,7,7,48.5
-69,test,Inspect; grade to a rubric,7,3,7,7,4,8,62.0
-70,test,Tests with logic; regress first,8,4,7,7,6,9,69.5
-71,test,Contract first; code second,6,3,5,7,4,8,55.0
-72,test,100% line + branch coverage,6,4,5,6,9,7,59.0
-73,test,Correctness over speed,5,3,6,6,2,8,50.5
-74,test,Coverage never goes down,5,3,6,6,8,8,56.5
-75,test,Full regression; with numbers,7,4,7,6,7,9,66.0
-76,test,Latency budget; gated like cov.,5,3,5,6,6,7,51.5
+41,xplat,No hardcoded temp/home/drive,5,3,7,6,7,8,57.5
+42,xplat,Both arches; flag no-ARM,4,1,5,4,4,6,39.5
+43,xplat,No shell-isms; orchestrate,4,2,6,6,4,7,47.0
+44,deploy,Storage goes through adapter,4,3,6,8,4,7,51.5
+45,deploy,Same code on-prem or cloud,4,2,6,7,3,7,47.5
+46,deploy,Pre-deploy gates never off,6,8,7,5,7,8,66.5
+47,deploy,Idempotent; safe to re-run,6,4,7,7,5,8,61.5
+48,deploy,Health endpoints + SIGTERM,4,3,6,6,7,7,51.5
+49,deploy,Podman / UBI / OpenShift,4,4,5,6,6,2,45.0
+50,deploy,Show progress; cache default,4,1,6,6,3,8,45.5
+51,secret,Hooks before first commit,7,9,8,4,8,9,73.5
+52,secret,A touched secret is burned,4,9,6,3,2,8,52.0
+53,secret,Never copy a secret anywhere,5,9,7,4,3,8,59.5
+54,secret,Scan the whole artifact,5,9,7,4,7,8,63.5
+55,secret,Scan the range; not the tip,5,9,7,4,7,8,63.5
+56,secret,Inspect config-file diffs,6,9,7,4,6,8,65.5
+57,secret,Scan files you didn't write,5,8,6,4,5,8,58.0
+58,secret,Pre-push rescan + tests,5,8,7,4,8,8,63.0
+59,secret,Gitignore keys from day one,6,8,9,4,8,9,71.0
+60,secret,After a leak; fix the hook,3,7,6,4,3,8,48.5
+61,version,Tags are immutable,4,4,7,4,7,8,53.0
+62,version,Versions only move forward,4,3,7,4,6,8,50.5
+63,version,SemVer; one canonical home,5,2,7,7,6,8,56.5
+64,version,Fetch tags before tagging,4,3,7,3,7,7,49.0
+65,version,Unique build number,4,1,6,4,8,7,46.5
+66,version,Changelog rides the bump,5,1,7,4,6,8,50.5
+67,version,Show the version everywhere,4,2,7,4,6,8,49.0
+68,version,Push tags by name,3,3,6,3,7,7,44.0
+69,test,Inspect; grade to a rubric,6,2,7,6,4,8,56.0
+70,test,Tests with logic; regress first,7,4,7,6,6,9,65.0
+71,test,Contract first; code second,5,3,5,7,4,8,52.0
+72,test,100% line + branch coverage,5,4,4,5,9,7,52.5
+73,test,Correctness over speed,4,2,6,5,2,8,44.5
+74,test,Coverage never goes down,4,2,6,5,8,8,50.5
+75,test,Full regression; with numbers,6,4,7,5,7,9,61.5
+76,test,Latency budget; gated like cov.,4,2,5,5,6,7,45.5
 77,test,No network in unit tests,6,3,7,7,7,9,63.0
-78,errors,No swallowed exceptions,7,5,7,7,7,9,69.0
-79,errors,Loud dev; graceful prod,6,4,7,7,4,9,61.5
-80,errors,A logger; never print,7,3,7,6,8,9,65.5
-81,errors,AI errors surface; no fake tool,7,4,7,6,4,8,62.0
-82,errors,Cleanup is structural,6,3,7,7,6,9,62.0
-83,errors,Structured logs past a script,4,2,6,6,4,7,47.0
-84,deps,Pin it and lock it,7,6,8,6,8,9,72.0
-85,deps,Audit for vulnerabilities,6,7,7,5,7,8,65.0
-86,deps,Stdlib plus one; not five,6,4,7,8,4,8,62.0
-87,deps,Project-local virtualenv,6,4,7,6,7,6,60.0
-88,hygiene,Lint + format every commit,7,3,8,6,9,9,68.5
-89,hygiene,Dead-code pass after features,6,2,7,7,7,8,60.5
-90,hygiene,Cleanup sweep after release,4,2,6,6,4,7,47.0
-91,hygiene,No commented-out code,6,2,7,6,8,8,60.0
-92,hygiene,No orphan TODOs,5,2,6,5,7,8,52.5
-93,docs,Persist decisions same commit,7,3,7,6,4,8,60.5
-94,docs,File bugs/features on sight,7,2,7,5,4,8,57.5
-95,docs,Plans carry a live Status,5,2,6,5,5,6,48.5
-96,docs,ADRs are immutable,5,2,6,6,4,7,50.0
-97,docs,Regenerate the README,6,2,6,5,4,8,52.5
-98,working,Plan first; size for 90%,8,3,7,7,3,9,65.0
-99,working,No flattery; no yes-manning,7,2,7,5,3,8,56.5
-100,working,Verbatim errors; diffs; asks,7,3,7,5,4,9,60.0
+78,errors,No swallowed exceptions,6,4,7,7,7,9,64.5
+79,errors,Loud dev; graceful prod,5,4,7,7,3,9,57.5
+80,errors,A logger; never print,6,2,7,5,8,9,59.5
+81,errors,AI errors surface; no fake tool,6,3,7,5,4,8,56.0
+82,errors,Cleanup is structural,5,3,7,7,6,9,59.0
+83,errors,Structured logs past a script,3,1,6,5,3,7,40.0
+84,deps,Pin it and lock it,6,6,8,5,8,9,67.5
+85,deps,Audit for vulnerabilities,5,7,7,4,7,8,60.5
+86,deps,Stdlib plus one; not five,5,4,7,8,3,8,58.0
+87,deps,Project-local virtualenv,5,4,7,5,7,5,54.5
+88,hygiene,Lint + format every commit,6,2,8,5,9,9,62.5
+89,hygiene,Dead-code pass after features,5,2,7,7,7,8,57.5
+90,hygiene,Cleanup sweep after release,3,1,6,6,3,7,41.5
+91,hygiene,No commented-out code,5,2,7,5,8,8,55.5
+92,hygiene,No orphan TODOs,4,2,6,4,7,8,48.0
+93,docs,Persist decisions same commit,6,2,7,5,3,8,53.5
+94,docs,File bugs/features on sight,6,1,7,4,3,8,50.5
+95,docs,Plans carry a live Status,4,1,6,4,5,6,42.5
+96,docs,ADRs are immutable,4,1,6,5,4,7,44.0
+97,docs,Regenerate the README,5,1,6,4,3,8,45.5
+98,working,Plan first; size for 90%,7,2,7,6,3,9,59.0
+99,working,No flattery; no yes-manning,6,1,7,4,2,8,49.5
+100,working,Verbatim errors; diffs; asks,6,2,7,4,4,9,54.0
