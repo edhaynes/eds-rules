@@ -1,4 +1,4 @@
-Same model — Llama 3.1 8B — twice. On the left, vanilla. On the right, the same weights with my hundred rules standing in front of it. One variable changes: the rules. With rules, seeing is believing.
+Watch this. Same model — Llama 3.1 8B — twice. On the left, vanilla. On the right, the same weights with my hundred rules standing in front of it. One variable changes: the rules. With rules, seeing is believing.
 
 Ask the vanilla model what rule 2 says. It has no idea — it has never seen my rules. Ask the rules version, and it quotes rule 2 back, word for word.
 
