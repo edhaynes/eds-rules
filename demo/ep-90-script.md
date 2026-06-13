@@ -47,8 +47,8 @@ wait for a hundred and you've waited too long. I've pushed it tighter for workin
 with AI, where the cost of a wrong guess is cheap to catch — I call mine ninety
 percent — but it's his idea, and I've never found a better one.
 
-## 1:40 — A small-world puzzle (framing chosen for safety — keep this tone)
-[CARD: the Fox News frame — crest circled]
+## 1:40 — A small-world puzzle (funny story, NO politics — keep this tone)
+[CARD: the Fox frame CROPPED to the crest + her — crop OUT the chyron/policy banner and party label; this is about the crest, not her politics]
 
 I'll end on something genuinely strange.
 
@@ -57,11 +57,11 @@ I'll end on something genuinely strange.
 That's my class crest. Naval Academy, Class of 1990 — the eagle, the ship, and
 our motto: Vidimus, Venimus, Vicimus. We saw, we came, we conquered.
 
-[CARD: full Fox frame — "NANCY MACE (R) · SC Congresswoman"]
+[CARD: tight on the crest on the wall behind her — no chyron, no banner]
 
-And that's it, framed on the wall, in a live Fox News hit with Congresswoman
-Nancy Mace of South Carolina. Now — she's The Citadel, Class of 1999. A fine
-institution. But that crest is the Naval Academy, Class of 1990.
+And that's it, framed on the wall, behind a congresswoman from South Carolina
+doing a TV hit. Now — she's The Citadel, Class of 1999. A fine institution. But
+that crest is the Naval Academy, Class of 1990.
 
 Wrong school. And wrong decade. Both.
 
@@ -71,11 +71,15 @@ best guess is it was a gift to some congressman and she borrowed his office for
 the hit. I'm just one of nine hundred-odd of us who did a hard double-take. If
 you know how this happened, tell me in the comments. Small world.
 
-[VERIFY before publish: (1) image provenance — it's a photo of a TV from
-Facebook; confirm it's a genuine, unedited Fox frame before airing it. (2) Using
-a Fox News frame is their footage — a brief screenshot for commentary is usually
-fair use, but know that's the basis. (3) Keep the curious tone above; do NOT
-let it drift into "she's misrepresenting herself" — that's a thin, risky claim.]
+[NOTES: (1) It's a funny small-world story for the podcast — NO politics. Crop
+the policy chyron and party label out of any on-screen frame; don't reference
+the ICE/DHS topic or her party. (2) Provenance: a photo of a TV from a private
+'90 USNA Facebook group; the matching Fox broadcast is corroborated, so it's
+very likely genuine — but it can't be pixel-certified, so present it as "this is
+going around our class group," not as forensic proof. (3) A brief Fox frame used
+for this kind of commentary is normally fair use; that's the basis. (4) Keep the
+curious "small world, probably a gift" tone — never "she's misrepresenting
+herself."]
 
 ---
 
