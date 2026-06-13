@@ -153,6 +153,31 @@ Side note: the cap mechanism works even on the boss's pet rule — "use vim, not
 emacs" grades 14.0 (below the go-local floor of 25.5), so it earns no slot. The
 fixed-100 cap rejects it; the system functions as designed.
 
+## Entry 13 — the verbal thinker as a model of the model (report through-line)
+
+Eddie: "as a verbal thinker I think much like an LLM, so I can predict things
+like epochs." There's a real structural parallel — an LLM has no non-verbal
+modality; it thinks in a conditioned linguistic stream. A strongly verbal thinker
+runs the same *shape*, so introspecting his own refinement loop lets him read the
+diminishing-returns curve directly (he predicted the 3-round taper before the
+run). He uses himself as a model of the model.
+
+Where it cracks (the part that makes it a *skill*, not a delusion):
+- Resemblance is at the **output/dynamics** level, not the mechanism. Human verbal
+  thought is serial, working-memory-bound; the model's underlying computation is
+  parallel attention over the whole context. Same dynamics, different substrate.
+- So the intuition is sharp where the model is process-like (epochs, front-loading,
+  tiered findings) and blind where it diverges from a human (no cross-session
+  memory, no understanding under the fluency, no taste, confident when wrong). The
+  expertise is owning the *map* of where the analogy holds and where it fails.
+
+Unusual not for verbal thinking (common) but for the stack: verbal generation +
+metacognition on the *process* + systems-modeling habit + heavy tool exposure.
+
+Meta: this session demonstrates it — Eddie predicts structure (epochs, the cap
+mechanism, the taper); the agent fills execution. The collaboration works because
+one models the process and the other runs it — the Jason/Eddie division in vivo.
+
 ## Open threads
 
 - Cut depth: which of the 33 sub-bar rules go (Eddie: keep Podman/UBI by
