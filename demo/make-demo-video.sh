@@ -25,7 +25,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Key var name varies; accept the common spellings (Eddie's is ELEVEN_API_KEY).
 ELEVENLABS_API_KEY="${ELEVENLABS_API_KEY:-${ELEVEN_API_KEY:-${XI_API_KEY:-}}}"
-: "${ELEVENLABS_API_KEY:?No ElevenLabs key — export ELEVEN_API_KEY (or ELEVENLABS_API_KEY/XI_API_KEY). Read from env, never hardcoded.}"
+AUDIO="${AUDIO:-}"   # pre-recorded voice track (e.g. Eddie's memo). When set,
+                     # use it verbatim and skip ElevenLabs entirely — no key needed.
 VOICE_ID="${VOICE_ID:-pNInz6obpgDQGcFmaJgB}"   # stock "Adam" — override to taste
 TTS_MODEL="${TTS_MODEL:-eleven_multilingual_v2}"
 NARRATION_FILE="${NARRATION_FILE:-${SCRIPT_DIR}/narration.txt}"
@@ -53,24 +54,32 @@ WORKDIR="$(mktemp -d)"
 trap 'rm -rf "${WORKDIR}"' EXIT
 VO="${WORKDIR}/vo.mp3"
 
-echo "==> generating voiceover from $(basename "${NARRATION_FILE}") via ElevenLabs (${TTS_MODEL})"
-TEXT="$(cat "${NARRATION_FILE}")"
-req_body="$(TEXT="${TEXT}" TTS_MODEL="${TTS_MODEL}" python3 -c '
+if [[ -n "${AUDIO}" ]]; then
+  # Use the supplied voice track (Eddie's memo wins the bake-off, 2026-06-13).
+  [[ -f "${AUDIO}" ]] || { echo "AUDIO file not found: ${AUDIO}" >&2; exit 1; }
+  echo "==> using supplied voice track: $(basename "${AUDIO}") (ElevenLabs skipped)"
+  VO="${AUDIO}"
+else
+  : "${ELEVENLABS_API_KEY:?No ElevenLabs key — export ELEVEN_API_KEY (or ELEVENLABS_API_KEY/XI_API_KEY), or pass AUDIO=<file>. Read from env, never hardcoded.}"
+  echo "==> generating voiceover from $(basename "${NARRATION_FILE}") via ElevenLabs (${TTS_MODEL})"
+  TEXT="$(cat "${NARRATION_FILE}")"
+  req_body="$(TEXT="${TEXT}" TTS_MODEL="${TTS_MODEL}" python3 -c '
 import json, os
 print(json.dumps({
     "text": os.environ["TEXT"],
     "model_id": os.environ["TTS_MODEL"],
     "voice_settings": {"stability": 0.5, "similarity_boost": 0.75},
 }))')"
-http_code="$(curl -s -w '%{http_code}' -o "${VO}" \
-  -X POST "https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}" \
-  -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
-  -H "content-type: application/json" \
-  -d "${req_body}")"
-if [[ "${http_code}" != "200" ]]; then
-  echo "ElevenLabs returned HTTP ${http_code}:" >&2
-  cat "${VO}" >&2 2>/dev/null || true
-  exit 1
+  http_code="$(curl -s -w '%{http_code}' -o "${VO}" \
+    -X POST "https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}" \
+    -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
+    -H "content-type: application/json" \
+    -d "${req_body}")"
+  if [[ "${http_code}" != "200" ]]; then
+    echo "ElevenLabs returned HTTP ${http_code}:" >&2
+    cat "${VO}" >&2 2>/dev/null || true
+    exit 1
+  fi
 fi
 
 echo "==> muxing voiceover onto $(basename "${RECORDING}") -> $(basename "${OUT}")"
