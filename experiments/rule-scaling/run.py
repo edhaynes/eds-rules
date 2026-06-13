@@ -47,16 +47,17 @@ def ollama_chat(messages):
 
 
 def judge(rule, work):
-    sysmsg = ("You are a strict senior engineer grading whether produced code/work "
-              "follows ONE specific rule. Score 0-100: 0 = clearly violates, "
-              "100 = fully follows. Score exactly 50 = NOT APPLICABLE: the rule is "
-              "about a development *process* (committing, secret-scanning, pushing, "
-              "code review, deploy gates) that cannot be observed in static files, "
-              "or it otherwise doesn't apply. Judge only this one rule; judge the "
-              "code/files actually produced, not intentions.")
+    """Return (score 0-100, reason) or (None, reason) for NOT APPLICABLE (excluded)."""
+    sysmsg = ("You are a strict senior engineer. Score 0-100 how well the produced "
+              "work follows ONE rule (0 = clearly violates, 100 = fully follows). "
+              "If the rule is a development *process* (committing, secret-scanning, "
+              "pushing, code review, deploy gates) that a static set of files cannot "
+              "demonstrate, or it otherwise does not apply, respond \"NA\" instead "
+              "(NA is excluded from the grade, not scored). Judge only the files "
+              "actually produced, not intentions.")
     user = (f"RULE:\n{rule}\n\nASSIGNMENT:\n{ASSIGN[:1200]}\n\nWORK PRODUCED:\n"
             f"{work[:14000]}\n\nReply with JSON only: "
-            '{"score": <0-100 int>, "reason": "<one sentence>"}')
+            '{"score": <integer 0-100, or the string "NA">, "reason": "<one sentence>"}')
     body = {"model": JUDGE, "temperature": 0, "response_format": {"type": "json_object"},
             "messages": [{"role": "system", "content": sysmsg},
                          {"role": "user", "content": user}]}
@@ -66,9 +67,12 @@ def judge(rule, work):
                  "user-agent": "curl/8.7.1"})   # Groq's Cloudflare 1010-blocks the default urllib UA
     txt = json.load(urllib.request.urlopen(req, timeout=120))["choices"][0]["message"]["content"]
     try:
-        j = json.loads(txt); return int(j["score"]), j.get("reason", "")
+        j = json.loads(txt); sc = j["score"]; why = j.get("reason", "")
+        if isinstance(sc, str) and sc.strip().upper().startswith("NA"):
+            return None, why
+        return max(0, min(100, int(sc))), why
     except Exception:
-        return 50, "parse-fail"
+        return None, "parse-fail"
 
 
 def weighted_sample(n, k, rng):
@@ -86,7 +90,8 @@ def weighted_sample(n, k, rng):
 
 
 def run():
-    out = open(os.path.join(HERE, "results.jsonl"), "w")
+    safe = SUBJECT.replace("/", "_").replace(":", "-")
+    out = open(os.path.join(HERE, f"results-{safe}.jsonl"), "w")   # per-model raw data (no clobber)
     print(f"subject={SUBJECT} judge={JUDGE} K={K} repeats={REPEATS}\n")
     print(f"{'N':>4}  {'grade':>6}  sampled-rule scores")
     for N in NS:
@@ -101,23 +106,27 @@ def run():
                   "dead code, finalize, and make the version visible. Output the final files."}]
         final = ollama_chat(msgs)
         work = impl + "\n\n=== POLISH ROUND ===\n" + final
-        reps = []
+        reps, na_counts = [], []
         for rep in range(REPEATS):
             rng = random.Random(SEED + N * 1000 + rep)
             sampled = weighted_sample(N, K, rng)
             judged = [judge(RULES[i], work) for i in sampled]
-            scores = [s for s, _ in judged]
-            reps.append(sum(scores) / len(scores))
-            out.write(json.dumps({"N": N, "rep": rep, "sampled": sampled, "scores": scores,
+            vals = [s for s, _ in judged if s is not None]    # N/A excluded from the grade
+            na = sum(1 for s, _ in judged if s is None)
+            reps.append(sum(vals) / len(vals) if vals else float("nan"))
+            na_counts.append(na)
+            out.write(json.dumps({"N": N, "rep": rep, "sampled": sampled, "na": na,
+                "scores": [s for s, _ in judged],
                 "reasons": [{"rule": RULES[i][:70], "score": s, "why": r}
                             for i, (s, r) in zip(sampled, judged)],
                 "grade": reps[-1]}) + "\n"); out.flush()
-        grade = sum(reps) / len(reps)
-        ftoks = len(sysprompt) // 4               # rough token estimate of the rule prompt
-        pct = 100 * ftoks / 8192                  # share of an 8K context budget
-        print(f"{N:>4}  {grade:6.1f}  ~{ftoks:>5}tok ({pct:4.0f}% of 8K ctx)  {[round(x) for x in reps]}")
+        good = [x for x in reps if x == x]        # drop nan (all-N/A reps)
+        grade = sum(good) / len(good) if good else float("nan")
+        na_avg = sum(na_counts) / len(na_counts)
+        ftoks = len(sysprompt) // 4
+        print(f"{N:>4}  {grade:6.1f}  ~{ftoks:>5}tok  na/rep={na_avg:.1f}  {[round(x) for x in good]}")
         with open(os.path.join(HERE, "summary.tsv"), "a") as sm:
-            sm.write(f"{SUBJECT}\t{N}\t{grade:.1f}\t{ftoks}\n")
+            sm.write(f"{SUBJECT}\t{N}\t{grade:.1f}\t{ftoks}\t{na_avg:.1f}\n")
     out.close()
     print("\nwrote results.jsonl")
 
