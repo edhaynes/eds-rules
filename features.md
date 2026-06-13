@@ -306,3 +306,10 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
 - Concept: a short (~2 min) video per day, each covering one rule (maybe 2–3 rules/video) — turn the 100 rules into a daily YouTube series. Natural fit with F16's demo-video pipeline (Eddie's voice + terminal/slides + `demo/make-demo-video.sh`).
 - **Open questions (Linda):** optimal length & one-vs-multi-rule format for retention/algorithm; Shorts vs long-form; cadence sustainability; does the rules-model demo anchor episode 1?
 - **Depends on:** F16 pipeline (reuse VO + mux flow per episode). 100 rules ≈ 100 episodes ≈ a ~3-month daily run.
+
+## F18 — Publishing pipeline (YouTube now, podcast later)
+- **Status:** Open — 2026-06-13
+- One-command publish: `make-episode.sh <recording>` → clean-audio → Scribe → build cards/visuals → mp4 → `publish-youtube.py` (YouTube Data API v3, one-time OAuth then unattended; default unlisted). Drop folder `demo/incoming/` kills the file-hunt.
+- **Podcast (eventually):** add an audio-export step (clean m4a → tagged MP3 + cover art) + distribute via an RSS feed. Either a host with an API (Transistor/Buzzsprout/RSS.com — scriptable) or self-host the RSS on GCS/GitHub. Submit the feed once to Apple Podcasts Connect + Spotify; they auto-pull new episodes thereafter.
+- **Deps (pending approval):** google-api-python-client, google-auth-oauthlib, google-auth-httplib2 (Apache-2.0, ARM-fine). Secrets (client_secret.json, refresh token) gitignored, stored outside repo.
+- **Manual part that remains:** authoring each episode's card content (creative); timing auto-derives from Scribe. Upload is automated after one-time auth.
