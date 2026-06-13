@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDIO = os.environ.get("AUDIO", os.path.join(HERE, "narration-ep90.m4a"))
 FRAMES = os.path.join(HERE, "frames-ep90")
-OUT = os.path.join(HERE, "eds-rules-ep90.mp4")
+OUT = os.environ.get("OUT", os.path.join(HERE, "eds-rules-ep90.mp4"))
 LOGO_MODE = os.environ.get("LOGO", "redhat")
 RH_LOGO = os.path.join(HERE, "assets", "redhat-logo-white.png")
 
