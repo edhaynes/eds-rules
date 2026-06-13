@@ -8,16 +8,33 @@ career, and each has a different cause.
 
 ## ① Input-security — a real blind spot. Focus here.
 
-The doc had ten rules on secret **leakage** and zero on malicious **input**. That
-reflects which security tradition formed the author: TACLANE, Nortel, network
-encryptors — a world about **confidentiality** (protect the key, encrypt the
-channel, don't let the secret escape). The injection/untrusted-input threat model
-(SQLi, command injection, XSS, deserialization) is the **web/multi-tenant app-sec**
-tradition (OWASP), never the home turf. In defense/embedded, inputs arrive from a
-*known peer over a fixed protocol behind a defined trust boundary* — the encryptor
-**is** the boundary. In an AI-built web service the input is the open internet.
-**Occurs constantly** (top web-vuln class; agents introduce it by default).
-Action: internalize "the attacker controls the input."
+**Eddie's own diagnosis (the primary cause):** *"I'm the main consumer of my own
+software, so I self-regulate my prompt."* When you are the only user, the trust
+boundary **collapses** — every input is your input, trusted by definition, so the
+rule never bites. It reappears the moment a *second* user, or a file/URL/API payload
+from anywhere, touches the system. Pertinence therefore scales with how many
+not-you inputs reach the code: low for a personal tool today, high the instant it
+ships to someone else or meets the open internet. (That's why it grades 79 — real,
+but below the secret rules — rather than 90+.)
+
+**The testing gap he named:** he *did* do monkey testing — good instinct toward
+robustness — but monkey/fuzz testing throws *random* input and finds crashes, not
+attacks. An attacker isn't random; they craft `'; DROP TABLE`, `../../etc/passwd`,
+`$(rm -rf)`, and random input essentially never lands on those exact strings. Monkey
+testing proves *robustness*, not *security*. The rigorous version is adversarial:
+injection test cases, a security-aware fuzz corpus, or the rule-3 disciplines up
+front (parameterize, confine paths) so the bug class can't exist.
+
+**Contributing factor (background):** the author's security tradition is
+**confidentiality** — TACLANE, Nortel, network encryptors: protect the key, encrypt
+the channel, don't let the secret escape (hence ten leakage rules). The
+injection/untrusted-input model is the **web/multi-tenant app-sec** tradition
+(OWASP), never the home turf; in defense/embedded, inputs arrive from a known peer
+over a fixed protocol behind a defined boundary — the encryptor *is* the boundary.
+
+**Occurs constantly once exposed** (top web-vuln class; agents introduce it by
+default). Action: internalize "the attacker controls the input," and test for
+malice, not just chaos.
 
 ## ② Idempotency — the world moved, more than a blind spot.
 
