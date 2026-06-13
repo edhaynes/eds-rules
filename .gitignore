@@ -31,3 +31,7 @@ demo/*.wav
 demo/frames/
 demo/frames-ep1/
 demo/.scribe-ep1.json
+demo/style-sample.png
+demo/assets/
+demo/frames-ep90/
+demo/.ep90-timeline.txt
