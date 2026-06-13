@@ -29,3 +29,5 @@ demo/*.mov
 demo/*.mp4
 demo/*.wav
 demo/frames/
+demo/frames-ep1/
+demo/.scribe-ep1.json
