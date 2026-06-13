@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "jason:latest",
+  "default_agent": "jason",
+  "agent": {
+    "jason": {
+      "model": "jason:latest",
+      "mode": "primary",
+      "description": "Project manager using local LLM"
+    },
+    "claude": {
+      "model": "ollama/claude-local",
+      "mode": "subagent",
+      "description": "Backend developer"
+    },
+    "opencode": {
+      "model": "ollama/opencode-local",
+      "mode": "subagent",
+      "description": "Opencode instance manager"
+    }
+  }
+}

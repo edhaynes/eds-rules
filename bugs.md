@@ -57,3 +57,32 @@ Known bugs for the eds-rules repo and the book manuscript.
 - **Status:** Open — Opencode validation reports `ollama/jason-llama8b` as an invalid model.
 - **Observed:** When running Opencode with `opencode.json` (or `project_manager/opencode.json`), the system fails to start due to the unrecognized model name.
 - **Fix:** Install the correct model (e.g., `ollama pull jason-llama8b`) or update the config to a valid model name.
+
+## B8 — Tool call validation error for repo_browser.open_file via comment channel
+- **Status:** Open — error occurs when attempting to open a file using a tool call that includes a channel tag (`repo_browser.open_file<|channel|>commentary`), which is rejected because the tool is not listed in request.tools.
+- **Observed:** The system returns a JSON error:
+  ```json
+  {"message":"Tool call validation failed: tool call validation failed: attempted to call tool 'repo_browser.open_file<|channel|>commentary' which was not in request.tools","type":"invalid_request_error"}
+  ```
+- **Fix:** Remove the channel tag and call `repo_browser.open_file` directly, ensuring the tool is included in the request's tools list.
+
+## B9 — Tool call validation error for repo_browser.exec
+- **Status:** Open — error occurs when attempting to call the `repo_browser.exec` tool, which is not listed in request.tools.
+- **Observed:** The system returns a JSON error:
+  ```json
+  {"message":"Tool call validation failed: tool call validation failed: attempted to call tool 'repo_browser.exec' which was not in request.tools","type":"invalid_request_error"}
+  ```
+- **Fix:** Ensure `repo_browser.exec` is included in the request's tools list before calling, or avoid using it if not supported.
+
+## B10 — Failed to parse tool call arguments as JSON
+- **Status:** Open — tool call fails when arguments cannot be parsed as valid JSON.
+- **Observed:** System returns error:
+  ```json
+  {"message":"Failed to parse tool call arguments as JSON","type":"invalid_request_error"}
+  ```
+- **Fix:** Validate and correctly format tool call arguments as proper JSON before invoking the tool; add input validation.
+
+## B11 — Jason model configuration fixed
+- **Status:** Completed — the Jason model reference in both `test/opencode.json` and `test/project_manager/opencode.json` has been updated to the installed model name `jason:latest`.
+- **Observed:** After the change, Opencode loads without model‑validation errors.
+- **Fix:** Updated "model" and "agent.jason.model" fields from `ollama/jason-llama8b` to `jason:latest` in both config files.
