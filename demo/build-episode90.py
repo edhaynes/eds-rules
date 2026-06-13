@@ -100,7 +100,7 @@ def c_title():
     img = centered([
         ("ED'S 100 RULES", H1, GRAY),
         ("Episode 90", BIG, WHITE),
-        ("with the rules vs. without — and why 90", HDR, RED),
+        ("Brought to you by the number 90 and the letter C", HDR, RED),
     ])
     d = ImageDraw.Draw(img)
     disc = "Personal technology blog — opinions expressed are my own and not those of Red Hat."
