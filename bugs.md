@@ -86,3 +86,8 @@ Known bugs for the eds-rules repo and the book manuscript.
 - **Status:** Completed — the Jason model reference in both `test/opencode.json` and `test/project_manager/opencode.json` has been updated to the installed model name `jason:latest`.
 - **Observed:** After the change, Opencode loads without model‑validation errors.
 - **Fix:** Updated "model" and "agent.jason.model" fields from `ollama/jason-llama8b` to `jason:latest` in both config files.
+
+## B12 — Book out of sync with RULES.md after the 3-rule swap (1.4.3)
+- **Status:** In Progress
+- **Observed:** 2026-06-13, commit f4b3ccd updated `RULES.md` (added rules 3/47/76 — input-security, idempotency, perf-budget; retired LF/SOLID/dep-restatement by consolidation; renumbered 1–100). The book (`book/ch0*.md` prose + chapter cards, `book/99-back-matter.md` Appendix D mapping, ~239 rule-number cross-references, Ch4 Mermaid scan-gate labels) is **not yet synced** — book↔repo text/number drift, which OUTLINE.md defines as a bug.
+- **Fix (Phase B sweep):** write 3 new ~2KB rule essays in the book voice (STYLE.md), retire the 3 consolidated ones, renumber headings + cards + Appendix D + every cross-reference, rewrite any opener prose that narrates contiguous runs. Run the PLAN_rule-weighting regression checks (heading sequence 1–100, card parity, Appendix D bijection, reference resolution, full EPUB/PDF build).

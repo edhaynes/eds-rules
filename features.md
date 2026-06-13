@@ -313,3 +313,8 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
 - **Podcast (eventually):** add an audio-export step (clean m4a → tagged MP3 + cover art) + distribute via an RSS feed. Either a host with an API (Transistor/Buzzsprout/RSS.com — scriptable) or self-host the RSS on GCS/GitHub. Submit the feed once to Apple Podcasts Connect + Spotify; they auto-pull new episodes thereafter.
 - **Deps (pending approval):** google-api-python-client, google-auth-oauthlib, google-auth-httplib2 (Apache-2.0, ARM-fine). Secrets (client_secret.json, refresh token) gitignored, stored outside repo.
 - **Manual part that remains:** authoring each episode's card content (creative); timing auto-derives from Scribe. Upload is automated after one-time auth.
+
+## F19 — Rule-quality rubric, grades, and 0–100 graph
+- **Status:** In Progress
+- **Added:** 2026-06-13 (Eddie)
+- Grade all 100 rules on a multi-dimension quality rubric — pertinence (P(Claude violates unprompted) × cost), security, cost-effectiveness, architectural simplicity, enforceability, generality — composited to a 0–100 quality score per rule, with a graph of the distribution. Artifacts: `quality/RUBRIC.md`, `quality/grade_rules.py`, `quality/rule-quality.svg`, `quality/grades.csv`.
