@@ -18,9 +18,10 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-AUDIO = os.path.join(HERE, "narration-eddie.m4a")
+# AI-voice teaser by default (ElevenLabs VO); override AUDIO/OUT via env.
+AUDIO = os.environ.get("AUDIO", os.path.join(HERE, "eds-rules-teaser-vo.mp3"))
 FRAMES = os.path.join(HERE, "frames")
-OUT = os.path.join(HERE, "eds-rules-teaser.mp4")
+OUT = os.environ.get("OUT", os.path.join(HERE, "eds-rules-teaser-11labs.mp4"))
 
 W, H = 1920, 1080
 BG = (13, 17, 23)          # GitHub dark
@@ -205,15 +206,16 @@ def c_end():
 
 
 # (start_seconds, builder) — durations derive from consecutive starts; last -> audio end.
+# Beats timed to the ElevenLabs VO (77s), from its Scribe sentence timeline.
 BEATS = [
     (0.0,   c_intro),
-    (11.0,  c_setup),
-    (27.0,  c_rule2_vanilla),
-    (36.0,  c_rule2_both),
-    (45.0,  c_hardcode),
-    (81.0,  c_wontinvent),
-    (89.0,  c_cost),
-    (125.0, c_end),
+    (5.24,  c_setup),
+    (16.88, c_rule2_vanilla),
+    (23.60, c_rule2_both),
+    (28.28, c_hardcode),
+    (45.90, c_wontinvent),
+    (54.68, c_cost),
+    (70.10, c_end),
 ]
 
 
@@ -249,7 +251,7 @@ def main():
     cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", listfile]
     if os.path.exists(AUDIO):
         cmd += ["-i", AUDIO, "-map", "0:v:0", "-map", "1:a:0", "-c:a", "aac", "-b:a", "192k"]
-    cmd += ["-c:v", "libx264", "-r", "30", "-pix_fmt", "yuv420p", "-shortest", OUT]
+    cmd += ["-c:v", "libx264", "-r", "30", "-pix_fmt", "yuv420p", "-t", f"{end}", "-shortest", OUT]
     subprocess.run(cmd, check=True)
     print(f"\nDone -> {OUT}")
 
