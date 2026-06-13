@@ -1,32 +1,32 @@
-granite3.1-dense:2b	1	50.0	48
-granite3.1-dense:2b	2	75.0	89
-granite3.1-dense:2b	4	75.0	160
-granite3.1-dense:2b	8	56.2	320
-granite3.1-dense:2b	16	52.7	839
-granite3.1-dense:2b	32	47.2	1281
-granite3.1-dense:2b	64	43.7	2165
-granite3.1-dense:2b	128	49.8	3675
-llama3.1:8b	1	50.0	48
-llama3.1:8b	2	75.0	89
-llama3.1:8b	4	75.0	159
-llama3.1:8b	8	53.3	320
-llama3.1:8b	16	50.3	839
-llama3.1:8b	32	49.2	1281
-llama3.1:8b	64	43.3	2165
-llama3.1:8b	128	52.3	3675
-gemma3:4b	1	50.0	48
-gemma3:4b	2	75.0	89
-gemma3:4b	4	75.0	159
-gemma3:4b	8	59.6	320
-gemma3:4b	16	55.0	839
-gemma3:4b	32	53.3	1281
-gemma3:4b	64	45.3	2165
-claude-opus-4-8	1	63.3	48
-gemma3:4b	128	48.3	3675
-claude-opus-4-8	2	66.7	89
-claude-opus-4-8	4	72.5	159
-claude-opus-4-8	8	72.3	320
-claude-opus-4-8	16	64.0	839
-claude-opus-4-8	32	61.5	1281
-claude-opus-4-8	64	64.7	2165
-claude-opus-4-8	128	62.8	3675
+granite3.1-dense:2b	1	nan	48	1.0
+granite3.1-dense:2b	2	100.0	89	1.0
+granite3.1-dense:2b	4	100.0	159	2.0
+claude-opus-4-8	1	nan	48	1.0
+granite3.1-dense:2b	8	55.0	320	4.0
+granite3.1-dense:2b	16	60.9	839	6.3
+granite3.1-dense:2b	32	39.8	1281	4.7
+claude-opus-4-8	2	100.0	89	1.0
+granite3.1-dense:2b	64	35.7	2165	3.7
+granite3.1-dense:2b	128	43.7	3675	4.7
+claude-opus-4-8	4	86.7	159	1.0
+gemma3:4b	1	nan	48	1.0
+gemma3:4b	2	100.0	89	1.0
+claude-opus-4-8	8	97.9	320	4.7
+gemma3:4b	4	88.9	159	1.7
+gemma3:4b	8	71.7	320	5.0
+claude-opus-4-8	16	95.4	839	5.7
+gemma3:4b	16	72.7	839	6.7
+gemma3:4b	32	41.2	1281	4.3
+claude-opus-4-8	32	55.7	1281	3.7
+gemma3:4b	64	41.3	2165	3.7
+gemma3:4b	128	34.6	3675	4.7
+llama3.1:8b	1	nan	48	1.0
+claude-opus-4-8	64	64.8	2165	3.0
+llama3.1:8b	2	100.0	89	1.0
+llama3.1:8b	4	100.0	159	2.0
+llama3.1:8b	8	74.7	320	4.7
+claude-opus-4-8	128	80.1	3675	5.3
+llama3.1:8b	16	59.0	839	5.7
+llama3.1:8b	32	39.8	1281	4.3
+llama3.1:8b	64	46.1	2165	3.3
+llama3.1:8b	128	47.0	3675	5.0

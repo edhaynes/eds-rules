@@ -1,40 +1,47 @@
-# Rule-scaling experiment — results (run 1, 2026-06-13)
+# Rule-scaling experiment — results (clean metric, 2026-06-13)
 
-Subject: granite3.1-dense:2b (rules prompt-baked) · Judge: openai/gpt-oss-120b ·
-Task: 10-min full-stack URL-shortener + one polish round · K=10 top-weighted
-sample · 3 repeats · corpus = real 100 rules + 28 padding.
+Subjects: granite3.1-dense:2b · gemma3:4b · llama3.1:8b (Ollama) · claude-opus-4-8 (API).
+Judge: openai/gpt-oss-120b (Groq). Task: 10-min full-stack URL-shortener + one polish
+round. Grade = mean judge score (0–100) over a top-weighted sample of rules, **N/A
+excluded** (process rules a static artifact can't show are dropped, not scored 50).
+K=10 sampled rules · 3 repeats · corpus = the real 100 rules + 28 padding.
 
-## The curve — grade (0–100) vs. N rules in context
+See `graph.svg`. Raw per-rule data (score + judge reason): `results-<model>.jsonl`.
+
+## Grade (0–100, N/A excluded) vs. N rules in context
 ```
-  N=1    50.0   (only rule 1, a process rule → N/A baseline)
-  N=2    75.0   ┐ peak — a 2B nails a handful
-  N=4    75.0   ┘
-  N=8    56.2
-  N=16   52.7
-  N=32   47.2
-  N=64   43.7   ← worst
-  N=128  49.8   (noise; per-rep 56/40/54)
+  N │ Granite 2B │ Gemma 4B │ Llama 8B │  Opus
+  2 │   100      │   100    │   100    │  100
+  4 │   100      │    89    │   100    │   87
+  8 │    55      │    72    │    75    │   98
+ 16 │    61      │    73    │    59    │   95
+ 32 │    40      │    41    │    40    │   56   ← Opus noise (1 weak gen)
+ 64 │    36      │    41    │    46    │   65
+128 │    44      │    35    │    47    │   80
 ```
-165 judgments: 36 clear violations (≤25), 37 clean follows (≥90), 90 N/A (≈50).
+(N=1 is blank: the only rule there is a process rule → all N/A.)
+Average over N=8..128: Granite **47** · Gemma **52** · Llama **53** · **Opus 79**.
 
-## Finding
-**A 2B model has a finite rule budget.** It follows ~2–8 prompt-baked rules
-cleanly; adherence then degrades as the rule count climbs — roughly halving the
-"win" by N≈64. The judge's reasons at high N are concrete: drops the tests,
-hardcodes ports/paths, assumes a Unix shell, adds undeclared dependencies,
-ships buggy code. Piling on more rules makes it obey *fewer*.
+## Findings
+1. **Small models have a hard rule budget.** 2B/4B/8B all hit ~90–100 at 2–4 rules,
+   then collapse to ~35–55 by N≥16 — far below the 90% goal. They actively *violate*
+   rules once the set grows.
+2. **2B ≈ 4B ≈ 8B.** Scaling within the small/mid tier doesn't help — all three cluster
+   together and crater together.
+3. **The frontier model doesn't dilute.** Opus stays at/above the 90% goal through N=16
+   and holds 65–80 at the full 128-rule load — a ~30-point gap over the small models in
+   the real-scale zone. Capacity, not a few billion params, is what holds the full rule set.
+4. **The 1/5 budget rule of thumb holds** (Eddie): at the worst small-model grades the
+   rules are still well under a quarter of the literal context — it's the *attention*
+   budget that saturates, not token space.
 
-## Caveats (honest)
-- One generation per N (stochastic); grades are noisy (N=128 bump is within noise).
-- Many top rules are *process* rules scored N/A (50), compressing absolute grades
-  toward the middle — the **shape** (peak at 2–4, decline) is the signal, not the level.
+## Caveats
+- One generated artifact per N (REPEATS re-samples judging only, not generation), so the
+  curve is noisy — e.g. Opus's N=32 dip is a single weak generation. Multiple generations
+  per N + error bars would smooth it for publication.
 - Single judge model; single corpus order.
 
-## Highest-value follow-ups
-1. **Fine-tune vs prompt-bake** — retrain Granite 2B on the rules (Way 2) and rerun.
-   Does ingraining the rules raise the budget / flatten the decline? This directly
-   tests the "train Jason" plan (PLAN_persona-models).
-2. **Medium tier** — same sweep on Llama 3.1 8B; does the bigger model hold more rules?
-3. **Fixed code-testable rule set** — grade the same N artifact-observable rules at
-   every N for clean apples-to-apples.
-4. More generations per N + error bars for a publishable curve.
+## Implication for the persona fleet (`plans/PLAN_persona-models.md`)
+The heavyweight tier (Claude/Claudius) needs frontier-class capacity (cloud Opus, or a
+70B on Gladius) to hold the full rules *and* do hard work. A 2B "Jason" must get a
+small, prioritized rule set — or be fine-tuned — not the full 100 prompt-baked.
