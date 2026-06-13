@@ -126,28 +126,28 @@ Claudina, Claudius) and how their roles bind to models on different stacks.
 
 78. No bare `except:`/`catch (e)` swallows — catch specific exceptions, rethrow or log with context.
 79. Fail loudly in dev, gracefully in prod, diagnosably always.
-80. Use a logger, never `print`, in shipped code; log level configurable.
+80. Use a logger, never `print`, in shipped code; log level configurable, and structured (JSON) once the project outgrows a script.
 81. AI/LLM errors surface to the user as friendly messages — never a silent failure, never a raw stack trace. And agents only call tools that actually exist in their tool list: a hallucinated tool name wastes tokens and stalls the session — fall back to shell or file primitives, or ask for the tool to be wired in, never fabricate one.
 82. Resource cleanup uses context managers / `defer` / `using` — no close-and-hope.
-83. Structured logging (JSON) once the project is more than a script.
 
 ## Dependencies
 
-84. Pin versions and commit the lockfile.
-85. Run a vulnerability audit periodically and on every new dependency.
-86. Prefer stdlib plus one well-maintained dependency over five small ones.
-87. Python work always uses a project-local virtualenv — never install into the system Python.
+83. Pin versions and commit the lockfile.
+84. Run a vulnerability audit periodically and on every new dependency.
+85. Prefer stdlib plus one well-maintained dependency over five small ones.
+86. Python work always uses a project-local virtualenv — never install into the system Python.
 
 ## Hygiene
 
-88. Lint and format on every commit; CI stays green.
-89. After meaningful feature work, run a dead-code pass (vulture/ruff, ts-prune/knip, staticcheck) — remove unused imports, parameters, branches, files; ask before deleting anything you're unsure about.
-90. After a stable release, the first task is a cleanup sweep — before any new feature.
-91. No commented-out code — git history is the archive.
-92. No TODO without a tracker link; otherwise it's a dated FIXME with an owner.
+87. Lint and format on every commit; CI stays green.
+88. After meaningful feature work, run a dead-code pass (vulture/ruff, ts-prune/knip, staticcheck) — remove unused imports, parameters, branches, files; ask before deleting anything you're unsure about.
+89. After a stable release, the first task is a cleanup sweep — before any new feature.
+90. No commented-out code — git history is the archive.
+91. No TODO without a tracker link; otherwise it's a dated FIXME with an owner.
 
 ## Documentation, memory, and tracking
 
+92. Maintain a living state file so a memoryless agent can start cold: a per-repo `STATE.md` (≤1024 words) ingested at session start and regenerated at the end of every commit, plus a one-line-per-repo `state.h` index at the projects root. It is an executive summary that *points* to the ADRs and trackers — never a log; when it overflows the cap, prune detail outward.
 93. When a standing decision is made in chat, persist it (ADR, memory file, rules doc) in the same commit — chat history is not memory.
 94. Track every bug and every requested feature in `bugs.md`/`features.md` the moment it's observed — even if fixed the same turn. Open questions are filed inline with the entry; filing never blocks on answers.
 95. Plans live in a `plans/` directory with a first-line `Status:` kept current — stale status on shipped work is a process violation.

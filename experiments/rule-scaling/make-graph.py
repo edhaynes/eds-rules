@@ -14,7 +14,7 @@ for s in data:
     data[s].sort()
 
 W, H = 1000, 620
-L, R, T, B = 90, 240, 70, 80          # margins (R wide for legend)
+L, R, T, B = 90, 60, 70, 80           # margins (legend drawn inside the empty top area)
 PW, PH = W - L - R, H - T - B
 BG, FG, GRID = "#101010", "#f0f6fc", "#30363d"
 COLORS = ["#ee0000", "#58a6ff", "#3fb950", "#d2a84b", "#a371f7"]
@@ -42,17 +42,20 @@ for n in NS:
     s.append(f'<line x1="{xx:.1f}" y1="{T+PH}" x2="{xx:.1f}" y2="{T+PH+6}" stroke="#8b949e"/>')
     s.append(f'<text x="{xx:.1f}" y="{T+PH+26}" fill="#8b949e" font-size="13" text-anchor="middle">{n}</text>')
 s.append(f'<text x="{L+PW/2:.0f}" y="{H-20}" fill="{FG}" font-size="15" text-anchor="middle">number of rules in the prompt (log scale)</text>')
-# lines + points + legend
-ly = T + 10
+# lines + points
 for i, (subj, pts) in enumerate(data.items()):
     c = COLORS[i % len(COLORS)]
     path = " ".join(f"{x(n):.1f},{y(g):.1f}" for n, g in pts)
     s.append(f'<polyline points="{path}" fill="none" stroke="{c}" stroke-width="3"/>')
     for n, g in pts:
         s.append(f'<circle cx="{x(n):.1f}" cy="{y(g):.1f}" r="4.5" fill="{c}"/>')
-    s.append(f'<rect x="{L+PW+24}" y="{ly-12}" width="22" height="6" fill="{c}"/>')
-    s.append(f'<text x="{L+PW+52}" y="{ly-4}" fill="{FG}" font-size="14">{subj}</text>')
-    ly += 28
+# legend — inside the empty top band of the plot
+ly = T + 24
+for i, subj in enumerate(data):
+    c = COLORS[i % len(COLORS)]
+    s.append(f'<rect x="{L+40}" y="{ly-12}" width="24" height="6" fill="{c}"/>')
+    s.append(f'<text x="{L+74}" y="{ly-4}" fill="{FG}" font-size="15">{subj}</text>')
+    ly += 27
 s.append("</svg>")
-open(os.path.join(HERE, "graph.svg"), "w").write("\n".join(s))
+open(os.path.join(HERE, "graph.svg"), "w").write("\n".join(s) + "\n")
 print(f"wrote graph.svg  ({len(data)} model(s): {', '.join(data)})")

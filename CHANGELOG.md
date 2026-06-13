@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.4] - 2026-06-13
+
+Net-neutral swap (stays at 100): added the **STATE rule** (#92, "Documentation,
+memory, and tracking") — maintain a per-repo `STATE.md` (≤1024 words, ingested at
+session start, regenerated each commit) plus a `state.h` index at the projects
+root, so a memoryless agent can start cold. It grades 67 (rank 10/100). To free
+the slot, the standalone structured-logging rule was folded into the logger rule
+(#80). Book sync for this + the 1.4.3 swap is batched under bug B12.
+
 ## [1.4.3] - 2026-06-13
 
 Net-neutral rule swap (count stays at exactly 100): three rules added by

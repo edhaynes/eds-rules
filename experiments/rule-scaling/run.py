@@ -29,6 +29,16 @@ GROQ_KEY = os.environ["GROQ_API_KEY"]
 
 
 def ollama_chat(messages):
+    if SUBJECT.startswith("claude"):                       # Anthropic API subject (frontier control)
+        sysmsg = next((m["content"] for m in messages if m["role"] == "system"), "")
+        conv = [m for m in messages if m["role"] != "system"]
+        body = {"model": SUBJECT, "max_tokens": 8000, "system": sysmsg, "messages": conv}
+        req = urllib.request.Request("https://api.anthropic.com/v1/messages",
+            data=json.dumps(body).encode(),
+            headers={"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01",
+                     "content-type": "application/json", "user-agent": "curl/8.7.1"})
+        d = json.load(urllib.request.urlopen(req, timeout=300))
+        return "".join(b.get("text", "") for b in d.get("content", []))
     body = {"model": SUBJECT, "messages": messages, "stream": False,
             "options": {"temperature": 0.2, "num_ctx": 8192}}
     req = urllib.request.Request("http://localhost:11434/api/chat",
