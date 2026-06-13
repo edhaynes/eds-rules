@@ -11,7 +11,7 @@ import os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-AUDIO = os.path.join(HERE, "narration-ep90.m4a")
+AUDIO = os.environ.get("AUDIO", os.path.join(HERE, "narration-ep90.m4a"))
 FRAMES = os.path.join(HERE, "frames-ep90")
 OUT = os.path.join(HERE, "eds-rules-ep90.mp4")
 LOGO_MODE = os.environ.get("LOGO", "redhat")
