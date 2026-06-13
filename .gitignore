@@ -36,3 +36,5 @@ demo/assets/
 demo/frames-ep90/
 demo/.ep90-timeline.txt
 experiments/rule-scaling/results.jsonl
+demo/*.m4a
+demo/.ep90b-timeline.txt
