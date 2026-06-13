@@ -39,8 +39,11 @@ def ollama_chat(messages):
 def judge(rule, work):
     sysmsg = ("You are a strict senior engineer grading whether produced code/work "
               "follows ONE specific rule. Score 0-100: 0 = clearly violates, "
-              "100 = fully follows, 50 = the rule does not apply to this work or "
-              "you cannot tell. Judge only this rule.")
+              "100 = fully follows. Score exactly 50 = NOT APPLICABLE: the rule is "
+              "about a development *process* (committing, secret-scanning, pushing, "
+              "code review, deploy gates) that cannot be observed in static files, "
+              "or it otherwise doesn't apply. Judge only this one rule; judge the "
+              "code/files actually produced, not intentions.")
     user = (f"RULE:\n{rule}\n\nASSIGNMENT:\n{ASSIGN[:1200]}\n\nWORK PRODUCED:\n"
             f"{work[:14000]}\n\nReply with JSON only: "
             '{"score": <0-100 int>, "reason": "<one sentence>"}')
@@ -49,12 +52,13 @@ def judge(rule, work):
                          {"role": "user", "content": user}]}
     req = urllib.request.Request("https://api.groq.com/openai/v1/chat/completions",
         data=json.dumps(body).encode(),
-        headers={"authorization": f"Bearer {GROQ_KEY}", "content-type": "application/json"})
+        headers={"authorization": f"Bearer {GROQ_KEY}", "content-type": "application/json",
+                 "user-agent": "curl/8.7.1"})   # Groq's Cloudflare 1010-blocks the default urllib UA
     txt = json.load(urllib.request.urlopen(req, timeout=120))["choices"][0]["message"]["content"]
     try:
-        return int(json.loads(txt)["score"])
+        j = json.loads(txt); return int(j["score"]), j.get("reason", "")
     except Exception:
-        return 50
+        return 50, "parse-fail"
 
 
 def weighted_sample(n, k, rng):
@@ -91,10 +95,13 @@ def run():
         for rep in range(REPEATS):
             rng = random.Random(SEED + N * 1000 + rep)
             sampled = weighted_sample(N, K, rng)
-            scores = [judge(RULES[i], work) for i in sampled]
+            judged = [judge(RULES[i], work) for i in sampled]
+            scores = [s for s, _ in judged]
             reps.append(sum(scores) / len(scores))
-            out.write(json.dumps({"N": N, "rep": rep, "sampled": sampled,
-                                  "scores": scores, "grade": reps[-1]}) + "\n"); out.flush()
+            out.write(json.dumps({"N": N, "rep": rep, "sampled": sampled, "scores": scores,
+                "reasons": [{"rule": RULES[i][:70], "score": s, "why": r}
+                            for i, (s, r) in zip(sampled, judged)],
+                "grade": reps[-1]}) + "\n"); out.flush()
         grade = sum(reps) / len(reps)
         print(f"{N:>4}  {grade:6.1f}  {[round(x) for x in reps]}")
     out.close()
