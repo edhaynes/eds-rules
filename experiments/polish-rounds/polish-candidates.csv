@@ -1,0 +1,22 @@
+round,candidate,quality,above_bar
+1,UTC everywhere; no naive datetimes,58.0,1
+1,Least privilege for creds/IAM/DB users,56.0,1
+2,Timeouts + retries + circuit breakers,55.5,1
+2,Latency/determinism + live progress [Eddie],52.5,1
+3,Migrations: forward-only; reversible; tested,51.5,1
+3,Observability: metrics + tracing + alerts,49.5,0
+4,Independent review of AI output pre-merge,49.5,0
+4,PII minimization; redact PII in logs,49.0,0
+5,Safe-by-default perms (no 0777 / 0.0.0.0),49.0,0
+5,Concurrency / race-safety discipline,47.5,0
+6,Reproducible / deterministic builds,47.5,0
+6,Rate limiting / quotas / cost controls,46.5,0
+7,Backups + a tested restore (DR),44.0,0
+7,Accessibility (a11y) for any UI,42.0,0
+8,Cache-invalidation discipline,40.0,0
+8,Canary / feature-flag rollout,39.5,0
+9,API versioning / deprecation policy,37.0,0
+9,Runbooks / on-call operational docs,33.0,0
+10,License / SPDX headers,32.0,0
+10,i18n / localization readiness,30.5,0
+10,Commit emoji / style conventions,30.0,0
