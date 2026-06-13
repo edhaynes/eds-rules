@@ -36,14 +36,19 @@ over a fixed protocol behind a defined boundary — the encryptor *is* the bound
 default). Action: internalize "the attacker controls the input," and test for
 malice, not just chaos.
 
-## ② Idempotency — the world moved, more than a blind spot.
+## ② Idempotency — NOT a blind spot. Tacit mastery, never written down.
 
-Idempotency is a *distributed-systems / unattended-ops* concern: retries,
-at-least-once delivery, resumable jobs, declarative reconciliation. In RTOS/embedded
-you **controlled execution** — a function runs once, deterministically. "The process
-dies halfway and is re-run" is a cloud/CI/**agent** reality. It bit the voicelab
-setup script the same day — and bit because the *agent* fire-and-retries.
-**Medium-occurrence but rising fast**, precisely because of how AI agents work.
+**Eddie's correction:** *"I preach idempotency up and down — a key attribute of
+Ansible."* Right. This was never an ignorance gap. Idempotency is *the* defining
+property of Ansible (declarative, converge-to-desired-state, safe to re-run), and
+this repo already earmarks an Ansible/Day-2 chapter (F12) where idempotency is the
+philosophical anchor. So why was it missing as a *rule*? Same reason as the
+performance budget below: a principle known so cold — and already slated to arrive
+*via Ansible* — that it never got pulled out as its own discrete, agent-facing line.
+Making it rule 47 lifts it from "implied by Ansible" to an explicit gate **every**
+operation must meet, Ansible in the stack or not — it wasn't, in the voicelab setup
+script that tripped on it the same day. **Occurrence: you'd never violate it; your
+agents will, at deploy/migration/script boundaries, unless it's an explicit gate.**
 
 ## ③ Performance budget — missed because you'd never violate it.
 
@@ -57,10 +62,17 @@ it isn't. Action: externalize tacit expertise into enforced gates.
 
 ## The through-line
 
-All three sit in the gap between the author's mental model — *deterministic
-execution, a trusted boundary, a single expert operator* — and the new reality:
-*untrusted input, unattended retrying agents, and a non-expert AI doing the typing.*
-The rules are excellent at the disciplines the author practices; the gaps are
-exactly where the agent era introduces failure modes the prior decades never had to
-defend, because the machine, the network edge, and the execution were all under one
-expert's control.
+Only **one** of the three was a true blind spot — **input-security** — and even
+that for a rational reason (sole consumer, collapsed trust boundary). The other two
+were never gaps in the author's *knowledge*: idempotency he preaches (Ansible), and
+latency/determinism is his life's work. They were missing as **rules** because of a
+subtler trap — **tacit mastery you never have to write down for yourself.** You
+author rules for the mistakes that actually happen to *you*; you'd never violate
+these, so they stayed implicit.
+
+The catch: **a non-expert AI executor doesn't inherit a 47-year reflex.** Claude,
+left alone, writes the unbatched query, skips the re-run check, interpolates the
+untrusted string — not from malice, from having none of the instinct. So the real
+lesson isn't "you have blind spots" (you mostly don't); it's *externalize the
+expertise that lives in your hands into explicit, enforced gates*, because the agent
+era moved the typing to someone who can't feel when a rule is being broken.
