@@ -13,7 +13,7 @@ doesn't. That's why the license is CC-BY-4.0.
 
 ## ▶ Watch — same 8B model, with the rules vs. without (2 min)
 
-[![Watch: same Llama 3.1 8B, with my rules vs. without](demo/teaser-thumb.png)](https://youtu.be/VIDEO_ID)
+[![Watch: same Llama 3.1 8B, with my rules vs. without](demo/teaser-thumb.png)](https://youtu.be/rmMGM460FMw)
 
 One local **Llama 3.1 8B**, the same weights twice. On the left, vanilla — it's
 never heard of "rule 2." On the right, the same model with these 100 rules
@@ -22,9 +22,9 @@ and *names the rule it breaks*, and refuses to invent a rule that doesn't exist.
 A small model, properly trained, does this for a few dollars of electricity a
 year — the same work through a frontier API runs into the thousands.
 
-**▶ [Watch the 2-minute demo →](https://youtu.be/VIDEO_ID)**
+**▶ [Watch the 2-minute demo →](https://youtu.be/rmMGM460FMw)**
 
-> Built and run with **[Bard](https://github.com/edhaynes/BardLLM)** — my local-first LLM workbench.
+> **Built with [Bard](https://apps.apple.com/app/bard-llm/id6772813533)** — *LLM on the Go*: run local models on iPhone, iPad, and Mac.
 
 ## Introducing Jason
 
