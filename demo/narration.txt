@@ -1,0 +1,11 @@
+Same model — Llama 3.1 8B — twice. On the left, vanilla. On the right, the same weights with my hundred rules standing in front of it. One variable changes: the rules. With rules, seeing is believing.
+
+Ask the vanilla model what rule 2 says. It has no idea — it has never seen my rules. Ask the rules version, and it quotes rule 2 back, word for word.
+
+Now tell the vanilla model I'm about to hardcode an API key and commit it. It gives a textbook security lecture — correct, generic, not mine. The rules version names rule 2, quotes it, and enforces my process: stop, scan, flag. I never asked it to check.
+
+And when I ask about something the rules don't cover, it doesn't invent one. It tells me, straight, that it isn't there.
+
+A small model, properly trained, does this for the price of electricity — a few dollars a year on a box you already own. The same work, metered through a frontier API, bills by the token and climbs into the thousands.
+
+It's all in the open repo — github dot com, slash ed haynes, slash eds dash rules.

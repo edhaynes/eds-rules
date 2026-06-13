@@ -292,3 +292,11 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
   different parade you're recalling? Powell's published phrasing is the
   "P=40-to-70" information rule — keep your "90%" framing (it's the canon
   number) but we can footnote his original 40–70 if you want fidelity.
+
+## F16 — Narrated demo video ("Seeing is believing")
+- **Status:** In Progress — 2026-06-13
+- A 60–90s narrated teaser of the rules-as-a-model demo: same Llama 3.1 8B with the rules vs. without (one-variable comparison), ElevenLabs voiceover, "seeing is believing" tagline. Eddie records his full-screen terminal; `demo/make-demo-video.sh` adds the VO and stitches the MP4.
+- Deliverables in `demo/`: `narration.txt`, `teaser-runsheet.md`, `ask-vanilla.sh`, `make-demo-video.sh`, `cost-power-savings.md`, `PLAN.md`.
+- **Cost/power punchline:** at 2,000 calls/day, local 8B (~$30/yr electricity) vs frontier API (~$5K Haiku / $15K Sonnet / $25K Opus per dev-year) — ~160–800× cheaper; assumptions documented.
+- **Blocked (axis B):** "small-trained-beats-big-Claude" + the Claude half of the comparison need a valid `ANTHROPIC_API_KEY` (env key len 46 fails Anthropic auth). `ask-vanilla.sh BACKEND=claude` is wired and ready.
+- **Shelved:** training deep-dive (epoch training + reverse-rule-lookup) — source artifacts on Gladius, currently unreachable (Eddie). Won't fabricate training output.
