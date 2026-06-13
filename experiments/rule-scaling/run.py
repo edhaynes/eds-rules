@@ -103,7 +103,11 @@ def run():
                             for i, (s, r) in zip(sampled, judged)],
                 "grade": reps[-1]}) + "\n"); out.flush()
         grade = sum(reps) / len(reps)
-        print(f"{N:>4}  {grade:6.1f}  {[round(x) for x in reps]}")
+        ftoks = len(sysprompt) // 4               # rough token estimate of the rule prompt
+        pct = 100 * ftoks / 8192                  # share of an 8K context budget
+        print(f"{N:>4}  {grade:6.1f}  ~{ftoks:>5}tok ({pct:4.0f}% of 8K ctx)  {[round(x) for x in reps]}")
+        with open(os.path.join(HERE, "summary.tsv"), "a") as sm:
+            sm.write(f"{SUBJECT}\t{N}\t{grade:.1f}\t{ftoks}\n")
     out.close()
     print("\nwrote results.jsonl")
 

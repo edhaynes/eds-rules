@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="Arial,Helvetica,sans-serif">
+<rect width="1000" height="620" fill="#101010"/>
+<text x="90" y="38" fill="#f0f6fc" font-size="26" font-weight="bold">Rule-following vs. number of rules in context</text>
+<text x="90" y="60" fill="#8b949e" font-size="14">subject models, rules prompt-baked · judge: GPT-OSS-120B · 10-min full-stack task + polish</text>
+<line x1="90" y1="540.0" x2="760" y2="540.0" stroke="#30363d" stroke-width="1"/>
+<text x="78" y="545.0" fill="#8b949e" font-size="13" text-anchor="end">0</text>
+<line x1="90" y1="422.5" x2="760" y2="422.5" stroke="#30363d" stroke-width="1"/>
+<text x="78" y="427.5" fill="#8b949e" font-size="13" text-anchor="end">25</text>
+<line x1="90" y1="305.0" x2="760" y2="305.0" stroke="#30363d" stroke-width="1"/>
+<text x="78" y="310.0" fill="#8b949e" font-size="13" text-anchor="end">50</text>
+<line x1="90" y1="187.5" x2="760" y2="187.5" stroke="#30363d" stroke-width="1"/>
+<text x="78" y="192.5" fill="#8b949e" font-size="13" text-anchor="end">75</text>
+<line x1="90" y1="70.0" x2="760" y2="70.0" stroke="#30363d" stroke-width="1"/>
+<text x="78" y="75.0" fill="#8b949e" font-size="13" text-anchor="end">100</text>
+<text x="26" y="305" fill="#f0f6fc" font-size="15" transform="rotate(-90 26 305)" text-anchor="middle">grade (0–100)</text>
+<line x1="90.0" y1="540" x2="90.0" y2="546" stroke="#8b949e"/>
+<text x="90.0" y="566" fill="#8b949e" font-size="13" text-anchor="middle">1</text>
+<line x1="185.7" y1="540" x2="185.7" y2="546" stroke="#8b949e"/>
+<text x="185.7" y="566" fill="#8b949e" font-size="13" text-anchor="middle">2</text>
+<line x1="281.4" y1="540" x2="281.4" y2="546" stroke="#8b949e"/>
+<text x="281.4" y="566" fill="#8b949e" font-size="13" text-anchor="middle">4</text>
+<line x1="377.1" y1="540" x2="377.1" y2="546" stroke="#8b949e"/>
+<text x="377.1" y="566" fill="#8b949e" font-size="13" text-anchor="middle">8</text>
+<line x1="472.9" y1="540" x2="472.9" y2="546" stroke="#8b949e"/>
+<text x="472.9" y="566" fill="#8b949e" font-size="13" text-anchor="middle">16</text>
+<line x1="568.6" y1="540" x2="568.6" y2="546" stroke="#8b949e"/>
+<text x="568.6" y="566" fill="#8b949e" font-size="13" text-anchor="middle">32</text>
+<line x1="664.3" y1="540" x2="664.3" y2="546" stroke="#8b949e"/>
+<text x="664.3" y="566" fill="#8b949e" font-size="13" text-anchor="middle">64</text>
+<line x1="760.0" y1="540" x2="760.0" y2="546" stroke="#8b949e"/>
+<text x="760.0" y="566" fill="#8b949e" font-size="13" text-anchor="middle">128</text>
+<text x="425" y="600" fill="#f0f6fc" font-size="15" text-anchor="middle">number of rules in the prompt (log scale)</text>
+<polyline points="90.0,305.0 185.7,187.5 281.4,187.5 377.1,275.9 472.9,292.3 568.6,318.2 664.3,334.6 760.0,305.9" fill="none" stroke="#ee0000" stroke-width="3"/>
+<circle cx="90.0" cy="305.0" r="4.5" fill="#ee0000"/>
+<circle cx="185.7" cy="187.5" r="4.5" fill="#ee0000"/>
+<circle cx="281.4" cy="187.5" r="4.5" fill="#ee0000"/>
+<circle cx="377.1" cy="275.9" r="4.5" fill="#ee0000"/>
+<circle cx="472.9" cy="292.3" r="4.5" fill="#ee0000"/>
+<circle cx="568.6" cy="318.2" r="4.5" fill="#ee0000"/>
+<circle cx="664.3" cy="334.6" r="4.5" fill="#ee0000"/>
+<circle cx="760.0" cy="305.9" r="4.5" fill="#ee0000"/>
+<rect x="784" y="68" width="22" height="6" fill="#ee0000"/>
+<text x="812" y="76" fill="#f0f6fc" font-size="14">granite3.1-dense:2b</text>
+<polyline points="90.0,305.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<circle cx="90.0" cy="305.0" r="4.5" fill="#58a6ff"/>
+<rect x="784" y="96" width="22" height="6" fill="#58a6ff"/>
+<text x="812" y="104" fill="#f0f6fc" font-size="14">llama3.1:8b</text>
+</svg>
