@@ -249,12 +249,18 @@ def main():
     if "--frames-only" in sys.argv: return
     lst = os.path.join(FRAMES, "concat.txt")
     with open(lst, "w") as fh:
-        for i, dr in enumerate(durs): fh.write(f"file 'c{i:02d}.png'\nduration {dr}\n")
-        fh.write(f"file 'c{len(durs)-1:02d}.png'\n")
+        last = len(durs) - 1
+        for i, dr in enumerate(durs):
+            # pad the final card so the concat video can't undershoot the audio;
+            # -t/-shortest then trim back to the exact audio length (keeps the sign-off).
+            fh.write(f"file 'c{i:02d}.png'\nduration {dr + 20 if i == last else dr}\n")
+        fh.write(f"file 'c{last:02d}.png'\n")
     cmd = ["ffmpeg","-y","-f","concat","-safe","0","-i",lst]
     if os.path.exists(AUDIO):
         cmd += ["-i",AUDIO,"-map","0:v:0","-map","1:a:0","-c:a","aac","-b:a","192k"]
-    cmd += ["-c:v","libx264","-r","30","-pix_fmt","yuv420p","-t",f"{end}","-shortest",OUT]
+    # No -shortest: it finalizes early on image-concat input and clips the audio.
+    # The padded concat video is longer than the audio; -t trims to the exact audio length.
+    cmd += ["-c:v","libx264","-r","30","-pix_fmt","yuv420p","-t",f"{end}",OUT]
     subprocess.run(cmd, check=True); print(f"\nDone -> {OUT}")
 
 if __name__ == "__main__":
