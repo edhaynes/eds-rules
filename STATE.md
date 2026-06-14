@@ -41,11 +41,15 @@ are really Jason's). Repo: github.com/edhaynes/eds-rules.
   refinement loop.
 
 ## Open threads / unfinished
-- **B12 (top, in progress): sync the book** to both RULES.md changesets. Plan:
-  `plans/PLAN_book-sync.md` (flex chapters to 19–21; 4 essays in, 4 retired). Step
-  1 done — 4 new rule essays drafted in `plans/book-sync-drafts.md`, **awaiting
-  Eddie's voice review + `[ANECDOTE]` fills** before integration (renumber, cards,
-  Appendix D, ~239 cross-refs). Until done, RULES.md↔book drift is a known bug.
+- **B12 (top, in progress): sync the book** to both RULES.md changesets.
+  Prepped + de-risked: plan (`PLAN_book-sync.md`), 4 essays drafted
+  (`book-sync-drafts.md`, awaiting Eddie's `[ANECDOTE]` fills + voice), mapping
+  frozen + **bijection-verified** (`book-sync-mapping.py`; chapters 21/19/19/21/20;
+  retire SOLID/structured-logs/line-endings/say-what-you-install, insert
+  input-sec/idempotency/latency/state). **Remaining = the application** (insert 4,
+  fold 4, renumber ~95 headings + 5 cards + Appendix D + ~239 cross-refs) — must
+  land in ONE consistent pass (global renumber; partial = broken). Until done,
+  RULES.md↔book drift is the known bug.
 - Eddie's latency/determinism+live-progress rule (grades 52.5, consolidates
   #50+#76) — available as an optional net-neutral swap.
 - **STATE process:** rule #92 added; per-repo `STATE.md` live (1024-word cap,
