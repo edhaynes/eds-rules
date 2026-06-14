@@ -61,7 +61,7 @@ def generate(model, prompt):
                    "content-type": "application/json", "user-agent": UA}, 180)
         txt = "".join(b.get("text", "") for b in d.get("content", []))
     else:
-        d = _post("http://localhost:11434/api/chat",
+        d = _post(os.environ.get("OLLAMA_URL", "http://localhost:11434/api/chat"),
                   {"model": model, "stream": False, "options": {"temperature": 0.1, "num_ctx": 4096},
                    "messages": [{"role": "user", "content": instr}]},
                   {"content-type": "application/json"}, 600)

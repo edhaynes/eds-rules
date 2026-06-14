@@ -63,7 +63,7 @@ def chat(model, messages):
         try:
             req = urllib.request.Request(ollama_url,
                 data=json.dumps(body).encode(), headers={"content-type": "application/json"})
-            return json.load(urllib.request.urlopen(req, timeout=1800))["message"]["content"]
+            return json.load(urllib.request.urlopen(req, timeout=300))["message"]["content"]
         except Exception as e:
             last = e
     raise last
