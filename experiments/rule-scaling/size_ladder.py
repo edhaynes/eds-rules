@@ -57,9 +57,15 @@ def chat(model, messages):
         return "".join(b.get("text", "") for b in d.get("content", []))
     body = {"model": model, "messages": messages, "stream": False,
             "options": {"temperature": TEMP, "num_ctx": 8192}}
-    req = urllib.request.Request("http://localhost:11434/api/chat",
-        data=json.dumps(body).encode(), headers={"content-type": "application/json"})
-    return json.load(urllib.request.urlopen(req, timeout=1800))["message"]["content"]
+    last = None
+    for attempt in range(4):                      # retry: Ollama resets when swapping big models
+        try:
+            req = urllib.request.Request("http://localhost:11434/api/chat",
+                data=json.dumps(body).encode(), headers={"content-type": "application/json"})
+            return json.load(urllib.request.urlopen(req, timeout=1800))["message"]["content"]
+        except Exception as e:
+            last = e
+    raise last
 
 
 def judge(rule, work):
