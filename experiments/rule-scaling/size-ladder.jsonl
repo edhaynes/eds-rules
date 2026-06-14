@@ -1,0 +1,24 @@
+{"model": "llama3.1:8b", "size": "8B", "kind": "base", "N": 64, "gen": 0, "grade": 55.0, "na": 6}
+{"model": "llama3.1:8b", "size": "8B", "kind": "base", "N": 64, "gen": 1, "grade": 35.714285714285715, "na": 3}
+{"model": "llama3.1:8b", "size": "8B", "kind": "base", "N": 64, "gen": 2, "grade": 18.571428571428573, "na": 3}
+{"model": "eds-rules-llama:latest", "size": "8Bft", "kind": "ft", "N": 64, "gen": 0, "grade": 65.0, "na": 5}
+{"model": "eds-rules-llama:latest", "size": "8Bft", "kind": "ft", "N": 64, "gen": 1, "grade": 47.142857142857146, "na": 3}
+{"model": "eds-rules-llama:latest", "size": "8Bft", "kind": "ft", "N": 64, "gen": 2, "grade": 18.571428571428573, "na": 3}
+{"model": "granite-coding-rules-8b-v0.3.1:latest", "N": 64, "gen": 0, "error": "[Errno 54] Connection reset by peer"}
+{"model": "granite-coding-rules-8b-v0.3.1:latest", "N": 64, "gen": 1, "error": "[Errno 54] Connection reset by peer"}
+{"model": "granite-coding-rules-8b-v0.3.1:latest", "size": "8Bft", "kind": "ft", "N": 64, "gen": 2, "grade": 14.285714285714286, "na": 3}
+{"model": "gemma3-ablit:12b", "size": "12B", "kind": "base", "N": 64, "gen": 0, "grade": 50.0, "na": 6}
+{"model": "gemma3-ablit:12b", "N": 64, "gen": 1, "error": "[Errno 54] Connection reset by peer"}
+{"model": "gemma3-ablit:12b", "N": 64, "gen": 2, "error": "[Errno 54] Connection reset by peer"}
+{"model": "gemma3:27b", "size": "27B", "kind": "base", "N": 64, "gen": 0, "grade": 44.0, "na": 5}
+{"model": "gemma3:27b", "size": "27B", "kind": "base", "N": 64, "gen": 1, "grade": 46.666666666666664, "na": 4}
+{"model": "gemma3:27b", "size": "27B", "kind": "base", "N": 64, "gen": 2, "grade": 20.714285714285715, "na": 3}
+{"model": "codellama:34b-instruct", "size": "34B", "kind": "base", "N": 64, "gen": 0, "grade": 38.333333333333336, "na": 4}
+{"model": "codellama:34b-instruct", "size": "34B", "kind": "base", "N": 64, "gen": 1, "grade": 50.0, "na": 4}
+{"model": "codellama:34b-instruct", "size": "34B", "kind": "base", "N": 64, "gen": 2, "grade": 13.75, "na": 2}
+{"model": "claude-opus-4-8", "size": "cloud", "kind": "cloud", "N": 64, "gen": 0, "grade": 72.5, "na": 6}
+{"model": "claude-opus-4-8", "size": "cloud", "kind": "cloud", "N": 64, "gen": 1, "grade": 97.85714285714286, "na": 3}
+{"model": "claude-opus-4-8", "size": "cloud", "kind": "cloud", "N": 64, "gen": 2, "grade": 42.857142857142854, "na": 3}
+{"model": "claude-fable-5", "N": 64, "gen": 0, "error": "HTTP Error 404: Not Found"}
+{"model": "claude-fable-5", "N": 64, "gen": 1, "error": "HTTP Error 404: Not Found"}
+{"model": "claude-fable-5", "N": 64, "gen": 2, "error": "HTTP Error 404: Not Found"}

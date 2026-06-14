@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Arial,Helvetica,sans-serif">
+<rect width="1000" height="560" fill="#101010"/>
+<text x="70" y="40" fill="#f0f6fc" font-size="24" font-weight="bold">Rule-following at 64 rules — no size clears the bar</text>
+<text x="70" y="64" fill="#8b949e" font-size="13">64 rules prompt-baked · 3 generations each (mean ± std) · judge GPT-OSS-120B · blue=base gold=fine-tuned red=cloud</text>
+<line x1="70" y1="490.0" x2="960" y2="490.0" stroke="#30363d"/>
+<text x="60" y="494.0" fill="#8b949e" font-size="12" text-anchor="end">0</text>
+<line x1="70" y1="405.0" x2="960" y2="405.0" stroke="#30363d"/>
+<text x="60" y="409.0" fill="#8b949e" font-size="12" text-anchor="end">25</text>
+<line x1="70" y1="320.0" x2="960" y2="320.0" stroke="#30363d"/>
+<text x="60" y="324.0" fill="#8b949e" font-size="12" text-anchor="end">50</text>
+<line x1="70" y1="235.0" x2="960" y2="235.0" stroke="#30363d"/>
+<text x="60" y="239.0" fill="#8b949e" font-size="12" text-anchor="end">75</text>
+<line x1="70" y1="150.0" x2="960" y2="150.0" stroke="#30363d"/>
+<text x="60" y="154.0" fill="#8b949e" font-size="12" text-anchor="end">100</text>
+<line x1="70" y1="184.0" x2="960" y2="184.0" stroke="#3fb950" stroke-width="2" stroke-dasharray="9 6"/>
+<text x="956" y="176.0" fill="#3fb950" font-size="14" font-weight="bold" text-anchor="end">goal: 90%</text>
+<rect x="93.8" y="441.4" width="79.5" height="48.6" fill="#d2a84b" opacity="0.85"/>
+<text x="133.6" y="433.4" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">14</text>
+<text x="133.6" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 133.6 508.0)">granite-coding-rules-8b-v0.3.1 (8Bft*)</text>
+<rect x="221.0" y="374.4" width="79.5" height="115.6" fill="#58a6ff" opacity="0.85"/>
+<line x1="260.7" y1="425.7" x2="260.7" y2="323.1" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="255.7" y1="425.7" x2="265.7" y2="425.7" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="255.7" y1="323.1" x2="265.7" y2="323.1" stroke="#f0f6fc" stroke-width="2"/>
+<text x="260.7" y="366.4" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">34</text>
+<text x="260.7" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 260.7 508.0)">codellama:34b (34B)</text>
+<rect x="348.1" y="366.2" width="79.5" height="123.8" fill="#58a6ff" opacity="0.85"/>
+<line x1="387.9" y1="416.9" x2="387.9" y2="315.6" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="382.9" y1="416.9" x2="392.9" y2="416.9" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="382.9" y1="315.6" x2="392.9" y2="315.6" stroke="#f0f6fc" stroke-width="2"/>
+<text x="387.9" y="358.2" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">36</text>
+<text x="387.9" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 387.9 508.0)">llama3.1:8b (8B)</text>
+<rect x="475.3" y="363.9" width="79.5" height="126.1" fill="#58a6ff" opacity="0.85"/>
+<line x1="515.0" y1="403.6" x2="515.0" y2="324.1" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="510.0" y1="403.6" x2="520.0" y2="403.6" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="510.0" y1="324.1" x2="520.0" y2="324.1" stroke="#f0f6fc" stroke-width="2"/>
+<text x="515.0" y="355.9" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">37</text>
+<text x="515.0" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 515.0 508.0)">gemma3:27b (27B)</text>
+<rect x="602.4" y="341.8" width="79.5" height="148.2" fill="#d2a84b" opacity="0.85"/>
+<line x1="642.1" y1="406.7" x2="642.1" y2="276.8" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="637.1" y1="406.7" x2="647.1" y2="406.7" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="637.1" y1="276.8" x2="647.1" y2="276.8" stroke="#f0f6fc" stroke-width="2"/>
+<text x="642.1" y="333.8" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">44</text>
+<text x="642.1" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 642.1 508.0)">eds-rules-llama (8Bft)</text>
+<rect x="729.6" y="320.0" width="79.5" height="170.0" fill="#58a6ff" opacity="0.85"/>
+<text x="769.3" y="312.0" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">50</text>
+<text x="769.3" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 769.3 508.0)">gemma3-ablit:12b (12B*)</text>
+<rect x="856.7" y="248.3" width="79.5" height="241.7" fill="#ee0000" opacity="0.85"/>
+<line x1="896.4" y1="324.8" x2="896.4" y2="171.8" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="891.4" y1="324.8" x2="901.4" y2="324.8" stroke="#f0f6fc" stroke-width="2"/>
+<line x1="891.4" y1="171.8" x2="901.4" y2="171.8" stroke="#f0f6fc" stroke-width="2"/>
+<text x="896.4" y="240.3" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="middle">71</text>
+<text x="896.4" y="508.0" fill="#8b949e" font-size="11" text-anchor="end" transform="rotate(-30 896.4 508.0)">claude-opus-4-8 (cloud)</text>
+<text x="515" y="552" fill="#8b949e" font-size="11" text-anchor="middle">* &lt;3 generations (provisional) · 70B deferred (Gladius down) · Fable unavailable (404)</text>
+</svg>
