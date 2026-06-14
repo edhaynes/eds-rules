@@ -27,7 +27,26 @@ task is buried under rules it can't hold. **The move that makes the 90% goal rea
 is to give each tier only the rules its task class needs** — a rule *slice*, not the
 full 100. That is the central design decision.
 
-## The enablers (these unlock the 90% goal)
+## Achievable goals (2026-06-14 — reset against the size-ladder data)
+The size ladder killed the old target: **no runnable model holds 64 prompt-baked rules at
+90%** (ceiling = Opus 71, unstable; local size flat at ~35). So we stop chasing that and
+set goals we can actually hit. The reframe: **success is each *seat* following its own
+*slice* at ≥90% — not any model following all 100.** Nobody holds the full set; that's the
+design, not a miss.
+
+| Goal | Target | Basis in the data |
+|---|---|---|
+| **G1 — T1 grunt budget** | a 2B holds its slice of **≤5 rules** (≤8 if fine-tuned) at ≥90% | small models score ~90–100 only at N≤4; crater past ~8 |
+| **G2 — T2 worker budget** | a **fine-tuned 8B** holds **≤10 rules** at ≥90% | fine-tune gave +20% (44 vs 36 at N=64); strong at small N |
+| **G3 — T3 budget** | Opus holds **≤16 rules** at ≥90% | measured: Opus 95 @ N=16, degrades past it |
+| **G4 — every slice fits its tier** | each per-seat slice ≤ its tier's budget; union == canon | slicing + consolidation (100→~70) make slices fit |
+| **G5 — fleet cost goal** | **≥90% of task *volume*** resolved in T1+T2 | most real work is mechanical/bounded → few rules apply |
+| **G6 — the proving milestone** | fine-tuned 8B clears **≥90% on its ≤8 slice** (the slice test) | single go/no-go for the cheap-tier thesis |
+
+**Explicitly dropped:** any one model holding 64 prompt-baked rules at 90% — measured
+unreachable, off the roadmap. The win comes from *fine-tune + slice*, not bigger models.
+
+## The enablers (these unlock the achievable goals above)
 1. **Global rule consolidation (F19 — the deep merge pass).** Shrink the canonical 100
    to a tighter set; fewer rules everywhere raises every tier's ceiling. Cluster
    analysis is done — see **Merge map** below (~100 → ~70, *no rule loosened*).
