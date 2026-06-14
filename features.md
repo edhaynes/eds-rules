@@ -319,9 +319,20 @@ Eddie redirected to Bard before execution — this is a clean, specced edit.
 - **Added:** 2026-06-13 (Eddie)
 - Grade all 100 rules on a multi-dimension quality rubric — pertinence (P(Claude violates unprompted) × cost), security, cost-effectiveness, architectural simplicity, enforceability, generality — composited to a 0–100 quality score per rule, with a graph of the distribution. Artifacts: `quality/RUBRIC.md`, `quality/grade_rules.py`, `quality/rule-quality.svg`, `quality/grades.csv`.
 
-## F19 — Rule consolidation: punchier, more concise, fewer
-- **Status:** Open — 2026-06-13
+## F20 — Rule consolidation: punchier, more concise, fewer (deep merge pass)
+- **Status:** In Progress — 2026-06-13 (merge map drafted; awaiting Eddie sign-off to edit RULES.md)
 - Make each rule punchier and more concise; consolidate/merge where rules overlap. Goal: fewer total rules + tighter wording.
 - **Now evidence-backed** (experiments/rule-scaling): rule *count* is the binding constraint for small models — capping at ~16 roughly doubles a 2B/4B/8B's adherence (~40→~80), and their clean budget is really ≤8. Fewer, sharper rules = more of the model's budget for the actual task + small models that clear the 90% bar.
 - Eddie has done **one** consolidation pass; estimates **2 more passes** will yield meaningful merges ("meat"). Ties to the 100-cap (§0.9) and PLAN_persona-models (smaller set → small models viable for more roles).
+- **Deep merge pass drafted (2026-06-13):** full cluster analysis in `plans/PLAN_persona-models.md` → "Merge map" — ~100 → ~70 rules, none loosened (merges combine coverage, tighten wording). Biggest clusters: secret hygiene 12→5, versioning 8→4, config 8→4, size 5→2. Awaiting Eddie's sign-off on the map before editing canonical `RULES.md`.
 - Approach: per-pass, find overlapping/redundant rules, merge into one sharper rule; tighten verbose rules to one crisp sentence; re-rank by importance; keep the cap. Surface proposed merges for Eddie's sign-off (don't silently cut).
+
+## F21 — Three-tier, route-by-task model fleet
+- **Status:** In Progress — 2026-06-13 (Eddie). Plan in `plans/PLAN_persona-models.md`.
+- 3 model tiers bound by *task class*: **T1 ~2B** (mechanical — git push, ls, cat, repo_search), **T2 ~8B** (research, python tests), **T3 16B→1T++** (the big guns — architecture, hard code, merges). **Goal: ≥90% of task volume completes in T1+T2 (cheap/local); only ~10% escalates to T3.**
+- Enablers: global rule consolidation (F20) + per-tier rule *slices* (each tier loads only its task's rules, union == canon) + optional fine-tune of T1/T2 on their slice. Router classifies task→tier; escalates T1→T2→T3 on failure. 90% metric is the success criterion, measured via the rule-scaling harness pattern.
+- Sprints S1–S7 in the plan; S1 (slices) + S3 (router) unblocked for Claude once Eddie signs off. T3 = cloud Opus++ (Gladius down).
+
+## F22 — Sizing rule: bite-size, parallel-capable, ≥90%-quality chunks
+- **Status:** Open — 2026-06-13 (Eddie — "another rule")
+- Add one sharp rule: chunk every task into **bite-size, parallel-capable** units, each sized for **≥90% quality first try**; >10% first-try-failure risk OR not independently runnable → split further. Lands by consolidating rule 15's sizing clause + rule 98 (frees the slot; count stays 100). It's the law the 3-tier fleet (F21) rides on. Surface for sign-off with the F20 merge.
