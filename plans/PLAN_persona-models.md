@@ -10,6 +10,19 @@ to the expensive frontier tier.** That is the cost-and-power thesis — reserve 
 1T-class model for the 10% that genuinely needs it; everything routine runs on a 2B or
 8B that costs ~nothing and runs on hardware we own.
 
+## The sizing law (Eddie, 2026-06-14): one rule per billion params
+Rule of thumb: **a model reliably holds ~1 rule per billion parameters at the 90% bar.**
+2B → ~2, 8B → ~8, 14B → ~14, 16B → ~16; the full consolidated ~70 needs a ~70B; 100 → ~100B.
+This is the unifying law behind the fleet — and it *retrodicts the size ladder*: 64 rules
+needs ~64B, our biggest local was 34B, so every local model flatlined at ~35 and only Opus
+(»64B) could even approach 64. **The local "64 @ 90%" chimera was arithmetic.** Consequences:
+- **Design each seat to ≤ (its billions) rules.** Jason on a 14B → tune for the **top 14**.
+- **Fine-tuning raises the effective count** — rules baked into weights don't spend the
+  attention budget — which is what lets a tuned model punch above its billions, and is why
+  the cheap tiers can exist at all.
+- **The full set lives only on a »70B** (cloud Opus, or a 70B on Gladius) — which is exactly
+  why T3 is frontier and the cheap tiers MUST be sliced.
+
 ## The three tiers
 
 | Tier | Size | Task class | Examples | Rule budget | Where |
@@ -70,9 +83,9 @@ unreachable, off the roadmap. The win comes from *fine-tune + slice*, not bigger
 
 ## Persona → tier (roles bind to tiers by task)
 Personas are role+rules contracts; the model is whatever tier the *task* lands in.
-- **Jason (PM / merges):** home tier **~12–16B code model** (coordination + the
-  push-to-main merge workflow — merge skill > raw size); dispatches his mechanical
-  sub-ops (git push, status) down to **T1**. Target/fine-tune him for coding + merges.
+- **Jason (PM / merges):** **Qwen2.5-Coder-14B, fine-tuned for the top 14 rules** (1-per-B
+  law) + decision drills + merge exemplars; dispatches his mechanical sub-ops (git push,
+  status) down to **T1**. Apache-2.0, ARM-native, ~9GB Q4.
 - **Claude (backend), Claudius (architect):** **T3 — Opus++.** Hard code and
   architecture are base-capacity problems; only frontier holds the full rules *and*
   does the work.
@@ -160,8 +173,8 @@ squeeze the crew + docs sections; this first pass takes the structural overlap.)
 1. **The 90% corpus.** What task mix counts toward the metric? I can draft it from real
    session work (mostly git/file ops + tests + research, occasional architecture) — or
    you specify the mix. *Recommend: I draft, you adjust.*
-2. **Jason's exact base.** 12B vs 16B, and which code model (Qwen2.5-Coder-14B fits
-   "good at coding/merges"). *Recommend Qwen2.5-Coder-14B.*
+2. **Jason's exact base.** ✅ RESOLVED — Qwen2.5-Coder-14B, fine-tune for the top 14 rules
+   (1-per-B). Pulling + baselining now; tune is the proving run (target ≥90% @ 14).
 3. **Slice-first or fine-tune-first** for T1/T2? *Recommend slice-first* — cheaper,
    faster to prove the 90% number; fine-tune as the boost once slices prove out.
 4. **Router: rules-based or LLM-classifier?** *Recommend rules-based v1*, LLM later.
