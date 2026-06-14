@@ -33,3 +33,16 @@ HumanEval, 40 problems, **test-graded** (actual unit tests executed, no judge).
   cheaper coder's domain.
 - Harder benchmark (SWE-bench-class, whole-repo) to surface the "needs-decompose" bucket
   that HumanEval's small functions don't.
+
+## The coding-capability ladder (all tiers, same 40 problems, 2026-06-14)
+```
+  model               pass@1
+  granite3.1-dense:2b  17/40  (42%)   T1 grunt
+  llama3.1:8b          23/40  (58%)
+  qwen2.5-coder:14b    36/40  (90%)   <- Jason: the sweet spot
+  claude-opus-4-8      39/40  (98%)   T3
+```
+Steep jump from 8B (58%) to 14B (90%) — 14B is where real coding crosses the bar. Confirms
+Qwen-14B as Jason. The 2B (42%) is a true grunt: simple chunks only — and on granite-2b vs
+llama-8b, **15/40 problems neither solved** (the "needs decompose" bucket the bigger models
+don't show), proving decomposition is mandatory at the smallest tier, optional at 14B.

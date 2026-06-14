@@ -1,4 +1,4 @@
 HumanEval 40 problems
-qwen2.5-coder:14b	36/40	90%
-claude-opus-4-8	39/40	98%
-both=35 t3_only=4 cheap_only=1 neither=0
+granite3.1-dense:2b	17/40	42%
+llama3.1:8b	23/40	58%
+both=15 t3_only=8 cheap_only=2 neither=15
