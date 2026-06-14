@@ -43,8 +43,11 @@ cumulative offset at each point drives the renumber.
    essay; technical/argument paragraphs written, personal war-stories left as
    `[ANECDOTE: ...]` placeholders for Eddie/Iris (the author writes his own
    history). [in progress]
-2. **Freeze the mapping** — old book # → new book # for all 100 (chapter base +
-   within-chapter importance position). Verify bijection on 1–100.
+2. **Freeze the mapping** — DONE + verified: `plans/book-sync-mapping.py`
+   (bijection on 1–100 asserts OK; chapters 21/19/19/21/20). Retirements fold:
+   SOLID(old38)→30, structured-logs(old59)→50, line-endings(old60)→52,
+   say-what-you-install(old100)→10. Inserts: input-sec→3, idempotency→47,
+   latency→77, state→84.
 3. **Per chapter (ch01–05):** insert new essay(s) at importance position; remove
    retired essay(s), folding their clause into the sibling rule's bold statement +
    a sentence; renumber `## Rule N:` headings; reorder + renumber the chapter card.
