@@ -59,6 +59,16 @@ design, not a miss.
 **Explicitly dropped:** any one model holding 64 prompt-baked rules at 90% — measured
 unreachable, off the roadmap. The win comes from *fine-tune + slice*, not bigger models.
 
+**Quality bar — good enough at the model, 90% at the system (Eddie, 2026-06-14).** Don't
+let perfect be the enemy of good enough. The data says a tuned small model lands ~65–75 on
+its slice, not 90 — and that is *fine*, because the 90% bar belongs to the **system**, not
+each tier. The recipe: a "good enough" cheap model **+ escalate-on-low-confidence + a cheap
+verify gate** that bounces weak output up to T3. That delivers 90%-quality output while
+keeping ~90% of *volume* on the cheap path. We tune Jason to be as good as a 14B gets, ship
+it, and let the *architecture* cover the gap — we do not chase a perfect small model that
+the size law says can't exist. (Revises G1–G3: those per-tier numbers are "good enough"
+targets, not gates; the only hard 90% gate is the system-level G5.)
+
 ## The enablers (these unlock the achievable goals above)
 1. **Global rule consolidation (F19 — the deep merge pass).** Shrink the canonical 100
    to a tighter set; fewer rules everywhere raises every tier's ceiling. Cluster
