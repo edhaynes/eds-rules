@@ -111,7 +111,7 @@ def main():
     subprocess.run(
         ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", listf, "-i", audio,
          "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30",
-         "-c:a", "aac", "-b:a", "192k", "-shortest", out],
+         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", f"{dur:.3f}", out],
         check=True, capture_output=True)
     print(f"wrote {out}  ({len(frames)} cards over {dur:.0f}s)")
 
