@@ -22,3 +22,7 @@
 {"model": "claude-fable-5", "N": 64, "gen": 0, "error": "HTTP Error 404: Not Found"}
 {"model": "claude-fable-5", "N": 64, "gen": 1, "error": "HTTP Error 404: Not Found"}
 {"model": "claude-fable-5", "N": 64, "gen": 2, "error": "HTTP Error 404: Not Found"}
+{"model": "eds-rules-llama:latest", "size": "?", "kind": "ft", "N": 8, "gen": 0, "grade": 55.0, "na": 4}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 0, "grade": 76.66666666666667, "na": 5}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 1, "grade": 77.5, "na": 4}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 2, "grade": 95.0, "na": 5}

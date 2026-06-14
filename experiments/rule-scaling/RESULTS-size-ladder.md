@@ -51,3 +51,26 @@ fine-tune signal is the first evidence that the cheap tiers can be made real.
 - Test the ft models on their **slice** (≤8 rules) — expected to clear the bar, proving
   fine-tune + slice is the viable combo.
 - Add the 70B point when Gladius can hear again.
+
+## N=8/14/16 feasibility — testing 1-rule-per-B + good-enough bar (2026-06-14)
+Can a small/mid model hold its 1-per-B budget? Tuned-on-disk models + bases + Qwen-14B
+base, GENS=3, N=8/14/16.
+
+```
+  model              N=8    N=14   N=16
+  qwen2.5-coder:14b  83.1   68.1   66.7   <- best base, untuned
+  llama3.1:8b        69.7   54.3   55.6
+  gemma3-ablit:12b   67.1   36.7   40.8
+  eds-rules-llama    64.6   63.7   60.3   (old 8B ft)
+  granite-coding-8b  66.4   26.7   49.2   (old 8B ft)
+```
+
+Findings:
+1. **Qwen-14B base is the clear winner** (83 @ N=8, 68 @ N=14) — ~15 pts above any other
+   base/tune. Strong modern base >> tired fine-tunes.
+2. **The existing 8B fine-tunes don't beat their base** at low N (eds-rules-llama 64.6 <
+   llama base 69.7 @ N=8) — they're weak/off-target, not a fair test of "carefully tuned."
+3. **1-per-B is not a 90% promise** at these sizes — but it IS a solid *good-enough* target:
+   Qwen lands 83 @ 8 and 68 @ 14 untuned, both "good enough" under the system-90% bar.
+4. **Decision:** Jason = Qwen2.5-Coder-14B base + targeted top-14 tune + the system verify
+   gate. The 90% comes from the system (router + escalate + verify), not a perfect model.
