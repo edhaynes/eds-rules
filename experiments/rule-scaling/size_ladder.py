@@ -58,9 +58,10 @@ def chat(model, messages):
     body = {"model": model, "messages": messages, "stream": False,
             "options": {"temperature": TEMP, "num_ctx": 8192}}
     last = None
+    ollama_url = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/chat")
     for attempt in range(4):                      # retry: Ollama resets when swapping big models
         try:
-            req = urllib.request.Request("http://localhost:11434/api/chat",
+            req = urllib.request.Request(ollama_url,
                 data=json.dumps(body).encode(), headers={"content-type": "application/json"})
             return json.load(urllib.request.urlopen(req, timeout=1800))["message"]["content"]
         except Exception as e:
