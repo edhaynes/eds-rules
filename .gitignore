@@ -41,3 +41,4 @@ demo/.ep90b-timeline.txt
 
 # mock podcast audio (large, regenerable from scripts)
 demo/podcast/*.wav
+demo/podcast/*.mp4
