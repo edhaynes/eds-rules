@@ -1,4 +1,4 @@
-HumanEval 40 problems
-granite3.1-dense:2b	17/40	42%
-llama3.1:8b	23/40	58%
-both=15 t3_only=8 cheap_only=2 neither=15
+HumanEval 20 problems
+jason-qwen14b-v031:latest	17/20	85%
+qwen2.5-coder:14b	19/20	95%
+both=16 t3_only=3 cheap_only=1 neither=0

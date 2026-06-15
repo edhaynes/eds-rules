@@ -1,4 +1,5 @@
 Status: In Progress — 2026-06-13 (3-tier fleet design; awaiting Eddie sign-off, then hand S1/S3 to Claude)
+Update 2026-06-14: first real Jason tune (Qwen-14B QLoRA on v0.3.1 recall data) is a **net loss in-task** — 97.6% recall but rule-following @N=14 dropped to 50.5 (base 57.5) and coding to 85% (base 95%). Recall-tuning teaches reciting, not applying. **The 90% comes from the system (slice + verify + escalate), NOT from fine-tuning the cheap tier on recall data.** See `experiments/rule-scaling/RESULTS-jason-tune.md`. Tuning, if pursued, needs application data + an in-task eval gate.
 Author: Jason-eds (architectural decider) with Claudius-eds
 
 # Model fleet — a 3-tier, route-by-task design
