@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.5] - 2026-06-15
+
+Reorder (no count change, stays at 100): **the Powell rule is now Rule 1** (Eddie
+— "the rule of 90 is the first rule"). It moves from the crew section to the head
+of the hard rules and is reworded to lead with the 90%-and-decide principle, with
+confidence-routing as a corollary; old rules 1–12 shift down to 2–13, and rules
+14–100 are untouched. `RULES.md` reordered; the book (`book/ch01.md` opener +
+narrative + card, the cross-references in `ch02/ch04/ch05/ch06`, and the front
+matter's "Start with these ten") re-synced to match. Appendix D is unchanged —
+book and canon shifted identically, so the `1–14 → 1–14` mapping still holds.
+
 ## [1.4.4] - 2026-06-13
 
 Net-neutral swap (stays at 100): added the **STATE rule** (#92, "Documentation,

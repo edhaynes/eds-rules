@@ -97,27 +97,29 @@ One hundred rules is a reference, not a starting line. If you adopt nothing
 else this week, adopt these — they prevent the unrecoverable and build the
 habits the other ninety stand on:
 
-1. **Rule 1 — scan before every boundary.** A secret scan before every
+1. **Rule 1 — the Powell rule.** Get 90% of the information, then decide;
+   below 90% certain, ask — never guess ahead, never stall past 90%. It's
+   first because it's the rule you apply every other rule through.
+2. **Rule 2 — scan before every boundary.** A secret scan before every
    commit, push, and deploy. No scan, no ship.
-2. **Rule 2 — never hardcode secrets.** Found one → stop and flag it; never
+3. **Rule 3 — never hardcode secrets.** Found one → stop and flag it; never
    propagate it, even temporarily.
-3. **Rule 4 — never destroy without confirmation.** No deletes, drops,
+4. **Rule 5 — never destroy without confirmation.** No deletes, drops,
    force-pushes, or history rewrites on an agent's own judgment.
-4. **Rule 6 — push early and always.** Unpushed work is a liability; the
+5. **Rule 7 — push early and always.** Unpushed work is a liability; the
    remote is the backup, and AI killed the merge-pain excuse.
-5. **Rule 7 — green before commit, healthy before handover.** Never commit
+6. **Rule 8 — green before commit, healthy before handover.** Never commit
    on red; never present a service as done without watching it answer.
-6. **Rule 8 — one purpose per commit.** No "while I'm in there" fixes.
-7. **Rule 9 — fail fast.** Crash loudly at startup with a clear message;
+7. **Rule 9 — one purpose per commit.** No "while I'm in there" fixes.
+8. **Rule 10 — fail fast.** Crash loudly at startup with a clear message;
    never limp along degraded.
-8. **Rule 13 — the Powell rule.** Get 90% of the information, then decide;
-   below 90% certain, ask — never guess ahead, never stall past 90%.
 9. **Rule 23 — if it can change, it's config.** Zero hardcoded hosts, ports,
    models, paths, or timeouts.
 10. **Rule 62 — hooks before the first commit.** Pre-commit secret scanning
     goes in before any code does; gates beat memory.
 
-This ten is the author's judgment, weighted toward irreversible damage. It
+This ten is the author's judgment — the decision rule first, then a weighting
+toward irreversible damage. It
 has a successor: audit enough real sessions against the rules (the tooling
 ships with the companion repo) and the violation histogram produces a
 *measured* ranking. When the data disagrees with this list, the data wins.
