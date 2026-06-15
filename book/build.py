@@ -27,6 +27,7 @@ SOURCES = [
     "ch03.md",
     "ch04.md",
     "ch05.md",
+    "ch06.md",
     "99-back-matter.md",
 ]
 

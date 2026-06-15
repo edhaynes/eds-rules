@@ -1,6 +1,6 @@
 # Book Outline — *100 Rules for Writing My Software: The Red Hat Way*
 
-Status: In Progress — first draft complete (5 chapters + front/back matter, ~38k words); build pipeline live (`book/build.py` → EPUB + 6"×9" PDF, 30 B&W diagrams render-checked 2026-06-12); remaining: author read-through, rubric cold grade (RUBRIC.md), trademark answer before cover is final
+Status: In Progress — draft re-synced to consolidated RULES.md 2026-06-15 (6 chapters + front/back matter); build pipeline live (`book/build.py` → EPUB + 7"×10" PDF); remaining: author read-through of the re-sync, rubric cold grade (RUBRIC.md), trademark answer before cover is final
 
 > **Restructured 2026-06-11 (Eddie):** 5 chapters × 20 rules (was 10 × 10).
 > Chapters build on one another, most fundamental first; each opens with a
@@ -8,14 +8,21 @@ Status: In Progress — first draft complete (5 chapters + front/back matter, ~3
 > Product table describe the original 10-chapter cut and are retained for the
 > rule-grouping rationale; the live structure is the 5-chapter arc:
 >
-> 1. **First Principles** (book rules 1–20) — hard rules + the crew → `ch01.md`
-> 2. **Design** (21–40) — configuration + architecture → `ch02.md`
-> 3. **Build** (41–60) — cross-platform & deployment + errors/observability/dependencies → `ch03.md`
-> 4. **Protect and Prove** (61–80) — secret hygiene + testing & the quality bar → `ch04.md`
-> 5. **Ship and Remember** (81–100) — versioning & release + hygiene/memory/process → `ch05.md`
+> 1. **First Principles** (book rules 1–22) — hard rules + the crew → `ch01.md`
+> 2. **Design** (23–40) — configuration + architecture → `ch02.md`
+> 3. **Build** (41–61) — cross-platform & deployment + errors/observability/dependencies → `ch03.md`
+> 4. **Protect and Prove** (62–75) — secret hygiene + testing & the quality bar → `ch04.md`
+> 5. **Ship and Remember** (76–92) — versioning & release + hygiene/memory/process → `ch05.md`
+> 6. **Operating an AI Fleet** (93–100) — making cheap models good as a system → `ch06.md`
+>
+> **Re-synced 2026-06-15** to the consolidated `RULES.md` (overlaps merged, ~9
+> new non-fleet rules added, new fleet chapter): the book moved from 5×20 to
+> **6 chapters summing to 100** (22/18/21/14/17/8). Per-chapter rule counts are
+> no longer uniform; see Appendix D for the book↔RULES.md mapping. Spec:
+> `plans/PLAN_book-resync.md`.
 >
 > Front matter: `00-front-matter.md` (title/disclaimer, foreword, how to read,
-> meet the crew). Back matter: `99-back-matter.md` (appendices A–D incl. the
+> meet the crew). Back matter: `99-back-matter.md` (appendices A–E incl. the
 > book↔RULES.md mapping, glossary).
 
 ## Product

@@ -83,65 +83,69 @@ repository (`RULES.md` at github.com/edhaynes/eds-rules, CC-BY-4.0).
 ## Appendix D — Book number ↔ repository `RULES.md` mapping
 
 The repository groups the rules by topic; the book orders them pedagogically.
-Same one hundred rules, two orderings.
+Same one hundred rules, two orderings. (The repository was consolidated
+2026-06-14 — overlapping rules merged, freed slots refilled, and a new
+*Operating an AI fleet* chapter added; the count held at 100. This table tracks
+that numbering.)
 
 | Book rules | RULES.md rules | Topic |
 |---|---|---|
-| 1–10 | 1–10 | Hard rules |
-| 11–12 | 11–12 | The Powell rule, the crew and its governance |
-| 13 | 98 | Plan first, sprint sizing |
-| 14–18 | 13–17 | The crew (Claudius, Jason, Claude, Claudina, Linda) |
-| 19 | 99 | No flattery |
-| 20 | 18 | Go local |
-| 21 | 19 | If it can change, it's config |
-| 22–25 | 27–30 | Architecture thesis, vendor interfaces, search-first, DI |
-| 26–28 | 20–22 | No silent fallbacks, startup validation, one config layer |
-| 29 | 31 | Objects with one job |
-| 30–31 | 45–46 | Storage adapter, on-prem/cloud as config |
-| 32–35 | 23–26 | "Use X locally", zero-setup defaults, magic numbers, `.env.example` |
-| 36–37 | 34–35 | File-size gauge, god classes |
-| 38–39 | 32–33 | SOLID, one class per file |
+| 1–14 | 1–14 | Hard rules, the Powell rule, the five-roles charter |
+| 15 | 90 | Plan first |
+| 16–20 | 15–19 | The crew — Claudius, Jason, Claude, Claudina, Linda |
+| 21 | 91 | No flattery |
+| 22 | 20 | Go local |
+| 23 | 21 | If it can change, it's config (absorbs magic numbers) |
+| 24–27 | 28–31 | Architecture thesis, vendor interfaces, search-first, DI |
+| 28–30 | 22–24 | No silent fallbacks, startup validation, one config layer |
+| 31 | 32 | Objects with one job (absorbs SOLID) |
+| 32–33 | 43–44 | Storage adapter, on-prem/cloud as config |
+| 34–35 | 25–26 | "Use X locally", zero-setup defaults |
+| 36 | 34 | The size gauge — files, functions, nesting |
+| 37 | 35 | No god classes |
+| 38 | 33 | One non-trivial class per file |
+| 39 | 27 | Ship the `.env.example` |
 | 40 | 36 | Mechanical refactor commits |
-| 41 | 47 | Deploy gates never disabled |
-| 42 | 77 | Catch specific, never swallow |
-| 43–44 | 83–84 | Pinned dependencies, vulnerability audits |
-| 45–46 | 48–49 | Health endpoints, container-friendly |
-| 47 | 78 | Loud in dev, graceful in prod |
-| 48 | 39 | Three platforms, two in CI |
-| 49–50 | 79–80 | Logger not print, AI errors surface |
-| 51 | 40 | Path libraries |
-| 52 | 85 | Stdlib plus one dependency |
-| 53 | 41 | No hardcoded temp, home, or drive letters |
-| 54–55 | 42–43 | Both architectures, no shell-isms |
-| 56 | 81 | Structural cleanup (context managers) |
-| 57 | 86 | Project-local virtualenvs |
-| 58 | 50 | Progress on slow paths |
-| 59 | 82 | Structured logs |
-| 60 | 44 | Line endings |
-| 61–63 | 51–53 | Hooks first, rotate first, never copy a secret |
-| 64 | 69 | The quality rubric (you get what you inspect) |
-| 65–66 | 54–55 | Scan the artifact, scan the range |
-| 67–69 | 70–72 | Tests ship with logic, contract first, 100% coverage |
-| 70–72 | 56–58 | "Harmless" config, unauthored files, pre-push rescan |
-| 73–74 | 73–74 | Correctness over speed, coverage ratchet |
-| 75–76 | 59–60 | `.gitignore` day one, fix the hook |
-| 77–78 | 75–76 | Full regression, no network in unit tests |
-| 79–80 | 37–38 | Function size, nesting (complexity budget) |
-| 81–82 | 61–62 | Immutable tags, versions only forward |
-| 83 | 93 | Decisions persisted same-commit |
-| 84 | 63 | One canonical version home |
-| 85 | 94 | Bug/feature ledgers |
-| 86–87 | 64–65 | Fetch before tagging, build numbers |
-| 88 | 100 | Verbatim errors, diffs not prose |
-| 89 | 66 | Changelog in the bump commit |
-| 90 | 95 | Plan status tracking |
-| 91 | 96 | Immutable ADRs |
-| 92–93 | 67–68 | Version display, push tags by name |
-| 94–95 | 88–89 | Lint every commit, dead-code sweeps |
-| 96 | 90 | Post-release cleanup |
-| 97 | 97 | README regeneration |
-| 98–99 | 91–92 | No commented-out code, no orphan TODOs |
-| 100 | 87 | Dependency disclosure |
+| 41 | 45 | Deploy gates never disabled |
+| 42 | 71 | Catch specific, never swallow (absorbs cleanup) |
+| 43 | 77 | Pin and lock (absorbs vulnerability audits) |
+| 44–45 | 47–48 | Health endpoints; container stack — Podman/UBI/OpenShift |
+| 46 | 46 | Idempotency |
+| 47 | 72 | Loud in dev, graceful in prod |
+| 48 | 37 | Three platforms, two in CI |
+| 49 | 73 | Logger not print (absorbs structured logs) |
+| 50 | 74 | AI errors surface; agents don't invent tools |
+| 51 | 38 | Path libraries (absorbs LF line endings) |
+| 52 | 78 | Stdlib plus one dependency |
+| 53–55 | 39–41 | Temp/home/drive, both architectures, no shell-isms |
+| 56 | 42 | Time is UTC until it's displayed |
+| 57 | 79 | Project-local virtualenvs |
+| 58 | 49 | Progress on slow paths |
+| 59 | 75 | Remote-call timeout, retry, circuit-breaker |
+| 60 | 76 | Correlation/trace ID |
+| 61 | 50 | Reversible, idempotent migrations |
+| 62–65 | 51–54 | Hooks first, rotate first, never copy a secret, scan every boundary |
+| 66 | 62 | The quality rubric (you get what you inspect) |
+| 67–69 | 63–65 | Tests ship with logic, contract first, 100% coverage |
+| 70–72 | 66–68 | Correctness over speed, coverage ratchet, full regression |
+| 73 | 69 | Latency/throughput budget |
+| 74 | 70 | No network in unit tests |
+| 75 | 55 | Fix the hook that missed it |
+| 76 | 56 | Immutable tags (absorbs fetch-before-tag, push by name) |
+| 77 | 57 | Versions only move forward |
+| 78 | 86 | Persist decisions same-commit (absorbs immutable ADRs) |
+| 79 | 58 | One canonical version home |
+| 80 | 87 | Bug/feature ledgers |
+| 81 | 59 | Build numbers |
+| 82 | 92 | Verbatim errors, diffs not prose |
+| 83 | 60 | Changelog in the bump commit |
+| 84 | 88 | Plan status tracking |
+| 85 | 61 | Version displayed everywhere |
+| 86–88 | 80–82 | Lint every commit, dead-code sweep, post-release cleanup |
+| 89 | 89 | README regeneration |
+| 90–91 | 83–84 | No commented-out code, no orphan TODOs |
+| 92 | 85 | A living `STATE.md` |
+| 93–100 | 93–100 | Operating an AI fleet — sizing law, slicing, context ceilings, verify-then-escalate |
 
 ## Appendix E — Bending the model: the three ways to retrain
 

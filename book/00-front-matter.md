@@ -75,21 +75,21 @@ There are exactly one hundred rules — never more. When a new rule earns a
 place, an old one is consolidated or retired. A rules document that only ever
 grows stops being read.
 
-The rules are arranged in five chapters that build on one another, most
+The rules are arranged in six chapters that build on one another, most
 fundamental first:
 
-1. **First Principles** (rules 1–20) — the lines you never cross, and who decides.
-2. **Design** (rules 21–40) — configuration and architecture: where decisions live.
-3. **Build** (rules 41–60) — portable, loud-failing, lightly-dependent code.
-4. **Protect and Prove** (rules 61–80) — secret hygiene and the quality bar.
-5. **Ship and Remember** (rules 81–100) — versioned releases and written memory.
+1. **First Principles** (rules 1–22) — the lines you never cross, and who decides.
+2. **Design** (rules 23–40) — configuration and architecture: where decisions live.
+3. **Build** (rules 41–61) — portable, loud-failing, lightly-dependent code.
+4. **Protect and Prove** (rules 62–75) — secret hygiene and the quality bar.
+5. **Ship and Remember** (rules 76–92) — versioned releases and written memory.
+6. **Operating an AI Fleet** (rules 93–100) — making cheap models good as a system.
 
 Each chapter opens with a synopsis of the fundamentals it stands on, so you can
 start anywhere and know what is being assumed. Each chapter closes with a
-one-page card — the twenty rules as a checklist, suitable for printing and
-taping to a monitor. Every rule gets a statement, the why (usually a scar), and
-a diagram where one earns its place. All diagrams are designed for black and
-white.
+one-page card — its rules as a checklist, suitable for printing and taping to a
+monitor. Every rule gets a statement, the why (usually a scar), and a diagram
+where one earns its place. All diagrams are designed for black and white.
 
 ## Start with these ten
 
@@ -101,20 +101,20 @@ habits the other ninety stand on:
    commit, push, and deploy. No scan, no ship.
 2. **Rule 2 — never hardcode secrets.** Found one → stop and flag it; never
    propagate it, even temporarily.
-3. **Rule 3 — never destroy without confirmation.** No deletes, drops,
+3. **Rule 4 — never destroy without confirmation.** No deletes, drops,
    force-pushes, or history rewrites on an agent's own judgment.
-4. **Rule 5 — push early and always.** Unpushed work is a liability; the
+4. **Rule 6 — push early and always.** Unpushed work is a liability; the
    remote is the backup, and AI killed the merge-pain excuse.
-5. **Rule 6 — green before commit, healthy before handover.** Never commit
+5. **Rule 7 — green before commit, healthy before handover.** Never commit
    on red; never present a service as done without watching it answer.
-6. **Rule 7 — one purpose per commit.** No "while I'm in there" fixes.
-7. **Rule 8 — fail fast.** Crash loudly at startup with a clear message;
+6. **Rule 8 — one purpose per commit.** No "while I'm in there" fixes.
+7. **Rule 9 — fail fast.** Crash loudly at startup with a clear message;
    never limp along degraded.
-8. **Rule 11 — the Powell rule.** Get 90% of the information, then decide;
+8. **Rule 13 — the Powell rule.** Get 90% of the information, then decide;
    below 90% certain, ask — never guess ahead, never stall past 90%.
-9. **Rule 21 — if it can change, it's config.** Zero hardcoded hosts, ports,
+9. **Rule 23 — if it can change, it's config.** Zero hardcoded hosts, ports,
    models, paths, or timeouts.
-10. **Rule 61 — hooks before the first commit.** Pre-commit secret scanning
+10. **Rule 62 — hooks before the first commit.** Pre-commit secret scanning
     goes in before any code does; gates beat memory.
 
 This ten is the author's judgment, weighted toward irreversible damage. It
