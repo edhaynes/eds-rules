@@ -95,14 +95,21 @@ fine-tune recipe (and when to bother) is in [model/README.md](model/README.md).
 
 ## Adopting these rules
 
-1. Copy (or submodule) `RULES.md` into your repo.
+The fastest path is the drop-in kit in **[`rules/`](rules/)** — the ingestible
+rules file plus step-by-step setup for Claude Code and OpenCode/Codex. See
+**[rules/README.md](rules/README.md)**. In short:
+
+1. Copy `rules/RULES.md` into your repo.
 2. Point your harness at it:
-   - **Claude Code:** reference it from `CLAUDE.md` (`@RULES.md`), or paste it in.
+   - **Claude Code:** reference it from `CLAUDE.md` (`@rules/RULES.md`), or paste it in.
    - **OpenCode / Codex / others:** reference it from `AGENTS.md`.
    - A symlink from both `CLAUDE.md` and `AGENTS.md` to one canonical file keeps
      them from drifting.
 3. Edit the rules you disagree with. They're numbered so you can cite them in
    review comments ("violates #56").
+
+The book that elaborates every rule is built into
+**[book/eds-rules-book-print.pdf](book/eds-rules-book-print.pdf)**.
 
 **Maintenance policy:** the count is fixed at exactly 100. New rules enter by
 consolidation or by deprecating a rule that earned retirement — the list never

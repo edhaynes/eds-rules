@@ -5,6 +5,7 @@ Usage: python3 book/build.py [epub|pdf|all]   (default: all)
 
 Requires on PATH: mmdc (@mermaid-js/mermaid-cli), pandoc, typst.
 Outputs to dist/: eds-rules-book.epub, eds-rules-book-print.pdf
+Also publishes the print PDF to book/eds-rules-book-print.pdf (tracked in git).
 """
 
 import hashlib
@@ -179,6 +180,10 @@ def build_pdf(processed: list[Path]) -> None:
     pdf = DIST_DIR / "eds-rules-book-print.pdf"
     subprocess.run(["typst", "compile", str(typ), str(pdf)], check=True)
     print(f"built {pdf.relative_to(REPO_ROOT)} ({pdf.stat().st_size // 1024} KB)")
+    # Publish the print PDF into book/ — the in-repo, version-tracked copy.
+    published = BOOK_DIR / "eds-rules-book-print.pdf"
+    shutil.copyfile(pdf, published)
+    print(f"published {published.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

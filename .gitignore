@@ -18,9 +18,7 @@ service-account*.json
 
 # book build artifacts
 book/_build/
-dist/*
-# ...except the published print PDF, which we ship in-repo
-!dist/eds-rules-book-print.pdf
+dist/
 __pycache__/
 *.py[cod]
 findings.yaml
@@ -48,3 +46,6 @@ demo/podcast/*.mp4
 # YouTube OAuth secrets (never commit)
 demo/client_secret.json
 demo/youtube-token.json
+
+# Ep93 interview pipeline — heavy/regenerable media intermediates
+demo/podcast/ep93-interview/work/

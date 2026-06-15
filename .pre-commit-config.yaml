@@ -7,8 +7,16 @@ repos:
     rev: v4.6.0
     hooks:
       - id: check-added-large-files
-        exclude: '^dist/eds-rules-book-print\.pdf$'
+        exclude: '^book/eds-rules-book-print\.pdf$'
       - id: check-merge-conflict
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: rules-kit-sync
+        name: keep rules/RULES.md in sync with canonical RULES.md
+        entry: python3 rules/sync.py
+        language: system
+        files: '^(RULES\.md|rules/RULES\.md)$'
+        pass_filenames: false
