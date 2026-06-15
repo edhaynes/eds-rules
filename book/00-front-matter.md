@@ -11,6 +11,14 @@ is, with no promises of any kind. Your mileage may vary — do your own research
 
 ---
 
+**Built with Bard** — *LLM on the Go*: run local models on iPhone, iPad, and
+Mac. App Store: [apps.apple.com/app/bard-llm/id6772813533](https://apps.apple.com/app/bard-llm/id6772813533)
+
+Watch and listen — the 100 Rules podcast:
+[youtu.be/rmMGM460FMw](https://youtu.be/rmMGM460FMw)
+
+---
+
 ## Foreword
 
 These rules come from years of actual development experience — close to five

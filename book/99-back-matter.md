@@ -1,5 +1,27 @@
 # Back Matter
 
+## Companion media
+
+A two-minute demonstration accompanies these rules: one local Llama 3.1 8B
+model, the same weights run twice — vanilla on one side, and with these hundred
+rules standing in front of it on the other. The ruled model quotes a rule cold,
+catches a hardcoded key and *names the rule it breaks*, and refuses to invent a
+rule that does not exist. The "best rule × worst rule" podcast series then walks
+the hundred one pair at a time.
+
+- **Watch and listen — the 100 Rules podcast:**
+  [youtu.be/rmMGM460FMw](https://youtu.be/rmMGM460FMw)
+- **Companion repository (`RULES.md`, CC-BY-4.0):**
+  [github.com/edhaynes/eds-rules](https://github.com/edhaynes/eds-rules)
+
+**Built with Bard.** The local models behind the demonstration — and the
+on-device inference this book keeps holding up as the cheap, private
+alternative to a frontier API — run on **Bard**, *LLM on the Go*: local models
+on iPhone, iPad, and Mac.
+
+- **Bard on the App Store:**
+  [apps.apple.com/app/bard-llm/id6772813533](https://apps.apple.com/app/bard-llm/id6772813533)
+
 ## Appendix A — Drop-in pre-commit config
 
 ```yaml
