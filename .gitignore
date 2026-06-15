@@ -18,7 +18,9 @@ service-account*.json
 
 # book build artifacts
 book/_build/
-dist/
+dist/*
+# ...except the published print PDF, which we ship in-repo
+!dist/eds-rules-book-print.pdf
 __pycache__/
 *.py[cod]
 findings.yaml
