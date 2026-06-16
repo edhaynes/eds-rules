@@ -1,0 +1,28 @@
+# The "Guy" branch — Guy's scalpel: 3 seats, Jason / Claude / Claudius.
+# Model→role binding is config, never hardcoded (rule P-CREW). "Go local" swaps the
+# model strings for local backends; roles and rule-slices are unchanged.
+# An 8B seat holds ~8 rules trained-resident; the rest are reinforced by paging
+# the relevant rule into context on its trigger (rule P-FLEET).
+project:
+  name: "cloud-native distributed app (multi-platform)"
+  active_layers: [axiom, personal, project, employer]
+
+seats:
+  - name: Jason
+    role: "PM / coordinator"
+    model: "llama-3.1-8b"
+    params_b: 8                       # rule budget ≈ 8 (sizing law); misses paged in
+    draws: [axiom, personal]
+    focus: [decide, route, plan, task-start, nontrivial, commit, push, session-end, crew, governance, planning, scope]
+  - name: Claude
+    role: "Builder / test-dev / easy coding"
+    model: "qwen2.5-14b"
+    params_b: 14                      # rule budget ≈ 14
+    draws: [axiom, personal, project]
+    focus: [test, coverage, feature, bugfix, code, api, contract, backend, dependency]
+  - name: Claudius
+    role: "Architect — API-first, then parallel fan-out"
+    model: "claude-opus"
+    params_b: 200                     # effectively holds its full draw resident
+    draws: [axiom, personal, project, employer]
+    focus: [design, architecture, api, infra, deploy, fleet, compose, governance, parallel]
