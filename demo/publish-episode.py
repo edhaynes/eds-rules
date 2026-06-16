@@ -80,16 +80,28 @@ def main():
     ap.add_argument("--video")
     ap.add_argument("--thumb")
     ap.add_argument("--at", help="local HH:MM to auto-publish; omit = stay private")
+    ap.add_argument("--public", action="store_true", help="publish public immediately")
+    ap.add_argument("--title", help="override title (e.g. interview episodes)")
+    ap.add_argument("--description", help="override description")
+    ap.add_argument("--tags", help="override tags, comma-separated")
     a = ap.parse_args()
     video = a.video or os.path.join(HERE, "podcast", f"ep{a.ep}.mp4")
     if not os.path.exists(video):
         sys.exit(f"No video at {video}")
     thumb = a.thumb or os.path.join(THUMBS, f"ep{a.ep}.png")
     title, desc, tags = metadata(a.ep)
+    if a.title:
+        title = a.title[:100]
+    if a.description:
+        desc = a.description
+    if a.tags:
+        tags = [t.strip() for t in a.tags.split(",") if t.strip()]
 
     status = {"privacyStatus": "private", "selfDeclaredMadeForKids": False}
     if a.at:
         status["publishAt"] = next_local(a.at)  # private until then, auto-public at publishAt
+    elif a.public:
+        status["privacyStatus"] = "public"
 
     yt = build("youtube", "v3", credentials=creds())
     print(f"Uploading: {title}")
@@ -113,6 +125,8 @@ def main():
 
     if a.at:
         print(f"  scheduled to auto-publish at {status['publishAt']} (UTC)")
+    elif a.public:
+        print("  status: PUBLIC (live now)")
     else:
         print("  status: PRIVATE (review on YouTube, then schedule or publish)")
 
