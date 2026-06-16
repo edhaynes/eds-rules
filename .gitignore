@@ -49,3 +49,6 @@ demo/youtube-token.json
 
 # Ep93 interview pipeline — heavy/regenerable media intermediates
 demo/podcast/ep93-interview/work/
+
+# regenerable synopsis PDF (large binary; rebuild via synopsis.py + Chrome)
+taxonomy/generated/*.pdf

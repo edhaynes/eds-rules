@@ -10,9 +10,9 @@ Crew: **cloud-native distributed app (multi-platform)** — 3 seats, total rule 
 ## Per seat
 | Seat | Model | Budget | Resident | Paged |
 |------|-------|-------:|---------:|------:|
-| Claudius | claude-opus | 200 | 50 | 0 |
+| Jason | llama-3.1-8b | 8 | 8 | 34 |
 | Claude | qwen2.5-14b | 14 | 14 | 33 |
-| Linda | llama-3.1-8b | 8 | 8 | 34 |
+| Claudius | claude-opus | 200 | 50 | 0 |
 
 ## Safety: is every axiom resident in *some* seat?
 - **YES** — all axioms are memorized somewhere in the crew.

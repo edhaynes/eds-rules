@@ -1,4 +1,4 @@
-# Claude — Backend / test-dev / easy coding
+# Claude — Builder / test-dev / easy coding
 
 Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, personal, project.
 
@@ -37,7 +37,7 @@ Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, p
 - **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`) ← triggers: report, debug, change
 - **Fleet: size, slice, page, verify-escalate** (`P-FLEET`) ← triggers: fleet, routing, compose
 - **Three roles, one final human** (`P-CREW`) ← triggers: crew, governance
-- **Linda — research, fast + wide** (`P-RESEARCH`) ← triggers: crew, research
+- **Jason — PM, fast 8B model** (`P-PM`) ← triggers: crew, planning, route, decide
 - **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`) ← triggers: container, deploy, infra
 - **Cloud-native: OpenShift-first, GCloud-portable** (`PR-CLOUD`) ← triggers: deploy, infra
 - **Architecture beats language** (`P-ARCH`) ← triggers: design
@@ -46,7 +46,7 @@ Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, p
 - **Search open source first** (`P-OSS`) ← triggers: build, design
 - **Deploy gates + idempotency + health** (`PR-DEPLOY`) ← triggers: deploy, migrate
 - **Living memory: STATE/ADR/trackers** (`P-DOCS`) ← triggers: decision, session, commit
-- **Testbed + connectivity rubric** (`PR-TESTBED`) ← triggers: testbed, connectivity, remote
+- **Testbed fleet + connectivity rubric** (`PR-TESTBED`) ← triggers: testbed, connectivity, remote, fleet
 - **Swappable interface per axis** (`P-SWAP`) ← triggers: design, integration
 - **One config layer; validate at start** (`P-CONFIG`) ← triggers: config, startup
 - **Disciplined errors + logging** (`P-ERRORS`) ← triggers: error, logging

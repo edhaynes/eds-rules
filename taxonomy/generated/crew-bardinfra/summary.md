@@ -1,6 +1,6 @@
 # Compose summary
 
-Crew: **bard-llm — on-device local-LLM app** — 3 seats, total rule budget **222**.
+Crew: **bard-infra — fleet / infrastructure project** — 3 seats, total rule budget **222**.
 
 - Active rules across layers: **47**
 - Team-resident (memorized) union: **47**
@@ -10,9 +10,9 @@ Crew: **bard-llm — on-device local-LLM app** — 3 seats, total rule budget **
 ## Per seat
 | Seat | Model | Budget | Resident | Paged |
 |------|-------|-------:|---------:|------:|
-| Claudius | claude-opus | 200 | 47 | 0 |
+| Jason | llama-3.1-8b | 8 | 8 | 34 |
 | Claude | qwen2.5-14b | 14 | 14 | 33 |
-| Linda | llama-3.1-8b | 8 | 8 | 34 |
+| Claudius | claude-opus | 200 | 47 | 0 |
 
 ## Safety: is every axiom resident in *some* seat?
 - **YES** — all axioms are memorized somewhere in the crew.

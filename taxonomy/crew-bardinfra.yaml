@@ -1,0 +1,25 @@
+# bard-infra — the sample app (fleet / infrastructure project). Active layers swap
+# the generic cloud-native "project" for the "bardinfra" layer (its rules section).
+project:
+  name: "bard-infra — fleet / infrastructure project"
+  active_layers: [axiom, personal, bardinfra]
+
+seats:
+  - name: Jason
+    role: "PM / coordinator"
+    model: "llama-3.1-8b"
+    params_b: 8
+    draws: [axiom, personal]
+    focus: [decide, route, plan, task-start, commit, push, crew, governance, fleet]
+  - name: Claude
+    role: "Builder / test-dev"
+    model: "qwen2.5-14b"
+    params_b: 14
+    draws: [axiom, personal, bardinfra]
+    focus: [test, coverage, feature, code, provision, node, connectivity, credential]
+  - name: Claudius
+    role: "Architect"
+    model: "claude-opus"
+    params_b: 200
+    draws: [axiom, personal, bardinfra]
+    focus: [design, architecture, fleet, deploy, cloud, recovery, compose, governance]
