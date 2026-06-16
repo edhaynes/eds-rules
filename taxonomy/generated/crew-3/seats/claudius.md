@@ -2,7 +2,7 @@
 
 Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom, personal, project, employer.
 
-## Resident (52) — held in weights / always in prompt
+## Resident (50) — held in weights / always in prompt
 - [axiom] **Secret scan before ship** (`AX-SCAN`)
 - [axiom] **Least privilege by default** (`AX-LEASTPRIV`)
 - [axiom] **Green before commit, healthy before handover** (`AX-GREEN`)
@@ -11,8 +11,8 @@ Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom,
 - [axiom] **No OS assumptions; script everything; headless** (`AX-HEADLESS`)
 - [axiom] **No flattery, no yes-manning** (`AX-NOFLAT`)
 - [personal] **Fleet: size, slice, page, verify-escalate** (`P-FLEET`)
-- [personal] **Five roles, one final human** (`P-CREW`)
-- [personal] **Claudius — architect, deep** (`P-ARCHITECT`)
+- [personal] **Three roles, one final human** (`P-CREW`)
+- [personal] **Claudius — architect, deep, API-first** (`P-ARCHITECT`)
 - [personal] **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`)
 - [project] **Cloud-native: OpenShift-first, GCloud-portable** (`PR-CLOUD`)
 - [personal] **API-first, then parallel fan-out** (`P-APIPAR`)
@@ -40,7 +40,8 @@ Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom,
 - [axiom] **Disclose every dependency** (`AX-DEPDISC`)
 - [axiom] **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`)
 - [axiom] **100% line + branch coverage** (`AX-COVER`)
-- [personal] **Jason — PM, fast model** (`P-PM`)
+- [personal] **Claude — builder / test-dev** (`P-BACKEND`)
+- [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
 - [project] **Target platforms: Windows, Linux, macOS, iOS** (`PR-TARGETS`)
 - [project] **Distributed-systems discipline** (`PR-DIST`)
 - [personal] **Living memory: STATE/ADR/trackers** (`P-DOCS`)
@@ -52,8 +53,5 @@ Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom,
 - [personal] **Pin, lock, audit; stdlib+one** (`P-DEPS`)
 - [personal] **Hygiene: lint, dead-code, no cruft** (`P-HYGIENE`)
 - [personal] **Versioning discipline** (`P-VERSION`)
-- [personal] **Claude — backend, methodical** (`P-BACKEND`)
-- [personal] **Claudina — frontend, cross-platform** (`P-FRONTEND`)
-- [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
 
 ## Paged (0) — injected on trigger

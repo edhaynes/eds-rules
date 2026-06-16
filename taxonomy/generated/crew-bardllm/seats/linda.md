@@ -5,14 +5,14 @@ Model `llama-3.1-8b` · ~8B → rule budget **8** (sizing law). Draws: axiom, pe
 ## Resident (8) — held in weights / always in prompt
 - [axiom] **The 90% rule (Powell)** (`AX-POWELL`)
 - [axiom] **No flattery, no yes-manning** (`AX-NOFLAT`)
-- [personal] **Search open source first** (`P-OSS`)
 - [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
+- [personal] **Search open source first** (`P-OSS`)
 - [axiom] **Secret scan before ship** (`AX-SCAN`)
 - [axiom] **Never hardcode secrets** (`AX-NOSECRET`)
 - [axiom] **Destruction needs a human** (`AX-DESTROY`)
 - [axiom] **Distrust every external input** (`AX-INPUT`)
 
-## Paged (36) — injected on trigger
+## Paged (34) — injected on trigger
 - **Autonomy bounded by version control** (`AX-AUTOVC`) ← triggers: write, autonomy
 - **Least privilege by default** (`AX-LEASTPRIV`) ← triggers: auth, deploy, credential
 - **Green before commit, healthy before handover** (`AX-GREEN`) ← triggers: commit, handover, deploy
@@ -32,9 +32,9 @@ Model `llama-3.1-8b` · ~8B → rule budget **8** (sizing law). Draws: axiom, pe
 - **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`) ← triggers: report, debug, change
 - **100% line + branch coverage** (`AX-COVER`) ← triggers: test, coverage
 - **Fleet: size, slice, page, verify-escalate** (`P-FLEET`) ← triggers: fleet, routing, compose
-- **Five roles, one final human** (`P-CREW`) ← triggers: crew, governance
-- **Jason — PM, fast model** (`P-PM`) ← triggers: crew, planning
-- **Claudius — architect, deep** (`P-ARCHITECT`) ← triggers: crew, design
+- **Three roles, one final human** (`P-CREW`) ← triggers: crew, governance
+- **Claudius — architect, deep, API-first** (`P-ARCHITECT`) ← triggers: crew, design, api
+- **Claude — builder / test-dev** (`P-BACKEND`) ← triggers: crew, backend, test, code
 - **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`) ← triggers: container, deploy, infra
 - **API-first, then parallel fan-out** (`P-APIPAR`) ← triggers: crew, design, api, feature, parallel
 - **Architecture beats language** (`P-ARCH`) ← triggers: design
@@ -47,5 +47,3 @@ Model `llama-3.1-8b` · ~8B → rule budget **8** (sizing law). Draws: axiom, pe
 - **Pin, lock, audit; stdlib+one** (`P-DEPS`) ← triggers: dependency
 - **Hygiene: lint, dead-code, no cruft** (`P-HYGIENE`) ← triggers: commit, post-feature, release
 - **Versioning discipline** (`P-VERSION`) ← triggers: release, tag
-- **Claude — backend, methodical** (`P-BACKEND`) ← triggers: crew, backend
-- **Claudina — frontend, cross-platform** (`P-FRONTEND`) ← triggers: crew, frontend

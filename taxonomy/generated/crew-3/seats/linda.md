@@ -5,14 +5,14 @@ Model `llama-3.1-8b` · ~8B → rule budget **8** (sizing law). Draws: axiom, pe
 ## Resident (8) — held in weights / always in prompt
 - [axiom] **The 90% rule (Powell)** (`AX-POWELL`)
 - [axiom] **No flattery, no yes-manning** (`AX-NOFLAT`)
-- [personal] **Claudius — architect, deep** (`P-ARCHITECT`)
+- [personal] **Claudius — architect, deep, API-first** (`P-ARCHITECT`)
+- [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
 - [personal] **API-first, then parallel fan-out** (`P-APIPAR`)
 - [personal] **Architecture beats language** (`P-ARCH`)
 - [personal] **Search open source first** (`P-OSS`)
 - [personal] **Swappable interface per axis** (`P-SWAP`)
-- [personal] **DI over globals; OO + SOLID** (`P-DI`)
 
-## Paged (36) — injected on trigger
+## Paged (34) — injected on trigger
 - **Secret scan before ship** (`AX-SCAN`) ← triggers: commit, push, deploy
 - **Never hardcode secrets** (`AX-NOSECRET`) ← triggers: code, config, review
 - **Destruction needs a human** (`AX-DESTROY`) ← triggers: delete, drop, force-push, migrate
@@ -36,16 +36,14 @@ Model `llama-3.1-8b` · ~8B → rule budget **8** (sizing law). Draws: axiom, pe
 - **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`) ← triggers: report, debug, change
 - **100% line + branch coverage** (`AX-COVER`) ← triggers: test, coverage
 - **Fleet: size, slice, page, verify-escalate** (`P-FLEET`) ← triggers: fleet, routing, compose
-- **Five roles, one final human** (`P-CREW`) ← triggers: crew, governance
-- **Jason — PM, fast model** (`P-PM`) ← triggers: crew, planning
+- **Three roles, one final human** (`P-CREW`) ← triggers: crew, governance
+- **Claude — builder / test-dev** (`P-BACKEND`) ← triggers: crew, backend, test, code
 - **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`) ← triggers: container, deploy, infra
 - **Living memory: STATE/ADR/trackers** (`P-DOCS`) ← triggers: decision, session, commit
+- **DI over globals; OO + SOLID** (`P-DI`) ← triggers: design, code
 - **One config layer; validate at start** (`P-CONFIG`) ← triggers: config, startup
 - **Disciplined errors + logging** (`P-ERRORS`) ← triggers: error, logging
 - **Small files and functions** (`P-SIZE`) ← triggers: code, refactor
 - **Pin, lock, audit; stdlib+one** (`P-DEPS`) ← triggers: dependency
 - **Hygiene: lint, dead-code, no cruft** (`P-HYGIENE`) ← triggers: commit, post-feature, release
 - **Versioning discipline** (`P-VERSION`) ← triggers: release, tag
-- **Claude — backend, methodical** (`P-BACKEND`) ← triggers: crew, backend
-- **Claudina — frontend, cross-platform** (`P-FRONTEND`) ← triggers: crew, frontend
-- **Linda — research, fast + wide** (`P-RESEARCH`) ← triggers: crew, research

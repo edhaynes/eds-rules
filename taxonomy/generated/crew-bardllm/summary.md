@@ -2,17 +2,17 @@
 
 Crew: **bard-llm — on-device local-LLM app** — 3 seats, total rule budget **222**.
 
-- Active rules across layers: **49**
-- Team-resident (memorized) union: **49**
+- Active rules across layers: **47**
+- Team-resident (memorized) union: **47**
 - Paged tail (context-injected on demand): **0**
 - Axiom core: **24** rules
 
 ## Per seat
 | Seat | Model | Budget | Resident | Paged |
 |------|-------|-------:|---------:|------:|
-| Claudius | claude-opus | 200 | 49 | 0 |
-| Claude | qwen2.5-14b | 14 | 14 | 35 |
-| Linda | llama-3.1-8b | 8 | 8 | 36 |
+| Claudius | claude-opus | 200 | 47 | 0 |
+| Claude | qwen2.5-14b | 14 | 14 | 33 |
+| Linda | llama-3.1-8b | 8 | 8 | 34 |
 
 ## Safety: is every axiom resident in *some* seat?
 - **YES** — all axioms are memorized somewhere in the crew.

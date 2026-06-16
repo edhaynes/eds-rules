@@ -2,17 +2,17 @@
 
 Crew: **cloud-native distributed app (multi-platform)** — 3 seats, total rule budget **222**.
 
-- Active rules across layers: **52**
-- Team-resident (memorized) union: **52**
+- Active rules across layers: **50**
+- Team-resident (memorized) union: **50**
 - Paged tail (context-injected on demand): **0**
 - Axiom core: **24** rules
 
 ## Per seat
 | Seat | Model | Budget | Resident | Paged |
 |------|-------|-------:|---------:|------:|
-| Claudius | claude-opus | 200 | 52 | 0 |
-| Claude | qwen2.5-14b | 14 | 14 | 35 |
-| Linda | llama-3.1-8b | 8 | 8 | 36 |
+| Claudius | claude-opus | 200 | 50 | 0 |
+| Claude | qwen2.5-14b | 14 | 14 | 33 |
+| Linda | llama-3.1-8b | 8 | 8 | 34 |
 
 ## Safety: is every axiom resident in *some* seat?
 - **YES** — all axioms are memorized somewhere in the crew.

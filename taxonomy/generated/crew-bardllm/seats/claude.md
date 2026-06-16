@@ -11,14 +11,14 @@ Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, p
 - [axiom] **Contract first** (`AX-CONTRACT`)
 - [axiom] **No flattery, no yes-manning** (`AX-NOFLAT`)
 - [axiom] **100% line + branch coverage** (`AX-COVER`)
+- [personal] **Claude — builder / test-dev** (`P-BACKEND`)
 - [bardllm] **On-device, offline-first** (`BL-ONDEVICE`)
 - [personal] **API-first, then parallel fan-out** (`P-APIPAR`)
 - [bardllm] **Apple platforms, native** (`BL-APPLE`)
 - [bardllm] **On-device resource budgets** (`BL-RESOURCE`)
 - [personal] **Search open source first** (`P-OSS`)
-- [bardllm] **App Store compliance** (`BL-STORE`)
 
-## Paged (35) — injected on trigger
+## Paged (33) — injected on trigger
 - **Secret scan before ship** (`AX-SCAN`) ← triggers: commit, push, deploy
 - **Destruction needs a human** (`AX-DESTROY`) ← triggers: delete, drop, force-push, migrate
 - **Distrust every external input** (`AX-INPUT`) ← triggers: input, parse, query, path
@@ -36,12 +36,13 @@ Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, p
 - **No OS assumptions; script everything; headless** (`AX-HEADLESS`) ← triggers: script, deploy, tooling
 - **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`) ← triggers: report, debug, change
 - **Fleet: size, slice, page, verify-escalate** (`P-FLEET`) ← triggers: fleet, routing, compose
-- **Five roles, one final human** (`P-CREW`) ← triggers: crew, governance
-- **Jason — PM, fast model** (`P-PM`) ← triggers: crew, planning
-- **Claudius — architect, deep** (`P-ARCHITECT`) ← triggers: crew, design
+- **Three roles, one final human** (`P-CREW`) ← triggers: crew, governance
+- **Claudius — architect, deep, API-first** (`P-ARCHITECT`) ← triggers: crew, design, api
+- **Linda — research, fast + wide** (`P-RESEARCH`) ← triggers: crew, research
 - **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`) ← triggers: container, deploy, infra
 - **Ships the sliced ruleset** (`BL-RULESRUNNER`) ← triggers: model, rules, slice
 - **Architecture beats language** (`P-ARCH`) ← triggers: design
+- **App Store compliance** (`BL-STORE`) ← triggers: release, build
 - **Living memory: STATE/ADR/trackers** (`P-DOCS`) ← triggers: decision, session, commit
 - **Swappable interface per axis** (`P-SWAP`) ← triggers: design, integration
 - **DI over globals; OO + SOLID** (`P-DI`) ← triggers: design, code
@@ -51,6 +52,3 @@ Model `qwen2.5-14b` · ~14B → rule budget **14** (sizing law). Draws: axiom, p
 - **Pin, lock, audit; stdlib+one** (`P-DEPS`) ← triggers: dependency
 - **Hygiene: lint, dead-code, no cruft** (`P-HYGIENE`) ← triggers: commit, post-feature, release
 - **Versioning discipline** (`P-VERSION`) ← triggers: release, tag
-- **Claude — backend, methodical** (`P-BACKEND`) ← triggers: crew, backend
-- **Claudina — frontend, cross-platform** (`P-FRONTEND`) ← triggers: crew, frontend
-- **Linda — research, fast + wide** (`P-RESEARCH`) ← triggers: crew, research

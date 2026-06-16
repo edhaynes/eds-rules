@@ -52,6 +52,12 @@ def layer_block(key):
             f"<p class=blurb>{e(LAYER_BLURB.get(key, ''))}</p><ul class=compact>{items}</ul>")
 
 
+NAX = len(AX)
+NPERS = len(LAYERS.get("personal", []))
+NPROJ = len(LAYERS.get("project", []))
+NBL = len(LAYERS.get("bardllm", []))
+NEMP = len(LAYERS.get("employer", []))
+
 owl_uri = ""
 if os.path.exists(OWL):
     import base64
@@ -115,10 +121,11 @@ sized to the model's rule budget, plus the paged tail. Worked 3-crew (the "Guy" 
 <tr><td>Claude</td><td>Backend / test-dev / easy coding</td><td>14B</td><td>~14</td></tr>
 <tr><td>Linda</td><td>Research — fast, web-capable</td><td>8B</td><td>~8</td></tr>
 </table>
-<p><b>Worked numbers:</b> cloud-native project = <b>52</b> active rules; bard-llm = <b>49</b>
-(24 axioms + 20 personal + 5 bard-llm). <b>Guy's test:</b> the {len(AX)}-axiom core needs
-~{len(AX)}B of summed budget to be fully resident; a frontier-free 8B+14B crew (22B) is
-just short — a frontier seat (Opus) covers it, which this crew has.</p>
+<p><b>Worked numbers:</b> cloud-native project = <b>{NAX+NPERS+NPROJ+NEMP}</b> active rules
+({NAX} axioms + {NPERS} personal + {NPROJ} project + {NEMP} employer); bard-llm =
+<b>{NAX+NPERS+NBL}</b> ({NAX} axioms + {NPERS} personal + {NBL} bard-llm). <b>Guy's test:</b>
+the {NAX}-axiom core needs ~{NAX}B of summed budget to be fully resident; a frontier-free
+8B+14B crew (22B) is just short — a frontier seat (Opus) covers it, which this crew has.</p>
 
 <footer>Generated from taxonomy/rules.yaml · github.com/edhaynes/eds-rules · CC-BY-4.0 ·
 Decision (2026-06-16): axiom core kept at {len(AX)}, no trim.</footer>

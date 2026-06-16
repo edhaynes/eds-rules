@@ -2,11 +2,11 @@
 
 Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom, personal, bardllm.
 
-## Resident (49) — held in weights / always in prompt
+## Resident (47) — held in weights / always in prompt
 - [axiom] **Contract first** (`AX-CONTRACT`)
 - [axiom] **No flattery, no yes-manning** (`AX-NOFLAT`)
 - [personal] **Fleet: size, slice, page, verify-escalate** (`P-FLEET`)
-- [personal] **Claudius — architect, deep** (`P-ARCHITECT`)
+- [personal] **Claudius — architect, deep, API-first** (`P-ARCHITECT`)
 - [personal] **API-first, then parallel fan-out** (`P-APIPAR`)
 - [bardllm] **Ships the sliced ruleset** (`BL-RULESRUNNER`)
 - [personal] **Architecture beats language** (`P-ARCH`)
@@ -36,8 +36,9 @@ Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom,
 - [axiom] **No OS assumptions; script everything; headless** (`AX-HEADLESS`)
 - [axiom] **Verbatim errors; diffs; surfaced assumptions** (`AX-VERBATIM`)
 - [axiom] **100% line + branch coverage** (`AX-COVER`)
-- [personal] **Five roles, one final human** (`P-CREW`)
-- [personal] **Jason — PM, fast model** (`P-PM`)
+- [personal] **Three roles, one final human** (`P-CREW`)
+- [personal] **Claude — builder / test-dev** (`P-BACKEND`)
+- [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
 - [personal] **Stack: Podman / UBI / Ansible / OpenShift** (`P-STACK`)
 - [bardllm] **On-device, offline-first** (`BL-ONDEVICE`)
 - [bardllm] **On-device resource budgets** (`BL-RESOURCE`)
@@ -49,8 +50,5 @@ Model `claude-opus` · ~200B → rule budget **200** (sizing law). Draws: axiom,
 - [personal] **Pin, lock, audit; stdlib+one** (`P-DEPS`)
 - [personal] **Hygiene: lint, dead-code, no cruft** (`P-HYGIENE`)
 - [personal] **Versioning discipline** (`P-VERSION`)
-- [personal] **Claude — backend, methodical** (`P-BACKEND`)
-- [personal] **Claudina — frontend, cross-platform** (`P-FRONTEND`)
-- [personal] **Linda — research, fast + wide** (`P-RESEARCH`)
 
 ## Paged (0) — injected on trigger
