@@ -1,0 +1,12 @@
+# Crew sandbox — OpenCode + Guy's crew (guy1.0), isolated, symmetric with the control.
+# UBI9 + Node 20 + OpenCode. Fresh in-container HOME (no host rules). Only the test
+# repo mounted at /work. Inference runs on the HOST: Jason/Claude via host Ollama,
+# Claudius via the host LiteLLM proxy — both reached at host.containers.internal
+# (the repo's opencode.json points there). Secrets passed at run time, never baked.
+FROM registry.access.redhat.com/ubi9/nodejs-20
+USER 0
+RUN npm install -g opencode-ai && npm cache clean --force
+ENV HOME=/sandbox-home
+RUN mkdir -p /sandbox-home && chmod 0777 /sandbox-home
+WORKDIR /work
+ENTRYPOINT ["opencode"]

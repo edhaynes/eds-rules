@@ -1,0 +1,13 @@
+# Control sandbox — plain Claude Code, NO rules, isolated.
+# UBI9 + Node 20. Fresh in-container HOME so the host's ~/.claude/CLAUDE.md and
+# shared-rules are unreachable: the control is genuinely ruleless. Only the test
+# repo is mounted at /work. Auth via ANTHROPIC_API_KEY passed at run time (never
+# baked into the image — secret hygiene).
+FROM registry.access.redhat.com/ubi9/nodejs-20
+USER 0
+RUN npm install -g @anthropic-ai/claude-code && npm cache clean --force
+# clean, writable HOME with no CLAUDE.md / memory of any kind
+ENV HOME=/sandbox-home
+RUN mkdir -p /sandbox-home && chmod 0777 /sandbox-home
+WORKDIR /work
+ENTRYPOINT ["claude"]
