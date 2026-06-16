@@ -14,6 +14,14 @@ Status: In Progress — draft re-synced to consolidated RULES.md 2026-06-15 (6 c
 > 4. **Protect and Prove** (62–75) — secret hygiene + testing & the quality bar → `ch04.md`
 > 5. **Ship and Remember** (76–92) — versioning & release + hygiene/memory/process → `ch05.md`
 > 6. **Operating an AI Fleet** (93–100) — making cheap models good as a system → `ch06.md`
+> 7. **From a Hundred Rules to an Axiom Core** (no new rules) — the hundred reframed as a cache hierarchy: axiom core + paged preference layers, Guy's test → `ch07.md`
+>
+> **Guy's taxonomy integrated 2026-06-16 (Eddie):** added **Chapter 7**, a
+> capstone that adds *no rules* and keeps the count at exactly 100 — it gives the
+> hundred a shape (small immutable axiom core + scoped preference layers, as a
+> cache hierarchy; Guy's test for minimum-safe crew sizing). Front matter, ch01
+> opener, and back matter (new Appendix F + glossary terms) re-synced. Source
+> material: `taxonomy/` ("Guy's scalpel"); spec `plans/PLAN_rules-taxonomy.md`.
 >
 > **Re-synced 2026-06-15** to the consolidated `RULES.md` (overlaps merged, ~9
 > new non-fleet rules added, new fleet chapter): the book moved from 5×20 to
@@ -22,8 +30,8 @@ Status: In Progress — draft re-synced to consolidated RULES.md 2026-06-15 (6 c
 > `plans/PLAN_book-resync.md`.
 >
 > Front matter: `00-front-matter.md` (title/disclaimer, foreword, how to read,
-> meet the crew). Back matter: `99-back-matter.md` (appendices A–E incl. the
-> book↔RULES.md mapping, glossary).
+> meet the crew). Back matter: `99-back-matter.md` (appendices A–F incl. the
+> book↔RULES.md mapping, the axiom core + layers, glossary).
 
 ## Product
 

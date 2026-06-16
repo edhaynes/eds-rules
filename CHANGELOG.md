@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning follows [SemVer](https://semver.org/).
 
+## [1.4.6] - 2026-06-16
+
+Book: integrate **Guy Turgeon's taxonomy ("Guy's scalpel")** as a new capstone
+chapter (Eddie — "republish taking Guy's improvements into account"). The count
+stays at exactly 100 — the chapter adds *no rules*; it gives the hundred a
+*shape*. New **Chapter 7, "From a Hundred Rules to an Axiom Core"**: the flat
+list reframed as a **cache hierarchy** — a small immutable **axiom core** (~24,
+resident in every seat) wrapped in scoped **preference layers**
+(personal/architect, project, employer) that page in on demand; **Guy's test**
+(smallest crew whose summed budget covers the required-resident set) and the
+**capacity dial** (crew size as the lever on resident capacity). Front matter
+("How to read") reframed to the cache-hierarchy view and the seven-chapter arc;
+Chapter 1 opener extended to name the final two chapters; back matter gains
+**Appendix F** (the 24 axioms enumerated, the layers, a worked crew-capacity
+table) and five glossary terms (axiom core, preference layer, cache hierarchy,
+capacity dial, Guy's test). `book/build.py` now assembles `ch07.md`. PDF + EPUB
+rebuilt. Supersedes the prior "keep 100 flat, flag don't cut" framing
+(STATE.md) by structuring the hundred rather than cutting it.
+
 ## [1.4.5] - 2026-06-15
 
 Reorder (no count change, stays at 100): **the Powell rule is now Rule 1** (Eddie

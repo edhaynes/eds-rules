@@ -199,6 +199,85 @@ That is why the rules lean so hard on gates that do not depend on the model's
 memory — pre-commit hooks (Appendix A), scans, and tests run whether or not
 anyone remembered the rule. Not foolproof is acceptable when the hooks are.
 
+## Appendix F — The axiom core and the layers
+
+Chapter 7 gives the hundred a shape: a small immutable core every seat carries,
+wrapped in layers of preference paged in on demand. This appendix is the
+reference behind that chapter — the core enumerated, the layers named, and one
+crew's capacity worked out.
+
+### The axiom core
+
+The rules whose violation is indefensible in any shop. Few by design: the core
+is the always-resident center, so it holds only what must never be a page-fault
+away. Short form below; the full statements are the rules themselves, by topic,
+in the companion `RULES.md`.
+
+| Axiom | In one line |
+|---|---|
+| Secret scan before ship | Scan before every commit, push, and deploy. No scan, no ship — any agent, any target. |
+| Never hardcode secrets | Found one → stop and flag; never propagate, even temporarily. |
+| Destruction needs a human | No delete, drop, destructive command, force-push, or history rewrite without explicit human confirmation. |
+| Distrust every external input | Validate and constrain at the boundary; never interpolate untrusted data into SQL, a shell, HTML, or a deserializer. |
+| The 90% rule (Powell) | Get 90% of the information, then decide; below 90%, ask. Route by the same bar. |
+| Autonomy bounded by version control | An agent only writes inside a git repo with a synced remote. No recoverable history, no autonomy. |
+| Least privilege by default | Narrowest scope that works; no wildcard perms, no shared admin keys; expire and rotate. |
+| Green before commit, healthy before handover | Never commit on red; never present a service as done without watching it answer. |
+| Secret-scan hooks from day one | Hooks installed before the first commit; `.gitignore` covers keys/certs/`.env*`. |
+| Zero hardcoded values | Nothing that can change is hardcoded; no magic numbers. |
+| A touched secret is burned | Rotate first, clean history second; surface a leaked secret only to its owner. |
+| Plan first for non-trivial work | State approach and files before editing; never silently change scope. |
+| Fail fast | Crash loudly at startup on bad config or missing deps; never limp along degraded. |
+| Inspect, don't expect — grade to a rubric | Test-driven and graded; 90% to work, 95% to publish. |
+| Tests with logic; regression first | New logic ships with tests; bug fixes ship a failing-first regression test. |
+| One purpose per commit/deploy | No "while I'm in there" fixes; mechanical refactors stand alone. |
+| Correctness over speed | The delay to reach verified behavior and full coverage is acceptable and expected. |
+| Push early, push always | Working code lands on main often; uncommitted work is a liability. |
+| Contract first | Freeze the interface, write tests against it, then implement. |
+| Disclose every dependency | Never add one without name, purpose, license, maintenance, and platform support. |
+| No OS assumptions; script everything; headless | Cross-platform primitives; assume no display and nobody at a prompt. |
+| No flattery, no yes-manning | Agree only when it carries information; defend your reasoning before capitulating. |
+| Verbatim errors; diffs; surfaced assumptions | Quote errors exactly; show diffs not prose; state assumptions. |
+| 100% line + branch coverage | Every branch exercised and asserted; the runner fails under it. |
+
+Two dozen rules. Hold every one of them resident and you need roughly two dozen
+billion parameters of summed crew budget — the arithmetic behind Guy's test.
+
+### The layers, by scope
+
+Everything outside the core is a preference, scoped. Constraints tighten
+downward; a layer may make an inherited rule stricter, never looser.
+
+- **Personal / architect preferences** — engineering opinions and the crew:
+  objects with one job, file and function size ceilings, one class per file, the
+  config-precedence stack, the five personas, and which model binds to each
+  seat.
+- **Project preferences** — what one codebase needs: its migration rules, its
+  schemas, its domain constraints — paged in for that project, absent
+  everywhere else.
+- **Employer preferences** — the shop's house standard. Mine are Red
+  Hat-shaped: Podman over Docker, UBI base images, OpenShift. Correct for me,
+  hardcoded to nobody else.
+
+### A worked crew — capacity and Guy's test
+
+One crew sized for a cloud-native, multi-platform project. Budget is the
+sizing-law allowance (≈1 rule per billion parameters); *resident* is what the
+seat pins; *paged* is the tail it fetches on demand.
+
+| Seat | Model | Budget | Resident | Paged |
+|------|-------|-------:|---------:|------:|
+| Jason | 7B coder | 7 | 7 | 35 |
+| Claude | 14B | 14 | 14 | 33 |
+| Claudius | frontier | 200 | 50 | 0 |
+
+Team-resident union: every active rule (50 here) is held by some seat — the
+canon, distributed. **Guy's test:** the 24-axiom core needs ≈24B of summed
+budget to hold every axiom resident. A frontier-free pair (8B + 14B = 21B)
+falls three short and is unsafe; add a frontier seat, or trim the core to ≤21,
+and every axiom has a home. Crew size is the capacity dial — add seats for
+harder projects, drop one and let more rules page for easier ones.
+
 ## Glossary
 
 - **The crew** — five fixed AI roles (Jason, Linda, Claude, Claudina,
@@ -214,4 +293,18 @@ anyone remembered the rule. Not foolproof is acceptable when the hooks are.
   one gets scanned.
 - **Go local** — the standing instruction that rebinds every persona to a
   local model backend; same roles, same rules, different engine.
-- **Chapter card** — the twenty-rule checklist closing each chapter.
+- **Chapter card** — the rule checklist closing each chapter.
+- **Axiom core** — the ~two dozen immutable, universal rules whose violation is
+  indefensible anywhere; carried resident by every seat. The smallest set that
+  must never be missed (Appendix F lists them).
+- **Preference layer** — a scoped set of rules outside the core
+  (personal/architect, project, employer); a layer may tighten an inherited
+  rule, never loosen it. Constraints tighten downward.
+- **Cache hierarchy** — the ruleset treated like memory: a per-seat *resident*
+  working set (≈1 rule per billion parameters), the *team-resident union* that
+  equals the canon, and a *paged tail* injected on demand when a task touches it.
+- **Capacity dial** — crew size as the lever on resident capacity: summed
+  per-seat budgets. Add seats to hold more rules standing; drop one to page more.
+- **Guy's test** — the smallest crew whose summed budget covers the
+  required-resident set (axioms plus must-hold project rules). Below it, an
+  axiom is homeless and the system is unsafe.

@@ -4,7 +4,12 @@
 commit.** Hard cap **1024 words** (currently ~800). When over cap, prune detail to
 ADRs / MEMORY / the notebook — STATE is a summary that points, never a log.*
 
-Last updated: 2026-06-13.
+Last updated: 2026-06-13. **Note 2026-06-16:** book is now **7 chapters**
+(`book/ch01–07`) — ch06 "Operating an AI Fleet", and new ch07 "From a Hundred
+Rules to an Axiom Core" integrates Guy's taxonomy ("Guy's scalpel": axiom core +
+paged preference layers, cache hierarchy, Guy's test) + Appendix F. Adds no
+rules; count stays 100. CHANGELOG 1.4.6. STATE below predates ch06/ch07 and is
+due a fuller regen.
 
 ## What this is
 "100 Rules for Writing My Software: The Red Hat Way" — an opinionated, capped-at-

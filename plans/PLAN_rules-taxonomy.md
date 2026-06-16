@@ -1,4 +1,4 @@
-Status: Partial — Remaining: map full old-100 → layers; frontier-free crew demo; sync RULES.md/book/STATE; merge. (branch: rules-taxonomy, 2026-06-16)
+Status: Partial — Remaining: map full old-100 → layers; frontier-free crew demo; sync RULES.md/STATE. (book synced 2026-06-16 — new Chapter 7 "From a Hundred Rules to an Axiom Core" + Appendix F, on main.) (branch: rules-taxonomy, 2026-06-16)
 Author: Jason-eds
 
 ## Decisions (Eddie, 2026-06-16)

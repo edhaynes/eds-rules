@@ -75,7 +75,14 @@ There are exactly one hundred rules — never more. When a new rule earns a
 place, an old one is consolidated or retired. A rules document that only ever
 grows stops being read.
 
-The rules are arranged in six chapters that build on one another, most
+The hundred is not a flat list, though it reads like one until the last
+chapter. Underneath, it has a shape: a small immutable core every machine must
+carry, and layers of preference that get paged in only when a task touches
+them. Chapter 7 draws that shape; the first six chapters walk the rules in
+reading order, and the seventh shows how they fit on machines that can't hold
+all hundred at once.
+
+The rules are arranged in seven chapters that build on one another, most
 fundamental first:
 
 1. **First Principles** (rules 1–22) — the lines you never cross, and who decides.
@@ -84,6 +91,7 @@ fundamental first:
 4. **Protect and Prove** (rules 62–75) — secret hygiene and the quality bar.
 5. **Ship and Remember** (rules 76–92) — versioned releases and written memory.
 6. **Operating an AI Fleet** (rules 93–100) — making cheap models good as a system.
+7. **From a Hundred Rules to an Axiom Core** — the hundred as a cache hierarchy: a small core that never leaves, the rest paged per seat.
 
 Each chapter opens with a synopsis of the fundamentals it stands on, so you can
 start anywhere and know what is being assumed. Each chapter closes with a
