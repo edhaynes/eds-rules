@@ -60,6 +60,9 @@ fi
 cat > "${WORKDIR}/Modelfile" << MODELFILE_EOF
 FROM ${BASE_MODEL}
 PARAMETER temperature 0
+# num_ctx 16384: OpenCode tool-calling truncates on Ollama's 4k default; 16k holds
+# the baked rule slice + the agent's tool schema (Linda research, 2026-06-16).
+PARAMETER num_ctx 16384
 
 SYSTEM """
 ${PERSONA_BLOCK}You are a standing-rules assistant. The complete, canonical rules document

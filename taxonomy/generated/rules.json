@@ -1,0 +1,650 @@
+{
+  "generatedFrom": "taxonomy/rules.yaml",
+  "count": 55,
+  "layers": [
+    "axiom",
+    "personal",
+    "project",
+    "bardinfra",
+    "employer"
+  ],
+  "rules": [
+    {
+      "id": "AX-SCAN",
+      "title": "Secret scan before ship",
+      "text": "Run a secret scan before every commit, push, and deploy. No scan, no ship \u2014 any agent, any target.",
+      "layer": "axiom",
+      "priority": 100,
+      "triggers": [
+        "commit",
+        "push",
+        "deploy"
+      ]
+    },
+    {
+      "id": "AX-NOSECRET",
+      "title": "Never hardcode secrets",
+      "text": "Never hardcode secrets, keys, tokens, passwords, or private endpoints. Found one \u2192 stop and flag; never propagate, even temporarily.",
+      "layer": "axiom",
+      "priority": 99,
+      "triggers": [
+        "code",
+        "config",
+        "review"
+      ]
+    },
+    {
+      "id": "AX-INPUT",
+      "title": "Distrust every external input",
+      "text": "Validate and constrain every external input at the boundary: bounds/range/overflow checks, parameterized queries and commands, resolved+confined paths. Never interpolate untrusted data into SQL, a shell, HTML, or a deserializer.",
+      "layer": "axiom",
+      "priority": 96,
+      "triggers": [
+        "input",
+        "parse",
+        "query",
+        "path"
+      ]
+    },
+    {
+      "id": "AX-DESTROY",
+      "title": "Destruction needs a human",
+      "text": "Never delete files, drop tables, run destructive commands, force-push, or rewrite history without explicit human confirmation.",
+      "layer": "axiom",
+      "priority": 97,
+      "triggers": [
+        "delete",
+        "drop",
+        "force-push",
+        "migrate"
+      ]
+    },
+    {
+      "id": "AX-LEASTPRIV",
+      "title": "Least privilege by default",
+      "text": "Every credential, token, and role gets the narrowest scope that works. No wildcard perms, no shared admin keys; expire and rotate by default.",
+      "layer": "axiom",
+      "priority": 90,
+      "triggers": [
+        "auth",
+        "deploy",
+        "credential"
+      ]
+    },
+    {
+      "id": "AX-HOOKS",
+      "title": "Secret-scan hooks from day one",
+      "text": "Secret-scanning hooks are mandatory in every repo, installed before the first commit: pre-commit (gitleaks + detect-secrets) and pre-push (rescan + tests). .gitignore covers keys/certs/.env* from day one.",
+      "layer": "axiom",
+      "priority": 88,
+      "triggers": [
+        "repo-init",
+        "commit",
+        "push"
+      ]
+    },
+    {
+      "id": "AX-BURNED",
+      "title": "A touched secret is burned",
+      "text": "A secret that ever touched a commit is burned: rotate first, clean history second. Never copy a secret anywhere; during leak response surface it verbatim only to its owner.",
+      "layer": "axiom",
+      "priority": 87,
+      "triggers": [
+        "leak",
+        "secret"
+      ]
+    },
+    {
+      "id": "AX-POWELL",
+      "title": "The 90% rule (Powell)",
+      "text": "Get 90% of the information you need, then decide. Below 90%, ask \u2014 never guess ahead, never stall past 90%. Route by the same bar: \u226590% to a fast seat, 50-90% to a heavyweight, below/high-stakes to the human.",
+      "layer": "axiom",
+      "priority": 95,
+      "triggers": [
+        "decide",
+        "route",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "AX-AUTOVC",
+      "title": "Autonomy bounded by version control",
+      "text": "An agent only writes inside a git repo with a synced remote. No recoverable history, no autonomy.",
+      "layer": "axiom",
+      "priority": 92,
+      "triggers": [
+        "write",
+        "autonomy"
+      ]
+    },
+    {
+      "id": "AX-PUSH",
+      "title": "Push early, push always",
+      "text": "Working code lands on main frequently; uncommitted/unpushed work is a liability. AI handles messy merges, so the old reason to hoard local state is gone.",
+      "layer": "axiom",
+      "priority": 80,
+      "triggers": [
+        "commit",
+        "push",
+        "session-end"
+      ]
+    },
+    {
+      "id": "AX-GREEN",
+      "title": "Green before commit, healthy before handover",
+      "text": "Never commit while tests fail; never present a service as done without verifying it is up, healthy, and answering a real request.",
+      "layer": "axiom",
+      "priority": 89,
+      "triggers": [
+        "commit",
+        "handover",
+        "deploy"
+      ]
+    },
+    {
+      "id": "AX-ONEPURP",
+      "title": "One purpose per commit/deploy",
+      "text": "One purpose per commit, one per deploy. No 'while I'm in there' fixes; mechanical refactors are their own reviewable commit.",
+      "layer": "axiom",
+      "priority": 82,
+      "triggers": [
+        "commit",
+        "deploy"
+      ]
+    },
+    {
+      "id": "AX-FAILFAST",
+      "title": "Fail fast",
+      "text": "Invalid config, missing deps, or unreachable backends crash loudly at startup with a clear message \u2014 never limp along degraded.",
+      "layer": "axiom",
+      "priority": 85,
+      "triggers": [
+        "startup",
+        "config",
+        "error"
+      ]
+    },
+    {
+      "id": "AX-DEPDISC",
+      "title": "Disclose every dependency",
+      "text": "Never add a dependency without stating name, purpose, license, maintenance status, and platform support.",
+      "layer": "axiom",
+      "priority": 78,
+      "triggers": [
+        "add-dependency"
+      ]
+    },
+    {
+      "id": "AX-GRADE",
+      "title": "Inspect, don't expect \u2014 grade to a rubric",
+      "text": "Test-driven, not test-after, and graded: every project keeps a rubric. 90% is the working bar, polish to 95%, publish nothing below 95%.",
+      "layer": "axiom",
+      "priority": 84,
+      "triggers": [
+        "test",
+        "ship",
+        "review"
+      ]
+    },
+    {
+      "id": "AX-REGRESS",
+      "title": "Tests with logic; regression first",
+      "text": "New logic ships with tests; bug fixes ship a regression test written failing-first, before the fix.",
+      "layer": "axiom",
+      "priority": 83,
+      "triggers": [
+        "feature",
+        "bugfix"
+      ]
+    },
+    {
+      "id": "AX-CONTRACT",
+      "title": "Contract first",
+      "text": "Define and freeze the API/interface, write tests against the contract, then implement. Never the reverse.",
+      "layer": "axiom",
+      "priority": 79,
+      "triggers": [
+        "api",
+        "interface",
+        "feature"
+      ]
+    },
+    {
+      "id": "AX-CORRECT",
+      "title": "Correctness over speed",
+      "text": "The delay to reach verified behavior and full coverage is acceptable and expected. Never trade correctness for velocity.",
+      "layer": "axiom",
+      "priority": 81,
+      "triggers": [
+        "test",
+        "ship"
+      ]
+    },
+    {
+      "id": "AX-PLAN",
+      "title": "Plan first for non-trivial work",
+      "text": "State the approach and the files to touch before editing. Never silently change scope \u2014 if the task is bigger than stated, stop and say so.",
+      "layer": "axiom",
+      "priority": 86,
+      "triggers": [
+        "task-start",
+        "nontrivial"
+      ]
+    },
+    {
+      "id": "AX-NOFLAT",
+      "title": "No flattery, no yes-manning",
+      "text": "Agree only when it carries information; disagree plainly when the evidence warrants; defend your reasoning before capitulating.",
+      "layer": "axiom",
+      "priority": 76,
+      "triggers": [
+        "always"
+      ]
+    },
+    {
+      "id": "AX-VERBATIM",
+      "title": "Verbatim errors; diffs; surfaced assumptions",
+      "text": "Quote errors verbatim, never paraphrase stack traces; show diffs not prose for 'what changed'; surface assumptions explicitly.",
+      "layer": "axiom",
+      "priority": 75,
+      "triggers": [
+        "report",
+        "debug",
+        "change"
+      ]
+    },
+    {
+      "id": "AX-HEADLESS",
+      "title": "No OS assumptions; script everything; headless",
+      "text": "Never assume a path, OS, or shell \u2014 use cross-platform primitives. Assume headless: no display, nobody at a prompt. A manual procedure dies with the next reimage; a script is a git clone away.",
+      "layer": "axiom",
+      "priority": 77,
+      "triggers": [
+        "script",
+        "deploy",
+        "tooling"
+      ]
+    },
+    {
+      "id": "AX-NOHARD",
+      "title": "Zero hardcoded values",
+      "text": "Zero hardcoded values for anything that could change \u2014 hosts, ports, model names, paths, timeouts, flags, prompts \u2014 and no magic numbers. Named constants or config only.",
+      "layer": "axiom",
+      "priority": 88,
+      "triggers": [
+        "code",
+        "config"
+      ]
+    },
+    {
+      "id": "AX-COVER",
+      "title": "100% line + branch coverage",
+      "text": "100% line and branch coverage, every branch exercised and asserted; configure the runner to fail under it. (Borderline axiom/craft \u2014 Eddie holds it as non-negotiable.)",
+      "layer": "axiom",
+      "priority": 70,
+      "triggers": [
+        "test",
+        "coverage"
+      ]
+    },
+    {
+      "id": "P-ARCH",
+      "title": "Architecture beats language",
+      "text": "Architecture matters more than language or framework.",
+      "layer": "personal",
+      "priority": 60,
+      "triggers": [
+        "design"
+      ]
+    },
+    {
+      "id": "P-OSS",
+      "title": "Search open source first",
+      "text": "Before building anything, research what open source already solved (stars/forks signal quality); check the codebase for something to adapt before inventing.",
+      "layer": "personal",
+      "priority": 58,
+      "triggers": [
+        "build",
+        "design"
+      ]
+    },
+    {
+      "id": "P-DI",
+      "title": "DI over globals; OO + SOLID",
+      "text": "Dependency injection over module globals/singletons; default to OO with single responsibilities; compose over inherit; apply SOLID where it earns its keep.",
+      "layer": "personal",
+      "priority": 55,
+      "triggers": [
+        "design",
+        "code"
+      ]
+    },
+    {
+      "id": "P-SWAP",
+      "title": "Swappable interface per axis",
+      "text": "Anything with a local-vs-cloud or vendor axis goes behind a swappable interface: LLM, storage, DB, cache, queue, auth, logging.",
+      "layer": "personal",
+      "priority": 56,
+      "triggers": [
+        "design",
+        "integration"
+      ]
+    },
+    {
+      "id": "P-SIZE",
+      "title": "Small files and functions",
+      "text": "Files \u2264500 lines (never >1000; past 800 refactor); functions \u226450 lines, \u22645 params; extract past ~3 nesting levels; no god classes; size refactors are their own commit.",
+      "layer": "personal",
+      "priority": 52,
+      "triggers": [
+        "code",
+        "refactor"
+      ]
+    },
+    {
+      "id": "P-CONFIG",
+      "title": "One config layer; validate at start",
+      "text": "All config flows through one layer (env \u2192 .env \u2192 file \u2192 CLI, increasing precedence); validate at startup naming the bad key; never silently fall back; ship a .env.example; run locally with zero setup.",
+      "layer": "personal",
+      "priority": 54,
+      "triggers": [
+        "config",
+        "startup"
+      ]
+    },
+    {
+      "id": "P-ERRORS",
+      "title": "Disciplined errors + logging",
+      "text": "No bare except/catch swallows; cleanup via context managers/defer/using; a logger never print, structured once past a script; loud in dev, graceful in prod, diagnosable always; AI errors surface as friendly messages.",
+      "layer": "personal",
+      "priority": 53,
+      "triggers": [
+        "error",
+        "logging"
+      ]
+    },
+    {
+      "id": "P-DEPS",
+      "title": "Pin, lock, audit; stdlib+one",
+      "text": "Pin versions, commit the lockfile, audit on every new dep; prefer stdlib plus one well-maintained dep over five; Python work in a project-local virtualenv.",
+      "layer": "personal",
+      "priority": 51,
+      "triggers": [
+        "dependency"
+      ]
+    },
+    {
+      "id": "P-HYGIENE",
+      "title": "Hygiene: lint, dead-code, no cruft",
+      "text": "Lint+format every commit, CI green; dead-code pass after features; cleanup sweep first after a stable release; no commented-out code; no orphan TODOs (tracker link or dated FIXME+owner).",
+      "layer": "personal",
+      "priority": 50,
+      "triggers": [
+        "commit",
+        "post-feature",
+        "release"
+      ]
+    },
+    {
+      "id": "P-VERSION",
+      "title": "Versioning discipline",
+      "text": "SemVer in one canonical place; versions only move forward; tags immutable (fetch remote before tagging, push by name); unique monotonic build number; changelog rides the bump; show the version everywhere.",
+      "layer": "personal",
+      "priority": 49,
+      "triggers": [
+        "release",
+        "tag"
+      ]
+    },
+    {
+      "id": "P-DOCS",
+      "title": "Living memory: STATE/ADR/trackers",
+      "text": "A per-repo STATE.md (\u22641024 words) ingested at session start, regenerated each commit; standing decisions persisted same-commit as numbered immutable ADRs; bugs/features tracked on sight; plans carry a live Status; regenerate the README after major changes.",
+      "layer": "personal",
+      "priority": 57,
+      "triggers": [
+        "decision",
+        "session",
+        "commit"
+      ]
+    },
+    {
+      "id": "P-CREW",
+      "title": "Three roles, one final human",
+      "text": "Guy's scalpel \u2014 the crew is three roles plus one human whose rulings are canon: Jason (PM, fast 8B), Claude (builder / test-dev, 14B), Claudius (architect, frontier). Any persona yields to the human; the PM carries the duty to push back when a ruling contradicts the canon. The model behind each role is a config binding per stack, never hardcoded ('go local' rebinds every seat).",
+      "layer": "personal",
+      "priority": 65,
+      "triggers": [
+        "crew",
+        "governance"
+      ]
+    },
+    {
+      "id": "P-PM",
+      "title": "Jason \u2014 PM, fast 8B model",
+      "text": "The PM runs on a fast 8B model, coordinates the heavyweights as subagents, holds the through-line, chunks work into independent sprints \u2014 without writing production code himself. Holds ~8 rules resident; the rest are reinforced by paging into context on the matching trigger.",
+      "layer": "personal",
+      "priority": 64,
+      "triggers": [
+        "crew",
+        "planning",
+        "route",
+        "decide"
+      ]
+    },
+    {
+      "id": "P-ARCHITECT",
+      "title": "Claudius \u2014 architect, deep, API-first",
+      "text": "The architect thinks long and deep and plans before anyone implements; if architecture needs rework, his plan was wrong. Freezes the API/contract first, then fans the work out in parallel.",
+      "layer": "personal",
+      "priority": 63,
+      "triggers": [
+        "crew",
+        "design",
+        "api"
+      ]
+    },
+    {
+      "id": "P-BACKEND",
+      "title": "Claude \u2014 builder / test-dev",
+      "text": "The builder is methodical; searches high-star OSS before original code; carries implementation and tests against the frozen contract.",
+      "layer": "personal",
+      "priority": 62,
+      "triggers": [
+        "crew",
+        "backend",
+        "test",
+        "code"
+      ]
+    },
+    {
+      "id": "P-APIPAR",
+      "title": "API-first, then parallel fan-out",
+      "text": "Eddie's variant for cloud-native apps: the architect freezes the API/contract first; frontend, backend, and tests then proceed in parallel, each built against the frozen contract. Contract is the synchronization point (ties AX-CONTRACT).",
+      "layer": "personal",
+      "priority": 61,
+      "triggers": [
+        "crew",
+        "design",
+        "api",
+        "feature",
+        "parallel"
+      ]
+    },
+    {
+      "id": "P-STACK",
+      "title": "Stack: Podman / UBI / Ansible / OpenShift",
+      "text": "Containers run rootless on Podman, Red Hat UBI base images, orchestrated by OpenShift, provisioned by Ansible; SELinux enforcing, smallest capability set, non-root user, read-only root FS where feasible. Rootless+daemonless beats a root daemon.",
+      "layer": "personal",
+      "priority": 62,
+      "triggers": [
+        "container",
+        "deploy",
+        "infra"
+      ]
+    },
+    {
+      "id": "P-FLEET",
+      "title": "Fleet: size, slice, page, verify-escalate",
+      "text": "Chunk tasks so a model nails them first try \u226590%. Sizing law: ~1 rule/billion params \u2014 never hand a model more rules than it has billions. Slice rules to the seat (a view of the canon; union = canon). Context ceiling by tier (~8k small, ~128k frontier). Cheap model + verify gate + escalate the residual; quality is the pipeline's, not any one model's. A budget-limited seat holds its slice resident (trained/in-prompt); rules beyond budget are reinforced by paging them into context on the matching trigger.",
+      "layer": "personal",
+      "priority": 66,
+      "triggers": [
+        "fleet",
+        "routing",
+        "compose"
+      ]
+    },
+    {
+      "id": "PR-TARGETS",
+      "title": "Target platforms: Windows, Linux, macOS, iOS",
+      "text": "This project ships multi-platform apps: Windows, Linux, macOS, iOS. Use path libraries, no OS assumptions, LF via .gitattributes, no hardcoded temp/home/drive; both arm64 and x86_64; CI covers the targets. (The cross-platform principle is craft; this target set is the project's choice.)",
+      "layer": "project",
+      "priority": 60,
+      "triggers": [
+        "build",
+        "ci",
+        "frontend"
+      ]
+    },
+    {
+      "id": "PR-CLOUD",
+      "title": "Cloud-native: OpenShift-first, GCloud-portable",
+      "text": "Cloud-native distributed app. OpenShift-first but the same code runs on-prem or on GCloud with config changes only \u2014 never source changes. Storage through an adapter (no hardcoded buckets/regions/accounts).",
+      "layer": "project",
+      "priority": 62,
+      "triggers": [
+        "deploy",
+        "infra"
+      ]
+    },
+    {
+      "id": "PR-DEPLOY",
+      "title": "Deploy gates + idempotency + health",
+      "text": "Pre-deploy gates (smoke, vuln scan, secret scan) never off by default. Every op idempotent and safe to re-run, gated on real end-state. Services expose health/readiness endpoints and shut down gracefully on SIGTERM. Migrations reversible and idempotent.",
+      "layer": "project",
+      "priority": 58,
+      "triggers": [
+        "deploy",
+        "migrate"
+      ]
+    },
+    {
+      "id": "PR-DIST",
+      "title": "Distributed-systems discipline",
+      "text": "Every remote call has a timeout, bounded backoff retries, and a fallback/circuit-breaker. Every request carries a correlation/trace ID propagated and logged. Store/compute time in UTC, convert only at display. Declare a latency+throughput budget and gate regressions against it like coverage.",
+      "layer": "project",
+      "priority": 59,
+      "triggers": [
+        "network",
+        "service",
+        "request"
+      ]
+    },
+    {
+      "id": "PR-TESTBED",
+      "title": "Testbed fleet + connectivity rubric",
+      "text": "Ansible establishes control of every node on the testbed (SSH, headless). Connectivity config and ansible-vault-ENCRYPTED credentials live in a dedicated testbed-project repo \u2014 encrypted blobs only, never plaintext passwords in git (AX-NOSECRET). A connectivity rubric proves each node reachable+ready before use, graded not vibed: SSH up, Ansible ping/play converges, health endpoint green, a representative request succeeds.",
+      "layer": "project",
+      "priority": 57,
+      "triggers": [
+        "testbed",
+        "connectivity",
+        "remote",
+        "fleet"
+      ]
+    },
+    {
+      "id": "BI-FLEET",
+      "title": "Ansible owns the fleet",
+      "text": "Every node is under declarative Ansible control; the inventory lives in the repo; plays are idempotent and safe to re-run, converging any node to the same state.",
+      "layer": "bardinfra",
+      "priority": 62,
+      "triggers": [
+        "fleet",
+        "node",
+        "provision"
+      ]
+    },
+    {
+      "id": "BI-VAULT",
+      "title": "Vault-encrypted creds in-repo",
+      "text": "Connectivity config and ansible-vault-ENCRYPTED credentials live in the testbed-project repo \u2014 encrypted blobs only, never plaintext passwords in git (AX-NOSECRET). Rotate on schedule; least privilege per node (AX-LEASTPRIV).",
+      "layer": "bardinfra",
+      "priority": 61,
+      "triggers": [
+        "credential",
+        "secret",
+        "connectivity"
+      ]
+    },
+    {
+      "id": "BI-CONN",
+      "title": "Graded connectivity rubric",
+      "text": "Prove each node reachable+ready before use, graded not vibed: SSH up, vault decrypts, Ansible ping/play converges, health endpoint green, a representative request succeeds.",
+      "layer": "bardinfra",
+      "priority": 60,
+      "triggers": [
+        "connectivity",
+        "remote",
+        "health"
+      ]
+    },
+    {
+      "id": "BI-REPRO",
+      "title": "Nodes reproducible from the repo",
+      "text": "A node is a git clone + ansible-playbook away; nothing important lives only on a box. Reimage and rebuild deterministically (headless, script-everything \u2014 AX-HEADLESS).",
+      "layer": "bardinfra",
+      "priority": 59,
+      "triggers": [
+        "provision",
+        "recovery"
+      ]
+    },
+    {
+      "id": "BI-PORTABLE",
+      "title": "OpenShift-first, portable plays",
+      "text": "The same plays target on-prem or GCloud with inventory/vars only \u2014 never play changes. Cloud-native by config, not by fork.",
+      "layer": "bardinfra",
+      "priority": 58,
+      "triggers": [
+        "deploy",
+        "cloud"
+      ]
+    },
+    {
+      "id": "EM-COMPLY",
+      "title": "Compliance & data residency",
+      "text": "[Placeholder] Org compliance regime: data residency/region limits, retention, PII handling, audit-log requirements.",
+      "layer": "employer",
+      "priority": 55,
+      "triggers": [
+        "data",
+        "deploy",
+        "audit"
+      ]
+    },
+    {
+      "id": "EM-VENDOR",
+      "title": "Approved vendors & registries",
+      "text": "[Placeholder] Only approved base images, registries, cloud accounts, and third-party services; route new vendors through review.",
+      "layer": "employer",
+      "priority": 54,
+      "triggers": [
+        "dependency",
+        "deploy"
+      ]
+    },
+    {
+      "id": "EM-REVIEW",
+      "title": "Org review gates",
+      "text": "[Placeholder] Mandatory human review/sign-off gates, change-management, and release-approval process beyond the repo's own.",
+      "layer": "employer",
+      "priority": 53,
+      "triggers": [
+        "merge",
+        "release"
+      ]
+    }
+  ]
+}

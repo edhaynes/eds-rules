@@ -137,8 +137,34 @@ def main():
           "→ more resident, less paging. Easier project → drop a seat."]
     write(os.path.join(OUT, "summary.md"), "\n".join(s) + "\n")
 
+    emit_slices(crew, pools)
+
     print(f"composed: {len(active_ids)} active rules, {len(team_resident)} team-resident, "
           f"axioms covered={axioms_covered}. See {OUT}/summary.md")
+
+
+def emit_slices(crew, pools):
+    """Per-seat full-text rule slice for baking into a model's system prompt:
+    all axioms (universal) + the seat's role rules from its non-axiom draws.
+    Small seats (<=20B) cap the role rules to the highest-priority dozen."""
+    for seat in crew["seats"]:
+        cap = 12 if seat["params_b"] <= 20 else 999
+        lines = [f"# Ed's Rules — {seat['name']}'s slice ({seat['role']})", "",
+                 "## Axioms — universal, always apply", ""]
+        for r in sorted(pools["axiom"], key=lambda r: -r["priority"]):
+            lines.append(f"- **{r['title']}** — {r['text']}")
+        role = []
+        for layer in seat["draws"]:
+            if layer == "axiom":
+                continue
+            role += pools.get(layer, [])
+        role = sorted(role, key=lambda r: -r["priority"])[:cap]
+        if role:
+            lines += ["", f"## {seat['name']}'s rules", ""]
+            for r in role:
+                lines.append(f"- **{r['title']}** — {r['text']}")
+        write(os.path.join(OUT, "slices", f"{seat['name'].lower()}.rules.md"), "\n".join(lines) + "\n")
+    print(f"  slices: {', '.join(s['name'].lower() for s in crew['seats'])} -> {OUT}/slices/")
 
 
 if __name__ == "__main__":

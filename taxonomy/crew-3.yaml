@@ -10,9 +10,9 @@ project:
 seats:
   - name: Jason
     role: "PM / coordinator"
-    model: "llama-3.1-8b"
-    params_b: 8                       # rule budget ≈ 8 (sizing law); misses paged in
-    draws: [axiom, personal]
+    model: "qwen2.5-coder:7b"         # Linda 2026-06-16: llama3.1:8b unreliable for
+    params_b: 7                       # OpenCode multi-turn tool-calling; Qwen-Coder is
+    draws: [axiom, personal]          # OpenCode's recommended local family. ~7 rules resident.
     focus: [decide, route, plan, task-start, nontrivial, commit, push, session-end, crew, governance, planning, scope]
   - name: Claude
     role: "Builder / test-dev / easy coding"

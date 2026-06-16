@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "//": "Guy's crew, scoped to THIS repo only (per-project — never global, so normal Claude Code/OpenCode in ~/projects stays ruleless). Jason is the default agent. Merges with the user's global providers (litellm-groq etc.).",
+
+  "model": "ollama/jason",
+
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": { "baseURL": "http://localhost:11434/v1", "apiKey": "ollama" },
+      "models": {
+        "jason":  { "name": "Jason — PM (rules-sliced 7B)" },
+        "claude": { "name": "Claude — builder (rules-sliced 14B)" }
+      }
+    }
+  },
+
+  "agent": {
+    "jason": {
+      "mode": "primary",
+      "model": "ollama/jason",
+      "description": "PM / coordinator. Scopes sprints, assigns, reviews; doesn't write production code by default. Rules + persona baked into the model."
+    },
+    "claude": {
+      "mode": "subagent",
+      "model": "ollama/claude",
+      "description": "Builder / test-dev. Implements against Claudius's frozen contract, tests-first. Rules + persona baked into the model."
+    },
+    "claudius": {
+      "mode": "subagent",
+      "model": "litellm-groq/gpt-oss-120b",
+      "description": "Architect. API-first, then parallel fan-out. Frontier model with his rule slice injected via the prompt below (context injection, not a fine-tune). Swap model to anthropic/claude-opus if you have it authed.",
+      "prompt": "{file:./CLAUDIUS.md}"
+    }
+  }
+}
