@@ -1,5 +1,12 @@
-Status: In Progress — 2026-06-16 (branch: rules-taxonomy)
+Status: Partial — Remaining: map full old-100 → layers; frontier-free crew demo; sync RULES.md/book/STATE; merge. (branch: rules-taxonomy, 2026-06-16)
 Author: Jason-eds
+
+## Decisions (Eddie, 2026-06-16)
+- Output form: **composer + layer files** (built: `taxonomy/`).
+- Scope: axiom core + layers + the **3-crew worked example** (Claudius/Claude/Linda).
+- Axiom core: **keep at 24, no trim.** A frontier seat (Opus) is required to hold the
+  whole core resident; the crew includes one, so axioms are covered. (Guy's test
+  still noted: a *frontier-free* 8B+14B crew would need the core ≤22 — not pursued.)
 
 # Re-taxonomize the rules: a small axiom core + composable preference layers
 
