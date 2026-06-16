@@ -1,0 +1,26 @@
+# The "Guy" branch — 3 seats: Claude, Claudius, Linda.
+# Model→role binding is config, never hardcoded (rule P-CREW). "Go local" swaps the
+# model strings for local backends; roles and rule-slices are unchanged.
+project:
+  name: "cloud-native distributed app (multi-platform)"
+  active_layers: [axiom, personal, project, employer]
+
+seats:
+  - name: Claudius
+    role: "Architect — API-first, then parallel fan-out"
+    model: "claude-opus"
+    params_b: 200                     # effectively holds its full draw resident
+    draws: [axiom, personal, project, employer]
+    focus: [design, architecture, api, infra, deploy, fleet, compose, governance, parallel]
+  - name: Claude
+    role: "Backend / test-dev / easy coding"
+    model: "qwen2.5-14b"
+    params_b: 14                      # rule budget ≈ 14 (sizing law)
+    draws: [axiom, personal, project]
+    focus: [test, coverage, feature, bugfix, code, api, contract, backend, dependency]
+  - name: Linda
+    role: "Research — fast, web-capable, wide"
+    model: "llama-3.1-8b"
+    params_b: 8                       # rule budget ≈ 8
+    draws: [axiom, personal]
+    focus: [research, decide, route, ambiguity, build, design]

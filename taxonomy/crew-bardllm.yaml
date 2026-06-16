@@ -1,0 +1,25 @@
+# bard-llm project — concrete example. Active layers swap the generic cloud-native
+# "project" for the "bardllm" project layer (its rules section at the bottom).
+project:
+  name: "bard-llm — on-device local-LLM app"
+  active_layers: [axiom, personal, bardllm]
+
+seats:
+  - name: Claudius
+    role: "Architect"
+    model: "claude-opus"
+    params_b: 200
+    draws: [axiom, personal, bardllm]
+    focus: [design, architecture, api, ui, fleet, compose, model, rules, slice]
+  - name: Claude
+    role: "Backend / test-dev"
+    model: "qwen2.5-14b"
+    params_b: 14
+    draws: [axiom, personal, bardllm]
+    focus: [test, coverage, feature, bugfix, code, build, perf, runtime, model-load]
+  - name: Linda
+    role: "Research — fast"
+    model: "llama-3.1-8b"
+    params_b: 8
+    draws: [axiom, personal]
+    focus: [research, decide, route, build]
