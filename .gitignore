@@ -52,3 +52,6 @@ demo/podcast/ep93-interview/work/
 
 # ep94 edit — heavy/regenerable media
 demo/podcast/ep94-edit/work/
+
+# podcast distribution kit — regenerable media (run podcast.py)
+demo/podcast/distribution/out/
