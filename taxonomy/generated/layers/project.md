@@ -1,9 +1,0 @@
-# Project layer
-
-What's being built: cloud-native distributed, multi-platform (Win/Linux/macOS/iOS).
-
-- **Cloud-native: OpenShift-first, GCloud-portable** (`PR-CLOUD`, prio 62) — Cloud-native distributed app. OpenShift-first but the same code runs on-prem or on GCloud with config changes only — never source changes. Storage through an adapter (no hardcoded buckets/regions/accounts).
-- **Target platforms: Windows, Linux, macOS, iOS** (`PR-TARGETS`, prio 60) — This project ships multi-platform apps: Windows, Linux, macOS, iOS. Use path libraries, no OS assumptions, LF via .gitattributes, no hardcoded temp/home/drive; both arm64 and x86_64; CI covers the targets. (The cross-platform principle is craft; this target set is the project's choice.)
-- **Distributed-systems discipline** (`PR-DIST`, prio 59) — Every remote call has a timeout, bounded backoff retries, and a fallback/circuit-breaker. Every request carries a correlation/trace ID propagated and logged. Store/compute time in UTC, convert only at display. Declare a latency+throughput budget and gate regressions against it like coverage.
-- **Deploy gates + idempotency + health** (`PR-DEPLOY`, prio 58) — Pre-deploy gates (smoke, vuln scan, secret scan) never off by default. Every op idempotent and safe to re-run, gated on real end-state. Services expose health/readiness endpoints and shut down gracefully on SIGTERM. Migrations reversible and idempotent.
-- **Testbed + connectivity rubric** (`PR-TESTBED`, prio 57) — Test/compute substrate is remote hosts over SSH, provisioned by Ansible, reached headlessly. A connectivity rubric proves reachable+ready before use, graded not vibed: SSH up, Ansible ping/play converges, health endpoint green, a representative request succeeds.
