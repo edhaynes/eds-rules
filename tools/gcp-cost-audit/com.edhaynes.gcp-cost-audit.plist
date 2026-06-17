@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.edhaynes.gcp-cost-audit</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/edhayn/projects/eds-rules/tools/gcp-cost-audit/audit.sh</string>
+    </array>
+
+    <!-- 1st of every month at 09:00 local time -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key>
+        <integer>1</integer>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- If the Mac was asleep/off at 09:00 on the 1st, run as soon as it wakes. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/edhayn/projects/eds-rules/tools/gcp-cost-audit/reports/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/edhayn/projects/eds-rules/tools/gcp-cost-audit/reports/launchd.err.log</string>
+</dict>
+</plist>
