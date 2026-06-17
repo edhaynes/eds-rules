@@ -2,6 +2,11 @@
 
 Known bugs for the eds-rules repo and the book manuscript.
 
+## B13 — publish-episode.py crashes re-uploading an episode with no podcast/epN.md
+- **Status:** Completed, 2026-06-17 — `metadata()` now returns empty defaults when the script file is absent so `--title/--description/--tags` can stand in; `main()` exits with a clear message if no title can be derived.
+- **Observed:** 2026-06-17, consolidating the channel — `publish-episode.py --ep 0`/`--ep 90` (re-uploads of older cuts, no `podcast/ep{0,90}.md`) traced back with `FileNotFoundError` because `metadata()` was called unconditionally before the CLI overrides were applied.
+- Fix landed in `demo/publish-episode.py`. Both re-uploads then published cleanly.
+
 ## B1 — Post-F5 narrative seams (body sentences strained by the reorder)
 - **Status:** Completed, 2026-06-12 (pending commit) — all three seams rephrased: Ch2 R30 tail now "configuration thread," Ch2 R31 opener now invokes "the configuration rules" by theme, Ch1 transition leads with the decision doctrine.
 - **Observed:** 2026-06-12, during the F5 importance reorder (body text was

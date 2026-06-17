@@ -40,6 +40,10 @@ def creds():
 
 def metadata(ep):
     md = os.path.join(HERE, "podcast", f"ep{ep}.md")
+    # Episodes without a script file (e.g. re-uploads of older cuts) supply
+    # their metadata via --title/--description/--tags instead.
+    if not os.path.exists(md):
+        return "", "", []
     title_line = good = bad = ""
     for line in open(md, encoding="utf-8"):
         if line.startswith("# Episode") and not title_line:
@@ -96,6 +100,9 @@ def main():
         desc = a.description
     if a.tags:
         tags = [t.strip() for t in a.tags.split(",") if t.strip()]
+    if not title:
+        sys.exit(f"No podcast/ep{a.ep}.md and no --title given; "
+                 f"cannot upload without a title.")
 
     status = {"privacyStatus": "private", "selfDeclaredMadeForKids": False}
     if a.at:
