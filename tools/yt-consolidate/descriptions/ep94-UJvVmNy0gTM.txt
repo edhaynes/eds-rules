@@ -1,0 +1,8 @@
+Episode 94 of Ed's Rules. After the conversation with Guy Turgeon (a chief architect at Red Hat, Telco vertical), Guy took a scalpel to the 100 rules — cutting them into a layered structure: a small immutable axiom core plus composable preference layers (personal/architect, project, employer). This episode walks the buckets — axioms, engineering discipline, quality, working with humans & agents — and the cache-hierarchy idea behind slicing rules across a small-model crew.
+
+The Guy Turgeon interview (Ep 93): https://youtu.be/uy7-QJ-QoOo
+Bard Technical Solutions: https://bardtek.com
+The 100 Rules on GitHub: https://github.com/edhaynes/eds-rules
+The book (free PDF): https://github.com/edhaynes/eds-rules/blob/main/book/eds-rules-book-print.pdf
+Guy's pared-down "Scalpel" edition (PDF): https://github.com/edhaynes/eds-rules/releases/download/rules-synopsis-2026-06-16/eds-rules-synopsis.pdf
+Bard LLM on the App Store: https://apps.apple.com/app/bard-llm/id6772813533

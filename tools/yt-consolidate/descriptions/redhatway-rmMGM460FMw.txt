@@ -1,0 +1,9 @@
+Ed is a Senior Software Architect and this is his new series:  100 Rules for Programming my Software.  As Ed used AI coding agents he was fed up with their mediocre "C-" results.  Over time he assembled 153 rules for project management of his AI created software.  Architecture he does himself, and has rules about the architecture.  This will be a daily 3-5 min webcast and Ed will invite cool Red Hatters to talk about their favorite rules!
+
+Now Ed makes A- software (90!) first pass, and 1 round of polish to 95%!
+
+Bard Technical Solutions: https://bardtek.com
+The 100 Rules on GitHub: https://github.com/edhaynes/eds-rules
+The book (free PDF): https://github.com/edhaynes/eds-rules/blob/main/book/eds-rules-book-print.pdf
+Guy's pared-down "Scalpel" edition (PDF): https://github.com/edhaynes/eds-rules/releases/download/rules-synopsis-2026-06-16/eds-rules-synopsis.pdf
+Bard LLM on the App Store: https://apps.apple.com/app/bard-llm/id6772813533

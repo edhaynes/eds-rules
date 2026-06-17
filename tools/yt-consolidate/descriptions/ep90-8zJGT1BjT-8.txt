@@ -1,0 +1,7 @@
+Brought to you by 1990 and the letter C!  C programming, my C grade in comp Sci algorithms, and pair programming with Claude.
+
+Bard Technical Solutions: https://bardtek.com
+The 100 Rules on GitHub: https://github.com/edhaynes/eds-rules
+The book (free PDF): https://github.com/edhaynes/eds-rules/blob/main/book/eds-rules-book-print.pdf
+Guy's pared-down "Scalpel" edition (PDF): https://github.com/edhaynes/eds-rules/releases/download/rules-synopsis-2026-06-16/eds-rules-synopsis.pdf
+Bard LLM on the App Store: https://apps.apple.com/app/bard-llm/id6772813533

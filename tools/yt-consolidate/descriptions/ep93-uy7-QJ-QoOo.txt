@@ -1,0 +1,8 @@
+Episode 93 of Ed's 100 Rules — the rule-quality series. Ed Haynes sits down with Guy Turgeon to grade the rule set: where the 100 Rules came from (Colin Powell's 90% rule), what generalizes versus what's just Ed's own, API design as the single source of truth, attack surface and container security (UBI, daemonless containers), and lessons from a career in embedded software (VxWorks, real-time systems).
+
+The follow-up (Ep 94 — Guy's Scalpel): https://youtu.be/UJvVmNy0gTM
+Bard Technical Solutions: https://bardtek.com
+The 100 Rules on GitHub: https://github.com/edhaynes/eds-rules
+The book (free PDF): https://github.com/edhaynes/eds-rules/blob/main/book/eds-rules-book-print.pdf
+Guy's pared-down "Scalpel" edition (PDF): https://github.com/edhaynes/eds-rules/releases/download/rules-synopsis-2026-06-16/eds-rules-synopsis.pdf
+Bard LLM on the App Store: https://apps.apple.com/app/bard-llm/id6772813533
