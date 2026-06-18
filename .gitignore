@@ -42,6 +42,7 @@ demo/.ep90b-timeline.txt
 # mock podcast audio (large, regenerable from scripts)
 demo/podcast/*.wav
 demo/podcast/*.mp4
+demo/podcast/recordings/
 
 # YouTube OAuth secrets (never commit)
 demo/client_secret.json
