@@ -2,10 +2,19 @@
 The "Red Hat Way" is a rigid, non-negotiable set of 100 standing instructions for AI coding agents working within git-tracked repositories, capped strictly at that number to force consolidation over expansion. Bounded by version control and explicit human sign-off for any exceptions, the rules dictate strict security and hygiene practices—such as mandatory pre-commit secret scanning, zero hardcoded configurations, cross-platform compatibility, and a container stack built natively on Podman, Red Hat UBI base images, Ansible, and OpenShift. Development operates under a five-persona agent crew coordinated by a project manager under a final human authority, requiring rigorous test-driven development targeting 100% line and branch coverage alongside mandatory rubric-based grading. Architecturally, the guidelines enforce modular object-oriented designs, localized source files, absolute dependency tracking, structural logging, and persistent markdown-based documentation (such as ADRs and READMEs), altogether mandating that agents prioritize correctness, fail loudly, and maintain direct, un-flattering communication.
 
 
-Now a podcast with almost 100 views lol.  check it out on youtube 
+Now a podcast with almost 100 views lol.  check it out on youtube
 
 **100 opinionated, general-purpose rules for AI pair programming** — distilled from
-years of coding.  I was on the team that designed the first Top Secret rated internet device (Taclane, General Dynamics) - and my "Jason" persona in the rules is based on the architect of that projects, which has sold billions and still in production 30 years later.
+years of coding. A few firsts along the way: I coded the first TCP/IP stack in the
+**TACLANE** (General Dynamics) — the first Top Secret-rated internet device, which has
+sold billions and is still in production 30 years later — and built the **first
+certified IPv6 stack, at Nortel**. My "Jason" persona in the rules is based on the
+architect of the TACLANE project. These days I'm the author of the companion book and
+of the **Bard** app (run local LLMs on iPhone, iPad, and Mac), and — off the clock —
+a parent and a husband. Whatever ego survives all that, my smarter colleagues at Red
+Hat keep firmly in check — like when Guy Turgeon took a scalpel to these very rules,
+cut them roughly in half, and made them better. Most interesting man in the world?
+Just ask him.
 
 These are *my* defaults, earned from years of actual development experience. Plenty
 of people will disagree with some of them — many have different opinions about git
