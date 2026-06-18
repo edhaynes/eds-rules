@@ -81,8 +81,8 @@ github.com/edhaynes/eds-rules
 
 - [x] Video assembled → `work/ep95-final.mp4` (9:52, 1080p24)
 - [x] Thumbnail → `ep95-thumbnail.jpg` (1280×720)
-- [ ] Upload to YouTube (Eddie's login) + set title/description above + thumbnail
-- [ ] Add the public URL to `../distribution/REPORT.md §3`
+- [x] Upload to YouTube (public): https://youtu.be/aELNChaaW6c — title/description/thumbnail set (2026-06-18)
+- [x] Add the public URL to `../distribution/REPORT.md §3`
 - [ ] (Optional) audio-only cut for the Spotify/Apple feed (`../distribution/podcast.py`)
 
 Heavy/regenerable media lives under `work/` (gitignored). Tools, brand PNGs, and

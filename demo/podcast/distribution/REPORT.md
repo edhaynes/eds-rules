@@ -73,6 +73,7 @@ Every paid buy needs your accounts/budget, so I prepared but did not purchase an
 
 ## 3. Everything else — current status (all live / pushed)
 
+- **Ep 95** public: https://youtu.be/aELNChaaW6c (The Virtue of the Small — owl splash + plain-English lower-thirds)
 - **Ep 94** public: https://youtu.be/UJvVmNy0gTM (owl splash + explainer cards)
 - **Ep 93** public: https://youtu.be/uy7-QJ-QoOo (Guy interview)
 - **Synopsis PDF** (GitHub release): https://github.com/edhaynes/eds-rules/releases/download/rules-synopsis-2026-06-16/eds-rules-synopsis.pdf
