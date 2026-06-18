@@ -1,0 +1,54 @@
+HumanEval · 40 problems · models=['qwen2.5-coder:14b', 'claude-opus-4-8'] · timeout=12s
+
+  1/40 HumanEval/52    qwen2.5-coder:14b=P  claude-opus-4-8=P
+  2/40 HumanEval/23    qwen2.5-coder:14b=P  claude-opus-4-8=P
+  3/40 HumanEval/123   qwen2.5-coder:14b=P  claude-opus-4-8=P
+  4/40 HumanEval/147   qwen2.5-coder:14b=P  claude-opus-4-8=P
+  5/40 HumanEval/150   qwen2.5-coder:14b=P  claude-opus-4-8=P
+  6/40 HumanEval/79    qwen2.5-coder:14b=P  claude-opus-4-8=P
+  7/40 HumanEval/90    qwen2.5-coder:14b=P  claude-opus-4-8=P
+  8/40 HumanEval/115   qwen2.5-coder:14b=P  claude-opus-4-8=P
+  9/40 HumanEval/160   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 10/40 HumanEval/78    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 11/40 HumanEval/67    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 12/40 HumanEval/125   qwen2.5-coder:14b=.  claude-opus-4-8=P
+ 13/40 HumanEval/69    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 14/40 HumanEval/94    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 15/40 HumanEval/19    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 16/40 HumanEval/139   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 17/40 HumanEval/36    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 18/40 HumanEval/10    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 19/40 HumanEval/97    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 20/40 HumanEval/95    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 21/40 HumanEval/117   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 22/40 HumanEval/27    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 23/40 HumanEval/33    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 24/40 HumanEval/148   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 25/40 HumanEval/134   qwen2.5-coder:14b=.  claude-opus-4-8=P
+ 26/40 HumanEval/46    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 27/40 HumanEval/13    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 28/40 HumanEval/149   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 29/40 HumanEval/6     qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 30/40 HumanEval/31    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 31/40 HumanEval/129   qwen2.5-coder:14b=P  claude-opus-4-8=.
+ 32/40 HumanEval/73    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 33/40 HumanEval/54    qwen2.5-coder:14b=.  claude-opus-4-8=P
+ 34/40 HumanEval/140   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 35/40 HumanEval/26    qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 36/40 HumanEval/108   qwen2.5-coder:14b=.  claude-opus-4-8=P
+ 37/40 HumanEval/136   qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 38/40 HumanEval/1     qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 39/40 HumanEval/0     qwen2.5-coder:14b=P  claude-opus-4-8=P
+ 40/40 HumanEval/146   qwen2.5-coder:14b=P  claude-opus-4-8=P
+
+=== pass@1 ===
+  qwen2.5-coder:14b            36/40  (90%)
+  claude-opus-4-8              39/40  (98%)
+
+=== the split (cheap=qwen2.5-coder:14b vs T3=claude-opus-4-8) ===
+  both solve (cheap's domain): 35
+  only T3 (the hard 10%):      4  ['HumanEval/125', 'HumanEval/134', 'HumanEval/54', 'HumanEval/108']
+  cheap-only (T3 flaked):      1  ['HumanEval/129']
+  neither (needs decompose):   0  []
+
+wrote coding-bench-results.jsonl + coding-bench-summary.txt

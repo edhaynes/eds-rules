@@ -1,0 +1,5 @@
+verify gate · cheap=qwen2.5-coder:14b · T3=claude-opus-4-8 · threshold=80.0 · slice=top-14
+
+cheap (qwen2.5-coder:14b) scored 48.6  ->  ESCALATED to T3
+final: served by claude-opus-4-8 at 83.3 (threshold 80.0)
+  (cheap output was below the bar; the gate caught it and bounced it up.)

@@ -26,3 +26,11 @@
 {"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 0, "grade": 76.66666666666667, "na": 5}
 {"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 1, "grade": 77.5, "na": 4}
 {"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 8, "gen": 2, "grade": 95.0, "na": 5}
+{"model": "jason-qwen14b-v031:latest", "size": "?", "kind": "base", "N": 14, "gen": 0, "grade": 53.75, "na": 6}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 14, "gen": 0, "grade": 54.0, "na": 5}
+{"model": "jason-qwen14b-v031:latest", "size": "?", "kind": "base", "N": 14, "gen": 0, "grade": 52.5, "na": 6}
+{"model": "jason-qwen14b-v031:latest", "size": "?", "kind": "base", "N": 14, "gen": 1, "grade": 49.0, "na": 5}
+{"model": "jason-qwen14b-v031:latest", "size": "?", "kind": "base", "N": 14, "gen": 2, "grade": 50.0, "na": 4}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 14, "gen": 0, "grade": 46.0, "na": 5}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 14, "gen": 1, "grade": 68.57142857142857, "na": 3}
+{"model": "qwen2.5-coder:14b", "size": "?", "kind": "base", "N": 14, "gen": 2, "grade": 58.0, "na": 5}

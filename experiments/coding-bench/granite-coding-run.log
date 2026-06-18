@@ -1,0 +1,54 @@
+HumanEval · 40 problems · models=['granite3.1-dense:2b', 'llama3.1:8b'] · timeout=12s
+
+  1/40 HumanEval/52    granite3.1-dense:2=P  llama3.1:8b=P
+  2/40 HumanEval/23    granite3.1-dense:2=P  llama3.1:8b=P
+  3/40 HumanEval/123   granite3.1-dense:2=.  llama3.1:8b=P
+  4/40 HumanEval/147   granite3.1-dense:2=P  llama3.1:8b=P
+  5/40 HumanEval/150   granite3.1-dense:2=P  llama3.1:8b=P
+  6/40 HumanEval/79    granite3.1-dense:2=P  llama3.1:8b=P
+  7/40 HumanEval/90    granite3.1-dense:2=P  llama3.1:8b=P
+  8/40 HumanEval/115   granite3.1-dense:2=.  llama3.1:8b=.
+  9/40 HumanEval/160   granite3.1-dense:2=.  llama3.1:8b=.
+ 10/40 HumanEval/78    granite3.1-dense:2=.  llama3.1:8b=.
+ 11/40 HumanEval/67    granite3.1-dense:2=.  llama3.1:8b=P
+ 12/40 HumanEval/125   granite3.1-dense:2=.  llama3.1:8b=.
+ 13/40 HumanEval/69    granite3.1-dense:2=.  llama3.1:8b=P
+ 14/40 HumanEval/94    granite3.1-dense:2=P  llama3.1:8b=P
+ 15/40 HumanEval/19    granite3.1-dense:2=.  llama3.1:8b=P
+ 16/40 HumanEval/139   granite3.1-dense:2=P  llama3.1:8b=P
+ 17/40 HumanEval/36    granite3.1-dense:2=P  llama3.1:8b=P
+ 18/40 HumanEval/10    granite3.1-dense:2=.  llama3.1:8b=.
+ 19/40 HumanEval/97    granite3.1-dense:2=P  llama3.1:8b=.
+ 20/40 HumanEval/95    granite3.1-dense:2=.  llama3.1:8b=P
+ 21/40 HumanEval/117   granite3.1-dense:2=.  llama3.1:8b=P
+ 22/40 HumanEval/27    granite3.1-dense:2=P  llama3.1:8b=P
+ 23/40 HumanEval/33    granite3.1-dense:2=.  llama3.1:8b=.
+ 24/40 HumanEval/148   granite3.1-dense:2=.  llama3.1:8b=P
+ 25/40 HumanEval/134   granite3.1-dense:2=.  llama3.1:8b=.
+ 26/40 HumanEval/46    granite3.1-dense:2=.  llama3.1:8b=.
+ 27/40 HumanEval/13    granite3.1-dense:2=P  llama3.1:8b=P
+ 28/40 HumanEval/149   granite3.1-dense:2=P  llama3.1:8b=.
+ 29/40 HumanEval/6     granite3.1-dense:2=P  llama3.1:8b=P
+ 30/40 HumanEval/31    granite3.1-dense:2=P  llama3.1:8b=P
+ 31/40 HumanEval/129   granite3.1-dense:2=.  llama3.1:8b=.
+ 32/40 HumanEval/73    granite3.1-dense:2=.  llama3.1:8b=.
+ 33/40 HumanEval/54    granite3.1-dense:2=.  llama3.1:8b=.
+ 34/40 HumanEval/140   granite3.1-dense:2=.  llama3.1:8b=.
+ 35/40 HumanEval/26    granite3.1-dense:2=.  llama3.1:8b=.
+ 36/40 HumanEval/108   granite3.1-dense:2=.  llama3.1:8b=.
+ 37/40 HumanEval/136   granite3.1-dense:2=P  llama3.1:8b=P
+ 38/40 HumanEval/1     granite3.1-dense:2=.  llama3.1:8b=P
+ 39/40 HumanEval/0     granite3.1-dense:2=P  llama3.1:8b=P
+ 40/40 HumanEval/146   granite3.1-dense:2=.  llama3.1:8b=.
+
+=== pass@1 ===
+  granite3.1-dense:2b          17/40  (42%)
+  llama3.1:8b                  23/40  (58%)
+
+=== the split (cheap=granite3.1-dense:2b vs T3=llama3.1:8b) ===
+  both solve (cheap's domain): 15
+  only T3 (the hard 10%):      8  ['HumanEval/123', 'HumanEval/67', 'HumanEval/69', 'HumanEval/19', 'HumanEval/95', 'HumanEval/117', 'HumanEval/148', 'HumanEval/1']
+  cheap-only (T3 flaked):      2  ['HumanEval/97', 'HumanEval/149']
+  neither (needs decompose):   15  ['HumanEval/115', 'HumanEval/160', 'HumanEval/78', 'HumanEval/125', 'HumanEval/10', 'HumanEval/33', 'HumanEval/134', 'HumanEval/46', 'HumanEval/129', 'HumanEval/73', 'HumanEval/54', 'HumanEval/140', 'HumanEval/26', 'HumanEval/108', 'HumanEval/146']
+
+wrote coding-bench-results.jsonl + coding-bench-summary.txt

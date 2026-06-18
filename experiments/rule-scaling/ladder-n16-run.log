@@ -1,0 +1,17 @@
+judge=openai/gpt-oss-120b NS=[8, 14, 16] GENS=3 K=10 temp=0.5
+
+model                                  size  kind    N   mean   std  per-gen
+eds-rules-llama:latest                    ?    ft    8   64.6   6.8  [55, 69, 70]
+eds-rules-llama:latest                    ?    ft   14   63.7  16.1  [85, 46, 60]
+eds-rules-llama:latest                    ?    ft   16   60.3  12.6  [56, 48, 78]
+llama3.1:8b                               ?  base    8   69.7   5.1  [73, 62, 73]
+llama3.1:8b                               ?  base   14   54.3   4.9  [48, 60, 55]
+llama3.1:8b                               ?  base   16   55.6  14.2  [42, 50, 75]
+granite-coding-rules-8b-v0.3.1:latest     ?    ft    8   66.4   9.8  [52, 73, 73]
+granite-coding-rules-8b-v0.3.1:latest     ?    ft   14   26.7   7.6  [25, 18, 37]
+granite-coding-rules-8b-v0.3.1:latest     ?    ft   16   49.2  12.2  [66, 38, 44]
+gemma3-ablit:12b                          ?  base    8   67.1  23.3  [50, 100, 51]
+gemma3-ablit:12b                          ?  base   14   36.7   8.3  [43, 25, 42]
+gemma3-ablit:12b                          ?  base   16   40.8   8.4  [52, 33, 37]
+
+wrote size-ladder.jsonl + size-ladder-summary.tsv

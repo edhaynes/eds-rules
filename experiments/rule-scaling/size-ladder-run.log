@@ -1,0 +1,13 @@
+judge=openai/gpt-oss-120b NS=[64] GENS=3 K=10 temp=0.5
+
+model                                  size  kind    N   mean   std  per-gen
+llama3.1:8b                              8B  base   64   36.4  14.9  [55, 36, 19]
+eds-rules-llama:latest                 8Bft    ft   64   43.6  19.1  [65, 47, 19]
+granite-coding-rules-8b-v0.3.1:latest  8Bft    ft   64   14.3   0.0  [14]
+gemma3-ablit:12b                        12B  base   64   50.0   0.0  [50]
+gemma3:27b                              27B  base   64   37.1  11.7  [44, 47, 21]
+codellama:34b-instruct                  34B  base   64   34.0  15.1  [38, 50, 14]
+claude-opus-4-8                       cloud cloud   64   71.1  22.5  [72, 98, 43]
+claude-fable-5                        cloud cloud   64    nan   nan  []
+
+wrote size-ladder.jsonl + size-ladder-summary.tsv

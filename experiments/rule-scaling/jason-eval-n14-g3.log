@@ -1,0 +1,7 @@
+judge=openai/gpt-oss-120b NS=[14] GENS=3 K=10 temp=0.5
+
+model                                  size  kind    N   mean   std  per-gen
+jason-qwen14b-v031:latest                 ?  base   14   50.5   1.5  [52, 49, 50]
+qwen2.5-coder:14b                         ?  base   14   57.5   9.2  [46, 69, 58]
+
+wrote size-ladder.jsonl + size-ladder-summary.tsv

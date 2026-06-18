@@ -19,3 +19,7 @@ gemma3-ablit:12b	?	base	8	67.1	23.3	3	14
 gemma3-ablit:12b	?	base	14	36.7	8.3	3	12
 gemma3-ablit:12b	?	base	16	40.8	8.4	3	14
 qwen2.5-coder:14b	?	base	8	83.1	8.5	3	14
+jason-qwen14b-v031:latest	?	base	14	53.8	0.0	1	6
+qwen2.5-coder:14b	?	base	14	54.0	0.0	1	5
+jason-qwen14b-v031:latest	?	base	14	50.5	1.5	3	15
+qwen2.5-coder:14b	?	base	14	57.5	9.2	3	13

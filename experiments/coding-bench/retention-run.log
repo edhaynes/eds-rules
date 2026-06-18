@@ -1,0 +1,34 @@
+HumanEval · 20 problems · models=['jason-qwen14b-v031:latest', 'qwen2.5-coder:14b'] · timeout=12s
+
+  1/20 HumanEval/52    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  2/20 HumanEval/23    jason-qwen14b-v031=.  qwen2.5-coder:14b=P
+  3/20 HumanEval/123   jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  4/20 HumanEval/147   jason-qwen14b-v031=.  qwen2.5-coder:14b=P
+  5/20 HumanEval/150   jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  6/20 HumanEval/79    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  7/20 HumanEval/162   jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  8/20 HumanEval/90    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+  9/20 HumanEval/115   jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 10/20 HumanEval/78    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 11/20 HumanEval/67    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 12/20 HumanEval/125   jason-qwen14b-v031=P  qwen2.5-coder:14b=.
+ 13/20 HumanEval/69    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 14/20 HumanEval/94    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 15/20 HumanEval/19    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 16/20 HumanEval/139   jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 17/20 HumanEval/36    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 18/20 HumanEval/10    jason-qwen14b-v031=.  qwen2.5-coder:14b=P
+ 19/20 HumanEval/97    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+ 20/20 HumanEval/95    jason-qwen14b-v031=P  qwen2.5-coder:14b=P
+
+=== pass@1 ===
+  jason-qwen14b-v031:latest    17/20  (85%)
+  qwen2.5-coder:14b            19/20  (95%)
+
+=== the split (cheap=jason-qwen14b-v031:latest vs T3=qwen2.5-coder:14b) ===
+  both solve (cheap's domain): 16
+  only T3 (the hard 10%):      3  ['HumanEval/23', 'HumanEval/147', 'HumanEval/10']
+  cheap-only (T3 flaked):      1  ['HumanEval/125']
+  neither (needs decompose):   0  []
+
+wrote coding-bench-results.jsonl + coding-bench-summary.txt
