@@ -53,6 +53,10 @@ demo/podcast/ep93-interview/work/
 # ep94 edit — heavy/regenerable media
 demo/podcast/ep94-edit/work/
 
+# ep95 edit — heavy/regenerable media + local venv
+demo/podcast/ep95-edit/work/
+demo/podcast/ep95-edit/.venv/
+
 # podcast distribution kit — regenerable media (run podcast.py)
 demo/podcast/distribution/out/
 # regenerable synopsis PDF (large binary; rebuild via synopsis.py + Chrome)
