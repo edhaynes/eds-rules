@@ -86,6 +86,7 @@ layers:
     - {id: BI-CONN,   title: "Graded connectivity rubric",       priority: 60, triggers: [connectivity, remote, health], text: "Prove each node reachable+ready before use, graded not vibed: SSH up, vault decrypts, Ansible ping/play converges, health endpoint green, a representative request succeeds."}
     - {id: BI-REPRO,  title: "Nodes reproducible from the repo", priority: 59, triggers: [provision, recovery], text: "A node is a git clone + ansible-playbook away; nothing important lives only on a box. Reimage and rebuild deterministically (headless, script-everything — AX-HEADLESS)."}
     - {id: BI-PORTABLE, title: "OpenShift-first, portable plays", priority: 58, triggers: [deploy, cloud], text: "The same plays target on-prem or GCloud with inventory/vars only — never play changes. Cloud-native by config, not by fork."}
+    - {id: BI-ADDR,   title: "Show every node's IPv4 + IPv6",     priority: 57, triggers: [node, connectivity, fleet], text: "The fleet view surfaces each node's IPv4 and IPv6 addresses, both local and bardnet (Tailnet). IPv6 is first-class, not an afterthought."}
 
   # ────────────────────────── EMPLOYER PREFS ──────────────────────────
   # Org-level constraints. Placeholder layer — fill per engagement.
