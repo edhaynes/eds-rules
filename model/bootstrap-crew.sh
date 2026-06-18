@@ -23,16 +23,22 @@ echo "==> composing layered slices from the taxonomy"
 python3 "${TAX}/compose.py" "${TAX}/rules.yaml" "${TAX}/crew-3.yaml" >/dev/null
 echo "    slices in ${SLICES}/"
 
+# CREW_TAG appends a version tag to model names (e.g. ":guy2.0"); JASON_BASE /
+# CLAUDE_BASE override the base model. Defaults preserve the qwen2.5-coder crew.
+# To rebuild on Qwen3-Coder (native tool_calls) on Gladius via the SSH tunnel:
+#   OLLAMA_HOST=http://127.0.0.1:11436 NUM_CTX=32768 CREW_TAG=:guy2.0 \
+#   JASON_BASE=qwen3-coder CLAUDE_BASE=qwen3-coder ./model/bootstrap-crew.sh
+CREW_TAG="${CREW_TAG:-}"
 build() {  # name base
-  echo "==> building '${1}' on ${2} (slice + persona + num_ctx 16384)"
+  echo "==> building '${1}${CREW_TAG}' on ${2} (slice + persona + num_ctx ${NUM_CTX:-16384})"
   RULES_FILE="${SLICES}/${1}.rules.md" \
   PERSONA_FILE="${SCRIPT_DIR}/personas/${1}.txt" \
-  MODEL_NAME="${1}" BASE_MODEL="${2}" \
+  MODEL_NAME="${1}${CREW_TAG}" BASE_MODEL="${2}" \
   "${SCRIPT_DIR}/make-rules-model.sh" 2>&1 | grep -vE '\[\?(25|2026)' | grep -E 'creating|smoke|Done|rule|—' || true
 }
 
-build jason  qwen2.5-coder:7b
-build claude  qwen2.5-coder:14b
+build jason  "${JASON_BASE:-qwen2.5-coder:7b}"
+build claude "${CLAUDE_BASE:-qwen2.5-coder:14b}"
 
 cat <<EOF
 

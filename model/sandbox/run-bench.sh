@@ -7,13 +7,21 @@
 #   run-bench.sh guy         # OpenCode crew (token capture is best-effort for local models)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MODE="${1:?usage: run-bench.sh control|guy}"
+MODE="${1:?usage: run-bench.sh control|guycc|guy}"
 TS="$(python3 -c 'import datetime;print(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))')"
 OUT="$HOME/test_projects/bench/${MODE}-${TS}"; mkdir -p "$OUT"
 
 stamp() { python3 -c 'import datetime,time;n=datetime.datetime.now(datetime.timezone.utc);print(n.isoformat(), repr(time.time()))'; }
 
-REPO="$HOME/test_projects/$([ "$MODE" = control ] && echo claude || echo test_guy)"
+JASON_MODEL=""   # set for the cloud "Jason coordinator" candidate arms (native Anthropic API)
+case "$MODE" in
+  control) REPO="$HOME/test_projects/claude" ;;       # ruleless Claude Code + frontier Anthropic
+  guycc)   REPO="$HOME/test_projects/claude_guy" ;;    # apples-to-apples: Claude Code harness + guy's local model
+  guy)     REPO="$HOME/test_projects/test_guy" ;;      # OpenCode crew + guy's local models
+  haiku)   REPO="$HOME/test_projects/claude_haiku";  JASON_MODEL="claude-haiku-4-5"  ;;  # Jason candidate: fast/cheap coordinator
+  sonnet)  REPO="$HOME/test_projects/claude_sonnet"; JASON_MODEL="claude-sonnet-4-6" ;;  # Jason candidate: reasoning coordinator
+  *) echo "usage: run-bench.sh control|guycc|guy|haiku|sonnet" >&2; exit 1 ;;
+esac
 PROMPT="$(cat "$REPO/PROMPT.txt")"
 
 read -r START_ISO START_EPOCH <<<"$(stamp)"
@@ -27,9 +35,36 @@ if [ "$MODE" = control ]; then
   podman run --rm "${UID_MAP[@]}" -v "$REPO:/work:Z" -e ANTHROPIC_API_KEY eds-sandbox-control \
     -p "$PROMPT" --dangerously-skip-permissions --output-format json \
     > "$OUT/result.json" 2> "$OUT/stderr.log" || echo "(claude exited non-zero — see stderr.log)"
+elif [ -n "$JASON_MODEL" ]; then
+  # Jason-coordinator candidate: same ruleless Claude Code harness + native Anthropic
+  # API, pinned to a specific cloud model. Only the model differs from control.
+  : "${ANTHROPIC_API_KEY:?set ANTHROPIC_API_KEY}"
+  podman run --rm "${UID_MAP[@]}" -v "$REPO:/work:Z" -e ANTHROPIC_API_KEY \
+    -e ANTHROPIC_MODEL="$JASON_MODEL" \
+    -e ANTHROPIC_SMALL_FAST_MODEL="$JASON_MODEL" \
+    eds-sandbox-control \
+    -p "$PROMPT" --dangerously-skip-permissions --output-format json \
+    > "$OUT/result.json" 2> "$OUT/stderr.log" || echo "(claude/$MODE exited non-zero — see stderr.log)"
+elif [ "$MODE" = guycc ]; then
+  # Same ruleless Claude Code harness as control, but pointed at guy's local model
+  # (claude:guy1.0) via the host LiteLLM Anthropic endpoint. Only the model differs
+  # from control — the harness, sandbox, task, and rubric are identical.
+  : "${LITELLM_MASTER_KEY:?set LITELLM_MASTER_KEY}"
+  podman run --rm "${UID_MAP[@]}" -v "$REPO:/work:Z" \
+    -e ANTHROPIC_BASE_URL=http://host.containers.internal:4000 \
+    -e ANTHROPIC_AUTH_TOKEN="$LITELLM_MASTER_KEY" \
+    -e ANTHROPIC_MODEL=claude-guy \
+    -e ANTHROPIC_SMALL_FAST_MODEL=claude-guy \
+    -e MAX_THINKING_TOKENS=0 \
+    -e CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
+    eds-sandbox-control \
+    -p "$PROMPT" --dangerously-skip-permissions --output-format json \
+    > "$OUT/result.json" 2> "$OUT/stderr.log" || echo "(claude+guy exited non-zero — see stderr.log)"
 else
-  podman run --rm "${UID_MAP[@]}" -v "$REPO:/work:Z" -e LITELLM_MASTER_KEY eds-sandbox-guy \
-    run "$PROMPT" > "$OUT/result.txt" 2> "$OUT/stderr.log" || echo "(opencode exited non-zero)"
+  mkdir -p "$OUT/ochome"   # persist OpenCode session data on the host for token capture
+  podman run --rm "${UID_MAP[@]}" -v "$REPO:/work:Z" -v "$OUT/ochome:/sandbox-home:Z" \
+    -e LITELLM_MASTER_KEY eds-sandbox-guy \
+    run --agent jason "$PROMPT" > "$OUT/result.txt" 2> "$OUT/stderr.log" || echo "(opencode exited non-zero)"
 fi
 
 read -r END_ISO END_EPOCH <<<"$(stamp)"

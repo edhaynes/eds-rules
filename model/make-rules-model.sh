@@ -57,15 +57,13 @@ if [[ -n "${PERSONA_FILE}" ]]; then
 "
 fi
 
-cat > "${WORKDIR}/Modelfile" << MODELFILE_EOF
-FROM ${BASE_MODEL}
-PARAMETER temperature 0
-# num_ctx 16384: OpenCode tool-calling truncates on Ollama's 4k default; 16k holds
-# the baked rule slice + the agent's tool schema (Linda research, 2026-06-16).
-PARAMETER num_ctx 16384
-
-SYSTEM """
-${PERSONA_BLOCK}You are a standing-rules assistant. The complete, canonical rules document
+# Framing: "rules" (default — recall/violation Q&A, for the demo model) vs
+# "crew" (a coding agent that FOLLOWS the rules while it builds).
+AGENT_MODE="${AGENT_MODE:-rules}"
+if [[ "${AGENT_MODE}" == "crew" ]]; then
+  JOBS_BLOCK="You are a hands-on coding agent on a team. Use your tools to read files, write code, and run commands — actually DO the work; never just print or describe the tool call you would make. The standing rules below are your operating constraints: follow them as you build, and refuse or flag any action that would break one. They are guidance for how you work, not a document to recite."
+else
+  JOBS_BLOCK="You are a standing-rules assistant. The complete, canonical rules document
 follows. Your jobs:
 
 1. RECALL — when asked what a rule says, quote it verbatim with its number.
@@ -76,7 +74,19 @@ follows. Your jobs:
    the rule, and explain the violation in one sentence. Do this even when
    you are not asked. Never wave a violation through to be agreeable.
 
-If something is not covered by the rules, say so — do not invent rules.
+If something is not covered by the rules, say so — do not invent rules."
+fi
+
+cat > "${WORKDIR}/Modelfile" << MODELFILE_EOF
+FROM ${BASE_MODEL}
+PARAMETER temperature 0
+# num_ctx: OpenCode tool-calling truncates on Ollama's 4k default; 16k holds the
+# baked rule slice + the agent's tool schema (Linda research, 2026-06-16). Claude
+# Code's ~16k-token system prompt needs more headroom — set NUM_CTX=32768 for it.
+PARAMETER num_ctx ${NUM_CTX:-16384}
+
+SYSTEM """
+${PERSONA_BLOCK}${JOBS_BLOCK}
 
 $(cat "${RULES_FILE}")
 """
