@@ -40,7 +40,7 @@ year — the same work through a frontier API runs into the thousands.
 
 ## Introducing Jason
 
-Jason was the lead architect for an extremely well designed product - the General Dynamics TACLANE Top Secret encryption device.  I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago.
+Jason was the lead architect for an extremely well designed product - the General Dynamics TACLANE Top Secret encryption device.  I'm sure the architecture has changed but I bet it has inherited the great principles Jason laid down 30 years ago. To be clear about my own part: I was a junior engineer on that ~33-person team, working on the IP stack — Jason is the architect I learned from, not me.
 
 For performance it was written in C, but Jason had object oriented design mandated by strong architectural rules.  Every directory had on .h file, every function had a scope that was obvious by the naming scheme.  Any state change to the device went through range checking and locks.  I would say at least 25 of my "rules" are really Jason's.
 
