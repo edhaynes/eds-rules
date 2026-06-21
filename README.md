@@ -5,7 +5,7 @@ The "Red Hat Way" is a rigid, non-negotiable set of 100 standing instructions fo
 Now a podcast with almost 100 views lol.  check it out on youtube
 
 **100 opinionated, general-purpose rules for AI pair programming** — distilled from
-years of coding. A few firsts along the way: I coded the first TCP/IP stack in the
+years of coding. A few firsts along the way: I contributed to the first TCP/IP stack in the
 **TACLANE** (General Dynamics) — the first Top Secret-rated internet device, which has
 sold billions and is still in production 30 years later — and built the **first
 certified IPv6 stack, at Nortel**. My "Jason" persona in the rules is based on the

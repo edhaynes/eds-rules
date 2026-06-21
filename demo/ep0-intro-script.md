@@ -35,8 +35,8 @@ I've been writing software for forty-seven years. I started around ten or
 eleven, on university mainframes and a TRS-80 Color Computer. I'm not a hobbyist
 who discovered AI last year.
 
-I wrote the first TCP/IP stack inside the TACLANE — General Dynamics, about a
-thirty-person team. It was the first network encryptor certified to carry
+I contributed to the first TCP/IP stack inside the TACLANE — General Dynamics, a
+thirty-three-person team. It was the first network encryptor certified to carry
 Top Secret traffic, and thirty years later it's still in production and has sold
 into the billions. I built the first certified IPv6 stack at Nortel. I did
 real-time and determinism at Wind River, and open source the right way at

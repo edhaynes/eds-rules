@@ -15,7 +15,7 @@ Subject: Small-model coding rules + a "1 rule per billion params" sizing law
 Hi [name],
 
 I publish "Ed's Rules" — an open-source (CC-BY) rule set for AI coding agents, distilled
-from ~47 years of building (first TCP/IP stack in the TACLANE encryptor; first certified
+from ~47 years of building (contributed to the first TCP/IP stack in the TACLANE encryptor; first certified
 IPv6 stack at Nortel; Wind River; Red Hat). Two results your readers might find worth a line:
 
 1. A local Llama 3.1 8B with the rules in front of it catches a hardcoded key, names the
