@@ -109,7 +109,7 @@ that numbering.)
 | 41 | 45 | Deploy gates never disabled |
 | 42 | 71 | Catch specific, never swallow (absorbs cleanup) |
 | 43 | 77 | Pin and lock (absorbs vulnerability audits) |
-| 44–45 | 47–48 | Health endpoints; container stack — Podman/UBI/OpenShift |
+| 44–45 | 47–48 | Health endpoints; container-friendly + least privilege (stack is a preference) |
 | 46 | 46 | Idempotency |
 | 47 | 72 | Loud in dev, graceful in prod |
 | 48 | 37 | Three platforms, two in CI |
