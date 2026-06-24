@@ -43,7 +43,12 @@ github.com/edhaynes/eds-rules.
   employer-layer example (Ch3 card, Ch4 recap, Appendix D de-branded to match).
   Ten diagrams added: Ch6 rules 93–98+100 (was 1, now 8), Ch7 layered funnel
   (`art/the-layers.png`, ported from the synopsis 3-pager) + a tighten-downward
-  nested-scope diagram. Print PDF now **171pp** (was 165); covers regenerated.
+  nested-scope diagram. **Print PDF now 196pp** (12pt body, bumped from default
+  11pt per Eddie 2026-06-24); covers regenerated (spine 0.441"). Trim stays
+  **7×10** (Eddie kept it over 6×9). Build fix: long appendix tables were
+  overflowing the bottom margin (KDP error) because typst figures are
+  `breakable:false` — added a PDF patch making table figures breakable; Appendix
+  D/E/F tables now paginate cleanly with repeating headers.
 - Teaser demo video live (8B Llama with-rules vs without). Persona-model training
   (`model/`) works as proof of concept.
 

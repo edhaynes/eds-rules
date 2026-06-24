@@ -59,10 +59,17 @@ TITLE_ART = (
 # chapters starting on a fresh page (weak break collapses at page tops),
 # title-page typography, and the crew illustration on the title page.
 PDF_PATCHES = [
+    # Body font: pandoc/typst default is 11pt; bump to 12pt for the 7x10 print
+    # edition (EPUB stays reflowable, reader-controlled).
+    ("  fontsize: 11pt,", "  fontsize: 12pt,"),
     ("    paper: paper,",
      f"    width: {TRIM_WIDTH},\n    height: {TRIM_HEIGHT},"),
     ("#show: doc => conf(",
      "#show heading.where(level: 1): it => pagebreak(weak: true) + it\n"
+     # Typst figures are breakable:false by default, so a table taller than one
+     # page overflows the bottom margin (KDP "text outside margin"). Let table
+     # figures break across pages; image figures stay atomic.
+     "#show figure.where(kind: table): set block(breakable: true)\n"
      "#show: doc => conf("),
     ("size: 1.5em, hyphenate: false)[#title",
      "size: 2.7em, hyphenate: false)[#title"),
