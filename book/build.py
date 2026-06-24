@@ -35,7 +35,7 @@ SOURCES = [
 
 METADATA = {
     "title": "100 Rules for Writing My Software",
-    "subtitle": "The Red Hat Way",
+    "subtitle": "A Field Manual for Directing AI Coding Agents",
     "author": "Ed Haynes",
     "lang": "en-US",
     "rights": "Book text (c) Ed Haynes. Underlying rules repo CC-BY-4.0.",

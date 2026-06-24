@@ -2,7 +2,7 @@
 #pagebreak()
 ```
 
-**100 Rules for Writing My Software: The Red Hat Way**
+**100 Rules for Writing My Software**
 
 Copyright © 2026 Ed Haynes. All rights reserved.
 
@@ -26,9 +26,8 @@ Published by Bard Technical Solutions.
 
 ---
 
-*These rules are called "the Red Hat way" but are not sanctioned or verified by
-Red Hat. The author is a Red Hat architect; this book is personal work,
-unaffiliated with and not endorsed by Red Hat. Everything in it is provided as
+*This book is the author's personal work — unaffiliated with, not sanctioned by,
+and not endorsed by the author's employer. Everything in it is provided as
 is, with no promises of any kind. Your mileage may vary — do your own research.*
 
 ---

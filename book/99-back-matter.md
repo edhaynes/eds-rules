@@ -183,7 +183,7 @@ models are the notable example: Apache-2.0 licensed, trained on
 license-filtered data with documented provenance, in over a hundred
 programming languages — a pipeline that deduplicates aggressively, scans for
 malware, and even redacts keys and passwords from the training data itself.
-Secret hygiene all the way down. And InstructLab, the open-source Red Hat/IBM
+Secret hygiene all the way down. And InstructLab, the open-source
 fine-tuning project, is exactly this appendix's second path packaged for
 people who are not researchers: it turns "tune open weights" into a
 command-line workflow fed by your own curated examples. A model that begins
@@ -255,9 +255,8 @@ downward; a layer may make an inherited rule stricter, never looser.
 - **Project preferences** — what one codebase needs: its migration rules, its
   schemas, its domain constraints — paged in for that project, absent
   everywhere else.
-- **Employer preferences** — the shop's house standard. Mine are Red
-  Hat-shaped: Podman over Docker, UBI base images, OpenShift. Correct for me,
-  hardcoded to nobody else.
+- **Employer preferences** — the shop's house standard. Mine: Podman over
+  Docker, UBI base images, OpenShift. Correct for me, hardcoded to nobody else.
 
 ### A worked crew — capacity and Guy's test
 
