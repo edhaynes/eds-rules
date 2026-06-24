@@ -37,6 +37,13 @@ github.com/edhaynes/eds-rules.
   cleared); AI-agent discoverability rides in KDP metadata. Plan:
   `plans/PLAN_amazon_kdp.md`. Remaining: epubcheck, KDP-issued ISBN → copyright
   page, imprint name, publish.
+- **Book now matches the taxonomy (2026-06-23, Eddie):** Red Hat stack relegated
+  from a fundamental rule to a scoped *example* — Rule 45 generalized to
+  "container-friendly + least privilege," Podman/UBI/OpenShift demoted to an
+  employer-layer example (Ch3 card, Ch4 recap, Appendix D de-branded to match).
+  Ten diagrams added: Ch6 rules 93–98+100 (was 1, now 8), Ch7 layered funnel
+  (`art/the-layers.png`, ported from the synopsis 3-pager) + a tighten-downward
+  nested-scope diagram. Print PDF now **171pp** (was 165); covers regenerated.
 - Teaser demo video live (8B Llama with-rules vs without). Persona-model training
   (`model/`) works as proof of concept.
 
