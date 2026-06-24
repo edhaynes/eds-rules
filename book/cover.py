@@ -6,13 +6,15 @@ Two artifacts, both at 300 DPI:
   * wrap   — full paperback wrap (back + spine + front) sized from   -> dist/cover-wrap.png / .pdf
              the interior page count.
 
-Design is purely typographic (no SVG rasteriser on this box, and the Red Hat
-fedora is a separate trademark we deliberately avoid). Title stays "The Red Hat
-Way" per Eddie; the AI-agents hook rides as a cover tagline + back-cover copy so
-the browse thumbnail signals the audience without changing the title.
+Design is purely typographic (no SVG rasteriser on this box). The former
+"THE RED HAT WAY" cover subtitle was removed per Eddie (2026-06-24); the
+AI-agents hook carries the positioning as the cover kicker + back-cover copy,
+so the browse thumbnail still signals the audience.
 
 Spine math is KDP's: white paper, black-and-white interior = 0.002252 in/page.
-Run:  python3 book/cover.py --pages 167
+Keep --pages in sync with the interior (dist/eds-rules-book-print.pdf); a stale
+count makes KDP reject the wrap on a size mismatch.
+Run:  python3 book/cover.py --pages 196
 """
 from __future__ import annotations
 
@@ -32,8 +34,7 @@ PAGE_THICKNESS = 0.002252        # KDP white paper, B&W interior, in/page
 # ── palette ──────────────────────────────────────────────────────────────────
 INK = (21, 23, 28)               # near-black charcoal background
 PAPER = (244, 242, 238)          # warm off-white
-RED = (204, 0, 0)                # Red Hat red, our accent
-RED_BRIGHT = (238, 0, 0)
+RED = (204, 0, 0)                # signal red, the accent
 MUTE = (150, 154, 162)           # muted gray for kickers / fine print
 
 FONTS = Path("/System/Library/Fonts")
@@ -116,12 +117,10 @@ def draw_front(img: Image.Image, ox: int, oy: int, w: int, h: int):
         lw = d.textlength(line, font=fsub)
         d.text((cx - lw / 2, oy + int((1200 + i * 110) * s)), line, font=fsub, fill=PAPER)
 
-    # divider + subtitle
+    # divider — a clean section break above the rule-ledger (the former
+    # "THE RED HAT WAY" subtitle was removed per Eddie 2026-06-24)
     dy = oy + int(1490 * s)
     d.line([cx - int(180 * s), dy, cx + int(180 * s), dy], fill=RED, width=max(1, int(4 * s)))
-    tracked(d, (0, oy + int(1530 * s)), "THE RED HAT WAY",
-            mono(int(54 * s)), RED_BRIGHT, tracking=int(10 * s),
-            anchor_center=ox * 2 + w if ox else w)
 
     # faint rule-number ledger down the lower third (technical texture)
     led = mono(int(26 * s))
@@ -251,8 +250,9 @@ def build_wrap(out_png: Path, pages: int):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--pages", type=int, default=167,
-                    help="interior page count (drives spine width)")
+    ap.add_argument("--pages", type=int, default=196,
+                    help="interior page count (drives spine width); "
+                         "matches dist/eds-rules-book-print.pdf")
     ap.add_argument("--out", type=Path, default=Path("dist"))
     args = ap.parse_args()
     build_ebook(args.out / "cover-ebook.png")
