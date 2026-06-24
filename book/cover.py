@@ -17,6 +17,7 @@ Run:  python3 book/cover.py --pages 167
 from __future__ import annotations
 
 import argparse
+import math
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -154,7 +155,9 @@ def build_wrap(out_png: Path, pages: int):
     spine_in = pages * PAGE_THICKNESS
     full_w_in = 2 * BLEED + 2 * TRIM_W + spine_in
     full_h_in = 2 * BLEED + TRIM_H
-    W, H = round(full_w_in * DPI), round(full_h_in * DPI)
+    # Round the canvas UP so the file meets-or-exceeds KDP's expected size; a
+    # sub-pixel round-down (14.690 vs expected 14.691) trips KDP's size check.
+    W, H = math.ceil(full_w_in * DPI), math.ceil(full_h_in * DPI)
     spine = round(spine_in * DPI)
     trim = round(TRIM_W * DPI)
     bleed = round(BLEED * DPI)
