@@ -2,6 +2,28 @@
 #pagebreak()
 ```
 
+**100 Rules for Writing My Software: The Red Hat Way**
+
+Copyright © 2026 Ed Haynes. All rights reserved.
+
+First edition, 2026.
+
+No part of this book may be reproduced, stored in a retrieval system, or
+transmitted in any form or by any means — electronic, mechanical, photocopying,
+recording, or otherwise — without the prior written permission of the author,
+except for brief quotations in a review.
+
+The hundred rules, in their short reference form, are published separately as
+the companion repository (`RULES.md`) under the Creative Commons Attribution 4.0
+license (CC-BY-4.0): [github.com/edhaynes/eds-rules](https://github.com/edhaynes/eds-rules).
+That reference form may be copied, adapted, and redistributed with attribution.
+This book's prose, structure, diagrams, and artwork are the author's and are
+**not** covered by that license.
+
+ISBN (paperback): 979-8-XXXXXXX-X-X *(assigned by KDP at publication)*
+
+Published by Bard Technical Solutions.
+
 ---
 
 *These rules are called "the Red Hat way" but are not sanctioned or verified by
