@@ -22,9 +22,11 @@ the KDP metadata, not the cover.
    eyeballs the render).
 3. **KDP listing kit** — `docs/KDP_LISTING.md`: identity, 3 categories, 7
    keywords, description (plain + HTML), pricing/royalty, upload checklist. ✅ done.
-4. **Rebuild + validate** — `python3 book/build.py all`; confirm page count;
-   regenerate wrap at the real `--pages`; `epubcheck` the EPUB. ⏳.
-5. **Commit + push** — stable cycle (1.4.6, even-minor) → **confirm before push**.
+4. **Rebuild + validate** — rebuilt EPUB + 165pp PDF with the copyright page;
+   covers regenerated at 165pp (spine 0.372"); **epubcheck → 0 errors / 0
+   warnings** (EPUB 3.3). ✅ done.
+5. **Commit + push** — committed locally (98a9607); stable cycle (1.4.6,
+   even-minor) → **confirm before push**. ⏳ awaiting Eddie's go.
 
 ## Open questions
 - Imprint: "Bard Technical Solutions" (default) vs the LLC vs "Independently

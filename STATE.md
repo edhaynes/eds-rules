@@ -4,7 +4,7 @@
 commit.** Hard cap **1024 words** (currently ~750). When over cap, prune detail to
 ADRs / MEMORY / the notebook — STATE is a summary that points, never a log.*
 
-Last updated: 2026-06-16.
+Last updated: 2026-06-23.
 
 ## What this is
 "100 Rules for Writing My Software: The Red Hat Way" — an opinionated, capped-at-
@@ -29,6 +29,14 @@ github.com/edhaynes/eds-rules.
   tracked at `book/eds-rules-book-print.pdf`; EPUB is gitignored in `dist/`.
 - Build: `book/build.py [epub|pdf|all]` needs `mmdc`, `pandoc`, `typst` on PATH;
   Mermaid → B&W PNG, pandoc → EPUB and (patched typst) → custom-trim PDF.
+- **Amazon KDP prep done (2026-06-23, Eddie):** Kindle + paperback. Copyright page
+  added to front matter; `book/cover.py` generates ebook (1600×2560) + paperback
+  wrap (spine from page count, barcode keep-out) — covers approved by Eddie;
+  `docs/KDP_LISTING.md` is the full listing kit (categories, 7 keywords,
+  description, pricing, upload checklist). Title kept "The Red Hat Way" (legal
+  cleared); AI-agent discoverability rides in KDP metadata. Plan:
+  `plans/PLAN_amazon_kdp.md`. Remaining: epubcheck, KDP-issued ISBN → copyright
+  page, imprint name, publish.
 - Teaser demo video live (8B Llama with-rules vs without). Persona-model training
   (`model/`) works as proof of concept.
 
