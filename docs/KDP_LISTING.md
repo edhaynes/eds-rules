@@ -133,7 +133,7 @@ barcode — leave it clear.
 | Spec | Value |
 |---|---|
 | Manuscript | `dist/eds-rules-book.epub` (rebuild before upload) |
-| Cover | `dist/cover-ebook.png` (1600×2560) |
+| Cover | `dist/cover-ebook.jpg` (1600×2560) |
 | DRM | Author's call — recommend **no DRM** (matches the CC-BY companion ethos) |
 
 Validate the EPUB before upload (KDP runs epubcheck and will reject on errors):
@@ -166,12 +166,12 @@ Pre-flight (local):
 - [ ] Rebuild both artifacts: `python3 book/build.py all`
 - [ ] Confirm page count; regenerate covers with `--pages <N>`
 - [ ] `epubcheck dist/eds-rules-book.epub` → zero errors
-- [ ] Eyeball `dist/cover-ebook.png` and `dist/cover-wrap.pdf` at 100%
+- [ ] Eyeball `dist/cover-ebook.jpg` and `dist/cover-wrap.pdf` at 100%
 - [ ] Paste the KDP-issued paperback ISBN into the copyright page; rebuild PDF
 
 KDP — Kindle eBook:
 - [ ] New Title → Kindle eBook → fill §1 identity, §2 categories, §3 keywords
-- [ ] Description from §4 · Upload `dist/eds-rules-book.epub` · cover `cover-ebook.png`
+- [ ] Description from §4 · Upload `dist/eds-rules-book.epub` · cover `cover-ebook.jpg`
 - [ ] Preview in the Online Previewer · set price §7 · publish
 
 KDP — Paperback:

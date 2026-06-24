@@ -147,8 +147,12 @@ def build_ebook(out: Path):
     img = Image.new("RGB", (w, h), INK)
     draw_front(img, 0, 0, w, h)
     out.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out, dpi=(DPI, DPI))
-    print(f"ebook  -> {out}  ({w}x{h})")
+    # KDP's preferred Kindle cover format is JPEG (RGB). Emit .jpg as the
+    # primary; keep a .png alongside for any lossless use.
+    jpg = out.with_suffix(".jpg")
+    img.save(jpg, "JPEG", quality=95, dpi=(DPI, DPI))
+    img.save(out.with_suffix(".png"), dpi=(DPI, DPI))
+    print(f"ebook  -> {jpg}  ({w}x{h}, JPEG q95)")
 
 
 def build_wrap(out_png: Path, pages: int):
