@@ -144,6 +144,7 @@ def preprocess(src: Path) -> Path:
 
 def pandoc(processed: list[Path], target: Path, extra: list[str]) -> None:
     meta = [f"--metadata={k}:{v}" for k, v in METADATA.items()]
+    target.unlink(missing_ok=True)   # fresh inode -> fresh "Created" date (not in-place)
     subprocess.run(
         ["pandoc", *map(str, processed), "-o", str(target),
          "--toc", "--toc-depth=2", "--resource-path", str(BUILD_DIR),
@@ -186,10 +187,12 @@ def build_pdf(processed: list[Path]) -> None:
         text = text.replace(old, new, 1)
     typ.write_text(text)
     pdf = DIST_DIR / "eds-rules-book-print.pdf"
+    pdf.unlink(missing_ok=True)      # fresh inode -> fresh "Created" date (not in-place)
     subprocess.run(["typst", "compile", str(typ), str(pdf)], check=True)
     print(f"built {pdf.relative_to(REPO_ROOT)} ({pdf.stat().st_size // 1024} KB)")
     # Publish the print PDF into book/ — the in-repo, version-tracked copy.
     published = BOOK_DIR / "eds-rules-book-print.pdf"
+    published.unlink(missing_ok=True)
     shutil.copyfile(pdf, published)
     print(f"published {published.relative_to(REPO_ROOT)}")
 
