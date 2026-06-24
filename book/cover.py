@@ -235,13 +235,8 @@ def build_wrap(out_png: Path, pages: int):
         d.text((bx, by), line, font=cf, fill=MUTE)
         by += 48
 
-    # barcode keep-out (KDP prints the ISBN barcode here — leave it clear)
-    bw, bh = int(2.0 * DPI), int(1.2 * DPI)
-    bx0 = front_x0 - bleed - int(SAFE * DPI) - bw
-    by0 = H - bleed - int(SAFE * DPI) - bh
-    d.rectangle([bx0, by0, bx0 + bw, by0 + bh], fill=PAPER)
-    d.text((bx0 + 24, by0 + bh // 2 - 16), "ISBN barcode\n(KDP places here)",
-           font=mono(26), fill=MUTE)
+    # No barcode placeholder: KDP overlays the ISBN barcode automatically at
+    # print time, so the back cover stays clean.
 
     out_png.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_png, dpi=(DPI, DPI))
