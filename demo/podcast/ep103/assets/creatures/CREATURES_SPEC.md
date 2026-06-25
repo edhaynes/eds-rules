@@ -1,6 +1,6 @@
 # Face-Cover Creatures — Spec (ep103)
 
-Status: In Progress — assets not yet generated (2026-06-25)
+Status: Completed — final art generated on Gladius (SDXL) 2026-06-25; PNGs in place
 
 Original critter set that sits over **passersby faces** in the ep103 video, so we
 obscure bystanders for privacy **without** copyrighted IP (see coding-rules §0.8 —
@@ -76,8 +76,12 @@ scale where color washes out. Antlers and ears especially carry from a distance.
 
 ## Acceptance
 
-- [ ] 4 × 512² RGBA PNGs, transparent bg, named as above
-- [ ] Distinct silhouette **and** hue per the table; one family in style
-- [ ] No franchise resemblance (original)
-- [ ] `contact-sheet.png` for visual verify
+- [x] 4 × 512² RGBA PNGs, transparent bg, named as above (SDXL on Gladius, alpha via rembg)
+- [x] Distinct silhouette **and** hue per the table; one family in style
+- [x] No franchise resemblance (original)
+- [x] `contact-sheet.png` for visual verify
 - [ ] Eddie signs off on the look before they go into the ep103 render
+
+Generation route used: `/srv/models/gen_creatures.py` on Gladius (gx10) —
+Stable Diffusion XL base 1.0, fp16, 35 steps; rembg for the alpha cutout;
+trimmed, padded, resized to 512². Raw 1024² renders kept alongside as `*_raw.png`.
