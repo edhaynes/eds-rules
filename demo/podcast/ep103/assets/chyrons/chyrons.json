@@ -1,0 +1,86 @@
+[
+  {
+    "idx": 1,
+    "start": 20,
+    "dur": 7.0,
+    "png": "chyron_01.png",
+    "title": "THE 1-PARAMETER LLM"
+  },
+  {
+    "idx": 2,
+    "start": 47,
+    "dur": 7.0,
+    "png": "chyron_02.png",
+    "title": "THE 0-PARAMETER MODEL"
+  },
+  {
+    "idx": 3,
+    "start": 78,
+    "dur": 7.0,
+    "png": "chyron_03.png",
+    "title": "STILL HAS A PURPOSE"
+  },
+  {
+    "idx": 4,
+    "start": 104,
+    "dur": 7.0,
+    "png": "chyron_04.png",
+    "title": "SCALING 10x EACH STEP"
+  },
+  {
+    "idx": 5,
+    "start": 120,
+    "dur": 7.0,
+    "png": "chyron_05.png",
+    "title": "LOGIC BEFORE MATH"
+  },
+  {
+    "idx": 6,
+    "start": 143,
+    "dur": 7.0,
+    "png": "chyron_06.png",
+    "title": "A MORAL COMPASS"
+  },
+  {
+    "idx": 7,
+    "start": 160,
+    "dur": 7.0,
+    "png": "chyron_07.png",
+    "title": "PROVABLE BY CONSTRUCTION"
+  },
+  {
+    "idx": 8,
+    "start": 177,
+    "dur": 7.0,
+    "png": "chyron_08.png",
+    "title": "PROVABLE vs UNPROVABLE"
+  },
+  {
+    "idx": 9,
+    "start": 216,
+    "dur": 7.0,
+    "png": "chyron_09.png",
+    "title": "TINY = FAST"
+  },
+  {
+    "idx": 10,
+    "start": 255,
+    "dur": 7.0,
+    "png": "chyron_10.png",
+    "title": "LOGIC IN THE TEXT"
+  },
+  {
+    "idx": 11,
+    "start": 286,
+    "dur": 7.0,
+    "png": "chyron_11.png",
+    "title": "THE FIRST AXIOM"
+  },
+  {
+    "idx": 12,
+    "start": 364,
+    "dur": 7.0,
+    "png": "chyron_12.png",
+    "title": "RECORDED AT DEN"
+  }
+]

@@ -62,3 +62,7 @@ demo/podcast/ep95-edit/.venv/
 demo/podcast/distribution/out/
 # regenerable synopsis PDF (large binary; rebuild via synopsis.py + Chrome)
 taxonomy/generated/*.pdf
+
+# ep103 — heavy/regenerable artifacts (scripts + small assets stay tracked)
+demo/podcast/ep103/work/
+demo/podcast/ep103/ep103.mp4
