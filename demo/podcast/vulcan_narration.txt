@@ -1,0 +1,15 @@
+Every safety-critical system asks one question before it runs a line of code: can this be trusted inside the partition? Today, that question is answered by a human with a checklist, or worse, by an AI that is probably right.
+
+In avionics, in medical, in autonomy, "probably" is not a word you get to use. A two-billion-parameter model can tell you code looks safe. It cannot prove it. And you cannot certify two billion parameters of judgment.
+
+Vulcan is different by design. It does not guess whether code belongs in a secure partition. It proves it. Give it a function, and it checks the partition's contract: no dynamic memory, no unbounded loops, no recursion, no hidden global state. And it returns a verdict that is a proof.
+
+When code is safe, Vulcan admits it. When it is not, Vulcan refuses, and names the exact rule that was broken. Refused: recursion. Admission denied. Not a vibe. A citation.
+
+Hand that same function to a two-billion-parameter model. Sometimes it catches the violation. Sometimes it misses it. Ask twice, get two answers. It cannot tell you which rule failed, because it was never reasoning about rules. It was predicting text.
+
+Vulcan is perfect on its task, deterministic to the bit, and small enough to read end to end. One million parameters, not two billion. The validator itself can be audited. Qualified. Certified.
+
+That is the whole game. You cannot put a black box in a safety case. But a proof, and a prover small enough to verify, that you can stand behind, in front of a regulator.
+
+QNX certifies the operating system. Vulcan certifies the intelligence running on top of it. Provably. Let's own that layer, together.
