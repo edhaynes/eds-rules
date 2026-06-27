@@ -66,3 +66,14 @@ taxonomy/generated/*.pdf
 # ep103 — heavy/regenerable artifacts (scripts + small assets stay tracked)
 demo/podcast/ep103/work/
 demo/podcast/ep103/ep103.mp4
+
+# generated podcast slides + voiceover (regenerable via build-vulcan-v2.py)
+demo/podcast/_slide_*.png
+demo/podcast/*.mp3
+
+# eval logs (regenerable)
+experiments/rule-scaling/*.log
+
+# stray ML model weights — not part of this repo
+yolo11n.pt
+*.pt
