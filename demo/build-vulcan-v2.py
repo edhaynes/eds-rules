@@ -63,7 +63,7 @@ def base():
         owl = Image.open(OWL).convert("RGBA")
         owl.thumbnail((128, 128))                      # a little bigger, aspect preserved
         img.paste(owl, (56, 36), owl)
-    d.text((196, 56), "BARD", font=font(54), fill=WHITE)
+    d.text((196, 56), "BARD", font=font(54), fill=GOLD)
     d.text((198, 120), "certified, provable AI", font=font(22, False), fill=DIM)
     if QNX_LOGO.exists():
         q = Image.open(QNX_LOGO).convert("RGBA")
@@ -107,9 +107,9 @@ def card_trail():
     img, d = base()
     rows = [
         'TACLANE — first Top-Secret-certified encryptor',
-        'Nortel — "first to pass IPv6 Phase II validation"  (UNH · Moonv6 · DoD)',
+        'Nortel — "first to pass IPv6 Phase II validation"',
         'Wind River Titanium — "industry\'s first commercial Carrier Grade NFVI"',
-        'Alstom × Red Hat — safety-critical rail',
+        'Alstom / Red Hat — safety-critical rail',
     ]
     center(d, [("A trail of press releases", 52, GOLD)] + [(r, 36, WHITE) for r in rows])
     return img
@@ -291,8 +291,10 @@ def main():
             print(f"  slide {i}: {d:.1f}s", flush=True)
         lf.write(f"file '{tmp / f's{len(SLIDES)-1:02d}.png'}'\n")
     full_audio = tmp / "vo.mp3"
+    # Re-encode the concatenated audio (stream-copy of MP3s only plays the first segment).
     subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat,
-                    "-c", "copy", str(full_audio)], check=True, capture_output=True)
+                    "-c:a", "libmp3lame", "-b:a", "192k", str(full_audio)],
+                   check=True, capture_output=True)
     subprocess.run(
         ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listf), "-i", str(full_audio),
          "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30",
